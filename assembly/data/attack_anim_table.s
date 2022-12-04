@@ -810,6 +810,126 @@ gMoveAnimations:
 .word ANIM_SPRINGTIDE_STORM
 .word ANIM_LUNAR_BLESSING
 .word ANIM_TAKE_HEART
+.word ANIM_LAZER_FIRE
+.word ANIM_SEARING_SUN
+.word ANIM_SOLAR_FLARE
+.word ANIM_FLASH_BANG
+.word ANIM_LIGHTSPEED_PUNCH
+.word ANIM_FOCUSED_BEAM
+.word ANIM_PURITY
+.word ANIM_CONCENTRATE
+.word ANIM_HALLOW_FOCUS
+.word ANIM_LIGHT_SHIELD
+.word ANIM_SERENITY
+.word ANIM_LUSTERSHOT
+.word ANIM_FINALLIGHT
+.word ANIM_SUNBEAM
+.word ANIM_RUINOUSLIGHT
+.word ANIM_BLINDED
+.word ANIM_CURINGLIGHT
+.word ANIM_WARMUP
+.word ANIM_DRUMROLL
+.word ANIM_STRUM
+.word ANIM_MELODY
+.word ANIM_SEEDSHAKER
+.word ANIM_SUDDENSHOUT
+.word ANIM_PITCHPERFECT
+.word ANIM_DEAFEN
+.word ANIM_FINALE
+.word ANIM_ACAPELLA
+.word ANIM_FORTISSIMO
+.word ANIM_BEAMEDNOTE
+.word ANIM_HECKLE
+.word ANIM_BLUES
+.word ANIM_JAZZ
+.word ANIM_ROCKNROLL
+.word ANIM_POP
+.word ANIM_RAP
+.word ANIM_GAMMARAY
+.word ANIM_BLACKHOLE
+.word ANIM_PULSAR
+.word ANIM_FISSION
+.word ANIM_FUSION
+.word ANIM_METEORSHOWER
+.word ANIM_STARBURST
+.word ANIM_WARPDRIVE
+.word ANIM_WORMHOLE
+.word ANIM_IRRADIATE
+.word ANIM_ASTEROIDBELT
+.word ANIM_COSMICRAY
+.word ANIM_GAMMAPOWER
+.word ANIM_RELATIVITY
+.word ANIM_BIGBANG
+.word ANIM_ABDUCT
+.word ANIM_NEUTRONSHOT
+.word ANIM_STANDIN
+.word ANIM_FLOURISH
+.word ANIM_CONFUZZLE
+.word ANIM_BEFUDDLE
+.word ANIM_REHEARSAL
+.word ANIM_SCREENTIME
+.word ANIM_BREAKALEG
+.word ANIM_PERFORMANCE
+.word ANIM_SWINDLE
+.word ANIM_INCANTATION
+.word ANIM_PRESTO
+.word ANIM_MAGICMISSILE
+.word ANIM_ENCHANT
+.word ANIM_ARCANEAETHER
+.word ANIM_VORTEX
+.word ANIM_TRANSMUTE
+.word ANIM_CHAOSMAGIC
+.word ANIM_FORAGE
+.word ANIM_MAUL
+.word ANIM_FERALSTRIKES
+.word ANIM_SAVAGE
+.word ANIM_CLAW
+.word ANIM_HARSHCLAW
+.word ANIM_BRUTALCLAW
+.word ANIM_BEASTCHARGE
+.word ANIM_RUPTURE
+.word ANIM_RAWR
+.word ANIM_FERALBITE
+.word ANIM_DIREFLAIL
+.word ANIM_PLAYDEAD
+.word ANIM_HUNTERMARK
+.word ANIM_ADRENALINE
+.word ANIM_BEASTSENSE
+.word ANIM_CONCEALMENT
+.word ANIM_PERSEVERANCE
+.word ANIM_ENTOMB
+.word ANIM_CHISEL
+.word ANIM_SNAGCURIO
+.word ANIM_SHARDSHOT
+.word ANIM_SCRAPE
+.word ANIM_TIMEGEAR
+.word ANIM_RUSTYRIVET
+.word ANIM_COREBLAST
+.word ANIM_HEIRLOOMHIT
+.word ANIM_MAINTENANCE
+.word ANIM_GAURDDRAIN
+.word ANIM_REINFORCE
+.word ANIM_BOLSTER
+.word ANIM_FORTIFY
+.word ANIM_WEIGHDOWN
+.word ANIM_CAVING
+.word ANIM_SALTRUB
+.word ANIM_GUMSHOT
+.word ANIM_MUNCH
+.word ANIM_SYRUPSMACK
+.word ANIM_MORNINGMEAL
+.word ANIM_GREEDYGRAB
+.word ANIM_REGROWTH
+.word ANIM_SUGARRUSH
+.word ANIM_FOODCOMA
+.word ANIM_TASTE
+.word ANIM_FEAST
+.word ANIM_FLINGFRUIT
+.word ANIM_BANQUET
+.word ANIM_CHOMP
+.word ANIM_DIGEST
+.word ANIM_CONSUME
+.word ANIM_ORDERUP
 
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
@@ -19777,6 +19897,956 @@ TAKE_HEART_RING_UP:
 .align 2
 FALLING_HEART: objtemplate ANIM_TAG_RED_HEART ANIM_TAG_RED_HEART OAM_OFF_16x16 gDummySpriteAnimTable 0x0 gDummySpriteAffineAnimTable SpriteCB_FallingObject
 TAKE_HEART_RING: objtemplate ANIM_TAG_GUARD_RING ANIM_TAG_RED_HEART 0x83ACBE0 gDummySpriteAnimTable 0x0 0x83E44D4 SpriteCB_SurroundingRing
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_LAZER_FIRE:
+	goto ANIM_DOUBLESLAP
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SEARING_SUN:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SOLAR_FLARE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FLASH_BANG:
+	goto 0x81caeb3 @MOVE_FLASH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_LIGHTSPEED_PUNCH:
+	goto 0x81cff92 @MOVE_DYNAMICPUNCH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FOCUSED_BEAM:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PURITY:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CONCENTRATE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HALLOW_FOCUS:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_LIGHT_SHIELD:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SERENITY:
+	goto ANIM_DRAGONDANCE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_LUSTERSHOT:
+	goto 0x81ce513 @MOVE_SOLARBEAM
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FINALLIGHT:
+	goto 0x81c8e15 @MOVE_EXPLOSION
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SUNBEAM:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RUINOUSLIGHT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BLINDED:
+	goto 0x81caeb3 @MOVE_FLASH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CURINGLIGHT:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_WARMUP:
+	@loadparticle ANIM_TAG_MUSIC_NOTES
+	goto 0x81d2d0d @MOVE_HYPERVOICE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_DRUMROLL:
+	goto 0x81d2d0d @MOVE_HYPERVOICE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STRUM:
+	goto 0x81d2d0d @MOVE_HYPERVOICE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MELODY:
+	goto 0x81ca5a0 @MOVE_SING
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SEEDSHAKER:
+	goto 0x81d2d0d @MOVE_HYPERVOICE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SUDDENSHOUT:
+	goto 0x81d2d0d @MOVE_HYPERVOICE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PITCHPERFECT:
+	goto 0x81d2d0d @MOVE_HYPERVOICE
+	endanimation
+	
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_DEAFEN:
+	goto ANIM_BOOMBURST
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FINALE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ACAPELLA:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FORTISSIMO:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BEAMEDNOTE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HECKLE:
+	goto 0x81cb69c @MOVE_UPROAR
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BLUES:
+	loadparticle ANIM_TAG_MUSIC_NOTES
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x043D
+	pause 0x5
+	pokespritetoBG side_target
+	setblends 0xF
+	loadBG1 BG_BLUE_SKY_NIGHT
+	waitbgfadeout
+	leftbankBG_over_partnerBG bank_target
+	soundcomplex 0x89 SOUND_PAN_ATTACKER 0x7 0xA
+	call RAP_NOTE
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x1 0x0 0x8 0x43D
+	call RAP_NOTE
+	launchtask AnimTask_move_bank_2 0x2 0x5 bank_target 0x2 0x0 0x2A 0x1
+	call RAP_NOTE
+	call RAP_NOTE
+	call RAP_NOTE
+	call RAP_NOTE
+	call RAP_NOTE
+	waitanimation
+	pokespritefromBG side_target
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_DEF 0x1 0x8 0x0 0x043D
+	resetblends
+	call UNSET_SCROLLING_BG
+	endanimation
+
+
+BLUES_NOTE:
+	launchtemplate Template_BellyDrumNote 0x2 0x4 0x0 0x0 0x0 0x0 
+	playsound2 0xb2 SOUND_PAN_ATTACKER 
+	pause 0xf
+	return 
+	@goto ANIM_DRAGONPULSE
+	@endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_JAZZ:
+	loadparticle ANIM_TAG_MUSIC_NOTES
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x043D
+	pause 0x5
+	pokespritetoBG side_target
+	leftbankBG_over_partnerBG bank_target
+	soundcomplex 0x89 SOUND_PAN_ATTACKER 0x7 0xA
+	call JAZZ_NOTE
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x1 0x0 0x8 0x43D
+	call JAZZ_NOTE
+	launchtask AnimTask_move_bank_2 0x2 0x5 bank_target 0x2 0x0 0x2A 0x1
+	call JAZZ_NOTE
+	call JAZZ_NOTE
+	call JAZZ_NOTE
+	call JAZZ_NOTE
+	call JAZZ_NOTE
+	waitanimation
+	pokespritefromBG side_target
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_DEF 0x1 0x8 0x0 0x043D
+	endanimation
+
+
+JAZZ_NOTE:
+	launchtemplate Template_BellyDrumNote 0x2 0x4 0x0 0x0 0x0 0x0 
+	playsound2 0xb2 SOUND_PAN_ATTACKER 
+	pause 0xf
+	return 
+	@goto ANIM_DRAGONPULSE
+	@endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ROCKNROLL:
+	goto 0x81cb69c @MOVE_UPROAR
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_POP:
+	goto 0x81c6f34 @MOVE_POUND
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RAP:
+	loadparticle ANIM_TAG_SMALL_EMBER
+	loadparticle ANIM_TAG_JAGGED_MUSIC_NOTE
+	loadparticle ANIM_TAG_THIN_RING
+	loadparticle ANIM_TAG_MUSIC_NOTES
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG 0x1 0x0 0x8 0x043D
+	pause 0x5
+	pokespritetoBG side_target
+	leftbankBG_over_partnerBG bank_target
+	soundcomplex 0x89 SOUND_PAN_ATTACKER 0x7 0xA
+	call RAP_FIRE
+	call RAP_NOTE
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_DEF 0x1 0x0 0x8 0x43D
+	@call RAP_FIRE
+	call RAP_NOTE
+	launchtask AnimTask_move_bank_2 0x2 0x5 bank_target 0x2 0x0 0x2A 0x1
+	call RAP_FIRE
+	call RAP_NOTE
+	@call RAP_FIRE
+	call RAP_NOTE
+	call RAP_FIRE
+	call RAP_NOTE
+	@call RAP_FIRE
+	call RAP_NOTE
+	call RAP_FIRE
+	call RAP_NOTE
+	waitanimation
+	pokespritefromBG side_target
+	launchtask AnimTask_pal_fade 0xa 0x5 PAL_BG | PAL_DEF 0x1 0x8 0x0 0x043D
+	endanimation
+
+RAP_FIRE:
+	launchtemplate Template_DragonBreathFire 0x82 0x5 0x0 0x0 0x0 0x0 0x14
+	launchtemplate Template_UproarRing 0x3 0x6 0x0 0x0 0x0 0x0 0x1f 0x8
+	@launchtemplate Template_JaggedMusicNote 0x2 0x4 0x0 0x1d 0xfff4 0x0
+	@launchtemplate Template_JaggedMusicNote 0x2 0x4 0x0 0xfff4 0xffe3 0x1
+	pause 0x5
+	return
+
+RAP_NOTE:
+	launchtemplate Template_BellyDrumNote 0x2 0x4 0x0 0x0 0x0 0x0 
+	playsound2 0xb2 SOUND_PAN_ATTACKER 
+	pause 0xf
+	return 
+	@call 0x81cd172 
+	@launchtemplate Template_JaggedMusicNote 0x2 0x4 0x0 0x1d 0xfff4 0x0
+	@launchtemplate Template_JaggedMusicNote 0x2 0x4 0x0 0xfff4 0xffe3 0x1
+	@pause 0x8
+	@return
+
+	@goto ANIM_DRAGONPULSE
+	@endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GAMMARAY:
+	loadparticle ANIM_TAG_ORBS
+	pokespritetoBG bank_target
+	setblends 0xF
+	loadBG1 BG_COSMIC
+	waitbgfadeout
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	call GR_GREEN_HYPERBEAM
+	pokespritefromBG bank_target
+	resetblends
+	call UNSET_SCROLLING_BG
+	endanimation
+
+GR_GREEN_HYPERBEAM:
+	launchtemplate BD_GREEN_BEAM 0x82 0x0
+	launchtemplate BD_GREEN_BEAM 0x82 0x0
+	pause 0x1
+	return
+
+	@goto ANIM_DRAGONPULSE
+	@endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BLACKHOLE:
+	goto ANIM_DARKVOID
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PULSAR:
+	goto ANIM_DARKPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FISSION:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FUSION:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_METEORSHOWER:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STARBURST:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_WARPDRIVE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_WORMHOLE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_IRRADIATE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ASTEROIDBELT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_COSMICRAY:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GAMMAPOWER:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RELATIVITY:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BIGBANG:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ABDUCT:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_NEUTRONSHOT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_STANDIN:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FLOURISH:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CONFUZZLE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BEFUDDLE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_REHEARSAL:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SCREENTIME:
+	goto 0x81cdc28 @MOVE_LIGHTSCREEN
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BREAKALEG:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PERFORMANCE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SWINDLE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_INCANTATION:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PRESTO:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MAGICMISSILE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ENCHANT:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ARCANEAETHER:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_VORTEX:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_TRANSMUTE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CHAOSMAGIC:
+	goto 0x81d21cc @MOVE_TRIATTACK
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FORAGE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MAUL:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FERALSTRIKES:
+	goto 0x81caf7b @MOVE_SLASH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SAVAGE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CLAW:
+	goto 0x81cd97a @MOVE_SCRATCH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HARSHCLAW:
+	goto 0x81caf7b @MOVE_SLASH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BRUTALCLAW:
+	goto 0x81cc6db @MOVE_CRUSHCLAW
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BEASTCHARGE:
+	goto 0x81c7886 @MOVE_TAKEDOWN
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RUPTURE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RAWR:
+	goto 0x81cdb57 @MOVE_GROWL
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FERALBITE:
+	goto 0x81d33f4 @MOVE_POISONFANG
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_DIREFLAIL:
+	goto ANIM_HEADSMASH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PLAYDEAD:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HUNTERMARK:
+	goto 0x81c9a84 @MOVE_LOCKON
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ADRENALINE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BEASTSENSE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CONCEALMENT:
+	goto 0x81cc072 @MOVE_CAMOUFLAGE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_PERSEVERANCE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ENTOMB:
+	goto 0x81d3e50 @MOVE_ROCKTOMB
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CHISEL:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SNAGCURIO:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SHARDSHOT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SCRAPE:
+	goto 0x81cd97a @MOVE_SCRATCH
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_TIMEGEAR:
+	loadparticle ANIM_TAG_IMPACT
+	loadparticle ANIM_TAG_GEAR @Gear
+	pokespritetoBG bank_target
+	call SET_PSYCHIC_BG
+	setblends 0x80C
+	setblends 0x80c
+	playsound2 0x49 SOUND_PAN_ATTACKER
+	launchtemplate TGEARGRIND_GEAR 0x2 0x6 0xffe0 0xffe0 0x0 0x333 0x333 0xa
+	launchtemplate TGEARGRIND_GEAR 0x2 0x6 0x20 0x20 0x0 0xfccd 0xfccd 0xa
+	pause 0xa
+	launchtemplate Template_Hit 0x2 0x4 0xfff8 0x0 0x1 0x1
+	launchtask AnimTask_move_bank 0x5 0x5 bank_target 0x0 0x7 0x5 0x2
+	waitanimation
+	launchtemplate TGEARGRIND_GEAR 0x2 0x6 0x20 0xffe0 0x0 0xfccd 0x333 0xa
+	launchtemplate TGEARGRIND_GEAR 0x2 0x6 0xffe0 0x20 0x0 0x333 0xfccd 0xa
+	pause 0xa
+	launchtemplate Template_Hit 0x2 0x4 0x8 0x0 0x1 0x1
+	launchtask AnimTask_move_bank 0x5 0x5 bank_target 0x0 0x8 0x4 0x2
+	waitanimation
+	stopmusic
+	pokespritefromBG bank_target
+	resetblends
+	call UNSET_SCROLLING_BG
+	endanimation
+
+.align 2
+TGEARGRIND_GEAR: objtemplate ANIM_TAG_GEAR ANIM_TAG_GEAR OAM_NORMAL_32x32 gDummySpriteAnimTable 0x0 0x83E7604 0x80B7BD5
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RUSTYRIVET:
+	goto 0x81c7a2d @MOVE_POISONSTING
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_COREBLAST:
+	goto 0x81d29a7 @ANIM_HYPERBEAM
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HEIRLOOMHIT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MAINTENANCE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GAURDDRAIN:
+	goto ANIM_STRENGTHSAP
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_REINFORCE:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BOLSTER:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FORTIFY:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_WEIGHDOWN:
+	goto ANIM_SMACKDOWN
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CAVING:
+	goto 0x81ca71e @MOVE_FISSURE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SALTRUB:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GUMSHOT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MUNCH:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SYRUPSMACK:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MORNINGMEAL:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GREEDYGRAB:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_REGROWTH:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SUGARRUSH:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FOODCOMA:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_TASTE:
+	goto 0x81d12e0 @MOVE_LICK
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FEAST:
+	goto ANIM_BUGBITE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FLINGFRUIT:
+	loadparticle ANIM_TAG_APPLE
+	@loadBG1 BG_SEISMICTOSS_SKUUPPERCUT
+	@waitbgfadeout
+	@launchtask AnimTask_scroll_background 0x5 0x4 0x0 0xf800 0x0 0xffff
+	@waitbgfadein
+	call FRSMALL_APPLES_FALL
+	call FRSMALL_APPLES_FALL
+	@launchtemplate LARGE_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, 0x0, 0x3c, 4, bank_target
+	pause 0x7
+	playsound2 0xCF SOUND_PAN_TARGET
+	@launchtemplate Template_SlideMonToOffset 0x2 0x5 bank_target 0 0x15 0x0 0x4
+	@pause 0x30
+	@launchtemplate Template_SlideMonToOriginalPos 0x2 0x3 bank_target 0x0 0x10
+	waitanimation
+	@call UNSET_SCROLLING_BG
+	endanimation
+
+FRSMALL_APPLES_FALL:
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, 35, 0x3c, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, -30, 0x44, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, 27, 0x37, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, -20, 0x32, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, 33, 0x3a, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, -12, 0x3a, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, 19, 0x3c, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, -38, 0x3a, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, 5, 0x3c, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	launchtemplate FRSMALL_FALLING_APPLE, TEMPLATE_TARGET | 2, 0x4, -23, 0x28, 4, bank_target
+	playsound2 0x25 SOUND_PAN_ATTACKER @;Falling sound
+	pause 0x2
+	return
+
+.align 2
+FRSMALL_FALLING_APPLE: objtemplate ANIM_TAG_APPLE ANIM_TAG_APPLE sAppleOAM gDummySpriteAnimTable 0x0 gDummySpriteAffineAnimTable SpriteCB_FallingObject
+@LARGE_FALLING_APPLE: objtemplate ANIM_TAG_APPLE ANIM_TAG_APPLE sAppleOAM gDummySpriteAnimTable 0x0 gSpriteAffineAnimTable_ScaledApple SpriteCB_FallingObject
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BANQUET:
+	goto ANIM_BUGBITE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CHOMP:
+	goto 0x81ce190 @MOVE_BITE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_DIGEST:
+	goto 0x81d2765 @MOVE_SWALLOW
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_CONSUME:
+	goto ANIM_DRAGONDANCE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ORDERUP:
+	goto ANIM_DRAGONDANCE
+	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool

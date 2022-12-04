@@ -1,0 +1,14 @@
+#org @gText_KlinkOffer
+Hi there, I was playing in my\nbackyard and I found this Pok\emon.\pBut my parents said I was too\nyoung to look after it.\pCould you look after it?
+
+#org @gText_KlinkAccept
+Thank you so much!\nPlease take care of it!
+
+#org @gText_KlinkReject
+Oh...\nOk then.
+
+#org @gText_KlinkRepeat
+Please take care of it!
+
+#org @gText_KlinkGot
+[BLACK][PLAYER] obtained a Klink!

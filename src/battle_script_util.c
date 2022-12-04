@@ -310,7 +310,7 @@ void SetAuroraVeil(void)
 	&& gBattleWeather & WEATHER_HAIL_ANY
 	&& WEATHER_HAS_EFFECT)
 	{
-		if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_LIGHT_CLAY)
+		if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_LIGHT_CLAY || ABILITY(gBankAttacker) == ABILITY_CERTIFIEDFREAK)
 			gNewBS->AuroraVeilTimers[SIDE(gBankAttacker)] = 8;
 		else
 			gNewBS->AuroraVeilTimers[SIDE(gBankAttacker)] = 5;
@@ -508,14 +508,29 @@ void StrengthSapFunc(void)
 
 s32 CalcStrengthSapHealAmount(u8 bankAtk, u8 bankDef)
 {
-	u16 attack = gBattleMons[bankDef].attack;
-	APPLY_QUICK_STAT_MOD(attack, STAT_STAGE(bankDef, STAT_STAGE_ATK));
-	attack = MathMax(1, attack);
+	if (gCurrentMove == MOVE_STRENGTHSAP)
+	{
+		u16 attack = gBattleMons[bankDef].attack;
+		APPLY_QUICK_STAT_MOD(attack, STAT_STAGE(bankDef, STAT_STAGE_ATK));
+		attack = MathMax(1, attack);
 
-	if (ITEM_EFFECT(bankAtk) == ITEM_EFFECT_BIG_ROOT)
-		attack = (13 * attack) / 10;
+		if (ITEM_EFFECT(bankAtk) == ITEM_EFFECT_BIG_ROOT)
+			attack = (13 * attack) / 10;
 
-	return attack * -1;
+		return attack * -1;
+	}
+	else if (gCurrentMove == MOVE_GAURDDRAIN)
+	{
+		u16 defense = gBattleMons[bankDef].defense;
+		APPLY_QUICK_STAT_MOD(defense, STAT_STAGE(bankDef, STAT_STAGE_DEF));
+		defense = MathMax(1, defense);
+
+		if (ITEM_EFFECT(bankAtk) == ITEM_EFFECT_BIG_ROOT)
+			defense = (13 * defense) / 10;
+
+		return defense * -1;
+	}
+	return 50 * -1;
 }
 
 void PlayAttackAnimationForExplosion(void)
@@ -1029,6 +1044,204 @@ void ChangeTargetTypeFunc(void)
 				gBattleStringLoader = ThirdTypeAddedString;
 			}
 			break;
+		case MOVE_GAMMARAY:
+			if (ABILITY(gBankTarget) == ABILITY_MULTITYPE
+			||  ABILITY(gBankTarget) == ABILITY_RKS_SYSTEM
+			|| (gBattleMons[gBankTarget].type1 == TYPE_POISON &&
+				gBattleMons[gBankTarget].type2 == TYPE_POISON &&
+				gBattleMons[gBankTarget].type3 == TYPE_BLANK))
+			{
+				gBattlescriptCurrInstr = BattleScript_ButItFailed - 5;
+			}
+			else
+			{
+				SET_BATTLER_TYPE(gBankTarget, TYPE_POISON);
+				PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_POISON);
+				gBattleStringLoader = TargetTransformedIntoType;
+			}
+			break;
+		case MOVE_ABDUCT:
+		case MOVE_COSMICRAY:
+		case MOVE_NEUTRONSHOT:
+			if (ABILITY(gBankTarget) == ABILITY_MULTITYPE
+			||  ABILITY(gBankTarget) == ABILITY_RKS_SYSTEM
+			|| (gBattleMons[gBankTarget].type1 == TYPE_COSMIC &&
+				gBattleMons[gBankTarget].type2 == TYPE_COSMIC &&
+				gBattleMons[gBankTarget].type3 == TYPE_BLANK))
+			{
+				gBattlescriptCurrInstr = BattleScript_ButItFailed - 5;
+			}
+			else
+			{
+				SET_BATTLER_TYPE(gBankTarget, TYPE_COSMIC);
+				PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_COSMIC);
+				gBattleStringLoader = TargetTransformedIntoType;
+			}
+			break;
+		case MOVE_TRANSMUTE:
+			if (ABILITY(gBankTarget) == ABILITY_MULTITYPE
+			||  ABILITY(gBankTarget) == ABILITY_RKS_SYSTEM)
+			{
+				gBattlescriptCurrInstr = BattleScript_ButItFailed - 5;
+			}
+			else
+			{
+				int num = umodsi(Random(), 25) + 1;
+				
+				switch(num)
+				{
+					case 1:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_NORMAL);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_NORMAL);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+
+					case 2:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_FIRE);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FIRE);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 3:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_WATER);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_WATER);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 4:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_GRASS);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_GRASS);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 5:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_ELECTRIC);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_ELECTRIC);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 6:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_ROCK);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_ROCK);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 7:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_GROUND);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_GROUND);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 8:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_ICE);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_ICE);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 9:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_FLYING);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FLYING);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 10:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_FIGHTING);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FIGHTING);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 11:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_GHOST);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_GHOST);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 12:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_BUG);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_BUG);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 13:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_POISON);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_POISON);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 14:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_PSYCHIC);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_PSYCHIC);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 15:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_STEEL);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_STEEL);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 16:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_DARK);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_DARK);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 17:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_DRAGON);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_DRAGON);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 18:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_FAIRY);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FAIRY);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 19:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_BEAST);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_BEAST);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 20:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_SOUND);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_SOUND);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 21:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_LIGHT);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_LIGHT);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 22:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_COSMIC);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_COSMIC);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+					case 23:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_RELIC);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_RELIC);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+
+					case 24:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_MYSTIC);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_MYSTIC);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+
+					case 25:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_FOOD);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FOOD);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+					
+				}
+			}
 	}
 }
 
@@ -1045,9 +1258,9 @@ void HealTargetFunc(void)
 
 	switch (gCurrentMove) {
 		case MOVE_HEALPULSE:
-			if (ABILITY(gBankTarget) == ABILITY_MEGALAUNCHER)
-				gBattleMoveDamage = udivsi(maxHP * 75, 100);
-			else
+			//if (ABILITY(gBankTarget) == ABILITY_MEGALAUNCHER)
+			//	gBattleMoveDamage = udivsi(maxHP * 75, 100);
+			//else
 				gBattleMoveDamage = maxHP / 2;
 			break;
 
@@ -1367,6 +1580,21 @@ void ModifyPostStockpileBoostDecrement(void)
 	}
 }
 
+void ModifyPostStockpileBoostIncrement(void)
+{
+	switch (gDisableStructs[gBankAttacker].stockpileCounter) {
+		case 1:
+			gBattleScripting.statChanger |= INCREASE_1;
+			break;
+		case 2:
+			gBattleScripting.statChanger |= INCREASE_2;
+			break;
+		case 3:
+			gBattleScripting.statChanger |= INCREASE_3;
+			break;
+	}
+}
+
 void RemoveStockpileBoosts(void)
 {
 	gDisableStructs[gBankAttacker].stockpileCounter = 0;
@@ -1470,6 +1698,19 @@ void AbilityChangeBSFunc(void)
 			{
 				*defAbilityLoc = ABILITY_SIMPLE;
 				ResetTookAbilityFrom(gBankTarget);
+				gLastUsedAbility = defAbility; //Original ability
+				ResetVarsForAbilityChange(gBankTarget);
+				gBattleStringLoader = SimpleBeamString;
+			}
+			break;
+		case MOVE_DEAFEN:
+			if (gSpecialAbilityFlags[defAbility].gSimpleBeamBannedAbilities)
+			{
+				gBattlescriptCurrInstr = BattleScript_ButItFailed - 5;
+			}
+			else
+			{
+				*defAbilityLoc = ABILITY_SOUNDPROOF;
 				gLastUsedAbility = defAbility; //Original ability
 				ResetVarsForAbilityChange(gBankTarget);
 				gBattleStringLoader = SimpleBeamString;

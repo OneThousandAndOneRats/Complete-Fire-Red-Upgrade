@@ -1,0 +1,8 @@
+#org @gText_R16AideIntro
+Oh! [PLAYER]!\nI've been looking for you!\pIt's me, one of the ever-present\naides to Prof.Oak\pHe entrusted me with this\nAmulet Coin.\pSo here you go!
+
+#org @gText_AmuletCoinGet
+[BLACK][PLAYER] received the Amulet Coin\nfrom the aide.
+
+#org @gText_AmuletCoinExplination
+An Amulet Coin is an item to be\nheld by a Pok\emon.\pIf the Pok\emon appears in a winning\nbattle, you will earn more money.

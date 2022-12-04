@@ -1,0 +1,8 @@
+#org @gText_R10AideIntro
+Oh! [PLAYER]!\nI've been looking for you!\pIt's me, one of the ever-present\naides to Prof.Oak\pHe entrusted me with this\nEverstone.\pSo here you go!
+
+#org @gText_EverstoneGet
+[BLACK][PLAYER] received the Everstone\nfrom the aide.
+
+#org @gText_EverstoneExplination
+Making Pok\emon evolve certainly\ncan add to the Pok\edex.\pHowever, at times, you may not\nwant a certain Pok\emon to evolve.\pIn that case, give the Everstone\nto that Pok\emon.\pIt will prevent evolution according\nto the professor.

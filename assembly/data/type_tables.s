@@ -40,6 +40,13 @@ typeicon 42, 12, 0xC8       @ -Accuracy- icon
 typeicon 42, 12, 0xE0       @ -PP- icon
 typeicon 42, 12, 0xE8       @ -Effect- icon
 typeicon 32, 12, 0x100      @ Fairy icon
+typeicon 32, 12, 0x104      @ Beast icon
+typeicon 32, 12, 0x108      @ Sound icon
+typeicon 32, 12, 0x10C      @ Light icon
+typeicon 32, 12, 0x120      @ Cosmic icon
+typeicon 32, 12, 0x124      @ Relic icon
+typeicon 32, 12, 0x128      @ Mystic icon
+typeicon 32, 12, 0x12C      @ Food icon
 typeicon  8,  8, 0xAE       @ Unused (Small white pokeball)
 typeicon  8,  8, 0xAF       @ Unused (Small dark pokeball)
 

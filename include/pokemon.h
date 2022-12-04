@@ -129,8 +129,15 @@
 #define TYPE_ROOSTLESS 0x13
 #define TYPE_BLANK	  0x14
 #define TYPE_FAIRY	  0x17
+#define TYPE_BEAST    0x18
+#define TYPE_SOUND    0x19
+#define TYPE_LIGHT    0x1a
+#define TYPE_COSMIC   0x1b
+#define TYPE_RELIC    0x1c
+#define TYPE_MYSTIC   0x1d
+#define TYPE_FOOD     0x1e
 
-#define NUMBER_OF_MON_TYPES (TYPE_FAIRY + 1)
+#define NUMBER_OF_MON_TYPES (TYPE_FOOD + 1)
 #define NUM_HIDDEN_POWER_TYPES 16
 
 #define PARTY_SIZE 6

@@ -1,0 +1,50 @@
+#org @gText_HonedgeOffer
+Hello! We were recently in an\nexcavation and we unearthed\pthis Pok\emon! Would you be able\nto take care of it?
+
+#org @gText_HonedgeAccept
+Alright! Please take care of it!
+
+#org @gText_HonedgeReject
+Are you sure?\nIts a pretty rare Pok\emon.
+
+#org @gText_HonedgeRepeat
+Please take care of it!
+
+#org @gText_HonedgeGot
+[BLACK][PLAYER] obtained a Honedge!
+
+#org @gText_RootFossilOldManIntro
+Hey there!\nHelp settle our disagreement.\pThat brat across the table thinks\nthat the Sail Fossil is better\pthan the Root Fossil.\pBut obviously the Root Fossil\nis far superior right?
+
+#org @gText_RootFossilOldManYes
+Ah clearly you are extremely\nknowledgeable.\pHere take one of my extra\nRoot Fossils as thanks.
+
+#org @gText_RootFossilOldManNo
+What?!?!?\nI can't believe this...
+
+#org @gText_RootFossilOldManRepeat
+This will show that brat...
+
+#org @gText_RootFossilOldManAlreadyHave
+Ah I see you already have the\nsuperior Root Fossil.\pYou can revive it here or in\nCeladon you know. 
+
+#org @gText_SailFossilWomenIntro
+Hey could I get your opinion\non something?\pYou think the Sail Fossil is clearly\nbetter than the Root Fossil right?\pI mean it dosen't even compare\nright?
+
+#org @gText_SailFossilWomenYes
+Yes!\nTake that you old geezer!\pAs thanks please take this\nextra Sail Fossil I have.
+
+#org @gText_SailFossilWomenNo
+Hmm, what a shame.\nI thought you had better taste.
+
+#org @gText_SailFossilWomenRepeat
+This will show that geezer...
+
+#org @gText_SailFossilWomenAlreadyHave
+Ah I see you already have the\nsuperior Sail Fossil.\pYou can revive it here or in\nCeladon you know. 
+
+#org @gText_RootFossilGet
+[PLAYER] got the Root Fossil!
+
+#org @gText_SailFossil
+[PLAYER] got the Sail Fossil!

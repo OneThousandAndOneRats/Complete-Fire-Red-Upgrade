@@ -2893,6 +2893,7 @@ bool8 BadIdeaToPoison(u8 bankDef, u8 bankAtk)
 		|| (defAbility == ABILITY_NATURALCURE && CAN_SWITCH_OUT(bankDef))
 		|| (defAbility == ABILITY_TOXICBOOST && RealPhysicalMoveInMoveset(bankDef))
 		|| (defAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankDef))
+		|| (defAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankDef))
 		|| (atkAbility == ABILITY_POISONTOUCH && ContactMovesThatAffectTargetInMoveset(bankAtk, bankDef)) //Just poison it using attacker's ability
 		|| (defAbility == ABILITY_HYDRATION && gBattleWeather & WEATHER_RAIN_ANY && gWishFutureKnock.weatherDuration != 1 && WEATHER_HAS_EFFECT)
 		|| (IS_DOUBLE_BATTLE && BATTLER_ALIVE(PARTNER(bankDef)) && ABILITY(PARTNER(bankDef)) == ABILITY_HEALER)
@@ -2911,6 +2912,7 @@ bool8 GoodIdeaToPoisonSelf(u8 bankAtk)
 		 ||  atkAbility == ABILITY_MAGICGUARD
 		 || (atkAbility == ABILITY_TOXICBOOST && RealPhysicalMoveInMoveset(bankAtk))
 		 || (atkAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankAtk))
+		 || (atkAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankAtk))
 		 ||  MoveInMoveset(MOVE_FACADE, bankAtk)
 		 ||  MoveInMoveset(MOVE_PSYCHOSHIFT, bankAtk));
 }
@@ -2929,6 +2931,7 @@ bool8 BadIdeaToParalyze(u8 bankDef, u8 bankAtk)
 	   || (defAbility == ABILITY_MARVELSCALE && PhysicalMoveInMoveset(bankAtk))
 	   || (defAbility == ABILITY_NATURALCURE && CAN_SWITCH_OUT(bankDef))
 	   || (defAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankDef))
+	   || (defAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankDef))
 	   || (defAbility == ABILITY_HYDRATION && gBattleWeather & WEATHER_RAIN_ANY && gWishFutureKnock.weatherDuration != 1 && WEATHER_HAS_EFFECT)
 	   || (IS_DOUBLE_BATTLE && BATTLER_ALIVE(PARTNER(bankDef)) && ABILITY(PARTNER(bankDef)) == ABILITY_HEALER)
 	   ||  MoveInMoveset(MOVE_FACADE, bankDef)
@@ -2944,6 +2947,7 @@ bool8 GoodIdeaToParalyzeSelf(u8 bankAtk)
 		&&  (atkAbility == ABILITY_MARVELSCALE
 		 ||  atkAbility == ABILITY_QUICKFEET
 		 || (atkAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankAtk))
+		 || (atkAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankAtk))
 		 || MoveInMoveset(MOVE_FACADE, bankAtk)
 		 || MoveInMoveset(MOVE_PSYCHOSHIFT, bankAtk));
 }
@@ -2964,6 +2968,7 @@ bool8 BadIdeaToBurn(u8 bankDef, u8 bankAtk)
 		|| (defAbility == ABILITY_NATURALCURE && CAN_SWITCH_OUT(bankDef))
 		|| (defAbility == ABILITY_FLAREBOOST && SpecialMoveInMoveset(bankDef))
 		|| (defAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankDef))
+		|| (defAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankDef))
 		|| (defAbility == ABILITY_HYDRATION && gBattleWeather & WEATHER_RAIN_ANY && gWishFutureKnock.weatherDuration != 1 && WEATHER_HAS_EFFECT)
 		|| (IS_DOUBLE_BATTLE && BATTLER_ALIVE(PARTNER(bankDef)) && ABILITY(PARTNER(bankDef)) == ABILITY_HEALER)
 		||  MoveInMoveset(MOVE_FACADE, bankDef)
@@ -2980,6 +2985,7 @@ bool8 GoodIdeaToBurnSelf(u8 bankAtk)
 		 ||  atkAbility == ABILITY_MAGICGUARD
 		 || (atkAbility == ABILITY_FLAREBOOST && SpecialMoveInMoveset(bankAtk))
 		 || (atkAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankAtk))
+		 || (atkAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankAtk))
 		 || MoveInMoveset(MOVE_FACADE, bankAtk)
 		 || MoveInMoveset(MOVE_PSYCHOSHIFT, bankAtk));
 }
@@ -2991,6 +2997,7 @@ bool8 GoodIdeaToFrostbiteSelf(u8 bankAtk)
 	return CanBeFrozen(bankAtk, bankAtk, FALSE)
 		&&  (atkAbility == ABILITY_QUICKFEET
 		 || (atkAbility == ABILITY_GUTS && RealPhysicalMoveInMoveset(bankAtk))
+		 || (atkAbility == ABILITY_FERAL && RealPhysicalMoveInMoveset(bankAtk))
 		 || MoveInMoveset(MOVE_FACADE, bankAtk)
 		 || MoveInMoveset(MOVE_PSYCHOSHIFT, bankAtk));
 }
@@ -5139,7 +5146,7 @@ bool8 AnyStatIsRaised(u8 bank)
 static u8 CountUsefulStatChanges(u8 bankWithBuffs, u8 bankToGetBuffs, bool8 debuff)
 {
 	u8 buffs = 0;
-	bool8 storedPowerInMoveset = !debuff && (MoveInMovesetAndUsable(MOVE_STOREDPOWER, bankToGetBuffs) || MoveInMovesetAndUsable(MOVE_POWERTRIP, bankToGetBuffs));
+	bool8 storedPowerInMoveset = !debuff && (MoveInMovesetAndUsable(MOVE_STOREDPOWER, bankToGetBuffs) || MoveInMovesetAndUsable(MOVE_POWERTRIP, bankToGetBuffs)|| MoveInMoveset(MOVE_BIGBANG, bankToGetBuffs));
 
 	for (u8 statId = STAT_STAGE_ATK; statId < BATTLE_STATS_NO; ++statId)
 	{

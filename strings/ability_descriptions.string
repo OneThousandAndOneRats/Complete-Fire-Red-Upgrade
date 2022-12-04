@@ -159,8 +159,11 @@ Moving last boosts power.
 #org @DESC_NOGUARD
 Ensures that all moves land.
 
-#org @DESC_MEGALAUNCHER
-Boosts aura and pulse moves.
+//#org @DESC_MEGALAUNCHER
+//Boosts aura and pulse moves.
+
+#org @DESC_STARGAZER
+Boosts Cosmic Moves
 
 #org @DESC_TOUGHCLAWS
 Boosts moves that make contact.
@@ -174,14 +177,23 @@ Raises own and ally's accuracy.
 #org @DESC_STORMDRAIN
 Draws in water to up Sp. Atk.
 
-#org @DESC_DARKAURA
-Powers up Dark-type moves.
+//#org @DESC_DARKAURA
+//Powers up Dark-type moves.
 
-#org @DESC_FAIRYAURA
-Powers up Fairy-type moves.
+//#org @DESC_FAIRYAURA
+//Powers up Fairy-type moves.
 
-#org @DESC_AURABREAK
-Reverses Aura Abilities.
+//#org @DESC_AURABREAK
+//Reverses Aura Abilities.
+
+#org @DESC_ADDITIVELIGHT
+Turns Light into HP.
+
+#org @DESC_BLINDINGENTRANCE
+Drops foe's Evasion on entrance.
+
+#org @DESC_CONDUCTOR
+Raises a random stat on entry.
 
 #org @DESC_REFRIGERATE
 Normal moves become Ice.
@@ -189,11 +201,17 @@ Normal moves become Ice.
 #org @DESC_PIXILATE
 Normal moves become Fairy.
 
-#org @DESC_AERILATE
-Normal moves become Flying.
+//#org @DESC_AERILATE
+//Normal moves become Flying.
 
-#org @DESC_NORMALIZE
-All moves become Normal-type.
+#org @DESC_TIMELESS
+Gradually raises Sp.Def.
+
+//#org @DESC_NORMALIZE
+//All moves become Normal-type.
+
+#org @DESC_FERAL
+Status boosts Attack and Speed.
 
 #org @DESC_UNBURDEN
 Doubles Speed if item is lost.
@@ -210,8 +228,11 @@ Attack rises when stats fall.
 #org @DESC_COMPETITIVE
 Sp. Atk rises when stats fall.
 
-#org @DESC_DEFEATIST
-Gives up at half HP.
+//#org @DESC_DEFEATIST
+//Gives up at half HP.
+
+#org @DESC_LUNARIZE
+Lunarize
 
 #org @DESC_SLOWSTART
 Takes a while to get going.
@@ -413,11 +434,17 @@ Summons a mysterious air current.
 #org @DESC_BERSERK
 Ups Sp. Atk below half HP.
 
-#org @DESC_LONGREACH
-Never makes contact.
+//#org @DESC_LONGREACH
+//Never makes contact.
 
-#org @DESC_LIQUIDVOICE
-Sound moves become Water-type.
+#org @DESC_PRIMAL
+Less Fire dmg, bit more spc dmg.
+
+//#org @DESC_LIQUIDVOICE
+//Sound moves become Water-type.
+
+#org @DESC_HEEBIEJEEBIES
+Status moves are more accurate.
 
 #org @DESC_QUEENLYMAJESTY
 Blocks priority moves.
@@ -461,8 +488,11 @@ Acts as if asleep.
 #org @DESC_DANCER
 Copies dance moves.
 
-#org @DESC_BATTERY
-Powers up allies.
+//#org @DESC_BATTERY
+//Powers up allies.
+
+#org @DESC_CERTIFIEDFREAK
+Screens last longer
 
 #org @DESC_RECEIVER
 #org @DESC_POWEROFALCHEMY
@@ -471,8 +501,11 @@ Takes over a KOed ally's Ability.
 #org @DESC_NEUROFORCE
 Powers up super effective hits.
 
-#org @DESC_GALVANIZE
-Normal moves become Electric.
+//#org @DESC_GALVANIZE
+//Normal moves become Electric.
+
+#org @DESC_RIPANDTEAR
+Bite moves become Beast Type.
 
 //Sword and Shield Abilities.
 
@@ -498,17 +531,26 @@ Spits prey if hit after a swim.
 #org @DESC_PROPELLERTAIL
 Moves ignore redirection.
 
-#org @DESC_STEAMENGINE
-Fire and Water hits boost Speed.
+//#org @DESC_STEAMENGINE
+//Fire and Water hits boost Speed.
 
-#org @DESC_PUNKROCK
-Ups and resists sound moves.
+#org @DESC_SOLARIZE
+Powers up Fire-type move
+
+//#org @DESC_PUNKROCK
+//Ups and resists sound moves.
+
+#org @DESC_CHITTERCHATTER
+Boosts Sound Moves
 
 #org @DESC_SANDSPIT
 Creates a sandstorm when hit.
 
-#org @DESC_ICESCALES
-Halves special damage.
+//#org @DESC_ICESCALES
+//Halves special damage.
+
+#org @DESC_COSMOSCONQUEROR
+Cosmic is effective against Cosmic.
 
 #org @DESC_RIPEN
 Doubles Berry effects.
@@ -545,6 +587,9 @@ Protects team from poison.
 
 #org @DESC_HUNGERSWITCH
 Changes form each turn.
+
+#org @DESC_TRACTORBEAM
+Drops foe's Speed on entrance. 
 
 #org @DESC_UNSEENFIST
 Contact moves bypass Protect.

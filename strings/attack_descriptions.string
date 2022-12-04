@@ -1307,6 +1307,366 @@ The user heals its\nown statuses and\nrestores HP. It also\nraises evasiveness.
 #org @DESC_TAKE_HEART
 The user heals its\nown statuses and\nraises its Sp. Atk\nand Sp. Def.
 
+#org @DESC_LAZER_FIRE
+The user hits the\nfoe with rapidly\nshot lazers two to\nfive times in a row.
+
+#org @DESC_SEARING_SUN
+A high energy blast\nusing the sun's\nenergy. Has a high\nchance to burn.
+
+#org @DESC_SOLAR_FLARE
+The user delivers\na massive burst of\nsolar energy. Has\na high chance to\nburn.
+
+#org @DESC_FLASH_BANG
+A brief flash of\nlight. Stuns the\nopponent and can\nreduce evasion.
+
+#org @DESC_LIGHTSPEED_PUNCH
+A punch delievered\nat hyper fast speeds.\nafter using the user\nwill need to\nrecharge.
+
+#org @DESC_FOCUSED_BEAM
+A beam focused on\ntargeting weak points.\nIt has a high\ncritical-hit ratio.
+
+#org @DESC_PURITY
+Purifies any status\nproblem from the\nuser or team members in\nthe room.
+
+#org @DESC_CONCENTRATE
+The user focuses\nall of their efforts\ninto ensuring a\nsuccessful hit.
+
+#org @DESC_HALLOW_FOCUS
+The user focuses\ntheir light within\nthemselves to\nbecome stronger,\nlowerers accuracy\nand evasion.
+
+#org @DESC_LIGHT_SHIELD
+The user focuses\ntheir light outside\nthemselves to\nincrease defenses,\nlowerers accuracy\nin return.
+
+#org @DESC_SERENITY
+A calming aura\npermeates the area,\nremoving all stat\nchanges.
+
+#org @DESC_LUSTERSHOT
+The user draws in\nlight to prepare\nfor a massive beam\nthe next turn.
+
+#org @DESC_FINALLIGHT
+A final explosion\nreleasing all of\nthe light within\nthe user. KOs the\nuser afterwards. 
+
+#org @DESC_SUNBEAM
+The user attacks\nwith harsh UV rays\nfrom the sun. Has\na very high chance\nto burn.
+
+#org @DESC_RUINOUSLIGHT
+A rampage of wild\nlight that attacks\nfor 2 to 3 turns\nbefore confusing\nthe user.
+
+#org @DESC_BLINDED
+A brief flash of\nlight raising the\nusers Sp.Attack but\nbriefly confusing\nthem. 
+
+#org @DESC_CURINGLIGHT
+A soothing light\nthat cures ailments\nand restores a bit\nof health.
+
+#org @DESC_WARMUP
+The user streches\ntheir vocal cords\nto prepare for the\nnext attack. Hitting\nthe target raises\nSp.Attack. 
+
+#org @DESC_DRUMROLL
+The user rapidly\nstrikes the target\ntwo to five times\nin quick succession. 
+
+#org @DESC_STRUM
+A strumming motion\ndealing a small\namount of damage. 
+
+#org @DESC_MELODY
+A brief song which\ncan damage the\ntargets hearing.
+
+#org @DESC_SEEDSHAKER
+The user shakes\nseed filled maracas,\ncausing life draining\nseeds to spill onto\nthe target.
+
+#org @DESC_SUDDENSHOUT
+A sudden and\nunexpected shout,\nhas a chance to\ncause the target\nto flinch.
+
+#org @DESC_PITCHPERFECT
+A sound sung at the\nperect pitch.\nShatters barriers\nlike Light Screen\nor Reflect.
+
+#org @DESC_DEAFEN
+The user blasts the\nfoe with a ear\nshattering scream.\nPrevents the foe\nfrom being effected\nby Sound-Type moves.
+
+#org @DESC_FINALE
+This move can be\nused only after the\nuser has used all\nthe other moves it\nknows in the battle. 
+
+#org @DESC_ACAPELLA
+The user gets all\nthe party Pok\emon\nto sing together.\nThe more party\nPok\emon, the more\ndamage. 
+
+#org @DESC_FORTISSIMO
+A loud and dramatic\nnote. Raises chance\nfor critical hits.
+
+#org @DESC_BEAMEDNOTE
+Two notes hitting\ntwice in quick\nsuccession.
+
+#org @DESC_HECKLE
+The user shouts\nrude insults forcing\nthe foe to switch\nout.
+
+#org @DESC_BLUES
+A slow and somber\nmelody. Lowers the\nopponents Sp.Attack\non hit.
+
+#org @DESC_JAZZ
+A swinging\nimprovised song.\nDoes a varying range\nof damage. 
+
+#org @DESC_ROCKNROLL
+A fierce and high\nenergy song. Lasts\nfor 5 turns but\ngrows stronger each\nhit.
+
+#org @DESC_POP
+A basic but widely\nloved song. Popular\nbut not that\nspecial.
+
+#org @DESC_RAP
+A fast and sharp\nsong. Spitting rhymes\nso hot they also do\nFire-Type damage.
+
+#org @DESC_GAMMARAY
+Blasts the foe with\ngamma radiation.\nChanges the foe's\ntype to Poison-Type.
+
+#org @DESC_BLACKHOLE
+Creates a black hole\nlasting for 5 turns\nbut grows stronger\neach hit.
+
+#org @DESC_PULSAR
+The user releases\na wave of energy,\nknocking the foe\naway and forcing\nthem to switch out.
+
+#org @DESC_FISSION
+Using gravitational\nforce compresses the\nfoe trapping them\nfor 2 to 5 turns.
+
+#org @DESC_FUSION
+Using powerful\ngravitational force\ncompresses the foe\ntrapping them for\n2 to 5 turns.
+
+#org @DESC_METEORSHOWER
+Hits the foe with\n3 meteors that\nbecome more powerful\nwith each successive\nhit.
+
+#org @DESC_STARBURST
+A small burst of\nstellar energy\ndamages the\nopponent. 
+
+#org @DESC_WARPDRIVE
+The user moves at\nwarp speeds to hit\nfaster than the\nopponent.
+
+#org @DESC_WORMHOLE
+After attacking,\nthe user switches\nplaces with a\nparty Pok\emon.
+
+#org @DESC_IRRADIATE
+The user uses cosmic\nradiation to badly\npoison a foe. 
+
+#org @DESC_ASTEROIDBELT
+Calls forth several\nasteroids to strike\nthe opponent.\nHits 2 to 5 times.
+
+#org @DESC_COSMICRAY
+Blasts the foe with\ncosmic rays. Changes\nthe opponents type\nto Cosmic-Type.
+
+#org @DESC_GAMMAPOWER
+The user harnesses\ngamma power to raise\ntheir Attack and\nSpecial Attack.
+
+#org @DESC_RELATIVITY
+The user steals all\nstat changes from the\nopponent and inverts\nthem onto themselves.
+
+#org @DESC_BIGBANG
+Does more damage\nbased on how high\nyour stats are\nraised, but removes\nthem afterwards.
+
+#org @DESC_ABDUCT
+Takes the foe up\ninto space. Reduces\ntheir Sp.Attack and\nchanges them to\nCosmic-Type
+
+#org @DESC_NEUTRONSHOT
+The user barages the\nfoe with a beam of\nconcentrated neurons.\nChanges foe to\nCosmic-Type.
+
+#org @DESC_STANDIN
+After attacking,\nthe user switches\nplaces with a\nparty Pok\emon.\nAlways goes last.
+
+#org @DESC_FLOURISH
+The user performs\na showy move which\nhas a chance of\nraising their\nSp.Attack.
+
+#org @DESC_CONFUZZLE
+The user plays a\nmean trick on the\nfoe. Has a chance\nto cause confusion.
+
+#org @DESC_BEFUDDLE
+This attack does\nextra damage to a\ntarget affected by\na status problem.
+
+#org @DESC_REHEARSAL
+The user practices\nsome moves. Raising\ntheir Sp.Attack and\nSpeed.
+
+#org @DESC_SCREENTIME
+Expertly constructs\ndefensive walls of\nboth Light Screen\nand Reflect at once.
+
+#org @DESC_BREAKALEG
+The user wishes the\nfoe bad luck. Raising\nthe foe's Sp.Attack\nsharply but\nparalyzes them. 
+
+#org @DESC_PERFORMANCE
+The user puts on a\nperformance, raising\ntheir Sp.Defense and\nSpeed.
+
+#org @DESC_SWINDLE
+A sleight of hand\nto steal the held\nitem of the foe.
+
+#org @DESC_INCANTATION
+The user chants an\nancient verse, has\na chance to cause\nconfusion.
+
+#org @DESC_PRESTO
+A surprise magic\nattack. It is sure\nto strike first.
+
+#org @DESC_MAGICMISSILE
+A classic spell.\nAlways guaranteed\nto hit.
+
+#org @DESC_ENCHANT
+The user enchants\nthemself to raise\ntheir Sp.Attack and\nmake critical hits\nmore likely.
+
+#org @DESC_ARCANEAETHER
+The user casts a\nspell with such\npotency that it can\nmake the opponent\nflinch.
+
+#org @DESC_VORTEX
+The foe is hurled\ninto a magical\nvortex, forcing them\nto switch to another\nparty member. 
+
+#org @DESC_TRANSMUTE
+Raises Sp.Attack and\nSp.Defense but\nchanges the user to\na random Type.
+
+#org @DESC_CHAOSMAGIC
+A chaotic elemental\nspell that can Burn,\nParalyze, or Freeze\nthe foe.  
+
+#org @DESC_FORAGE
+The user searches\nthe area for food.\nHeals a bit of health\nand cures status\nconditions.
+
+#org @DESC_MAUL
+The user savagely\nattacks the opponent.\nHas a chance to\nraise the user's\nAttack.
+
+#org @DESC_FERALSTRIKES
+The user rapidly\nclaws the opponent\n2 to 5 times in a\nrow.
+
+#org @DESC_SAVAGE
+A brutal charge\nthat deals recoil\nback to the user.
+
+#org @DESC_CLAW
+A cut inflicted\nby sharp claws.
+
+#org @DESC_HARSHCLAW
+The user viciously\nclaws at the foe\ntwice.
+
+#org @DESC_BRUTALCLAW
+A 3-claw attack\nthat becomes more\npowerful with each\nsuccessive hit.
+
+#org @DESC_BEASTCHARGE
+The user charges\nthe foe with such\nstrength that they\ntake recoil damage.
+
+#org @DESC_RUPTURE
+A brutal tearing\nattack that ignores\nall of the foe's\nstat changes.
+
+#org @DESC_RAWR
+A small but vicious\nroar. Increases the\nuser's Attack.
+
+#org @DESC_FERALBITE
+An infected bite.\nHas a chance to\npoison the foe.
+
+#org @DESC_DIREFLAIL
+The final thrashing\nof a cornered beast.\nDeals massive recoil\ndamage.
+
+#org @DESC_PLAYDEAD
+The user pretends\nto be KO'd. Lowers\nAttack but increases\nDefenses.
+
+#org @DESC_HUNTERMARK
+The user places a\nmark on the foe.\nPreventing them from\nfleeing and raising\nAccuracy.
+
+#org @DESC_ADRENALINE
+Blood courses\nthrough the user.\nRaising Attack,\nSpeed, and Crit\nChance, but becoming\neasier to hit.
+
+#org @DESC_BEASTSENSE
+Using primal instincts,\nthe user readies\nthemself. Raises\nDefense and\nAccuracy.
+
+#org @DESC_CONCEALMENT
+The user cloaks\nthemself in the\nenviroment, raising\ntheir Evasion.
+
+#org @DESC_PERSEVERANCE
+The user prepares\nfor attacks by\ndropping their Attack\nstats and raising\ntheir Defenses.
+
+#org @DESC_ENTOMB
+The user barricades\nthe foe underground,\ndecreasing their\nspeed.
+
+#org @DESC_CHISEL
+Removes a piece\nfrom the opponent.\nHas a chance to\nlower their Defense\non hit.
+
+#org @DESC_SNAGCURIO
+Grabs a valuable\nobject. Increases\nmoney gained at the\nend of the battle.
+
+#org @DESC_SHARDSHOT
+Launches a small\npiece of scrap at\nthe opponent.
+
+#org @DESC_SCRAPE
+Stratches away at\nthe opponent.\nHas a chance to\nlower their\nSp.Defense on hit.
+
+#org @DESC_TIMEGEAR
+The user forsees the\ngears of time\ngrinding the\nopponent. Deals\ndamage 2 turns in\nthe future.
+
+#org @DESC_RUSTYRIVET
+The user launches\na rivet coated in\nrust. Has a chance\nto poison the\nopponent.
+
+#org @DESC_COREBLAST
+Launches a blast\nof energy from deep\ninside. Needs a turn\nafterwards to\nrecharge.
+
+#org @DESC_HEIRLOOMHIT
+Clobbers the\nopponent with a\nantique. Has a high\nchance to raise\nDefense on hit.
+
+#org @DESC_MAINTENANCE
+The user takes\ntime to repair flaws.\nRaises Defense and\nSp.Defense.
+
+#org @DESC_GAURDDRAIN
+The user siphons the\nfoe's Defense stat.\nLowers the foe's\nDefense stat. While\nrecovering health.
+
+#org @DESC_REINFORCE
+Sacrifices half of\nthe user's health\nto maximize Defense. 
+
+#org @DESC_BOLSTER
+Sacrifices half of\nthe user's health\nto maximize\nSp.Defense.
+
+#org @DESC_FORTIFY
+The user reinforces\nthemselves. Raising\ntheir Defense\nsharply.
+
+#org @DESC_WEIGHDOWN
+Burdens the opponent\nwith extra weight\nforcing them to the\nground.
+
+#org @DESC_CAVING
+Traps the opponent\nin a deep cave.\nPrevents them from\nswitching and deals\ndamage each turn.
+
+#org @DESC_SALTRUB
+Rubs salt in the\nwounds of the\nopponent. Does extra\ndamage if they have\nalready taken\ndamage.
+
+#org @DESC_GUMSHOT
+The user shoots a\nwad of sticky gum\nat the opponent,\nslowing them down.
+
+#org @DESC_MUNCH
+The user takes a\nbite out of the\nopponent, healing\na bit of health.
+
+#org @DESC_SYRUPSMACK
+A sticky handful\nof syrup slaps the\nopponent, reducing\ntheir Attack. 
+
+#org @DESC_MORNINGMEAL
+Although this move\nhas great power, it\nonly works the first\nturn the user is in\nbattle.
+
+#org @DESC_GREEDYGRAB
+The user greedily\nsnatches the berry\nheld by the opponent\nand eats it quickly. 
+
+#org @DESC_REGROWTH
+Regrows a berry\nthat has been used\nin battle so it can\nbe used again.
+
+#org @DESC_SUGARRUSH
+Gain a burst of\nenergy after eating\nsugar. Raises\nSp.Attack and Speed.
+
+#org @DESC_FOODCOMA
+After too much sugar\nthe opponent loses\na lot of energy.\nLowers opponents\nSpecial Attack and\nSpeed.
+
+#org @DESC_TASTE
+A lick that has\na chance to lower\nthe foe's speed.
+
+#org @DESC_FEAST
+Absorbs health and\nlowers the foe's\nSp.Defense.
+
+#org @DESC_FLINGFRUIT
+The user flings a\nfruit at the foe.\nDoes double damage\nif holding a berry.
+
+#org @DESC_BANQUET
+Absorbs health and\ndeals more damage\nthe more the\nopponents stats are\nraised.
+
+#org @DESC_CHOMP
+Deals damage and\nprepares a STOCKPILE,\nraising Defense and\nSp.Defense.
+
+#org @DESC_DIGEST
+Swallows all stored\nSTOCKPILEs. Increase\nAttack, Sp.Attack\nand Speed for each\nlevel. 
+
+#org @DESC_CONSUME
+The user eats their\nberry and prepares\na STOCKPILE, raising\nDefense and\nSp.Defense.
+
+#org @DESC_ORDERUP
+The user places an\norder for a randomly\nchoosen Food-Type\nattack.
+
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.
 

@@ -1,0 +1,47 @@
+#org @gText_PalletTown_FatGuy
+Hello, world!\nTechnology rules!
+
+#org @gText_PalletTown_NES_first
+[PLAYER] played with the NES.\p[.] Okay!\nIt's time to go!\pWhats this?
+
+#org @gText_PalletTown_NES_second
+[PLAYER] played with the NES.\p[.] Okay!\nIt's time to go!
+
+#org @gText_bulbasaur_containPkm
+Wow Those are Pok\e Balls.\nThey contain Pok\emon!
+
+#org @gText_bulbasaur_lastPkm
+That's Prof. Oaks's last Pok\emon.
+
+#org @gText_bulbasaur_GrassChoice
+I see! Grookey is your choice.\nIt's very easy to raise.\pSo, [PLAYER], you want to go with\nthe Grass Pok\emon Grookey?
+
+#org @gText_bulbasaur_WaterChoice
+Hm! Totodile is your choice.\nIt's one worth raising.\pSo, [PLAYER], you've decided on the\nWater Pok\emon Totodile?
+
+#org @gText_bulbasaur_FireChoice
+Ah! Fennekin is your choice.\nYou should raise it patiently.\pSo, [PLAYER], you're claiming the\nFire Pok\emon Fennekin?
+
+#org @gText_bulbasaur_energetic
+This Pok\emon is really quite\nenergetic!
+
+#org @gText_bulbasaur_recieve
+[PLAYER] received the [BUFFER1]\nfrom PROF. OAK!
+
+#org @gText_bulbasaur_nickname
+Do you want to give a nickname to\nthis [BUFFER1]?
+
+#org @gText_bulbasaur_rivaltake
+[RIVAL]: I'll take this one, then!
+
+#org @gText_bulbasaur_rivalrecieve
+[RIVAL] received the [BUFFER1]\nfrom PROF. OAK!
+
+#org @gText_RoamerSpotted
+Weird pokemon have been sighted\nacross the region!
+
+#org @gText_BoyTv
+There's a movie on TV.\nFour boys are walking on railroad\ltracks.\p[.]I better go, too.
+
+#org @gText_GirlTv
+There's a movie on TV.\nA girl with her hair in pigtails is\lwalking up a brick road.\p[.]I better go, too.

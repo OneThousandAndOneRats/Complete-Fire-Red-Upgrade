@@ -43,7 +43,8 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 {
 	[ABILITY_ADAPTABILITY] = 8,
 	[ABILITY_AFTERMATH] = 5,
-	[ABILITY_AERILATE] = 8,
+	//[ABILITY_AERILATE] = 8,
+	[ABILITY_TIMELESS] = 9,
 	#ifdef ABILITY_AIRLOCK
 	[ABILITY_AIRLOCK] = 5,
 	#endif
@@ -58,9 +59,11 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	#ifdef ABILITY_ASONE_CHILLING
 	[ABILITY_ASONE_CHILLING] = 7,
 	#endif
-	[ABILITY_AURABREAK] = 3,
+	//[ABILITY_AURABREAK] = 3,
+	[ABILITY_CONDUCTOR] = 0,
 	[ABILITY_BADDREAMS] = 4,
-	[ABILITY_BATTERY] = 0,
+	//[ABILITY_BATTERY] = 0,
+	[ABILITY_CERTIFIEDFREAK] = 1,
 	[ABILITY_BATTLEARMOR] = 2,
 	[ABILITY_BATTLEBOND] = 6,
 	[ABILITY_BEASTBOOST] = 7,
@@ -82,9 +85,11 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	[ABILITY_CUTECHARM] = 2,
 	[ABILITY_DAMP] = 2,
 	[ABILITY_DANCER] = 5,
-	[ABILITY_DARKAURA] = 6,
+	//[ABILITY_DARKAURA] = 6,
+	[ABILITY_ADDITIVELIGHT] = 7,
 	[ABILITY_DAZZLING] = 5,
-	[ABILITY_DEFEATIST] = -1,
+	//[ABILITY_DEFEATIST] = -1,
+	[ABILITY_LUNARIZE] = 6,
 	[ABILITY_DEFIANT] = 5,
 	[ABILITY_DELTASTREAM] = 10,
 	[ABILITY_DESOLATELAND] = 10,
@@ -100,7 +105,8 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	[ABILITY_EFFECTSPORE] = 4,
 	[ABILITY_ELECTRICSURGE] = 8,
 	[ABILITY_EMERGENCYEXIT] = 3,
-	[ABILITY_FAIRYAURA] = 6,
+	//[ABILITY_FAIRYAURA] = 6,
+	[ABILITY_BLINDINGENTRANCE]  = 0,
 	[ABILITY_FILTER] = 6,
 	[ABILITY_FLAMEBODY] = 4,
 	[ABILITY_FLAREBOOST] = 5,
@@ -117,7 +123,8 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	#endif
 	[ABILITY_FURCOAT] = 7,
 	[ABILITY_GALEWINGS] = 6,
-	[ABILITY_GALVANIZE] = 8,
+	//[ABILITY_GALVANIZE] = 8,
+	[ABILITY_RIPANDTEAR] = 7,
 	[ABILITY_GLUTTONY] = 3,
 	[ABILITY_GOOEY] = 5,
 	[ABILITY_GRASSPELT] = 2,
@@ -155,15 +162,18 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	[ABILITY_LIGHTNINGROD] = 7,
 	[ABILITY_LIMBER] = 3,
 	[ABILITY_LIQUIDOOZE] = 3,
-	[ABILITY_LIQUIDVOICE] = 5,
-	[ABILITY_LONGREACH] = 3,
+	//[ABILITY_LIQUIDVOICE] = 5,
+	[ABILITY_HEEBIEJEEBIES] = 6,
+	//[ABILITY_LONGREACH] = 3,
+	[ABILITY_PRIMAL] = 4,
 	[ABILITY_MAGICBOUNCE] = 9,
 	[ABILITY_MAGICGUARD] = 9,
 	[ABILITY_MAGICIAN] = 3,
 	[ABILITY_MAGMAARMOR] = 1,
 	[ABILITY_MAGNETPULL] = 9,
 	[ABILITY_MARVELSCALE] = 5,
-	[ABILITY_MEGALAUNCHER] = 7,
+	//[ABILITY_MEGALAUNCHER] = 7,
+	[ABILITY_STARGAZER] = 3,
 	[ABILITY_MERCILESS] = 4,
 	[ABILITY_MINUS] = 0,
 	[ABILITY_MISTYSURGE] = 8,
@@ -183,7 +193,8 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	[ABILITY_NATURALCURE] = 7,
 	[ABILITY_NEUROFORCE] = 6,
 	[ABILITY_NOGUARD] = 8,
-	[ABILITY_NORMALIZE] = -1,
+	//[ABILITY_NORMALIZE] = -1,
+	[ABILITY_FERAL] = 6,
 	[ABILITY_OBLIVIOUS] = 2,
 	[ABILITY_OVERCOAT] = 5,
 	[ABILITY_OVERGROW] = 5,
@@ -329,10 +340,13 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	#ifdef ABILITY_PROPELLERTAIL
 	[ABILITY_PROPELLERTAIL] = 3,
 	#endif
-	[ABILITY_STEAMENGINE] = 3,
-	[ABILITY_PUNKROCK] = 2,
+	//[ABILITY_STEAMENGINE] = 3,
+	[ABILITY_SOLARIZE] = 6,
+	//[ABILITY_PUNKROCK] = 2,
+	[ABILITY_CHITTERCHATTER] = 2,
 	[ABILITY_SANDSPIT] = 5,
-	[ABILITY_ICESCALES] = 7,
+	//[ABILITY_ICESCALES] = 7,
+	[ABILITY_COSMOSCONQUEROR] = 4,
 	[ABILITY_RIPEN] = 4,
 	[ABILITY_ICEFACE] = 4,
 	[ABILITY_POWERSPOT] = 2, //UPDATE
@@ -436,6 +450,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				case ABILITY_FOREWARN:
 				case ABILITY_FRISK:
 				case ABILITY_IMPOSTER:
+				case ABILITY_BLINDINGENTRANCE:
+				case ABILITY_TRACTORBEAM:
 				#ifdef ABILITY_ASONE_GRIM
 				case ABILITY_ASONE_GRIM:
 				#endif
@@ -458,6 +474,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			case ABILITY_IMPOSTER:
 			case ABILITY_ANTICIPATION:
 			case ABILITY_FRISK:
+			case ABILITY_BLINDINGENTRANCE:
+			case ABILITY_TRACTORBEAM:
 				gStatuses3[bank] |= STATUS3_SWITCH_IN_ABILITY_DONE;
 				break;
 			case ABILITY_TRACE: //Trace is the only ability that activates after a U-Turn + faint switch-in
@@ -707,6 +725,26 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			}
 			break;
 
+		case ABILITY_BLINDINGENTRANCE:
+			if (!(gBattleMons[FOE(bank)].status2 & STATUS2_SUBSTITUTE) || !(gBattleMons[PARTNER(FOE(bank))].status2 & STATUS2_SUBSTITUTE))
+			{
+				BattleScriptPushCursorAndCallback(BattleScript_BlindingEntranceActivatesEnd3);
+				gBattleStruct->intimidateBank = bank;
+				gNewBS->intimidateActive = bank + 1;
+				effect++;
+			}
+			break;
+
+		case ABILITY_TRACTORBEAM:
+			if (!(gBattleMons[FOE(bank)].status2 & STATUS2_SUBSTITUTE) || !(gBattleMons[PARTNER(FOE(bank))].status2 & STATUS2_SUBSTITUTE))
+			{
+				BattleScriptPushCursorAndCallback(BattleScript_TractorBeamActivatesEnd3);
+				gBattleStruct->intimidateBank = bank;
+				gNewBS->intimidateActive = bank + 1;
+				effect++;
+			}
+			break;
+
 		case ABILITY_FORECAST:
 			effect = CastformDataTypeChange(bank);
 			if (effect != 0)
@@ -840,7 +878,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
 			effect++;
 			break;
-
+		/*
 		case ABILITY_DARKAURA:
 			gBattleStringLoader = gText_DarkAuraActivate;
 			BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
@@ -858,7 +896,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
 			effect++;
 			break;
-
+		*/
 		case ABILITY_COMATOSE:
 			gBattleStringLoader = gText_ComatoseActivate;
 			BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
@@ -1255,6 +1293,39 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			}
 			break;
 
+		case ABILITY_CONDUCTOR:
+			if (STAT_STAGE(bank, STAT_STAGE_SPATK) < STAT_STAGE_MAX)
+			{
+				int rand = RandRange(0,5);
+				u8 statToRaise = 0;
+				switch(rand)
+				{
+					case 0:
+						statToRaise = STAT_STAGE_ATK;
+						break;
+					case 1:
+						statToRaise = STAT_STAGE_DEF;
+						break;
+					case 2:
+						statToRaise = STAT_STAGE_SPEED;
+						break;
+					case 3:
+						statToRaise = STAT_STAGE_SPATK;
+						break;
+					case 4:
+						statToRaise = STAT_STAGE_SPDEF;
+						break;
+				}
+				gBankAttacker = bank;
+				STAT_STAGE(bank, statToRaise)++;
+				gBattleScripting.statChanger = statToRaise | INCREASE_1;
+				PREPARE_STAT_BUFFER(gBattleTextBuff1, statToRaise);
+				PREPARE_STAT_ROSE(gBattleTextBuff2);
+				BattleScriptPushCursorAndCallback(BattleScript_AttackerAbilityStatRaiseEnd3);
+				effect++;
+			}
+			break;
+
 		case ABILITY_SCREENCLEANER:
 			RemoveScreensFromSide(B_SIDE_PLAYER);
 			RemoveScreensFromSide(B_SIDE_OPPONENT);
@@ -1442,6 +1513,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 						gBattleScripting.animArg1 = 0x11;
 						gBattleScripting.animArg2 = 0;
 						PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPEED);
+						PREPARE_STAT_ROSE(gBattleTextBuff2);
+						BattleScriptPushCursorAndCallback(BattleScript_AttackerAbilityStatRaiseEnd3);
+						effect++;
+					}
+					break;
+
+				case ABILITY_TIMELESS:
+					if (STAT_STAGE(bank, STAT_SPDEF) < STAT_STAGE_MAX && gDisableStructs[bank].isFirstTurn != 2)
+					{
+						gBattleMons[bank].statStages[STAT_SPDEF - 1]++;
+						gBattleScripting.statChanger = STAT_SPDEF | INCREASE_1;
+						gBattleScripting.animArg1 = 0x11;
+						gBattleScripting.animArg2 = 0;
+						PREPARE_STAT_BUFFER(gBattleTextBuff1, STAT_SPDEF);
 						PREPARE_STAT_ROSE(gBattleTextBuff2);
 						BattleScriptPushCursorAndCallback(BattleScript_AttackerAbilityStatRaiseEnd3);
 						effect++;
@@ -1699,7 +1784,10 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					if (moveType == TYPE_ELECTRIC)
 						effect = 1;
 					break;
-
+				case ABILITY_ADDITIVELIGHT:
+					if (moveType == TYPE_LIGHT)
+						effect = 1;
+					break;
 				case ABILITY_WATERABSORB:
 				case ABILITY_DRYSKIN:
 					if (moveType == TYPE_WATER)
@@ -2157,7 +2245,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				}
 				break;
 
-			case ABILITY_STEAMENGINE:
+			/*case ABILITY_STEAMENGINE:
 				if (MOVE_HAD_EFFECT
 				&& TOOK_DAMAGE(bank)
 				&& BATTLER_ALIVE(bank)
@@ -2171,7 +2259,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 					effect++;
 				}
 				break;
-
+			*/
 			case ABILITY_ILLUSION:
 				if (MOVE_HAD_EFFECT
 				&& TOOK_DAMAGE(bank)

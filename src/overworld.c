@@ -1200,7 +1200,7 @@ void SetUpTrainerEncounterMusic(void)
 				break;
 		}
 		#else //ENCOUNTER_MUSIC_BY_CLASS
-			music = gClassBasedTrainerEncounterBGM[gTrainers[trainerId].trainerClass];
+			music = gClassBasedTrainerEncounterBGM[GET_TRAINER(trainerId).trainerClass];
 
 			if (music == 0)
 				music = BGM_EYE_BOY;
@@ -2682,9 +2682,9 @@ bool8 TrySetupDiveDownScript(void)
 	&& TrySetDiveWarp() == 2)
 	{
 		u16 item = ITEM_NONE;
-		#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-		item = ITEM_HM05_DIVE;
-		#endif
+		//#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
+		//item = ITEM_HM05_DIVE;
+		//#endif
 
 		#ifdef FLAG_BOUGHT_ADM
 		if (FlagGet(FLAG_BOUGHT_ADM))
@@ -2717,9 +2717,9 @@ bool8 TrySetupDiveEmergeScript(void)
 	&& TrySetDiveWarp() == 1)
 	{
 		u16 item = ITEM_NONE;
-		#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-		item = ITEM_HM05_DIVE;
-		#endif
+		//#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
+		//item = ITEM_HM05_DIVE;
+		//#endif
 
 		#ifdef FLAG_BOUGHT_ADM
 		if (FlagGet(FLAG_BOUGHT_ADM))

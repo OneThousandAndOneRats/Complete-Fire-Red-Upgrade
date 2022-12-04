@@ -1,0 +1,50 @@
+#org @gText_Amber_intro
+Ssh! Listen, I need to share a\nsecret with someone.\pI think that this ancient relic\ncontains Pok\emon DNA!\pIt would be a shattering scientific\nbreakthrough if Pok\emon could be\lresurrected from it.\pBut, my colleagues just ignore\nwhat I have to say.\pSo, I have a favor to ask!\pI want you to get this examined by\na scientist somewhere.
+
+#org @gText_Amber_get
+[PLAYER] received the Odd Keystone\nfrom the man.
+
+#org @gText_Amber_repeat
+Ssh!\nGet the Odd Keystone checked!
+
+#org @gText_Amber_fail
+You don't have space for this.
+
+#org @gText_Amber_display
+A beautiful relic from the past.
+
+#org @gText_Amber_display_empty
+There used to be a relic here.
+
+#org @gText_runningshoes_intro
+Oh, [PLAYER]!
+
+#org @gText_runningshoes_greet
+I'm glad I caught up to you.\nI'm PROF. OAK's AIDE.\pI've been asked to deliver this,\nso here you go.
+
+#org @gText_runningshoes_get
+[PLAYER] received the\nEXP SHARE from the AIDE.
+
+#org @gText_runningshoes_switch
+[PLAYER] switched shoes with the\nRUNNING SHOES.
+
+#org @gText_runningshoes_instructions
+Press the B Button to run.\nBut only where there's room to run!
+
+#org @gText_runningshoes_
+Well, I must be going back to\nthe LAB.\pBye-bye!
+
+#org @gText_runningshoes_0X17EA36
+There's a letter attached[.]\pDear [PLAYER],\pHere is a pair of RUNNING SHOES\nfor my beloved challenger.\pRemember, I'll always cheer for\nyou! Don't ever give up!\pFrom Mom
+
+#org @gText_SneakIn
+You can't sneak in the back way!\nNice try, kid, but no.\pOh, whatever!\nDo you know about that relic?
+
+#org @gText_SneakInYes
+I'm not a big fan of that relic.\pI think I can occasionally\nhear whispers from it.
+
+#org @gText_SneakInNo
+That relic was recovered from a\nnearby tower that recently collapsed.\pIt's weird, the tower fell when\nnobody was looking.
+
+#org @gText_EnjoyYourself
+Please enjoy yourself.

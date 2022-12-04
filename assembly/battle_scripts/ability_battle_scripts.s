@@ -19,6 +19,8 @@ ability_battle_scripts.s
 .global BattleScript_EvaporateOnSwitchIn
 .global BattleScript_StrongWindsWeakenedttack
 .global BattleScript_IntimidateActivatesEnd3
+.global BattleScript_BlindingEntranceActivatesEnd3
+.global BattleScript_TractorBeamActivatesEnd3
 .global BattleScript_TraceActivates
 .global BattleScript_Frisk
 .global BattleScript_FriskEnd
@@ -252,6 +254,87 @@ IntimidateActivatesLoopIncrement:
 	goto BS_IntimidateActivatesLoop
 
 BattleScript_IntimidateActivatesReturn:
+	callasm TryRemoveIntimidateAbilityPopUp @;In case the battle scripting bank is changed
+	callasm RemoveIntimidateActive
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_BlindingEntranceActivatesEnd3:
+	call BattleScript_PauseBlindingEntranceActivates
+	end3
+
+BattleScript_PauseBlindingEntranceActivates:
+	call BattleScript_AbilityPopUp
+	setbyte TARGET_BANK 0x0
+
+BS_BlindingEntranceActivatesLoop:
+	setstatchanger STAT_EVSN | DECREASE_1
+	trygetintimidatetarget BattleScript_BlindingEntranceActivatesReturn
+	jumpifbehindsubstitute BANK_TARGET BlindingEntranceActivatesLoopIncrement
+	statbuffchange STAT_TARGET | STAT_NOT_PROTECT_AFFECTED | STAT_BS_PTR BlindingEntranceActivatesLoopIncrement
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BattleScript_BlindingEntrancePrevented
+	setgraphicalstatchangevalues
+	playanimation BANK_TARGET ANIM_STAT_BUFF ANIM_ARG_1
+	printfromtable 0x83FE588
+	waitmessage DELAY_1SECOND
+	goto BlindingEntranceActivatesLoopIncrement
+	
+
+BattleScript_BlindingEntrancePrevented:
+	pause DELAY_HALFSECOND
+	printfromtable 0x83FE588
+	waitmessage DELAY_1SECOND
+
+BlindingEntranceActivatesLoopIncrement:
+	jumpifword NOTANDS BATTLE_TYPE BATTLE_DOUBLE BattleScript_BlindingEntranceActivatesReturn
+	addbyte TARGET_BANK 0x1
+	trygetintimidatetarget BattleScript_BlindingEntranceActivatesReturn
+	callasm TryReactiveIntimidatePopUp
+	goto BS_IntimidateActivatesLoop
+
+BattleScript_BlindingEntranceActivatesReturn:
+	callasm TryRemoveIntimidateAbilityPopUp @;In case the battle scripting bank is changed
+	callasm RemoveIntimidateActive
+	return
+
+@;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+BattleScript_TractorBeamActivatesEnd3:
+	call BattleScript_PauseTractorBeamActivates
+	end3
+
+BattleScript_PauseTractorBeamActivates:
+	call BattleScript_AbilityPopUp
+	setbyte TARGET_BANK 0x0
+
+BS_TractorBeamActivatesLoop:
+	setstatchanger STAT_SPD | DECREASE_1
+	trygetintimidatetarget BattleScript_TractorBeamActivatesReturn
+	jumpifbehindsubstitute BANK_TARGET TractorBeamActivatesLoopIncrement
+	statbuffchange STAT_TARGET | STAT_NOT_PROTECT_AFFECTED | STAT_BS_PTR TractorBeamActivatesLoopIncrement
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BattleScript_TractorBeamPrevented
+	setgraphicalstatchangevalues
+	playanimation BANK_TARGET ANIM_STAT_BUFF ANIM_ARG_1
+	printfromtable 0x83FE588
+	waitmessage DELAY_1SECOND
+	goto TractorBeamActivatesLoopIncrement
+	
+
+BattleScript_TractorBeamPrevented:
+	pause DELAY_HALFSECOND
+	printfromtable 0x83FE588
+	waitmessage DELAY_1SECOND
+
+TractorBeamActivatesLoopIncrement:
+	jumpifword NOTANDS BATTLE_TYPE BATTLE_DOUBLE BattleScript_TractorBeamActivatesReturn
+	addbyte TARGET_BANK 0x1
+	trygetintimidatetarget BattleScript_TractorBeamActivatesReturn
+	callasm TryReactiveIntimidatePopUp
+	goto BS_IntimidateActivatesLoop
+
+BattleScript_TractorBeamActivatesReturn:
 	callasm TryRemoveIntimidateAbilityPopUp @;In case the battle scripting bank is changed
 	callasm RemoveIntimidateActive
 	return

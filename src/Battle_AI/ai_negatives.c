@@ -301,7 +301,7 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 					}
 				}
 				break;
-			case ABILITY_STEAMENGINE:
+			/*case ABILITY_STEAMENGINE:
 				if (moveSplit != SPLIT_STATUS
 				&& (moveType == TYPE_WATER || moveType == TYPE_FIRE))
 				{
@@ -318,7 +318,7 @@ u8 AIScript_Negatives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 					}
 				}
 				break;
-
+			*/
 			//Move category checks
 			case ABILITY_SOUNDPROOF:
 				if (CheckSoundMove(move))
@@ -1179,6 +1179,44 @@ SKIP_CHECK_TARGET:
 							DECREASE_VIABILITY(10);
 						break;
 
+					case MOVE_HALLOWFOCUS:
+						if (data->atkAbility == ABILITY_CONTRARY)
+							DECREASE_VIABILITY(10);
+
+						if ((STAT_STAGE(bankAtk, STAT_STAGE_SPATK) >= STAT_STAGE_MAX || !SpecialMoveInMoveset(bankAtk))
+						&&  (STAT_STAGE(bankAtk, STAT_STAGE_ATK) >= STAT_STAGE_MAX || !PhysicalMoveInMoveset(bankAtk))
+						&&  (STAT_STAGE(bankAtk, STAT_STAGE_DEF) >= STAT_STAGE_MAX)
+						&&  (STAT_STAGE(bankAtk, STAT_STAGE_SPDEF) >= STAT_STAGE_MAX))
+							DECREASE_VIABILITY(10);
+						break;
+
+					case MOVE_LIGHTSHIELD:
+						if (data->atkAbility == ABILITY_CONTRARY)
+							DECREASE_VIABILITY(10);
+	
+						if ((STAT_STAGE(bankAtk, STAT_STAGE_DEF) >= STAT_STAGE_MAX)
+						&&  (STAT_STAGE(bankAtk, STAT_STAGE_SPDEF) >= STAT_STAGE_MAX))
+							DECREASE_VIABILITY(10);
+						break;
+						
+					case MOVE_PLAYDEAD:
+					if (data->atkAbility == ABILITY_CONTRARY)
+						DECREASE_VIABILITY(10);
+
+					if ((STAT_STAGE(bankAtk, STAT_STAGE_DEF) >= STAT_STAGE_MAX)
+					&&  (STAT_STAGE(bankAtk, STAT_STAGE_SPDEF) >= STAT_STAGE_MAX))
+						DECREASE_VIABILITY(10);
+					break;
+
+					case MOVE_PERSEVERANCE:
+					if (data->atkAbility == ABILITY_CONTRARY)
+						DECREASE_VIABILITY(10);
+
+					if ((STAT_STAGE(bankAtk, STAT_STAGE_DEF) >= STAT_STAGE_MAX)
+					&&  (STAT_STAGE(bankAtk, STAT_STAGE_SPDEF) >= STAT_STAGE_MAX))
+						DECREASE_VIABILITY(10);
+					break;					
+
 					default: //Dragon Dance + Shift Gear
 						if (data->atkAbility == ABILITY_CONTRARY
 						|| (IsTrickRoomActive() && !IsTrickRoomOnLastTurn())) //Trick Room not about to end
@@ -1387,6 +1425,8 @@ SKIP_CHECK_TARGET:
 				switch (move) {
 					case MOVE_DRAGONTAIL:
 					case MOVE_CIRCLETHROW:
+					case MOVE_HECKLE:
+					case MOVE_VORTEX:
 						goto AI_STANDARD_DAMAGE;
 
 					default:
@@ -1556,8 +1596,9 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_FOCUS_ENERGY:
-			if (data->atkStatus2 & STATUS2_FOCUS_ENERGY
+			if ((data->atkStatus2 & STATUS2_FOCUS_ENERGY
 			|| PARTNER_MOVE_IS_MAX_MOVE_WITH_EFFECT(MAX_EFFECT_CRIT_PLUS))
+			&& move != MOVE_FORTISSIMO)
 				DECREASE_VIABILITY(10);
 			break;
 
@@ -2103,6 +2144,8 @@ SKIP_CHECK_TARGET:
 				if (data->defAbility == ABILITY_CONTRARY)
 					DECREASE_VIABILITY(10);
 			}
+			if(move == MOVE_BREAKALEG && data->defStatus1 & STATUS1_PARALYSIS)
+				DECREASE_VIABILITY(10);
 			else
 				goto AI_CONFUSE;
 			goto AI_SUBSTITUTE_CHECK;
@@ -2129,7 +2172,7 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_BATON_PASS:
-			if (move == MOVE_UTURN || move == MOVE_VOLTSWITCH || move == MOVE_FLIPTURN)
+			if (move == MOVE_UTURN || move == MOVE_VOLTSWITCH || move == MOVE_FLIPTURN || move == MOVE_WORMHOLE || move == MOVE_STANDIN)
 			{
 				goto AI_STANDARD_DAMAGE;
 			}
@@ -2321,6 +2364,9 @@ SKIP_CHECK_TARGET:
 		case EFFECT_STOCKPILE:
 			if (gDisableStructs[bankAtk].stockpileCounter >= 3)
 				DECREASE_VIABILITY(10);
+			if (move == MOVE_CONSUME)
+				if (GetPocketByItemId(data->atkItem) != POCKET_BERRIES)
+						DECREASE_VIABILITY(10);
 			break;
 
 		case EFFECT_SPIT_UP:

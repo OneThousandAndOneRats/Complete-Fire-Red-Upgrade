@@ -15,7 +15,7 @@ const struct TrainersWithEvs gTrainersWithEvsSpreads[] =
 		.atkEv = 252,
 		.spdEv = 252,
 		.ball = TRAINER_EV_CLASS_BALL,
-		.ability = Ability_Random_1_2,
+		.ability = Ability_Hidden,
 	},
 	[2] =
 	{ //Physical Sweeper: Speed Based

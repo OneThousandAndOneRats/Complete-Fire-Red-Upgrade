@@ -1,0 +1,89 @@
+#org @gText_CeladonFossilReviveIntro
+Hi there! I've been studying\nhow to revive fossils!\pDo you have any?
+
+#org @gText_CeladonFossilReviveGoodbye
+If you find any fossils bring\nthem to me!
+
+#org @gText_CeladonFossilReviveMoreFossiles
+If you have any more fossils\nlet me know!
+
+#org @gText_CeladonFossilReviveRootFossil
+Oh! A Root Fossil!
+
+#org @gText_CeladonFossilReviveSailFossil
+Oh! A Sail Fossil!
+
+#org @gText_CeladonFossilReviveOddKeystone
+Oh?\nThis relic...\pIt still has Pok\emon DNA on it!
+
+#org @gText_CeladonFossilReviveQuestion
+Do you want me to bring it\nback to life?
+
+#org @gText_CeladonFossilReviveNoResponse
+Dang what a shame...
+
+#org @gText_CeladonFossilReviveYesResponse
+Yes! Give me just a moment.\p...\p...\p...\pAlright here you go!
+
+#org @gText_CeladonFossilLileepAquire
+You received a Lileep!
+
+#org @gText_CeladonFossilAmauraAquire
+You received a Amaura!
+
+#org @gText_CeladonFossilSpiritombAquire
+You received a Spiritomb!
+
+#org @gText_CeladonChefHello
+Ey chief what can I get ya?
+
+#org @gText_CeladonWaitress
+Hi! Can I take your order?
+
+#org @gText_CeladonChefGoodbye
+Come again soon!
+
+#org @gText_GameCornerMons
+We sell rare Pok\emon!\pYou can't find them anywhere else!
+
+#org @gText_GameCornerMaractus
+Maractus
+
+#org @gText_GameCornerPorygon
+Porygon
+
+#org @gText_GameCornerBeldum
+Beldum
+
+#org @gText_GameCornerExit
+Exit 
+
+#org @gText_gamecornermons_Whichpkmn
+Which Pok\emon would you like?
+
+#org @gText_GameCornerBuyMaractus
+So you want to buy Maractus?\nThat'll be \$10000.
+
+#org @gText_GameCornerBuyPorygon
+So you want to buy Porygon?\nThat'll be \$15000.
+
+#org @gText_GameCornerBuyBeldum
+So you want to buy Beldum?\nThat'll be \$20000.
+
+#org @gText_GameCornerNotEnoughMoney
+Looks like you're short on cash.
+
+#org @gText_GameCornerWait
+[.]
+
+#org @gText_GameCornerThanks
+Thanks! Come again!
+
+#org @gText_GameCornerGotMaractus
+You got a Maractus!
+
+#org @gText_GameCornerGotPorygon
+You got a Porygon!
+
+#org @gText_GameCornerGotBeldum
+You got a Beldum!

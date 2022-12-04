@@ -410,6 +410,39 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 							goto AI_SP_ATTACK_PLUS;
 					}
 					break;
+
+				case MOVE_HALLOWFOCUS:
+					if (GoodIdeaToRaiseSpDefenseAgainst(bankAtk, bankDef, 1))
+						goto AI_SP_DEFENSE_PLUS;
+					else if (GoodIdeaToRaiseDefenseAgainst(bankAtk, bankDef, 1))
+						goto AI_DEFENSE_PLUS;
+					else if (GoodIdeaToRaiseAttackAgainst(bankAtk, bankDef, 1))
+						goto AI_ATTACK_PLUS;
+					else if (GoodIdeaToRaiseSpAttackAgainst(bankAtk, bankDef, 1))
+						goto AI_SP_ATTACK_PLUS;
+					break;
+
+				case MOVE_LIGHTSHIELD:
+					if (GoodIdeaToRaiseSpDefenseAgainst(bankAtk, bankDef, 2))
+						goto AI_SP_DEFENSE_PLUS;
+					else if (GoodIdeaToRaiseDefenseAgainst(bankAtk, bankDef, 2))
+						goto AI_DEFENSE_PLUS;
+					break;
+
+				case MOVE_PLAYDEAD:
+					if (GoodIdeaToRaiseSpDefenseAgainst(bankAtk, bankDef, 2))
+						goto AI_SP_DEFENSE_PLUS;
+					else if (GoodIdeaToRaiseDefenseAgainst(bankAtk, bankDef, 2))
+						goto AI_DEFENSE_PLUS;
+					break;
+
+				case MOVE_PERSEVERANCE:
+					if (GoodIdeaToRaiseSpDefenseAgainst(bankAtk, bankDef, 2))
+						goto AI_SP_DEFENSE_PLUS;
+					else if (GoodIdeaToRaiseDefenseAgainst(bankAtk, bankDef, 2))
+						goto AI_DEFENSE_PLUS;
+					break;
+
 				default:
 					if (atkAbility == ABILITY_CONTRARY)
 						break;
@@ -485,6 +518,16 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 		case EFFECT_STOCKPILE:
 			if (MoveEffectInMoveset(EFFECT_SWALLOW, bankAtk)
 			||  MoveEffectInMoveset(EFFECT_SPIT_UP, bankAtk))
+				INCREASE_STATUS_VIABILITY(2);
+			if (move == MOVE_CONSUME &&
+				(data->atkItem == ITEM_LIECHI_BERRY
+				|| data->atkItem == ITEM_GANLON_BERRY
+				|| data->atkItem == ITEM_SALAC_BERRY
+				|| data->atkItem == ITEM_PETAYA_BERRY
+				|| data->atkItem == ITEM_APICOT_BERRY
+				|| data->atkItem == ITEM_LANSAT_BERRY
+				|| data->atkItem == ITEM_STARF_BERRY )
+			) //data->atkItem
 				INCREASE_STATUS_VIABILITY(2);
 			else if (atkAbility != ABILITY_CONTRARY)
 				goto AI_COSMIC_POWER;
@@ -1500,6 +1543,8 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				case MOVE_VOLTSWITCH:
 				case MOVE_FLIPTURN:
 				case MOVE_PARTINGSHOT:
+				case MOVE_WORMHOLE:
+				case MOVE_STANDIN:
 					PIVOT_CHECK:
 					if (IS_SINGLE_BATTLE)
 					{
@@ -1531,6 +1576,8 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 							else if (IsClassDoublesAllOutAttacker(class))
 								INCREASE_VIABILITY(18);
 						}
+						if (GetMonAbility(GetBankPartyData(bankAtk)) == ABILITY_BLINDINGENTRANCE || GetMonAbility(GetBankPartyData(bankAtk)) == ABILITY_TRACTORBEAM)
+							INCREASE_VIABILITY(10);
 					}
 					break;
 
@@ -1704,16 +1751,24 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			break;
 
 		case EFFECT_BELLY_DRUM:
-			if (atkAbility != ABILITY_CONTRARY && RealPhysicalMoveInMoveset(bankAtk))
+			if(move == MOVE_BELLYDRUM)
 			{
-				if (BadIdeaToRaiseStatAgainst(bankAtk, bankDef, TRUE))
-					break;
-
-				if (IsTypeZCrystal(data->atkItem, gBattleMoves[move].type) && !IsMegaZMoveBannedBattle())
-					INCREASE_STAT_VIABILITY(STAT_STAGE_ATK, STAT_STAGE_MAX, 5);
-				else
-					INCREASE_STAT_VIABILITY(STAT_STAGE_ATK, 8, 2);
+				if (PhysicalMoveInMoveset(bankAtk) && atkAbility != ABILITY_CONTRARY)
+				{
+					if (IsTypeZCrystal(data->atkItem, moveType) && !IsMegaZMoveBannedBattle())
+						INCREASE_STAT_VIABILITY(STAT_STAGE_ATK, STAT_STAGE_MAX, 5);
+					else
+						INCREASE_STAT_VIABILITY(STAT_STAGE_ATK, 8, 2);
+				}
 			}
+			else
+			{
+				if(move == MOVE_REINFORCE)
+					INCREASE_STAT_VIABILITY(STAT_STAGE_DEF, 8, 2);
+				if(move == MOVE_BOLSTER)
+					INCREASE_STAT_VIABILITY(STAT_STAGE_SPDEF, 8, 2);
+			}
+			
 			break;
 
 		case EFFECT_PSYCH_UP:
@@ -1721,6 +1776,36 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			{
 				IncreasePsychUpViability(&viability, class, bankAtk, bankDef);
 			}
+			if (move == MOVE_RELATIVITY)
+			{
+				for (i = STAT_STAGE_ATK; i < BATTLE_STATS_NO; ++i)
+				{
+					if (STAT_STAGE(bankDef, i) < STAT_STAGE(bankAtk, i))
+					{
+						if (i == STAT_STAGE_ATK && (PhysicalMoveInMoveset(bankAtk)))
+						{
+							INCREASE_STATUS_VIABILITY(1);
+							break;
+						}
+						else if (i == STAT_STAGE_SPATK && (SpecialMoveInMoveset(bankAtk)))
+						{
+							INCREASE_STATUS_VIABILITY(1);
+							break;
+						}
+						else if (i == STAT_STAGE_ACC || i == STAT_STAGE_EVASION || i == STAT_STAGE_SPEED)
+						{
+							INCREASE_STATUS_VIABILITY(1);
+							break;
+						}
+						else if (IsClassStall(class)) //Defense and Sp. Defense
+						{
+							INCREASE_STATUS_VIABILITY(1);
+							break;
+						}
+					}
+				}
+			}
+			
 			else if (atkAbility != ABILITY_CONTRARY) //Spectral Thief
 			{
 				bool8 hasHigherStat = FALSE;
@@ -2582,6 +2667,15 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				case MOVE_FORESTSCURSE:
 					if (defAbility == ABILITY_WONDERGUARD)
 						INCREASE_STATUS_VIABILITY(2); //Give it more weaknesses
+					break;
+				case MOVE_ABDUCT:
+				case MOVE_COSMICRAY:
+				case MOVE_NEUTRONSHOT:
+					if (IsClassSweeper(class)
+					&& (MoveTypeInMoveset(bankAtk, TYPE_FLYING) || MoveTypeInMoveset(bankAtk, TYPE_POISON)
+						|| MoveTypeInMoveset(bankAtk, TYPE_MYSTIC) || MoveTypeInMoveset(bankAtk, TYPE_ROCK)
+						|| (MoveTypeInMoveset(bankAtk, TYPE_COSMIC) && atkAbility == ABILITY_COSMOSCONQUEROR)) )
+						INCREASE_STATUS_VIABILITY(2); //Get some super effective moves
 					break;
 			}
 			break;

@@ -1,0 +1,23 @@
+#org @gText_R2AideIntro
+Hi! Remember me?\nI'm one of Prof. Oak's aides.\pProf. Oak entrusted me with\nTM70 for you. Here you go!
+
+#org @gText_FlashGet
+[BLACK][PLAYER] received TM70\nfrom the aide.
+
+#org @gText_FlashExplination
+TM70 contains a special move\nFlash.\pFlash lights up even the darkest\nof caves and dungeons.\pAs long as you have the TM and a\nPok\emon that can learn it,\pit will be used automatically!
+
+#org @gText_MimeJrOffer
+Hi! I was catching some Pok\emon\nand I ran into this Mime Jr.\pUnfortunately, I don't have\nany more room on my team.\pWould you like it?
+
+#org @gText_MimeJrAccept
+Great!\nHere you go!
+
+#org @gText_MimeJrReject
+No worries, I'll keep looking\nfor someone else.
+
+#org @gText_MimeJrRepeat
+How's Mime Jr doing?
+
+#org @gText_MimeJrGot
+[BLACK][PLAYER] obtained a Mime Jr!

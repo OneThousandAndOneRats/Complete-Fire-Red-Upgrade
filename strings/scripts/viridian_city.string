@@ -1,0 +1,32 @@
+#org @gText_ViridianCityLittleGirl
+Here you go!
+
+#org @gText_fishingrod_intro
+I'm the Fishing Guru!\pI simply looove fishing!\nI can't bear to go without.\pTell me, do you like to fish?
+
+#org @gText_fishingrod_turndown
+Oh[.]\nThat's so disappointing[.]
+
+#org @gText_fishingrod_followup
+Hello there, [PLAYER]!\pHow are the fish biting?
+
+#org @gText_fishingrod_accepted
+Grand! I like your style.\nI think we can be friends.\pTake this and fish, young friend!
+
+#org @gText_fishingrod_recieve
+[PLAYER] received an Old Rod from\nthe Fishing Guru.
+
+#org @gText_fishingrod_after
+Fishing is a way of life!\nIt is like the finest poetry.\pFrom the seas to rivers, go out\nand land the big one, my friend.
+
+#org @gText_fishingrod_noroom
+Oh, no!\pI had a nice gift for you, but you\nhave no room for it!
+
+#org @gText_OldManCoffe
+Well, now, I've had my coffee, and\nthat's what I need to get going!\pHm?\nWhat is that red box you have?\pAh, so you're working on your\nPOK\eDEX.\pThen let me give you a word of\nadvice.\pWhenever you catch a POK\eMON,\nthe POK\eDEX automatically updates\lits data.\pI can see in your eyes you\nalready know how to catch\p[.]POK\eMON. Here take this.
+
+#org @gText_RecievedDexNav
+[PLAYER] recieved the Dex Nav!
+
+#org @gText_DexNav_Explination
+That device can help you\nfind all POK\eMON in an area.\pIt can be accessed by going\nto the right in the menu. 

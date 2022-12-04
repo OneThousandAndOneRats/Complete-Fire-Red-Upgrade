@@ -105,6 +105,12 @@ The Lucky Chant shielded\n[FD][36] team from critical hits!
 #org @gText_TargetWasInfested
 [TARGET] has been\nafflicted with an Infestation!
 
+#org @gText_TargetWasCompressed
+[TARGET] is being\ncompressed by gravity!
+
+#org @gText_TargetInCave
+[TARGET] is stuck\nin a tight cave!
+
 #org @SkyDropUpString
 [ATTACKER] took\n[TARGET] into the sky!
 
@@ -283,6 +289,18 @@ The [LAST_ITEM] restored\n[SCRIPTING_BANK]'s status!
 
 #org @gText_BellyDrumMinimizedAttack
 [ATTACKER] cut its own HP\nand minimized Attack!
+
+#org @gText_ReinforceMaximizedDefense
+[ATTACKER] cut its own HP\nand maximized Defense!
+
+#org @gText_BolsterMaximizedSpDefense
+[ATTACKER] cut its own HP\nand maximized Sp.Defense!
+
+#org @gText_ReinforceMinimizedDefense
+[ATTACKER] cut its own HP\nand minimized Defense!
+
+#org @gText_BolsterMinimizedSpDefense
+[ATTACKER] cut its own HP\nand minimized Sp.Defense!
 
 #org @gText_SqueezedByOctolock
 [ATTACKER] was squeezed\nby the Octolock!

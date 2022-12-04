@@ -2303,6 +2303,366 @@ Lunar Bless
 #org @NAME_TAKE_HEART
 Take Heart
 
+#org @NAME_LAZER_FIRE
+Lazer Fire
+
+#org @NAME_SEARING_SUN
+Searing Sun
+
+#org @NAME_SOLAR_FLARE
+Solar Flare
+
+#org @NAME_FLASH_BANG
+Flash Bang
+
+#org @NAME_LIGHTSPEED_PUNCH
+LghtspdPunch
+
+#org @NAME_FOCUSED_BEAM
+Focus Beam
+
+#org @NAME_PURITY
+Purify
+
+#org @NAME_CONCENTRATE
+Concentrate
+
+#org @NAME_HALLOW_FOCUS
+Hallow Focus
+
+#org @NAME_LIGHT_SHIELD
+Light Shield
+
+#org @NAME_SERENITY
+Serenity
+
+#org @NAME_LUSTERSHOT
+Luster Shot
+
+#org @NAME_FINALLIGHT
+Final Light
+
+#org @NAME_SUNBEAM
+Sun Beam
+
+#org @NAME_RUINOUSLIGHT
+RuinousLight
+
+#org @NAME_BLINDED
+Blinded
+
+#org @NAME_CURINGLIGHT
+Curing Light
+
+#org @NAME_WARMUP
+Warm Up
+
+#org @NAME_DRUMROLL
+Drumroll
+
+#org @NAME_STRUM
+Strum
+
+#org @NAME_MELODY
+Melody
+
+#org @NAME_SEEDSHAKER
+Seed Shaker
+
+#org @NAME_SUDDENSHOUT
+Sudden Shout
+
+#org @NAME_PITCHPERFECT
+PitchPerfect
+
+#org @NAME_DEAFEN
+Deafen
+
+#org @NAME_FINALE
+Finale
+
+#org @NAME_ACAPELLA
+Acapella
+
+#org @NAME_FORTISSIMO
+Fortissimo
+
+#org @NAME_BEAMEDNOTE
+Beamed Note
+
+#org @NAME_HECKLE
+Heckle
+
+#org @NAME_BLUES
+Blues
+
+#org @NAME_JAZZ
+Jazz
+
+#org @NAME_ROCKNROLL
+Rock'n Roll
+
+#org @NAME_POP
+Pop
+
+#org @NAME_RAP
+Rap
+
+#org @NAME_GAMMARAY
+Gamma Ray
+
+#org @NAME_BLACKHOLE
+Blackhole
+
+#org @NAME_PULSAR
+Pulsar
+
+#org @NAME_FISSION
+Fission
+
+#org @NAME_FUSION
+Fusion
+
+#org @NAME_METEORSHOWER
+MeteorShower
+
+#org @NAME_STARBURST
+Starburst
+
+#org @NAME_WARPDRIVE
+Warp Drive
+
+#org @NAME_WORMHOLE
+Wormhole
+
+#org @NAME_IRRADIATE
+Irradiate
+
+#org @NAME_ASTEROIDBELT
+AsteroidBelt
+
+#org @NAME_COSMICRAY
+Cosmic Ray
+
+#org @NAME_GAMMAPOWER
+Gamma Power
+
+#org @NAME_RELATIVITY
+Relativity
+
+#org @NAME_BIGBANG
+Big Bang
+
+#org @NAME_ABDUCT
+Abduct
+
+#org @NAME_NEUTRONSHOT
+Neutron Shot
+
+#org @NAME_STANDIN
+Stand In
+
+#org @NAME_FLOURISH
+Flourish
+
+#org @NAME_CONFUZZLE
+Confuzzle
+
+#org @NAME_BEFUDDLE
+Befuddle
+
+#org @NAME_REHEARSAL
+Rehearsal
+
+#org @NAME_SCREENTIME
+Screen Time
+
+#org @NAME_BREAKALEG
+Faulty Wish
+
+#org @NAME_PERFORMANCE
+Performance
+
+#org @NAME_SWINDLE
+Swindle
+
+#org @NAME_INCANTATION
+Incantation
+
+#org @NAME_PRESTO
+Presto
+
+#org @NAME_MAGICMISSILE
+MagicMissile
+
+#org @NAME_ENCHANT
+Enchant
+
+#org @NAME_ARCANEAETHER
+ArcaneAether
+
+#org @NAME_VORTEX
+Vortex
+
+#org @NAME_TRANSMUTE
+Transmute
+
+#org @NAME_CHAOSMAGIC
+Chaos Magic
+
+#org @NAME_FORAGE
+Forage
+
+#org @NAME_MAUL
+Maul
+
+#org @NAME_FERALSTRIKES
+FeralStrikes
+
+#org @NAME_SAVAGE
+Savage
+
+#org @NAME_CLAW
+Claw
+
+#org @NAME_HARSHCLAW
+Harsh Claw
+
+#org @NAME_BRUTALCLAW
+Brutal Claw
+
+#org @NAME_BEASTCHARGE
+Beast Charge
+
+#org @NAME_RUPTURE
+Rupture
+
+#org @NAME_RAWR
+Rawr
+
+#org @NAME_FERALBITE
+Feral Bite
+
+#org @NAME_DIREFLAIL
+Dire Flail
+
+#org @NAME_PLAYDEAD
+Play Dead
+
+#org @NAME_HUNTERMARK
+Hunter'sMark
+
+#org @NAME_ADRENALINE
+Adrenaline
+
+#org @NAME_BEASTSENSE
+Beast Sense
+
+#org @NAME_CONCEALMENT
+Concealment
+
+#org @NAME_PERSEVERANCE
+Perseverance
+
+#org @NAME_ENTOMB
+Entomb
+
+#org @NAME_CHISEL
+Chisel
+
+#org @NAME_SNAGCURIO
+Snag Curio
+
+#org @NAME_SHARDSHOT
+Shard Shot
+
+#org @NAME_SCRAPE
+Scrape
+
+#org @NAME_TIMEGEAR
+Time Gear
+
+#org @NAME_RUSTYRIVET
+Rusty Rivet
+
+#org @NAME_COREBLAST
+Core Blast
+
+#org @NAME_HEIRLOOMHIT
+Heirloom Hit
+
+#org @NAME_MAINTENANCE
+Maintenance
+
+#org @NAME_GAURDDRAIN
+Guard Drain
+
+#org @NAME_REINFORCE
+Reinforce
+
+#org @NAME_BOLSTER
+Bolster
+
+#org @NAME_FORTIFY
+Fortify
+
+#org @NAME_WEIGHDOWN
+Weigh Down
+
+#org @NAME_CAVING
+Caving
+
+#org @NAME_SALTRUB
+Salt Rub
+
+#org @NAME_GUMSHOT
+Gum Shot
+
+#org @NAME_MUNCH
+Munch
+
+#org @NAME_SYRUPSMACK
+Syrup Smack
+
+#org @NAME_MORNINGMEAL
+Morning Meal
+
+#org @NAME_GREEDYGRAB
+Greedy Grab
+
+#org @NAME_REGROWTH
+Regrowth
+
+#org @NAME_SUGARRUSH
+Sugar Rush
+
+#org @NAME_FOODCOMA
+Sugar Crash
+
+#org @NAME_TASTE
+Taste
+
+#org @NAME_FEAST
+Feast
+
+#org @NAME_FLINGFRUIT
+Fling Fruit
+
+#org @NAME_BANQUET
+Banquet
+
+#org @NAME_CHOMP
+Chomp
+
+#org @NAME_DIGEST
+Digest
+
+#org @NAME_CONSUME
+Consume
+
+#org @NAME_ORDERUP
+Order Up
+
 #org @Z_Move_1
 Z-Move 1
 

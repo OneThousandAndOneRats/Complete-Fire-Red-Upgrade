@@ -1,0 +1,27 @@
+#org @gText_TreeCanBeCut
+This tree looks like it can be Cut\ndown!
+
+#org @gText_CutTreeQuestion
+This tree looks like it can be Cut\ndown!\pWould you like to Cut it?
+
+
+#org @gText_ShopHello
+Hi, there!\nMay I help you?
+
+#org @gText_ShopGoodbye
+Please come again!
+
+#org @gText_NicknameQuestion
+Do you want to give a nickname to\nthis [BUFFER1]?
+
+#org @gText_BoulderQuestion
+It's a big boulder, but a Pok\emon\nmay be able to push it aside.\pWould you like to use Strength?
+
+#org @gText_LargeBoulder
+It's a big boulder, but a Pok\emon\nmay be able to push it aside.
+
+#org @gText_PossibleToPushBoulder
+Strength made it possible to move\nboulders around.
+
+#org @gText_newrocksmash_Nosmash
+It's a rugged rock, but a Pok\emon\nmay be able to smash it.

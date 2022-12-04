@@ -96,7 +96,7 @@ static const u32 sStatusFlagsForMoveEffects[] =
 
 const u16 gTrappingMoves[] =
 {
-	MOVE_BIND, MOVE_WRAP, MOVE_FIRESPIN, MOVE_CLAMP, MOVE_WHIRLPOOL, MOVE_SANDTOMB, MOVE_MAGMASTORM, MOVE_INFESTATION, MOVE_SNAPTRAP, MOVE_OCTOLOCK, MOVE_THUNDERCAGE, 0xFFFF
+	MOVE_BIND, MOVE_WRAP, MOVE_FIRESPIN, MOVE_CLAMP, MOVE_WHIRLPOOL, MOVE_SANDTOMB, MOVE_MAGMASTORM, MOVE_INFESTATION, MOVE_SNAPTRAP, MOVE_OCTOLOCK, MOVE_THUNDERCAGE, MOVE_FISSION, MOVE_FUSION, MOVE_CAVING,0xFFFF
 };
 
 const u16 gWrappedStringIds[] =
@@ -469,6 +469,13 @@ void SetMoveEffect(bool8 primary, u8 certain)
 							gNewBS->sandblastCentiferno[gEffectBank] = 1; //This condition doesn't get removed when the attacker leaves the field
 							if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_GRIP_CLAW)
 								gNewBS->sandblastCentiferno[gEffectBank] |= 2;
+							break;
+						case MOVE_FISSION:
+						case MOVE_FUSION:
+							gBattleStringLoader = gText_TargetWasCompressed;
+							break;
+						case MOVE_CAVING:
+							gBattleStringLoader = gText_TargetInCave;
 							break;
 					}
 				}

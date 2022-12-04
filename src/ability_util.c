@@ -278,7 +278,7 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 				#endif
 			}
 			break;
-		case ABILITY_PUNKROCK:
+		/*case ABILITY_PUNKROCK:
 			switch (dexNum)
 			{
 				#if (defined NATIONAL_DEX_WHISMUR && defined NATIONAL_DEX_LOUDRED && defined NATIONAL_DEX_EXPLOUD)
@@ -298,8 +298,8 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 					return gText_AbilityName_SoundWaves;
 				#endif
 			}
-			break;
-		case ABILITY_ICESCALES:
+			break;*/
+		/*case ABILITY_ICESCALES:
 			switch (dexNum)
 			{
 				default:
@@ -317,7 +317,7 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 					return gText_AbilityName_DustyScales;
 				#endif
 			}
-			break;
+			break; */
 		case ABILITY_GORILLATACTICS:
 			switch (dexNum)
 			{
@@ -575,6 +575,7 @@ bool8 IsHPAbsorptionAbility(u8 ability)
 	{
 		case ABILITY_WATERABSORB:
 		case ABILITY_VOLTABSORB:
+		case ABILITY_ADDITIVELIGHT:
 			return TRUE;
 		default:
 			return FALSE;

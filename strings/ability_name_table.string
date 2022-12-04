@@ -1,4 +1,4 @@
-MAX_LENGTH=16
+MAX_LENGTH=12
 FILL_FF=True
 
 #org @gAbilityNames
@@ -233,8 +233,8 @@ Shell Armor
 #org @NAME_HUNGER_SWITCH
 Hunger Switch
 
-#org @NAME_UNUSED
-Unused
+#org @NAME_TRACTORBEAM
+Tractor Beam
 
 #org @NAME_SWEET_VEIL
 Sweet Veil
@@ -383,8 +383,11 @@ Analytic
 #org @NAME_NO_GUARD
 No Guard
 
-#org @NAME_MEGA_LAUNCHER
-Mega Launcher
+//#org @NAME_MEGA_LAUNCHER
+//Mega Launcher
+
+#org @NAME_STARGAZER
+Stargazer
 
 #org @NAME_TOUGH_CLAWS
 Tough Claws
@@ -398,14 +401,23 @@ Victory Star
 #org @NAME_STORM_DRAIN
 Storm Drain
 
-#org @NAME_DARK_AURA
-Dark Aura
+//#org @NAME_DARK_AURA
+//Dark Aura
 
-#org @NAME_FAIRY_AURA
-Fairy Aura
+//#org @NAME_FAIRY_AURA
+//Fairy Aura
 
-#org @NAME_AURA_BREAK
-Aura Break
+//#org @NAME_AURA_BREAK
+//Aura Break
+
+#org @NAME_ADDITIVELIGHT
+Additive Light
+
+#org @NAME_BLINDINGENTRANCE
+Blinding Entrance
+
+#org @NAME_CONDUCTOR
+Contuctor
 
 #org @NAME_REFRIGERATE
 Refrigerate
@@ -413,11 +425,17 @@ Refrigerate
 #org @NAME_PIXILATE
 Pixilate
 
-#org @NAME_AERILATE
-Aerilate
+//#org @NAME_AERILATE
+//Aerilate
 
-#org @NAME_NORMALIZE
-Normalize
+#org @NAME_TIMELESS
+Timeless
+
+//#org @NAME_NORMALIZE
+//Normalize
+
+#org @NAME_FERAL
+Feral
 
 #org @NAME_UNBURDEN
 Unburden
@@ -434,8 +452,11 @@ Defiant
 #org @NAME_COMPETITIVE
 Competitive
 
-#org @NAME_DEFEATIST
-Defeatist
+//#org @NAME_DEFEATIST
+//Defeatist
+
+#org @NAME_LUNARIZE
+Lunarize
 
 #org @NAME_SLOW_START
 Slow Start
@@ -653,11 +674,17 @@ Gorilla Tactics
 #org @NAME_BERSERK
 Berserk
 
-#org @NAME_LONG_REACH
-Long Reach
+//#org @NAME_LONG_REACH
+//Long Reach
 
-#org @NAME_LIQUID_VOICE
-Liquid Voice
+#org @NAME_PRIMAL
+Primal
+
+//#org @NAME_LIQUID_VOICE
+//Liquid Voice
+
+#org @NAME_HEEBIEJEEBIES
+Heebie Jeebies
 
 #org @NAME_QUICK_DRAW
 Quick Draw
@@ -701,8 +728,11 @@ Comatose
 #org @NAME_DANCER
 Dancer
 
-#org @NAME_BATTERY
-Battery
+//#org @NAME_BATTERY
+//Battery
+
+#org @NAME_CERTIFIEDFREAK
+Certified Freak
 
 #org @NAME_RECEIVER
 Receiver
@@ -713,8 +743,11 @@ Odd Medicine
 #org @NAME_NEUROFORCE
 Neuroforce
 
-#org @NAME_GALVANIZE
-Galvanize
+//#org @NAME_GALVANIZE
+//Galvanize
+
+#org @NAME_RIPANDTEAR
+Rip and Tear
 
 #org @NAME_INTREPID_SWORD
 Intrepid Sword
@@ -737,17 +770,26 @@ Gulp Missile
 #org @NAME_STALWART
 Stalwart
 
-#org @NAME_STEAM_ENGINE
-Steam Engine
+//#org @NAME_STEAM_ENGINE
+//Steam Engine
 
-#org @NAME_PUNK_ROCK
-Punk Rock
+#org @NAME_SOLARIZE
+Solarize
+
+//#org @NAME_PUNK_ROCK
+//Punk Rock
+
+#org @NAME_CHITTER_CHATTER
+Chitter Chatter
 
 #org @NAME_SAND_SPIT
 Sand Spit
 
-#org @NAME_ICE_SCALES
-Ice Scales
+//#org @NAME_ICE_SCALES
+//Ice Scales
+
+#org @NAME_COSMOSCONQUEROR
+CosmosConqueror
 
 #org @NAME_RIPEN
 Ripen

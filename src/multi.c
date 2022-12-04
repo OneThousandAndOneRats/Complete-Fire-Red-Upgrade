@@ -491,7 +491,7 @@ u32 MultiMoneyCalc(void)
 static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 {
 	u8 i, firstMonId, lastMonId, level, rate;
-	struct Trainer* trainer = &gTrainers[trainerId];
+	struct Trainer trainer = GET_TRAINER(trainerId);
 
 	//Get the party range to search through for the given trainer
 	if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
@@ -527,7 +527,7 @@ static u32 CalcPrizeiMoneyForTrainer(u16 trainerId)
 	//Get the money rate
 	for (i = 0, rate = 0; i < NUM_TRAINER_CLASSES; ++i)
 	{
-		if (gTrainerMoneyTable[i].trainerClass == trainer->trainerClass)
+		if (gTrainerMoneyTable[i].trainerClass == trainer.trainerClass)
 		{
 			rate = gTrainerMoneyTable[i].money;
 			break;

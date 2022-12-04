@@ -61,6 +61,7 @@ void TrySetMagnetRise(void);
 void TailwindLuckyChantFunc(void);
 void FlameBurstFunc(void);
 void ModifyPostStockpileBoostDecrement(void);
+void ModifyPostStockpileBoostIncrement(void);
 void RemoveStockpileBoosts(void);
 void SetHealingWishLunarDanceFunc(void);
 void FinalGambitDamageCalc(void);

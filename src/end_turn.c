@@ -121,7 +121,7 @@ enum Block_A
 enum Block_B
 {
 	ET_Uproar,
-	ET_SpeedBoost_Moody_BadDreams_SlowStart,
+	ET_SpeedBoost_Moody_BadDreams_SlowStart_Timeless,
 	ET_Orbz,
 	ET_Harvest_Pickup,
 	MAX_CASES_BLOCK_B,
@@ -1408,7 +1408,7 @@ u8 TurnBasedEffects(void)
 						}
 						break;
 
-					case ET_SpeedBoost_Moody_BadDreams_SlowStart:
+					case ET_SpeedBoost_Moody_BadDreams_SlowStart_Timeless:
 						if (BATTLER_ALIVE(gActiveBattler))
 						{
 							gLastUsedAbility = ABILITY(gActiveBattler);
@@ -1418,6 +1418,7 @@ u8 TurnBasedEffects(void)
 								case ABILITY_MOODY:
 								case ABILITY_BADDREAMS:
 								case ABILITY_SLOWSTART:
+								case ABILITY_TIMELESS:
 									if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, gActiveBattler, 0, 0, 0))
 										effect++;
 									break;

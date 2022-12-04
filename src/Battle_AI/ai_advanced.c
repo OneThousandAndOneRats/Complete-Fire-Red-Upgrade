@@ -445,7 +445,18 @@ u8 PredictFightingStyle(const u16* const moves, const u8 ability, const u8 itemE
 						break;
 
 					case EFFECT_LIGHT_SCREEN:
-						++reflectionNum;
+						switch(move)
+						{
+							case MOVE_SCREENTIME:
+								if (!gNewBS->AuroraVeilTimers[SIDE(bank)]) //Don't check Hail b/c being a Screener helps set up Hail
+									auroraVeil = TRUE; //Same as having two screen moves
+								break;
+							default:
+								if (!(gSideStatuses[SIDE(bank)] & SIDE_STATUS_LIGHTSCREEN))
+									++reflectionNum;
+								break;
+
+						}
 						break;
 
 					case EFFECT_LEECH_SEED:
@@ -733,7 +744,7 @@ u8 PredictFightingStyle(const u16* const moves, const u8 ability, const u8 itemE
 					class = FIGHT_CLASS_DOUBLES_TRICK_ROOM_ATTACKER;
 			}
 			else if (hasRedirection
-			|| (ability == ABILITY_INTIMIDATE && hasFakeOut)
+			|| ((ability == ABILITY_INTIMIDATE || ability == ABILITY_BLINDINGENTRANCE || ability == ABILITY_TRACTORBEAM )&& hasFakeOut)
 			|| (hasFakeOut && hasPivot))
 			{
 				class = FIGHT_CLASS_DOUBLES_UTILITY;
@@ -868,7 +879,7 @@ u16 GetAmountToRecoverBy(u8 bankAtk, u8 bankDef, u16 move)
 
 	switch (gBattleMoves[move].effect) {
 		case EFFECT_RESTORE_HP:
-			if (move == MOVE_LIFEDEW || move == MOVE_JUNGLEHEALING)
+			if (move == MOVE_LIFEDEW || move == MOVE_JUNGLEHEALING || move == MOVE_CURINGLIGHT || move == MOVE_FORAGE)
 				amountToRecover = MathMax(1, maxHp / 4);
 			else
 				amountToRecover = MathMax(1, maxHp / 2);
@@ -1079,6 +1090,7 @@ static bool8 BankHoldingUsefulItemToProtectFor(u8 bank)
 	&& (ability == ABILITY_GUTS
 	 || ability == ABILITY_FLAREBOOST
 	 || ability == ABILITY_MAGICGUARD
+	 || ability == ABILITY_FERAL
 	 || MoveInMoveset(MOVE_FACADE, bank)))
 		return TRUE;
 
@@ -1098,6 +1110,11 @@ static bool8 BankHasAbilityUsefulToProtectFor(u8 bankAtk, u8 bankDef)
 		case ABILITY_SPEEDBOOST:
 			if (SpeedCalc(bankAtk) <= SpeedCalc(bankDef)
 			&&  STAT_STAGE(bankAtk, STAT_STAGE_SPEED) < STAT_STAGE_MAX)
+				return TRUE;
+			break;
+
+		case ABILITY_TIMELESS:
+			if (STAT_STAGE(bankAtk, STAT_STAGE_SPDEF) < STAT_STAGE_MAX)
 				return TRUE;
 			break;
 	}
@@ -1806,6 +1823,7 @@ static bool8 ShouldTryToSetUpStat(u8 bankAtk, u8 bankDef, u16 move, u8 stat, u8 
 	if (ABILITY(bankDef) == ABILITY_UNAWARE
 	&& !MoveInMovesetAndUsable(MOVE_STOREDPOWER, bankAtk)
 	&& !MoveInMovesetAndUsable(MOVE_POWERTRIP, bankAtk)
+	&& !MoveInMoveset(MOVE_BIGBANG, bankAtk)
 	&& !(stat == STAT_STAGE_DEF && MoveInMovesetAndUsable(MOVE_BODYPRESS, bankAtk)))
 		return FALSE; //Don't set up if foe has Unaware
 

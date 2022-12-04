@@ -16,6 +16,8 @@ extern const u8 BattleScript_WeatherAbilityBlockedByPrimalWeatherRet[];
 extern const u8 BattleScript_WeatherAbilityBlockedByEvaporate[];
 extern const u8 BattleScript_EvaporateOnSwitchIn[];
 extern const u8 BattleScript_IntimidateActivatesEnd3[];
+extern const u8 BattleScript_BlindingEntranceActivatesEnd3[];
+extern const u8 BattleScript_TractorBeamActivatesEnd3[];
 extern const u8 BattleScript_TraceActivates[];
 extern const u8 BattleScript_Frisk[];
 extern const u8 BattleScript_FriskEnd[];

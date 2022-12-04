@@ -533,8 +533,9 @@ bool8 CanMonNeverMakeContact(struct Pokemon* mon)
 
 bool8 CanNeverMakeContactByAbilityItemEffect(u8 ability, u8 itemEffect)
 {
-	return ability == ABILITY_LONGREACH
-		|| CanNeverMakeContactByItemEffect(itemEffect);
+	//return ability == ABILITY_LONGREACH
+	//	|| CanNeverMakeContactByItemEffect(itemEffect);
+	return CanNeverMakeContactByItemEffect(itemEffect);
 }
 
 bool8 CanNeverMakeContactByItemEffect(u8 itemEffect)

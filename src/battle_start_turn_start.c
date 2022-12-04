@@ -1792,7 +1792,7 @@ u16 GetMUS_ForBattle(void)
 		}
 		else
 		{
-			trainerClass = gTrainers[gTrainerBattleOpponent_A].trainerClass;
+			trainerClass = GET_TRAINER(gTrainerBattleOpponent_A).trainerClass;
 
 			if (gClassBasedBattleBGM[trainerClass])
 				return gClassBasedBattleBGM[trainerClass];
@@ -1804,7 +1804,7 @@ u16 GetMUS_ForBattle(void)
 
 			if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
 			{
-				trainerClass = gTrainers[SECOND_OPPONENT].trainerClass;
+				trainerClass = GET_TRAINER(SECOND_OPPONENT).trainerClass;
 				if (gClassBasedBattleBGM[trainerClass])
 					return gClassBasedBattleBGM[trainerClass];
 			}
@@ -1881,10 +1881,10 @@ u8 GetTrainerBattleTransition(void)
 		return B_TRANSITION_CHAMPION;
 
 	#ifdef FR_PRE_BATTLE_MUGSHOT_STYLE
-	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == CLASS_CHAMPION)
+	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_CHAMPION)
 		return B_TRANSITION_CHAMPION;
 
-	if (gTrainers[gTrainerBattleOpponent_A].trainerClass == CLASS_ELITE_FOUR)
+	if (GET_TRAINER(gTrainerBattleOpponent_A).trainerClass == CLASS_ELITE_FOUR)
 	{
 		VarSet(VAR_PRE_BATTLE_MUGSHOT_STYLE, MUGSHOT_TWO_BARS);
 		VarSet(VAR_PRE_BATTLE_MUGSHOT_SPRITE, MUGSHOT_PLAYER);
@@ -1935,7 +1935,7 @@ u8 GetTrainerBattleTransition(void)
 		return B_TRANSITION_CUSTOM_LOGO;
 	#endif
 
-	if ((gTrainers[gTrainerBattleOpponent_A].doubleBattle == TRUE
+	if ((GET_TRAINER(gTrainerBattleOpponent_A).doubleBattle == TRUE
 	#ifdef FLAG_DOUBLE_BATTLE
 	|| FlagGet(FLAG_DOUBLE_BATTLE)
 	#endif
@@ -2328,6 +2328,8 @@ u32 SpeedCalc(u8 bank)
 	{
 		speed = (speed * 15) / 10; //1.5x
 	}
+	else if (gBattleMons[bank].status1 & STATUS_ANY && ability == ABILITY_FERAL)
+		speed = (speed * 11) / 10;
 	else if (gBattleMons[bank].status1 & STATUS_PARALYSIS)
 	{
 		#ifndef OLD_PARALYSIS_SPD_DROP
@@ -2401,6 +2403,8 @@ u32 SpeedCalcMon(u8 side, struct Pokemon* mon) //Used for the AI
 
 	if (mon->condition & STATUS_ANY && ability == ABILITY_QUICKFEET)
 		speed *= 2;
+	else if (mon->condition & STATUS_ANY && ability == ABILITY_FERAL)
+		speed = (speed * 11) / 10;
 	else if (mon->condition & STATUS_PARALYSIS)
 	{
 		#ifndef OLD_PARALYSIS_SPD_DROP

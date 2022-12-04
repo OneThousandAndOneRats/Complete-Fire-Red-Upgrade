@@ -1,0 +1,20 @@
+#org @gText_EspurrOffer
+Hello there youngster.\nYou look like a capable trainer.\pWould you like to train this stray\nEspurr? 
+
+#org @gText_EspurrAccept
+Thank you so much!
+
+#org @gText_EspurrReject
+Oh what a shame...
+
+#org @gText_EspurrRepeat
+Thank you!\nPlease take care of it!
+
+#org @gText_EspurrGot
+[BLACK][PLAYER] obtained a Espurr!
+
+#org @gTextbox_EspurrOldLady
+We recently found a stray\nEspurr and are looking for\pa trainer to take care of it.
+
+#org @gTextbox_EspurrOldLadyAccepted
+Thank you for taking care of\nthe Espurr.\pWe're both at ease knowing\nit's in good hands.

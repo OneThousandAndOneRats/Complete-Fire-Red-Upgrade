@@ -489,6 +489,13 @@ void AnimTask_GetTrappedMoveAnimId(u8 taskId)
 		case MOVE_THUNDERCAGE:
 			gBattleAnimArgs[0] = 9;
 			break;
+		case MOVE_FISSION:
+		case MOVE_FUSION:
+			gBattleAnimArgs[0] = 10;
+			break;
+		case MOVE_CAVING:
+			gBattleAnimArgs[0] = 11;
+			break;
 		default:
 			gBattleAnimArgs[0] = 0;
 	}

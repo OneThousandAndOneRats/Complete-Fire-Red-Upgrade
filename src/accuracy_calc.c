@@ -453,6 +453,11 @@ static u32 AccuracyCalcPassDefAbilityItemEffect(u16 move, u8 bankAtk, u8 bankDef
 				calc = udivsi((calc * 80), 100); // 0.8 Hustle loss;
 			break;
 
+		case ABILITY_HEEBIEJEEBIES:
+			if (moveSplit == SPLIT_STATUS)
+				calc = udivsi((calc * 12), 100); // 1.2 HeebieJeebies boost;
+			break;
+
 		case ABILITY_VICTORYSTAR:
 			calc = udivsi((calc * 110), 100); // 1.1 Victory Star boost
 	}
@@ -575,6 +580,11 @@ u32 VisualAccuracyCalc_NoTarget(u16 move, u8 bankAtk)
 		case ABILITY_HUSTLE:
 			if (moveSplit == SPLIT_PHYSICAL)
 				calc = udivsi((calc * 80), 100); // 0.8 Hustle loss;
+			break;
+
+		case ABILITY_HEEBIEJEEBIES:
+			if (moveSplit == SPLIT_STATUS)
+				calc = udivsi((calc * 12), 100); // 1.2 HeebieJeebies boost;
 			break;
 
 		case ABILITY_VICTORYSTAR:

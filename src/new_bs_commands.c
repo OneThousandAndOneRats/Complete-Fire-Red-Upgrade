@@ -908,8 +908,39 @@ void atkFF21_tryspectralthiefsteal(void)
 			case ABILITY_CONTRARY:
 				increment = -1;
 		}
+		if (gCurrentMove == MOVE_RELATIVITY)
+		{
+				success = TRUE;
+				int prev = gBattleMons[gBankAttacker].statStages[i];
 
-		if (atkAbility == ABILITY_CONTRARY)
+				if(atkAbility == ABILITY_CONTRARY) // contrary just keep the same stats
+				{
+					gBattleMons[gBankAttacker].statStages[i] = gBattleMons[gBankTarget].statStages[i];
+				}
+				else // otherwise invert
+				{
+					gBattleMons[gBankAttacker].statStages[i] = 12 - gBattleMons[gBankTarget].statStages[i]; 
+				}
+
+				if(gBattleMons[gBankAttacker].statStages[i] > prev) // if its higher than it was it rose
+				{
+					gNewBS->statRoseThisRound[gBankAttacker] = TRUE;
+				}
+				else if (gBattleMons[gBankAttacker].statStages[i] < prev) // if its lower it fell
+				{
+					gNewBS->statFellThisTurn[gBankAttacker] = TRUE;
+					gNewBS->statFellThisRound[gBankAttacker] = TRUE;
+				}
+				gBattleMons[gBankTarget].statStages[i] = 6;
+
+
+				//gBattleMons[gBankTarget].statStages[i] -= 1;
+				//gBattleMons[gBankAttacker].statStages[i] += increment;
+				
+				//gNewBS->statFellThisTurn[gBankAttacker] = TRUE;
+				//gNewBS->statFellThisRound[gBankAttacker] = TRUE;
+		}
+		else if (atkAbility == ABILITY_CONTRARY)
 		{
 			while (gBattleMons[gBankTarget].statStages[i] > 6 && gBattleMons[gBankAttacker].statStages[i] > 0)
 			{

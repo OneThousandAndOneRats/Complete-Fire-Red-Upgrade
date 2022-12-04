@@ -831,7 +831,7 @@ static u8 GetEggStepsToSubtract(void)
 		{
 			u8 ability = GetMonAbility(&gPlayerParty[i]);
 
-			if (ability == ABILITY_MAGMAARMOR || ability == ABILITY_FLAMEBODY || ability == ABILITY_STEAMENGINE)
+			if (ability == ABILITY_MAGMAARMOR || ability == ABILITY_FLAMEBODY /*|| ability == ABILITY_STEAMENGINE*/)
 			{
 				steps = 2;
 				break;

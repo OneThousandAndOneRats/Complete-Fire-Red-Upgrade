@@ -1468,6 +1468,11 @@ TYPE_LOOP:
 		moveType = TYPE_FLYING;
 		goto TYPE_LOOP;
 	}
+	if (move == MOVE_RAP && moveType != TYPE_FIRE)
+	{
+		moveType = TYPE_FIRE;
+		goto TYPE_LOOP;
+	}
 }
 
 void TypeDamageModificationPartyMon(u8 atkAbility, struct Pokemon* monDef, u16 move, u8 moveType, u8* flags)
@@ -1489,6 +1494,11 @@ TYPE_LOOP_AI:
 	if (move == MOVE_FLYINGPRESS && moveType != TYPE_FLYING)
 	{
 		moveType = TYPE_FLYING;
+		goto TYPE_LOOP_AI;
+	}
+	if (move == MOVE_RAP && moveType != TYPE_FIRE)
+	{
+		moveType = TYPE_FIRE;
 		goto TYPE_LOOP_AI;
 	}
 }
@@ -1531,6 +1541,9 @@ static void ModulateDmgByType(u8 multiplier, const u16 move, const u8 moveType, 
 	}
 
 	if (move == MOVE_FREEZEDRY && defType == TYPE_WATER) //Always Super-Effective, even in Inverse Battles
+		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
+
+	if(moveType == TYPE_COSMIC && defType == TYPE_COSMIC && atkAbility == ABILITY_COSMOSCONQUEROR)
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
 	if (moveType == TYPE_FIRE && gNewBS->tarShotBits & gBitTable[bankDef]) //Fire always Super-Effective if covered in tar
@@ -1697,20 +1710,23 @@ u8 GetMoveTypeSpecialPostAbility(u16 move, u8 atkAbility, bool8 zMoveActive)
 					return TYPE_ICE;
 				case ABILITY_PIXILATE:
 					return TYPE_FAIRY;
-				case ABILITY_AERILATE:
-					return TYPE_FLYING;
-				case ABILITY_GALVANIZE:
-					return TYPE_ELECTRIC;
+				//case ABILITY_AERILATE:
+				//	return TYPE_FLYING;
+				//case ABILITY_GALVANIZE:
+				//	return TYPE_ELECTRIC;
 			}
 		}
 
 		//Change non-Normal-type moves
 		switch (atkAbility) {
-			case ABILITY_NORMALIZE:
-				return TYPE_NORMAL;
-			case ABILITY_LIQUIDVOICE:
-				if (CheckSoundMove(move)) //Change Sound Moves
-					return TYPE_WATER;
+			//case ABILITY_NORMALIZE:
+			//	return TYPE_NORMAL;
+			//case ABILITY_LIQUIDVOICE:
+			//	if (CheckSoundMove(move)) //Change Sound Moves
+			//		return TYPE_WATER;
+			case ABILITY_RIPANDTEAR:
+				if (gSpecialMoveFlags[move].gBitingMoves) //Change Sound Moves
+					return TYPE_BEAST;
 				break;
 		}
 	}
@@ -1746,15 +1762,16 @@ static bool8 AbilityCanChangeTypeAndBoost(u16 move, u8 atkAbility, u8 electrifyT
 			switch (atkAbility) {
 				case ABILITY_REFRIGERATE:
 				case ABILITY_PIXILATE:
-				case ABILITY_AERILATE:
-				case ABILITY_GALVANIZE:
+				//case ABILITY_AERILATE:
+				//case ABILITY_GALVANIZE:
 					return TRUE;
 			}
 		}
 	}
 
 	//Check non-Normal-type moves
-	return atkAbility == ABILITY_NORMALIZE && moveTypeCanBeChanged;
+	//return atkAbility == ABILITY_NORMALIZE && moveTypeCanBeChanged;
+	return FALSE;
 }
 
 u8 GetExceptionMoveType(u8 bankAtk, u16 move)
@@ -1792,6 +1809,8 @@ u8 GetExceptionMoveType(u8 bankAtk, u16 move)
 		case MOVE_NATURALGIFT:
 			moveType = GetNaturalGiftMoveType(item);
 			break;
+
+
 
 		case MOVE_JUDGMENT:
 			if (effect == ITEM_EFFECT_PLATE)
@@ -2677,6 +2696,12 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				attack = (attack * 15) / 10;
 			break;
 
+		case ABILITY_FERAL:
+		//1.1x Boost
+			if (data->atkStatus1 & STATUS_ANY)
+				attack = (attack * 11) / 10;
+			break;
+
 		case ABILITY_SOLARPOWER:
 		//1.5x Boost
 			if (WEATHER_HAS_EFFECT && (gBattleWeather & WEATHER_SUN_ANY)
@@ -2692,7 +2717,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				attack /= 2;
 			break;
 
-		case ABILITY_DEFEATIST:
+		/*case ABILITY_DEFEATIST:
 		//0.5x Boost
 			if (data->atkHP <= (data->atkMaxHP / 2))
 			{
@@ -2700,7 +2725,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				spAttack /= 2;
 			}
 			break;
-
+		*/
 		case ABILITY_FLASHFIRE:
 		//1.5x Boost
 			if (!useMonAtk && data->moveType == TYPE_FIRE
@@ -3091,6 +3116,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 	}
 
 	//Aura Abilities
+	/*
 	if ((data->moveType == TYPE_DARK
 		&& (ABILITY_ON_FIELD(ABILITY_DARKAURA) || data->atkAbility == ABILITY_DARKAURA || data->defAbility == ABILITY_DARKAURA)) //Check all because may be party mon
 	||  (data->moveType == TYPE_FAIRY
@@ -3101,7 +3127,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 		else
 			damage = (damage * 4) / 3;
 	}
-
+	*/
 	//Second Attacker Ability Checks
 	switch (data->atkAbility) {
 		case ABILITY_TINTEDLENS:
@@ -3166,17 +3192,26 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 				damage /= 2;
 			break;
 
+		case ABILITY_PRIMAL:
+			if (data->moveSplit == SPLIT_SPECIAL)
+				damage = (damage *120) / 100;
+			if(data->moveType == TYPE_FIRE)
+				damage /=2;
+			break;
+		/*
 		case ABILITY_PUNKROCK:
 		//0.5x Decrement
 			if (CheckSoundMove(move))
 				damage /= 2; //50 % reduction
 			break;
-
+		*/
+		/*
 		case ABILITY_ICESCALES:
 		//0.5x Decrement
 			if (data->moveSplit == SPLIT_SPECIAL)
 				damage /= 2;
 			break;
+		*/
 	}
 
 	//Second Target Partner Ability Checks
@@ -3218,6 +3253,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 	if (data->moveSplit == SPLIT_PHYSICAL
 	&& (data->atkStatus1 & STATUS_BURN)
 	&& data->atkAbility != ABILITY_GUTS
+	&& data->atkAbility != ABILITY_FERAL
 	&& move != MOVE_FACADE)
 		damage /= 2;
 	#ifdef FROSTBITE
@@ -3323,6 +3359,12 @@ static u16 GetBasePower(struct DamageCalc* data)
 				power *= 2;
 			break;
 
+		case MOVE_SALTRUB:
+			if (!(data->specialFlags & FLAG_IGNORE_TARGET)
+			&& data->defHP < data->defMaxHP)
+				power = (power * 12) / 10;
+			break;
+
 		case MOVE_ECHOEDVOICE:
 			if (data->specialFlags & (FLAG_CHECKING_FROM_MENU | FLAG_AI_CALC))
 			{
@@ -3389,6 +3431,12 @@ static u16 GetBasePower(struct DamageCalc* data)
 				power *= 2;
 			break;
 
+		case MOVE_BEFUDDLE:
+			if (!(data->specialFlags & FLAG_IGNORE_TARGET)
+			&& data->defStatus1 & STATUS_ANY)
+				power = (power * 15) / 10;
+			break;
+			
 		case MOVE_PAYBACK:
 			if (!(data->specialFlags & (FLAG_IGNORE_TARGET | FLAG_CHECKING_FROM_MENU))
 			&& !useMonAtk
@@ -3575,6 +3623,16 @@ static u16 GetBasePower(struct DamageCalc* data)
 				power = 20 * (1 + CountBoosts(bankAtk));
 			break;
 
+		case MOVE_BIGBANG:
+			if (!useMonAtk)
+				power = 30 * (1 + CountBoosts(bankAtk));
+			break;
+
+		case MOVE_BANQUET:
+			if (!useMonAtk)
+				power = 30 * (1 + CountBoosts(bankDef));
+			break;
+
 		case MOVE_FLING: ;
 			power = GetFlingPower(data->atkItem, data->atkSpecies, data->atkAbility, bankAtk, useMonAtk);
 			break;
@@ -3678,6 +3736,13 @@ static u16 GetBasePower(struct DamageCalc* data)
 			power = GetNaturalGiftMovePower(data->atkItem);
 			break;
 
+		case MOVE_FLINGFRUIT:
+			if (IsBerry(data->atkItem))
+			{
+				power *=2;
+			}
+			break;
+
 		case MOVE_PURSUIT:
 			if (data->specialFlags & FLAG_AI_CALC)
 			{
@@ -3730,6 +3795,21 @@ static u16 GetBasePower(struct DamageCalc* data)
 					party = gEnemyParty;
 
 				power = (gBaseStats[party[gBattleCommunication[0] - 1].species].baseAttack / 10) + 5;
+			}
+			break;
+
+		case MOVE_ACAPELLA:
+			if (useMonAtk || (data->specialFlags & (FLAG_CHECKING_FROM_MENU | FLAG_AI_CALC)))
+				power = (gBaseStats[data->atkSpecies].baseSpAttack / 10) + 5;
+			else
+			{
+				struct Pokemon* party;
+				if (SIDE(bankAtk) == B_SIDE_PLAYER)
+					party = gPlayerParty;
+				else
+					party = gEnemyParty;
+
+				power = (gBaseStats[party[gBattleCommunication[0] - 1].species].baseSpAttack / 10) + 5;
 			}
 			break;
 
@@ -3808,6 +3888,43 @@ static u16 GetBasePower(struct DamageCalc* data)
 		case MOVE_LASHOUT:
 			if (gNewBS->statFellThisRound[bankAtk])
 				power *= 2;
+			break;
+
+		case MOVE_JAZZ:
+			goto Cleanup;
+			Cleanup:;
+			int num = umodsi(Random(), 9) + 1;
+			//int num = 1;	
+			switch(num)
+			{
+				case 1:
+					power = (power * 7) / 10;
+					break;
+				case 2:
+					power = (power * 8) / 10;
+					break;
+				case 3:
+					power = (power * 9) / 10;
+					break;
+				case 4:
+					power *=1;
+					break;
+				case 5:
+					power = (power * 11) / 10;
+					break;
+				case 6:
+					power = (power * 12) / 10;
+					break;
+				case 7:
+					power = (power * 13) / 10;
+					break;
+				case 8:
+					power = (power * 14) / 10;
+					break;
+				case 9:
+					power = (power * 15) / 10;
+					break;
+			}
 			break;
 
 		case MOVE_ROAROFTIME:
@@ -3931,11 +4048,11 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 				power = (power * 13) / 10;
 			break;
 
-		case ABILITY_AERILATE:
+		//case ABILITY_AERILATE:
 		case ABILITY_PIXILATE:
 		case ABILITY_REFRIGERATE:
-		case ABILITY_GALVANIZE:
-		case ABILITY_NORMALIZE:
+		//case ABILITY_GALVANIZE:
+		//case ABILITY_NORMALIZE:
 		//1.2x / 1.3x Boost
 			if ((!useMonAtk && AbilityCanChangeTypeAndBoost(move, data->atkAbility, gNewBS->ElectrifyTimers[bankAtk], (gNewBS->zMoveData.active || gNewBS->zMoveData.viewing)))
 			||   (useMonAtk && AbilityCanChangeTypeAndBoost(move, data->atkAbility, 0, FALSE)))
@@ -3947,13 +4064,13 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 				#endif
 			}
 			break;
-
+		/*
 		case ABILITY_MEGALAUNCHER:
 		//1.5x Boost
 			if (gSpecialMoveFlags[move].gPulseAuraMoves)
 				power = (power * 15) / 10;
 			break;
-
+		*/
 		case ABILITY_STRONGJAW:
 		//1.5x Boost
 			if (gSpecialMoveFlags[move].gBitingMoves)
@@ -3999,12 +4116,37 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 				power = (power * 13) / 10;
 			break;
 
+		case ABILITY_CHITTERCHATTER:
+		//1.2 Boost
+			if(data->moveType == TYPE_SOUND)
+				power = (power * 12) / 10;
+			break;
+
+		case ABILITY_SOLARIZE:
+		//1.5 Boost
+			if(data->moveType == TYPE_FIRE)
+				power = (power * 15) / 10;
+			break;
+
+		case ABILITY_LUNARIZE:
+		//1.5 Boost
+			if(data->moveType == TYPE_ICE)
+				power = (power * 15) / 10;
+			break;
+
+		case ABILITY_STARGAZER:
+		//1.2 Boost
+			if(data->moveType == TYPE_COSMIC)
+				power = (power * 12) / 10;
+			break;
+
+		/*
 		case ABILITY_PUNKROCK:
 		//1.3x Boost
 			if (CheckSoundMove(move))
 				power = (power * 13) / 10;
 			break;
-
+		*/
 		#ifdef ABILITY_TRANSISTOR
 		case ABILITY_TRANSISTOR:
 		//1.5x Boost
@@ -4024,12 +4166,12 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 
 	//Check attacker partner ability boost
 	switch (data->atkPartnerAbility) {
-		case ABILITY_BATTERY:
+		/*case ABILITY_BATTERY:
 		//1.3x Boost
 			if (data->moveSplit == SPLIT_SPECIAL)
 				power = (power * 13) / 10;
 			break;
-
+		*/
 		case ABILITY_STEELYSPIRIT:
 		//1.5x Boost
 			if (data->moveType == TYPE_STEEL)

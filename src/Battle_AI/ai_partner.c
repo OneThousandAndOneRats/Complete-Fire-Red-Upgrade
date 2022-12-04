@@ -86,6 +86,12 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 				}
 				break;
 
+			// Light
+			case ABILITY_ADDITIVELIGHT:
+				if (moveType == TYPE_LIGHT)
+					IncreaseHealPartnerViability(&viability, class, bankAtkPartner);
+				break;
+				
 			// Water
 			case ABILITY_WATERABSORB:
 			case ABILITY_DRYSKIN:
@@ -157,7 +163,7 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 					IncreaseHelpingHandViability(&viability, class);
 				}
 				break;
-			case ABILITY_STEAMENGINE:
+			/*case ABILITY_STEAMENGINE:
 				if (moveSplit != SPLIT_STATUS
 				&&  !IsClassDoublesTotalTeamSupport(partnerClass)
 				&& (moveType == TYPE_WATER || moveType == TYPE_FIRE)
@@ -168,7 +174,7 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 					IncreaseHelpingHandViability(&viability, class);
 				}
 				break;
-
+			*/
 			//Move category checks
 			case ABILITY_CONTRARY:
 				if (!IsClassDoublesTotalTeamSupport(partnerClass)
@@ -225,7 +231,7 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 
 				if (atkAbility == ABILITY_TRUANT //Try to get rid of these abilities
 				||  atkAbility == ABILITY_SLOWSTART
-				||  atkAbility == ABILITY_DEFEATIST)
+				/*||  atkAbility == ABILITY_DEFEATIST*/)
 				{
 					if (CheckContact(move, bankAtk, bankAtkPartner) //Mummy will transfer
 					&& !PARTNER_MOVE_EFFECT_IS_SKILL_SWAP
@@ -338,6 +344,7 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 					break;
 				case MOVE_LIFEDEW:
 				case MOVE_JUNGLEHEALING:
+				case MOVE_CURINGLIGHT:
 					if (!partnerProtects)
 						IncreaseHealPartnerViability(&viability, class, bankAtkPartner);
 					break;
@@ -447,45 +454,46 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 			break;
 
 		case EFFECT_BEAT_UP:
-			switch (atkPartnerAbility)
-			{
-				case ABILITY_JUSTIFIED:
-					if (moveType == TYPE_DARK
-					&& moveSplit != SPLIT_STATUS
-					&& RealPhysicalMoveInMoveset(bankAtkPartner)
-					&& AI_STAT_CAN_RISE(bankAtkPartner, STAT_STAGE_ATK)
-					&& !MoveKnocksOutXHits(move, bankAtk, bankAtkPartner, 1))
-						IncreaseHelpingHandViability(&viability, class);
-					break;
-				case ABILITY_STAMINA:
-					if (moveSplit != SPLIT_STATUS
-					&& AI_STAT_CAN_RISE(bankAtkPartner, STAT_STAGE_DEF)
-					&& !MoveKnocksOutXHits(move, bankAtk, bankAtkPartner, 1))
-						IncreaseHelpingHandViability(&viability, class);
-					break;
-				case ABILITY_COTTONDOWN:
-					if (moveSplit != SPLIT_STATUS
-					&& !MoveKnocksOutXHits(move, bankAtk, bankAtkPartner, 1))
-					{
-						u8 foe1 = FOE(bankAtk);
-						u8 foe2 = PARTNER(foe1);
-						u8 foe1Ability = ABILITY(foe1);
-						u8 foe2Ability = ABILITY(foe2);
-
-						if (BATTLER_ALIVE(foe1)
-						&& (foe1Ability == ABILITY_CONTRARY || foe1Ability == ABILITY_MIRRORARMOR))
-							break; //Don't try to benefit enemy
-
-						if (BATTLER_ALIVE(foe2)
-						&& (foe2Ability == ABILITY_CONTRARY || foe2Ability == ABILITY_MIRRORARMOR))
-							break; //Don't try to benefit enemy
-
-						if (CanStatBeLowered(STAT_STAGE_SPEED, foe1, bankAtk, foe1Ability)
-						|| CanStatBeLowered(STAT_STAGE_SPEED, foe2, bankAtk, foe2Ability))
-							IncreaseHelpingHandViability(&viability, class); //Try lower opposing enemies speed		
-					}
-					break;
-			}
+			if(move != MOVE_ACAPELLA)
+				switch (atkPartnerAbility)
+				{
+					case ABILITY_JUSTIFIED:
+						if (moveType == TYPE_DARK
+						&& moveSplit != SPLIT_STATUS
+						&& RealPhysicalMoveInMoveset(bankAtkPartner)
+						&& AI_STAT_CAN_RISE(bankAtkPartner, STAT_STAGE_ATK)
+						&& !MoveKnocksOutXHits(move, bankAtk, bankAtkPartner, 1))
+							IncreaseHelpingHandViability(&viability, class);
+						break;
+					case ABILITY_STAMINA:
+						if (moveSplit != SPLIT_STATUS
+						&& AI_STAT_CAN_RISE(bankAtkPartner, STAT_STAGE_DEF)
+						&& !MoveKnocksOutXHits(move, bankAtk, bankAtkPartner, 1))
+							IncreaseHelpingHandViability(&viability, class);
+						break;
+					case ABILITY_COTTONDOWN:
+						if (moveSplit != SPLIT_STATUS
+						&& !MoveKnocksOutXHits(move, bankAtk, bankAtkPartner, 1))
+						{
+							u8 foe1 = FOE(bankAtk);
+							u8 foe2 = PARTNER(foe1);
+							u8 foe1Ability = ABILITY(foe1);
+							u8 foe2Ability = ABILITY(foe2);
+	
+							if (BATTLER_ALIVE(foe1)
+							&& (foe1Ability == ABILITY_CONTRARY || foe1Ability == ABILITY_MIRRORARMOR))
+								break; //Don't try to benefit enemy
+	
+							if (BATTLER_ALIVE(foe2)
+							&& (foe2Ability == ABILITY_CONTRARY || foe2Ability == ABILITY_MIRRORARMOR))
+								break; //Don't try to benefit enemy
+	
+							if (CanStatBeLowered(STAT_STAGE_SPEED, foe1, bankAtk, foe1Ability)
+							|| CanStatBeLowered(STAT_STAGE_SPEED, foe2, bankAtk, foe2Ability))
+								IncreaseHelpingHandViability(&viability, class); //Try lower opposing enemies speed		
+						}
+						break;
+				}
 			break;
 
 		case EFFECT_HELPING_HAND:
@@ -539,11 +547,11 @@ u8 AIScript_Partner(const u8 bankAtk, const u8 bankAtkPartner, const u16 origina
 
 			bool8 attackerHasBadAbility = atkAbility == ABILITY_TRUANT
 									   || atkAbility == ABILITY_SLOWSTART
-									   || atkAbility == ABILITY_DEFEATIST;
+									   /*|| atkAbility == ABILITY_DEFEATIST*/;
 
 			bool8 partnerHasBadAbility = atkPartnerAbility == ABILITY_TRUANT
 									  || atkPartnerAbility == ABILITY_SLOWSTART
-									  || atkPartnerAbility == ABILITY_DEFEATIST;
+									  /*|| atkPartnerAbility == ABILITY_DEFEATIST*/;
 
 			switch (move) {
 				case MOVE_WORRYSEED:

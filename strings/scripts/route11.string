@@ -1,0 +1,24 @@
+#org @gText_LickitoungeOffer
+Hey there! My parents caught this\nLickitung when it was going\pthrough their garbage.\nCould you take care of it? 
+
+#org @gText_LickitoungeAccept
+Thanks!\nMake sure he stays out the garbage!
+
+#org @gText_LickitoungeReject
+I understand.\nTake care.
+
+#org @gText_LickitoungeRepeat
+Make sure he stays out the garbage!
+
+#org @gText_LickitoungeGot
+[BLACK][PLAYER] obtained a Lickitung!
+
+
+#org @gText_R11AideIntro
+Oh! [PLAYER]!\nI've been looking for you!\pIt's me, one of the ever-present\naides to Prof.Oak\pHe entrusted me with this\nItemfinder.\pSo here you go!
+
+#org @gText_ItemFinderGet
+[BLACK][PLAYER] received the Itemfinder\nfrom the aide.
+
+#org @gText_ItemfinderExplination
+There are items on the ground that\nmay be hidden from view.\pUse the Itemfinder to detect any\nhidden items close to you.\pThe machine is a bit limited.\nIt can't pinpoint item locations.\pWhat it does is show the direction\nwhere the item is.\pUse it to get your bearings, then\nsearch the suspect area by hand.

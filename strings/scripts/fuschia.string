@@ -1,0 +1,45 @@
+#org @gText_WardenNoTeeth
+Warden: Hif fuff hefifoo!\pHa lof ha feef ee hafahi ho.\nHeff hee fwee!
+
+#org @gText_WardenRepeat
+Warden: Inside HM04 you'll find\nStrength.\pIt lets Pok\emon move boulders when\nyou're outside of battle.\pYou don't even need to\nteach them the move!\pOh yes, did you find the Secret\nHouse in the Safari Zone?
+
+#org @gTextWardenYesText
+Ah howhee ho hoo!\nEef ee hafahi ho!
+
+#org @gTextWardenNoText
+Ha?\nHe ohay heh ha hoo ee haheh!
+
+#org @gText_WardenTeethReturn
+[BLACK][PLAYER] gave the Gold Teeth\nto the Warden.
+
+#org @gText_WardenPutsTeethIn
+[BLACK]The Warden popped in his teeth!
+
+#org @gText_WardenThanks
+Warden: Thanks!\nYou're a real lifesaver!\pNo one could understand a word\nthat I said, not a one!\pI was too ashamed to show my face\naround the office, even.\pLet me give you something for your\ntrouble.
+
+#org @gText_Hm04Get
+[PLAYER] received HM04\nfrom the Warden.
+
+
+#org @gText_EggMoveTutorIntro
+Oh Hello,\nI'm the move deleter.\pOr at least I was. I lost my job\nwhen they updated HMs to let\panyone delete them.\nSo now I teach egg moves!\pWould you like any of your\nPok\emon to learn a egg move?
+
+#org @gText_EggMoveAskWho
+Alright!\nWho should I teach?
+
+#org @gText_EggMoveAskWhat
+Which move should be taught?
+
+#org @gText_EggMoveEnjoy
+Alright Enjoy!
+
+#org @gText_EggMoveTutorNo
+Dang, back to unemployment I guess.
+
+#org @gText_LearnEggMove
+Want to learn a egg move?
+
+#org @gText_Fuschia_EggNo3
+Sorry[.] that's an egg.

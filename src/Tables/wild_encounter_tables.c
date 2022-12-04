@@ -19,6 +19,2509 @@ tables to edit:
 
 #ifndef UNBOUND //Modify this section
 
+static const struct WildPokemon gPalletTown_SurfMons[] = 
+{
+  {36, 58, SPECIES_TENTACOOL},
+  {36, 58, SPECIES_TENTACOOL},
+  {46, 58, SPECIES_TENTACRUEL},
+  {46, 58, SPECIES_TENTACRUEL},
+  {46, 58, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gPalletTown_SurfMonsInfo = {5, gPalletTown_SurfMons};
+
+
+static const struct WildPokemon gPalletTown_FishingMons[] = 
+{
+  {2, 4, SPECIES_MAGIKARP},
+  {2, 4, SPECIES_CHINCHOU},
+  {15, 29, SPECIES_MAGIKARP},
+  {15, 29, SPECIES_CHINCHOU},
+  {15, 29, SPECIES_CHINCHOU},
+  {35, 55, SPECIES_LANTURN},
+  {35, 55, SPECIES_LANTURN},
+  {35, 55, SPECIES_LANTURN},
+  {35, 55, SPECIES_GYARADOS},
+  {35, 55, SPECIES_GYARADOS},
+};
+static const struct WildPokemonInfo gPalletTown_FishingMonsInfo = {5, gPalletTown_FishingMons};
+
+
+static const struct WildPokemon gRoute1_LandMons[] = 
+{
+  {2, 4, SPECIES_PIDGEY},		//Chance: 20%
+  {2, 4, SPECIES_BIDOOF},		//Chance: 20%
+  {2, 4, SPECIES_PIDGEY},		//Chance: 10%
+  {2, 4, SPECIES_BIDOOF},		//Chance: 10%
+  {2, 4, SPECIES_PIDGEY},		//Chance: 10%
+  {2, 4, SPECIES_BIDOOF},		//Chance: 10%
+  {3, 5, SPECIES_SUNKERN},		//Chance: 5%
+  {3, 5, SPECIES_ODDISH},		//Chance: 5%
+  {2, 4, SPECIES_PIDGEY},		//Chance: 4%
+  {2, 4, SPECIES_BIDOOF},		//Chance: 4%
+  {2, 4, SPECIES_SUNKERN},		//Chance: 1%
+  {2, 4, SPECIES_ODDISH},		//Chance: 1%
+};
+static const struct WildPokemonInfo gRoute1_LandMonsInfo = {20, gRoute1_LandMons};
+
+
+
+static const struct WildPokemon gViridianCity_SurfMons[] = 
+{
+  {30, 45, SPECIES_MAGIKARP},
+  {32, 45, SPECIES_LUMINEON},
+  {30, 45, SPECIES_MAGIKARP},
+  {32, 50, SPECIES_LUMINEON},
+  {30, 50, SPECIES_QUAGSIRE},
+};
+static const struct WildPokemonInfo gViridianCity_SurfMonsInfo = {5, gViridianCity_SurfMons};
+
+
+static const struct WildPokemon gViridianCity_FishingMons[] = 
+{
+  {2, 4, SPECIES_MAGIKARP},
+  {2, 4, SPECIES_FINNEON},
+  {15, 25, SPECIES_MAGIKARP},
+  {15, 25, SPECIES_FINNEON},
+  {15, 25, SPECIES_WOOPER},
+  {35, 55, SPECIES_LUMINEON},
+  {35, 55, SPECIES_MAGIKARP},
+  {35, 55, SPECIES_LUMINEON},
+  {35, 55, SPECIES_QUAGSIRE},
+  {35, 55, SPECIES_QUAGSIRE},
+};
+static const struct WildPokemonInfo gViridianCity_FishingMonsInfo = {5, gViridianCity_FishingMons};
+
+
+
+static const struct WildPokemon gRoute22_LandMons[] = 
+{
+  {3, 5, SPECIES_BUNNELBY},		//Chance: 20%
+  {3, 5, SPECIES_WOOLOO},		//Chance: 20%
+  {3, 5, SPECIES_BUNNELBY},		//Chance: 10%
+  {3, 5, SPECIES_MANKEY},		//Chance: 10%
+  {3, 5, SPECIES_HOOTHOOT},		//Chance: 10%
+  {3, 5, SPECIES_MANKEY},		//Chance: 10%
+  {3, 5, SPECIES_WOOLOO},		//Chance: 5%
+  {3, 5, SPECIES_WOOLOO},		//Chance: 5%
+  {3, 5, SPECIES_HOOTHOOT},		//Chance: 4%
+  {3, 5, SPECIES_NICKIT},		//Chance: 4%
+  {3, 5, SPECIES_NICKIT},		//Chance: 1%
+  {3, 5, SPECIES_NICKIT},		//Chance: 1%
+};
+static const struct WildPokemonInfo gRoute22_LandMonsInfo = {20, gRoute22_LandMons};
+
+
+
+static const struct WildPokemon gRoute22_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_TENTACRUEL},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute22_SurfMonsInfo = {5, gRoute22_SurfMons};
+
+
+static const struct WildPokemon gRoute22_FishingMons[] = 
+{
+  {2, 4, SPECIES_MAGIKARP},
+  {2, 4, SPECIES_FINNEON},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute22_FishingMonsInfo = {5, gRoute22_FishingMons};
+
+
+static const struct WildPokemon gRoute2_LandMons[] = 
+{
+  {4, 6, SPECIES_POOCHYENA},   //Chance: 20%
+  {4, 6, SPECIES_TAILLOW},   //Chance: 20%
+  {4, 6, SPECIES_NIDORAN_M},   //Chance: 10%
+  {4, 6, SPECIES_NIDORAN_F},   //Chance: 10%
+  {3, 6, SPECIES_POOCHYENA},   //Chance: 10%
+  {3, 6, SPECIES_TAILLOW},   //Chance: 10%
+  {3, 5, SPECIES_HOOTHOOT},   //Chance: 5%
+  {3, 5, SPECIES_AZURILL},   //Chance: 5%
+  {3, 5, SPECIES_NIDORAN_M},   //Chance: 4%
+  {3, 5, SPECIES_NIDORAN_F},   //Chance: 4%
+  {3, 5, SPECIES_HOOTHOOT},   //Chance: 1%
+  {3, 5, SPECIES_AZURILL},   //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute2_LandMonsInfo= {20, gRoute2_LandMons};
+
+
+static const struct WildPokemon gViridianForest_LandMons[] = 
+{
+  {4, 6, SPECIES_KRICKETOT},   //Chance: 20%
+  {4, 6, SPECIES_BLIPBUG},   //Chance: 20%
+  {4, 6, SPECIES_COMBEE},   //Chance: 10%
+  {4, 6, SPECIES_SEWADDLE},   //Chance: 10%
+  {4, 6, SPECIES_SHROOMISH},   //Chance: 10%
+  {4, 6, SPECIES_SHROOMISH},   //Chance: 10%
+  {4, 6, SPECIES_COMBEE},   //Chance: 5%
+  {4, 6, SPECIES_SEWADDLE},   //Chance: 5%
+  {5, 9, SPECIES_DOTTLER},   //Chance: 4%
+  {5, 7, SPECIES_PHANTUMP},   //Chance: 4%
+  {5, 9, SPECIES_DOTTLER},   //Chance: 1%
+  {5, 7, SPECIES_PHANTUMP},   //Chance: 1%
+};
+static const struct WildPokemonInfo gViridianForest_LandMonsInfo= {20, gViridianForest_LandMons};
+
+static const struct WildPokemon gRoute3_LandMons[] = 
+{
+  {8, 12, SPECIES_WHISMUR},   //Chance: 20%
+  {8, 12, SPECIES_MAREEP},   //Chance: 20% 
+  {8, 12, SPECIES_GLAMEOW},   //Chance: 10% 
+  {8, 12, SPECIES_JIGGLYPUFF},   //Chance: 10% 
+  {8, 12, SPECIES_GLAMEOW},   //Chance: 10% 
+  {8, 12, SPECIES_JIGGLYPUFF},   //Chance: 10% 
+  {8, 12, SPECIES_AIPOM},   //Chance: 5%
+  {8, 12, SPECIES_AIPOM},   //Chance: 5%
+  {8, 12, SPECIES_MURKROW},   //Chance: 4%
+  {8, 12, SPECIES_MURKROW},   //Chance: 4%
+  {8, 12, SPECIES_MURKROW},   //Chance: 1%
+  {8, 12, SPECIES_MURKROW},   //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute3_LandMonsInfo= {20, gRoute3_LandMons};
+
+static const struct WildPokemon gMTMoon1F_LandMons[] = 
+{
+  {10, 14, SPECIES_GEODUDE},   //Chance: 20% 
+  {10, 14, SPECIES_ZUBAT},   //Chance: 20% 
+  {10, 14, SPECIES_SANDSHREW},   //Chance: 10% 
+  {10, 14, SPECIES_ARON},   //Chance: 10% 
+  {10, 14, SPECIES_GEODUDE},   //Chance: 10% 
+  {10, 14, SPECIES_ZUBAT},   //Chance: 10% 
+  {10, 14, SPECIES_SANDSHREW},   //Chance: 5%
+  {10, 14, SPECIES_ARON},   //Chance: 5%
+  {10, 14, SPECIES_GEODUDE},   //Chance: 4%
+  {10, 14, SPECIES_ZUBAT},   //Chance: 4%
+  {10, 14, SPECIES_SANDSHREW},   //Chance: 1%
+  {10, 14, SPECIES_ARON},   //Chance: 1%
+};
+static const struct WildPokemonInfo gMTMoon1F_LandMonsInfo= {4, gMTMoon1F_LandMons};
+
+static const struct WildPokemon gMTMoonB1F_LandMons[] = 
+{
+  {10, 14, SPECIES_WOOBAT},   //Chance: 20% Woobat
+  {10, 14, SPECIES_WOOBAT},   //Chance: 20% 
+  {10, 14, SPECIES_WOOBAT},   //Chance: 10% 
+  {10, 14, SPECIES_WOOBAT},   //Chance: 10% 
+  {10, 14, SPECIES_WOOBAT},   //Chance: 10% 
+  {10, 14, SPECIES_WOOBAT},   //Chance: 10% 
+  {10, 14, SPECIES_WOOBAT},   //Chance: 5%
+  {10, 14, SPECIES_WOOBAT},   //Chance: 5%
+  {10, 14, SPECIES_WOOBAT},   //Chance: 4%
+  {10, 14, SPECIES_WOOBAT},   //Chance: 4%
+  {10, 14, SPECIES_WOOBAT},   //Chance: 1%
+  {10, 14, SPECIES_WOOBAT},   //Chance: 1%
+};
+static const struct WildPokemonInfo gMTMoonB1F_LandMonsInfo= {4, gMTMoonB1F_LandMons};
+
+static const struct WildPokemon gMTMoonB2F_LandMons[] = 
+{
+  {10, 14, SPECIES_ROGGENROLA},   //Chance: 20% Roggenrola
+  {10, 14, SPECIES_NOIBAT},   //Chance: 20% noibat
+  {10, 14, SPECIES_ROGGENROLA},   //Chance: 10% clefairy
+  {10, 14, SPECIES_NOIBAT},   //Chance: 10% elgyem
+  {10, 14, SPECIES_CLEFAIRY},   //Chance: 10% 
+  {10, 14, SPECIES_ELGYEM},   //Chance: 10% 
+  {10, 14, SPECIES_ROGGENROLA},   //Chance: 5%
+  {10, 14, SPECIES_NOIBAT},   //Chance: 5%
+  {10, 14, SPECIES_CLEFAIRY},   //Chance: 4%
+  {10, 14, SPECIES_ELGYEM},   //Chance: 4%
+  {10, 14, SPECIES_CLEFAIRY},   //Chance: 1%
+  {10, 14, SPECIES_ELGYEM},   //Chance: 1%
+};
+static const struct WildPokemonInfo gMTMoonB2F_LandMonsInfo= {4, gMTMoonB2F_LandMons};
+
+static const struct WildPokemon gRoute4_LandMons[] = 
+{
+  {12, 16, SPECIES_LITLEO},   //Chance: 20% 
+  {12, 16, SPECIES_SPOINK},   //Chance: 20% 
+  {12, 16, SPECIES_LITLEO},   //Chance: 10% 
+  {12, 16, SPECIES_SPOINK},   //Chance: 10% 
+  {12, 16, SPECIES_NATU},   //Chance: 10% 
+  {12, 16, SPECIES_WOOPER},   //Chance: 10% 
+  {12, 16, SPECIES_NATU},   //Chance: 5%
+  {12, 16, SPECIES_WOOPER},   //Chance: 5%
+  {12, 16, SPECIES_NATU},   //Chance: 4%
+  {12, 16, SPECIES_SHINX},   //Chance: 4%
+  {12, 16, SPECIES_NATU},   //Chance: 1%
+  {12, 16, SPECIES_SHINX},   //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute4_LandMonsInfo= {20, gRoute4_LandMons};
+
+static const struct WildPokemon gRoute4_SurfMons[] = 
+{
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_WOOPER},
+  {35, 58, SPECIES_STARYU},
+  {45, 58, SPECIES_STARMIE},
+  {56, 58, SPECIES_QUAGSIRE},
+};
+static const struct WildPokemonInfo gRoute4_SurfMonsInfo = {5, gRoute4_SurfMons};
+
+
+static const struct WildPokemon gRoute4_FishingMons[] = 
+{
+  {5, 15, SPECIES_STARYU},
+  {5, 15, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gRoute4_FishingMonsInfo = {5, gRoute4_FishingMons};
+
+static const struct WildPokemon gCeruleanCity_SurfMons[] = 
+{
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_WOOPER},
+  {35, 58, SPECIES_STARYU},
+  {45, 58, SPECIES_STARMIE},
+  {56, 58, SPECIES_QUAGSIRE},
+};
+static const struct WildPokemonInfo gCeruleanCity_SurfMonsInfo = {5, gCeruleanCity_SurfMons};
+
+
+static const struct WildPokemon gCeruleanCity_FishingMons[] = 
+{
+  {5, 15, SPECIES_HORSEA},
+  {5, 15, SPECIES_REMORAID},
+  {27, 29, SPECIES_HORSEA},
+  {27, 29, SPECIES_REMORAID},
+  {27, 29, SPECIES_HORSEA},
+  {33, 55, SPECIES_SEADRA},
+  {33, 55, SPECIES_OCTILLERY},
+  {33, 55, SPECIES_OCTILLERY},
+  {33, 55, SPECIES_SEADRA},
+  {33, 55, SPECIES_SEADRA},
+};
+static const struct WildPokemonInfo gCeruleanCity_FishingMonsInfo = {5, gCeruleanCity_FishingMons};
+
+
+static const struct WildPokemon gRoute24_LandMons[] = 
+{
+  {13, 17, SPECIES_PETILIL},         //Chance: 20% 
+  {13, 17, SPECIES_FLABEBE},         //Chance: 20% 
+  {13, 17, SPECIES_PETILIL},         //Chance: 10% 
+  {13, 17, SPECIES_FLABEBE},         //Chance: 10% 
+  {13, 17, SPECIES_CUTIEFLY},         //Chance: 10% 
+  {13, 17, SPECIES_ABRA},             //Chance: 10% 
+  {13, 17, SPECIES_CUTIEFLY},         //Chance: 5%
+  {13, 17, SPECIES_ABRA},         //Chance: 5%
+  {13, 17, SPECIES_GOOMY},         //Chance: 4%
+  {13, 17, SPECIES_CUTIEFLY},         //Chance: 4%
+  {13, 17, SPECIES_CUTIEFLY},         //Chance: 1%
+  {13, 17, SPECIES_ABRA},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute24_LandMonsInfo= {20, gRoute24_LandMons};
+
+static const struct WildPokemon gRoute24_SurfMons[] = 
+{
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_WOOPER},
+  {35, 58, SPECIES_STARYU},
+  {45, 58, SPECIES_STARMIE},
+  {56, 58, SPECIES_QUAGSIRE},
+};
+static const struct WildPokemonInfo gRoute24_SurfMonsInfo = {5, gRoute24_SurfMons};
+
+
+static const struct WildPokemon gRoute24_FishingMons[] = 
+{
+  {5, 15, SPECIES_STARYU},
+  {5, 15, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gRoute24_FishingMonsInfo = {5, gRoute24_FishingMons};
+
+
+static const struct WildPokemon gRoute25_LandMons[] = 
+{
+  {14, 18, SPECIES_HOUNDOUR},         //Chance: 20% Inkay
+  {14, 18, SPECIES_GOTHITA},         //Chance: 20% Applin
+  {14, 18, SPECIES_HOUNDOUR},         //Chance: 10% Houndoor
+  {14, 18, SPECIES_GOTHITA},         //Chance: 10% Numel
+  {14, 18, SPECIES_NUMEL},         //Chance: 10% Gothita
+  {14, 18, SPECIES_NUMEL},             //Chance: 10% 
+  {14, 18, SPECIES_INKAY},         //Chance: 5%
+  {14, 18, SPECIES_GOTHITA},         //Chance: 5%
+  {14, 18, SPECIES_NUMEL},         //Chance: 4%
+  {14, 18, SPECIES_APPLIN},         //Chance: 4%
+  {14, 18, SPECIES_NUMEL},         //Chance: 1%
+  {14, 18, SPECIES_APPLIN},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute25_LandMonsInfo= {20, gRoute25_LandMons};
+
+static const struct WildPokemon gRoute25_SurfMons[] = 
+{
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_WOOPER},
+  {35, 58, SPECIES_STARYU},
+  {45, 58, SPECIES_STARMIE},
+  {56, 58, SPECIES_QUAGSIRE},
+};
+static const struct WildPokemonInfo gRoute25_SurfMonsInfo = {5, gRoute25_SurfMons};
+
+
+static const struct WildPokemon gRoute25_FishingMons[] = 
+{
+  {5, 15, SPECIES_STARYU},
+  {5, 15, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gRoute25_FishingMonsInfo = {5, gRoute25_FishingMons};
+
+
+static const struct WildPokemon gRoute5_LandMons[] = 
+{
+  {17, 20, SPECIES_MEOWTH},         //Chance: 20% Meowth
+  {17, 20, SPECIES_STUFFUL},         //Chance: 20% Stufful
+  {17, 20, SPECIES_MEOWTH},         //Chance: 10% Salandit
+  {17, 20, SPECIES_STUFFUL},         //Chance: 10% Tyrogue
+  {17, 20, SPECIES_SALANDIT},         //Chance: 10% Milcery
+  {17, 20, SPECIES_TYROGUE},         //Chance: 10% Teddiursa
+  {17, 20, SPECIES_SALANDIT},         //Chance: 5%
+  {17, 20, SPECIES_TYROGUE},         //Chance: 5%
+  {17, 20, SPECIES_TEDDIURSA},         //Chance: 4%
+  {17, 20, SPECIES_MILCERY},         //Chance: 4%
+  {17, 20, SPECIES_TEDDIURSA},         //Chance: 1%
+  {17, 20, SPECIES_MILCERY},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute5_LandMonsInfo= {20, gRoute5_LandMons};
+
+
+
+static const struct WildPokemon gRoute6_LandMons[] = 
+{
+  {17, 20, SPECIES_MARILL},         //Chance: 20% helioptile
+  {17, 20, SPECIES_MEDITITE},         //Chance: 20% meditite
+  {17, 20, SPECIES_MARILL},         //Chance: 10% croagunk
+  {17, 20, SPECIES_MEDITITE},         //Chance: 10% sandygast
+  {17, 20, SPECIES_CROAGUNK},         //Chance: 10% Maril
+  {17, 20, SPECIES_HELIOPTILE},         //Chance: 10% 
+  {17, 20, SPECIES_CROAGUNK},         //Chance: 5%
+  {17, 20, SPECIES_HELIOPTILE},         //Chance: 5%
+  {17, 20, SPECIES_CROAGUNK},         //Chance: 4%
+  {17, 20, SPECIES_SANDYGAST},         //Chance: 4%
+  {17, 20, SPECIES_SANDYGAST},         //Chance: 1%
+  {17, 20, SPECIES_SANDYGAST},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute6_LandMonsInfo= {20, gRoute6_LandMons};
+
+static const struct WildPokemon gRoute6_SurfMons[] = 
+{
+  {35, 58, SPECIES_MARILL},
+  {35, 58, SPECIES_AZUMARILL},
+  {35, 58, SPECIES_LUMINEON},
+  {45, 58, SPECIES_AZUMARILL},
+  {56, 58, SPECIES_LUMINEON},
+};
+static const struct WildPokemonInfo gRoute6_SurfMonsInfo = {5, gRoute6_SurfMons};
+
+
+static const struct WildPokemon gRoute6_FishingMons[] = 
+{
+  {10, 15, SPECIES_FINNEON},
+  {10, 15, SPECIES_MARILL},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_MARILL},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_AZUMARILL},
+  {33, 55, SPECIES_AZUMARILL},
+};
+static const struct WildPokemonInfo gRoute6_FishingMonsInfo = {5, gRoute6_FishingMons};
+
+
+static const struct WildPokemon gVermillionCity_SurfMons[] = 
+{
+  {35, 58, SPECIES_SKRELP},
+  {35, 58, SPECIES_DRAGALGE},
+  {35, 58, SPECIES_TENTACOOL},
+  {45, 58, SPECIES_TENTACOOL},
+  {56, 58, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gVermillionCity_SurfMonsInfo = {5, gVermillionCity_SurfMons};
+
+
+static const struct WildPokemon gVermillionCity_FishingMons[] = 
+{
+  {10, 15, SPECIES_SKRELP},
+  {10, 15, SPECIES_BINACLE},
+  {27, 29, SPECIES_SKRELP},
+  {27, 29, SPECIES_BINACLE},
+  {27, 29, SPECIES_BINACLE},
+  {33, 55, SPECIES_DRAGALGE},
+  {33, 55, SPECIES_DHELMISE},
+  {33, 55, SPECIES_BARBARACLE},
+  {33, 55, SPECIES_DHELMISE},
+  {33, 55, SPECIES_BARBARACLE},
+};
+static const struct WildPokemonInfo gVermillionCity_FishingMonsInfo = {5, gVermillionCity_FishingMons};
+
+
+static const struct WildPokemon gRoute11_LandMons[] = 
+{
+  {17, 20, SPECIES_PANCHAM},         //Chance: 20% Miltank
+  {17, 20, SPECIES_DROWZEE},         //Chance: 20% Mawile
+  {17, 20, SPECIES_PANCHAM},         //Chance: 10% Pancham
+  {17, 20, SPECIES_DROWZEE},         //Chance: 10% Espurr
+  {17, 20, SPECIES_MILTANK},         //Chance: 10% Hawlucha
+  {17, 20, SPECIES_MAWILE},         //Chance: 10% 
+  {17, 20, SPECIES_PANCHAM},         //Chance: 5%
+  {17, 20, SPECIES_DROWZEE},         //Chance: 5%
+  {17, 20, SPECIES_HAWLUCHA},         //Chance: 4%
+  {17, 20, SPECIES_HAWLUCHA},         //Chance: 4%
+  {17, 20, SPECIES_MILTANK},         //Chance: 1%
+  {17, 20, SPECIES_MAWILE},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute11_LandMonsInfo= {20, gRoute11_LandMons};
+
+
+static const struct WildPokemon gDiglettsCaveEntrance_LandMons[] = 
+{
+  {17, 20, SPECIES_DIGLETT},         //Chance: 20% Diglet
+  {17, 20, SPECIES_DIGLETT},         //Chance: 20% Dugtrio
+  {17, 20, SPECIES_DIGLETT},         //Chance: 10% Stunfisk
+  {17, 20, SPECIES_DIGLETT},         //Chance: 10% Hippopatas
+  {17, 20, SPECIES_DIGLETT},         //Chance: 10% Silcobra
+  {17, 20, SPECIES_DIGLETT},         //Chance: 10% 
+  {17, 20, SPECIES_DIGLETT},         //Chance: 5%
+  {17, 20, SPECIES_DIGLETT},         //Chance: 5%
+  {17, 20, SPECIES_DIGLETT},         //Chance: 4%
+  {17, 20, SPECIES_DUGTRIO},         //Chance: 4%
+  {17, 20, SPECIES_DUGTRIO},         //Chance: 1%
+  {17, 20, SPECIES_DUGTRIO},         //Chance: 1%
+};
+
+static const struct WildPokemonInfo gDiglettsCaveEntrance_LandMonsInfo = {4, gDiglettsCaveEntrance_LandMons};
+
+
+static const struct WildPokemon gDiglettsCaveB1F_LandMons[] = 
+{
+  {17, 20, SPECIES_DIGLETT},         //Chance: 20% 
+  {17, 20, SPECIES_SILICOBRA},         //Chance: 20% 
+  {17, 20, SPECIES_DIGLETT},         //Chance: 10% 
+  {17, 20, SPECIES_SILICOBRA},         //Chance: 10% 
+  {17, 20, SPECIES_HIPPOPOTAS},         //Chance: 10% 
+  {17, 20, SPECIES_HIPPOPOTAS},         //Chance: 10% 
+  {17, 20, SPECIES_DIGLETT},         //Chance: 5%
+  {17, 20, SPECIES_DUGTRIO},         //Chance: 5%
+  {17, 20, SPECIES_SILICOBRA},         //Chance: 4%
+  {17, 20, SPECIES_STUNFISK},         //Chance: 4%
+  {17, 20, SPECIES_STUNFISK},         //Chance: 1%
+  {17, 20, SPECIES_STUNFISK},         //Chance: 1%
+};
+
+static const struct WildPokemonInfo gDiglettsCaveB1F_LandMonsInfo = {4, gDiglettsCaveB1F_LandMons};
+
+
+static const struct WildPokemon gRoute9_LandMons[] = 
+{
+  {20, 25, SPECIES_VENIPEDE},         //Chance: 20% Durant
+  {20, 25, SPECIES_DURANT},         //Chance: 20% Volbeat
+  {20, 25, SPECIES_VENIPEDE},         //Chance: 10% Illumise
+  {20, 25, SPECIES_DURANT},         //Chance: 10% 
+  {20, 25, SPECIES_VOLBEAT},         //Chance: 10% Venipede
+  {20, 25, SPECIES_ILLUMISE},         //Chance: 10% Heatmore
+  {20, 25, SPECIES_VOLBEAT},         //Chance: 5%
+  {20, 25, SPECIES_ILLUMISE},         //Chance: 5%
+  {20, 25, SPECIES_HEATMOR},         //Chance: 4%
+  {20, 25, SPECIES_HEATMOR},         //Chance: 4%
+  {22, 27, SPECIES_WHIRLIPEDE},         //Chance: 1%
+  {22, 27, SPECIES_WHIRLIPEDE},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute9_LandMonsInfo= {20, gRoute9_LandMons};
+
+
+static const struct WildPokemon gRoute10_LandMons[] = 
+{
+  {20, 25, SPECIES_MAGNEMITE},         //Chance: 20% Tynamo
+  {20, 25, SPECIES_YAMPER},         //Chance: 20% Magnemite
+  {20, 25, SPECIES_MAGNEMITE},         //Chance: 10% 
+  {20, 25, SPECIES_YAMPER},         //Chance: 10% Yamper
+  {20, 25, SPECIES_TYNAMO},         //Chance: 10% 
+  {20, 25, SPECIES_YAMPER},         //Chance: 10% 
+  {20, 25, SPECIES_MAGNEMITE},         //Chance: 5%
+  {20, 25, SPECIES_BRONZOR},         //Chance: 5%
+  {20, 25, SPECIES_TYNAMO},         //Chance: 4%
+  {20, 25, SPECIES_TYNAMO},         //Chance: 4%
+  {22, 27, SPECIES_BRONZOR},         //Chance: 1%
+  {22, 27, SPECIES_BRONZOR},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute10_LandMonsInfo= {20, gRoute10_LandMons};
+
+static const struct WildPokemon gRoute10_SurfMons[] = 
+{
+  {35, 58, SPECIES_ALOMOMOLA},
+  {35, 58, SPECIES_ALOMOMOLA},
+  {35, 58, SPECIES_GYARADOS},
+  {45, 58, SPECIES_GYARADOS},
+  {56, 58, SPECIES_GYARADOS},
+};
+static const struct WildPokemonInfo gRoute10_SurfMonsInfo = {5, gRoute10_SurfMons};
+
+
+static const struct WildPokemon gRoute10_FishingMons[] = 
+{
+  {15, 20, SPECIES_ALOMOMOLA},
+  {15, 20, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_ALOMOMOLA},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_GYARADOS},
+  {33, 55, SPECIES_ALOMOMOLA},
+  {33, 55, SPECIES_ALOMOMOLA},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+};
+static const struct WildPokemonInfo gRoute10_FishingMonsInfo = {5, gRoute10_FishingMons};
+
+
+
+static const struct WildPokemon gRockTunnel1F_LandMons[] = 
+{
+  {22, 27, SPECIES_GRAVELER},         //Chance: 20% Sneasel
+  {22, 27, SPECIES_LOUDRED},         //Chance: 20% Druddigon
+  {22, 27, SPECIES_GRAVELER},         //Chance: 10% Loudred
+  {22, 27, SPECIES_LOUDRED},         //Chance: 10% Gravler
+  {22, 27, SPECIES_SNEASEL},         //Chance: 10% Solrock
+  {22, 27, SPECIES_SNEASEL},         //Chance: 10% 
+  {22, 27, SPECIES_GRAVELER},         //Chance: 5%
+  {22, 27, SPECIES_SOLROCK},         //Chance: 5%
+  {22, 27, SPECIES_DRUDDIGON},         //Chance: 4%
+  {22, 27, SPECIES_DRUDDIGON},         //Chance: 4%
+  {22, 27, SPECIES_MINIOR_SHIELD},         //Chance: 1%
+  {22, 27, SPECIES_MINIOR_SHIELD},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRockTunnel1F_LandMonsInfo = {4, gRockTunnel1F_LandMons};
+
+static const struct WildPokemon gRockTunnelB1F_LandMons[] = 
+{
+  {22, 27, SPECIES_BOLDORE},         //Chance: 20% Deino
+  {22, 27, SPECIES_DIGGERSBY},         //Chance: 20% Golett
+  {22, 27, SPECIES_BOLDORE},         //Chance: 10% Diggersby
+  {22, 27, SPECIES_DIGGERSBY},         //Chance: 10% Boldore
+  {22, 27, SPECIES_GOLETT},         //Chance: 10% Lunatone
+  {22, 27, SPECIES_GOLETT},         //Chance: 10% 
+  {22, 27, SPECIES_BOLDORE},         //Chance: 5%
+  {22, 27, SPECIES_LUNATONE},         //Chance: 5%
+  {22, 27, SPECIES_DEINO},         //Chance: 4%
+  {22, 27, SPECIES_DEINO},         //Chance: 4%
+  {22, 27, SPECIES_MINIOR_SHIELD},         //Chance: 1%
+  {22, 27, SPECIES_MINIOR_SHIELD},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRockTunnelB1F_LandMonsInfo = {4, gRockTunnelB1F_LandMons};
+
+
+
+static const struct WildPokemon gPokemonTower3F_LandMons[] = 
+{
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Ghastly
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Haunter
+  {24, 29, SPECIES_GASTLY},         //Chance: 10% Litwick
+  {24, 29, SPECIES_GASTLY},         //Chance: 10% Shuppet
+  {24, 29, SPECIES_GASTLY},         //Chance: 10% Misdreavus
+  {24, 29, SPECIES_SHUPPET},         //Chance: 10% Yamask
+  {24, 29, SPECIES_GASTLY},         //Chance: 5%
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 5%
+  {24, 29, SPECIES_SHUPPET},         //Chance: 4%
+  {24, 29, SPECIES_LITWICK},         //Chance: 4%
+  {24, 29, SPECIES_YAMASK},         //Chance: 1%
+  {24, 29, SPECIES_YAMASK},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonTower3F_LandMonsInfo = {2, gPokemonTower3F_LandMons};
+
+static const struct WildPokemon gPokemonTower4F_LandMons[] = 
+{
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Ghastly
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Haunter
+  {24, 29, SPECIES_GASTLY},         //Chance: 10% Litwick
+  {24, 29, SPECIES_SHUPPET},         //Chance: 10% Shuppet
+  {24, 29, SPECIES_SHUPPET},         //Chance: 10% Misdreavus
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Yamask
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 5%
+  {24, 29, SPECIES_LITWICK},         //Chance: 5%
+  {24, 29, SPECIES_LITWICK},         //Chance: 4%
+  {24, 29, SPECIES_YAMASK},         //Chance: 4%
+  {24, 29, SPECIES_YAMASK},         //Chance: 1%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonTower4F_LandMonsInfo = {4, gPokemonTower4F_LandMons};
+
+static const struct WildPokemon gPokemonTower5F_LandMons[] = 
+{
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Ghastly
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Haunter
+  {24, 29, SPECIES_SHUPPET},         //Chance: 10% Litwick
+  {24, 29, SPECIES_SHUPPET},         //Chance: 10% Shuppet
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Misdreavus
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Yamask
+  {24, 29, SPECIES_LITWICK},         //Chance: 5%
+  {24, 29, SPECIES_LITWICK},         //Chance: 5%
+  {24, 29, SPECIES_YAMASK},         //Chance: 4%
+  {24, 29, SPECIES_YAMASK},         //Chance: 4%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonTower5F_LandMonsInfo = {6, gPokemonTower5F_LandMons};
+
+static const struct WildPokemon gPokemonTower6F_LandMons[] = 
+{
+  {24, 29, SPECIES_GASTLY},         //Chance: 20% Ghastly
+  {24, 29, SPECIES_SHUPPET},         //Chance: 20% Haunter
+  {24, 29, SPECIES_SHUPPET},         //Chance: 10% Litwick
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Shuppet
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Misdreavus
+  {24, 29, SPECIES_LITWICK},         //Chance: 10% Yamask
+  {24, 29, SPECIES_LITWICK},         //Chance: 5%
+  {24, 29, SPECIES_YAMASK},         //Chance: 5%
+  {24, 29, SPECIES_YAMASK},         //Chance: 4%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 4%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonTower6F_LandMonsInfo = {8, gPokemonTower6F_LandMons};
+
+
+static const struct WildPokemon gPokemonTower7F_LandMons[] = 
+{
+  {24, 29, SPECIES_SHUPPET},         //Chance: 20% Ghastly
+  {24, 29, SPECIES_SHUPPET},         //Chance: 20% Haunter
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Litwick
+  {24, 29, SPECIES_MISDREAVUS},         //Chance: 10% Shuppet
+  {24, 29, SPECIES_LITWICK},         //Chance: 10% Misdreavus
+  {24, 29, SPECIES_LITWICK},         //Chance: 10% Yamask
+  {24, 29, SPECIES_YAMASK},         //Chance: 5%
+  {24, 29, SPECIES_YAMASK},         //Chance: 5%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 4%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 4%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+  {24, 29, SPECIES_HAUNTER},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonTower7F_LandMonsInfo = {10, gPokemonTower7F_LandMons};
+
+
+
+static const struct WildPokemon gRoute8_LandMons[] = 
+{
+  {23, 28, SPECIES_PIDGEOTTO},         //Chance: 20% Audino
+  {23, 28, SPECIES_FLOETTE},         //Chance: 20% Chingling
+  {23, 28, SPECIES_AUDINO},         //Chance: 10% Baltoy
+  {23, 28, SPECIES_AUDINO},         //Chance: 10% Pideotto
+  {23, 28, SPECIES_CHINGLING},         //Chance: 10% Floette
+  {23, 28, SPECIES_CHINGLING},         //Chance: 10% 
+  {23, 28, SPECIES_PIDGEOTTO},         //Chance: 5%
+  {23, 28, SPECIES_FLOETTE},         //Chance: 5%
+  {23, 28, SPECIES_BALTOY},         //Chance: 4%
+  {23, 28, SPECIES_BALTOY},         //Chance: 4%
+  {23, 28, SPECIES_BALTOY},         //Chance: 1%
+  {23, 28, SPECIES_BALTOY},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute8_LandMonsInfo= {20, gRoute8_LandMons};
+
+static const struct WildPokemon gRoute7_LandMons[] = 
+{
+  {23, 28, SPECIES_ORANGURU},         //Chance: 20% Zangoose
+  {23, 28, SPECIES_PASSIMIAN},         //Chance: 20% Seviper
+  {23, 28, SPECIES_ORANGURU},         //Chance: 10% Oranguru
+  {23, 28, SPECIES_PASSIMIAN},         //Chance: 10% Swirlix
+  {23, 28, SPECIES_SEVIPER},         //Chance: 10% Applin
+  {23, 28, SPECIES_ZANGOOSE},         //Chance: 10% 
+  {23, 28, SPECIES_SEVIPER},         //Chance: 5%
+  {23, 28, SPECIES_ZANGOOSE},         //Chance: 5%
+  {23, 28, SPECIES_SWIRLIX},         //Chance: 4%
+  {23, 28, SPECIES_APPLIN},         //Chance: 4%
+  {23, 28, SPECIES_SWIRLIX},         //Chance: 1%
+  {23, 28, SPECIES_APPLIN},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute7_LandMonsInfo= {20, gRoute7_LandMons};
+
+static const struct WildPokemon gCeladonCity_SurfMons[] = 
+{
+  {35, 58, SPECIES_LUMINEON},
+  {35, 58, SPECIES_LUMINEON},
+  {35, 58, SPECIES_STARYU},
+  {45, 58, SPECIES_STARYU},
+  {56, 58, SPECIES_STARYU},
+};
+static const struct WildPokemonInfo gCeladonCity_SurfMonsInfo = {5, gCeladonCity_SurfMons};
+
+
+static const struct WildPokemon gCeladonCity_FishingMons[] = 
+{
+  {15, 20, SPECIES_FINNEON},
+  {15, 20, SPECIES_STARYU},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_STARYU},
+  {27, 29, SPECIES_FINNEON},
+  {33, 55, SPECIES_FINNEON},
+  {33, 55, SPECIES_STARYU},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gCeladonCity_FishingMonsInfo = {5, gCeladonCity_FishingMons};
+
+
+static const struct WildPokemon gRoute16_LandMons[] = 
+{
+  {25, 30, SPECIES_NIDORINA},         //Chance: 20% 
+  {25, 30, SPECIES_NIDORINO},         //Chance: 20% 
+  {25, 30, SPECIES_GLOOM},         //Chance: 10% 
+  {25, 30, SPECIES_BIBAREL},         //Chance: 10% 
+  {25, 30, SPECIES_NIDORINA},         //Chance: 10% 
+  {25, 30, SPECIES_NIDORINO},         //Chance: 10% 
+  {25, 30, SPECIES_VULPIX},         //Chance: 5%
+  {25, 30, SPECIES_GLOOM},         //Chance: 5%
+  {25, 30, SPECIES_VULPIX},         //Chance: 4%
+  {25, 30, SPECIES_BIBAREL},         //Chance: 4%
+  {25, 30, SPECIES_BIBAREL},         //Chance: 1%
+  {25, 30, SPECIES_GLOOM},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute16_LandMonsInfo= {20, gRoute16_LandMons};
+
+static const struct WildPokemon gRoute17_LandMons[] = 
+{
+  {27, 32, SPECIES_SWELLOW},         //Chance: 20% 
+  {27, 32, SPECIES_THIEVUL},         //Chance: 20% Swello
+  {27, 32, SPECIES_SWELLOW},         //Chance: 10% Thievul
+  {27, 32, SPECIES_THIEVUL},         //Chance: 10% Flaffy
+  {27, 32, SPECIES_FLAAFFY},         //Chance: 10% Mightyena
+  {27, 32, SPECIES_MIGHTYENA},         //Chance: 10% Sliggu
+  {27, 32, SPECIES_FLAAFFY},         //Chance: 5%
+  {27, 32, SPECIES_MIGHTYENA},         //Chance: 5%
+  {27, 32, SPECIES_FLAAFFY},         //Chance: 4%
+  {27, 32, SPECIES_GOOMY},         //Chance: 4%
+  {27, 32, SPECIES_GOOMY},         //Chance: 1%
+  {27, 32, SPECIES_GOOMY},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute17_LandMonsInfo= {20, gRoute17_LandMons};
+
+
+static const struct WildPokemon gRoute18_LandMons[] = 
+{
+  {28, 33, SPECIES_PIDGEOTTO},         //Chance: 20% Doduo
+  {28, 33, SPECIES_NOCTOWL},         //Chance: 20% Skarmory
+  {28, 33, SPECIES_PIDGEOTTO},         //Chance: 10% Pidgeotto
+  {28, 33, SPECIES_NOCTOWL},         //Chance: 10% Noctowl
+  {28, 33, SPECIES_DODUO},         //Chance: 10% Sigilyph
+  {28, 33, SPECIES_SKARMORY},         //Chance: 10% 
+  {28, 33, SPECIES_DODUO},         //Chance: 5%
+  {28, 33, SPECIES_SKARMORY},         //Chance: 5%
+  {28, 33, SPECIES_DODUO},         //Chance: 4%
+  {28, 33, SPECIES_SIGILYPH},         //Chance: 4%
+  {28, 33, SPECIES_SIGILYPH},         //Chance: 1%
+  {28, 33, SPECIES_SIGILYPH},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute18_LandMonsInfo= {20, gRoute18_LandMons};
+
+
+
+
+
+static const struct WildPokemon gRoute12_LandMons[] = 
+{
+  {27, 32, SPECIES_WHIRLIPEDE},         //Chance: 20% Kadabra
+  {27, 32, SPECIES_SNUBBULL},         //Chance: 20% Snubbull
+  {27, 32, SPECIES_WHIRLIPEDE},         //Chance: 10% Granbull
+  {27, 32, SPECIES_SNUBBULL},         //Chance: 10% Gothorita
+  {27, 32, SPECIES_KADABRA},         //Chance: 10% Whirlipede
+  {27, 32, SPECIES_GOTHORITA},         //Chance: 10% 
+  {27, 32, SPECIES_KADABRA},         //Chance: 5%
+  {27, 32, SPECIES_GOTHORITA},         //Chance: 5%
+  {27, 32, SPECIES_KADABRA},         //Chance: 4%
+  {30, 34, SPECIES_GRANBULL},         //Chance: 4%
+  {30, 34, SPECIES_GRANBULL},         //Chance: 1%
+  {30, 34, SPECIES_GRANBULL},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute12_LandMonsInfo= {20, gRoute12_LandMons};
+
+static const struct WildPokemon gRoute12_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_TENTACOOL},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_SHARPEDO},
+};
+static const struct WildPokemonInfo gRoute12_SurfMonsInfo = {5, gRoute12_SurfMons};
+
+
+static const struct WildPokemon gRoute12_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_TENTACOOL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute12_FishingMonsInfo = {5, gRoute12_FishingMons};
+
+
+
+
+
+
+static const struct WildPokemon gRoute13_LandMons[] = 
+{
+  {28, 34, SPECIES_LUXIO},         //Chance: 20% Jangmo-o
+  {28, 34, SPECIES_DUBWOOL},         //Chance: 20% Luxray
+  {28, 34, SPECIES_LUXIO},         //Chance: 10% Luxio
+  {28, 34, SPECIES_DUBWOOL},         //Chance: 10% Dubwool
+  {28, 34, SPECIES_LUXIO},         //Chance: 10% Breloom
+  {28, 34, SPECIES_BRELOOM},         //Chance: 10% 
+  {28, 34, SPECIES_BRELOOM},         //Chance: 5%
+  {28, 34, SPECIES_LUXIO},         //Chance: 5%
+  {28, 34, SPECIES_JANGMO_O},         //Chance: 4%
+  {28, 34, SPECIES_JANGMO_O},         //Chance: 4%
+  {34, 39, SPECIES_LUXRAY},         //Chance: 1%
+  {34, 39, SPECIES_LUXRAY},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute13_LandMonsInfo= {20, gRoute13_LandMons};
+
+static const struct WildPokemon gRoute13_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_TENTACOOL},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_SHARPEDO},
+};
+static const struct WildPokemonInfo gRoute13_SurfMonsInfo = {5, gRoute13_SurfMons};
+
+
+static const struct WildPokemon gRoute13_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_TENTACOOL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute13_FishingMonsInfo = {5, gRoute13_FishingMons};
+
+
+
+
+static const struct WildPokemon gRoute14_LandMons[] = 
+{
+  {28, 34, SPECIES_SWADLOON},         //Chance: 20% Xatu
+  {28, 34, SPECIES_SANDACONDA},         //Chance: 20% Sandacobra
+  {28, 34, SPECIES_SWADLOON},         //Chance: 10% Swadloon
+  {28, 34, SPECIES_SANDACONDA},         //Chance: 10% Bewear
+  {28, 34, SPECIES_XATU},         //Chance: 10% 
+  {28, 34, SPECIES_BEWEAR},         //Chance: 10% 
+  {28, 34, SPECIES_XATU},         //Chance: 5%
+  {28, 34, SPECIES_BEWEAR},         //Chance: 5%
+  {28, 34, SPECIES_SWADLOON},         //Chance: 4%
+  {28, 34, SPECIES_XATU},         //Chance: 4%
+  {28, 34, SPECIES_SWADLOON},         //Chance: 1%
+  {28, 34, SPECIES_XATU},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute14_LandMonsInfo= {20, gRoute14_LandMons};
+
+
+
+
+static const struct WildPokemon gRoute15_LandMons[] = 
+{
+  {28, 35, SPECIES_DIGGERSBY},         //Chance: 20% Ribombee
+  {28, 35, SPECIES_SPOINK},         //Chance: 20% Houndoom
+  {28, 35, SPECIES_DIGGERSBY},         //Chance: 10% Spoink
+  {28, 35, SPECIES_SPOINK},         //Chance: 10% Grumpig
+  {28, 35, SPECIES_SPOINK},         //Chance: 10% Diggersby
+  {28, 35, SPECIES_HOUNDOOM},         //Chance: 10% 
+  {28, 35, SPECIES_DIGGERSBY},         //Chance: 5%
+  {28, 35, SPECIES_HOUNDOOM},         //Chance: 5%
+  {28, 35, SPECIES_RIBOMBEE},         //Chance: 4%
+  {32, 36, SPECIES_GRUMPIG},         //Chance: 4%
+  {28, 35, SPECIES_RIBOMBEE},         //Chance: 1%
+  {32, 36, SPECIES_GRUMPIG},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute15_LandMonsInfo= {20, gRoute15_LandMons};
+
+
+
+
+static const struct WildPokemon gSafariCenter_LandMons[] = 
+{
+  {30, 36, SPECIES_NINCADA},         //Chance: 20% SPECIES_NINCADA
+  {30, 36, SPECIES_AMBIPOM},         //Chance: 20% SPECIES_NINJASK
+  {30, 36, SPECIES_NINCADA},         //Chance: 10% SPECIES_HERACROSS
+  {30, 36, SPECIES_TAUROS},         //Chance: 10% SPECIES_AMBIPOM
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% SPECIES_PYROAR
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% 
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 4%
+  {30, 36, SPECIES_HERACROSS},         //Chance: 4%
+  {30, 36, SPECIES_HERACROSS},         //Chance: 1%
+  {30, 36, SPECIES_HERACROSS},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSafariCenter_LandMonsInfo= {20, gSafariCenter_LandMons};
+
+static const struct WildPokemon gSafariCenter_SurfMons[] = 
+{
+  {35, 58, SPECIES_CHINCHOU},
+  {35, 58, SPECIES_CHINCHOU},
+  {35, 58, SPECIES_LANTURN},
+  {45, 58, SPECIES_RELICANTH},
+  {56, 58, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariCenter_SurfMonsInfo = {5, gSafariCenter_SurfMons};
+
+
+static const struct WildPokemon gSafariCenter_FishingMons[] = 
+{
+  {15, 20, SPECIES_MAGIKARP},
+  {15, 20, SPECIES_CHINCHOU},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_CHINCHOU},
+  {27, 29, SPECIES_CHINCHOU},
+  {33, 55, SPECIES_LANTURN},
+  {33, 55, SPECIES_LANTURN},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariCenter_FishingMonsInfo = {5, gSafariCenter_FishingMons};
+
+
+
+
+
+
+
+
+
+static const struct WildPokemon gSafariEast_LandMons[] = 
+{
+  {30, 36, SPECIES_NINCADA},         //Chance: 20% Turtonator
+  {30, 36, SPECIES_AMBIPOM},         //Chance: 20% Nincada
+  {30, 36, SPECIES_NINCADA},         //Chance: 10% Ninjask
+  {30, 36, SPECIES_TAUROS},         //Chance: 10% SPECIES_AMBIPOM
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% SPECIES_PYROAR
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% 
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 4%
+  {30, 36, SPECIES_TURTONATOR},         //Chance: 4%
+  {30, 36, SPECIES_TURTONATOR},         //Chance: 1%
+  {30, 36, SPECIES_TURTONATOR},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSafariEast_LandMonsInfo= {20, gSafariEast_LandMons};
+
+static const struct WildPokemon gSafariEast_SurfMons[] = 
+{
+  {35, 58, SPECIES_FINNEON},
+  {35, 58, SPECIES_LUMINEON},
+  {35, 58, SPECIES_LUMINEON},
+  {45, 58, SPECIES_RELICANTH},
+  {56, 58, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariEast_SurfMonsInfo = {5, gSafariEast_SurfMons};
+
+
+static const struct WildPokemon gSafariEast_FishingMons[] = 
+{
+  {15, 20, SPECIES_MAGIKARP},
+  {15, 20, SPECIES_FINNEON},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_FINNEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariEast_FishingMonsInfo = {5, gSafariEast_FishingMons};
+
+
+
+
+
+
+static const struct WildPokemon gSafariNorth_LandMons[] = 
+{
+  {30, 36, SPECIES_NINCADA},         //Chance: 20% Stonjourner
+  {30, 36, SPECIES_AMBIPOM},         //Chance: 20% Ninjask
+  {30, 36, SPECIES_NINCADA},         //Chance: 10% Nincada
+  {30, 36, SPECIES_TAUROS},         //Chance: 10% 
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% 
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% 
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 4%
+  {30, 36, SPECIES_STONJOURNER},         //Chance: 4%
+  {30, 36, SPECIES_STONJOURNER},         //Chance: 1%
+  {30, 36, SPECIES_STONJOURNER},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSafariNorth_LandMonsInfo= {20, gSafariNorth_LandMons};
+
+static const struct WildPokemon gSafariNorth_SurfMons[] = 
+{
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_STARMIE},
+  {35, 58, SPECIES_STARMIE},
+  {45, 58, SPECIES_RELICANTH},
+  {56, 58, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariNorth_SurfMonsInfo = {5, gSafariNorth_SurfMons};
+
+
+static const struct WildPokemon gSafariNorth_FishingMons[] = 
+{
+  {15, 20, SPECIES_MAGIKARP},
+  {15, 20, SPECIES_STARYU},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {27, 29, SPECIES_STARYU},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariNorth_FishingMonsInfo = {5, gSafariNorth_FishingMons};
+
+
+
+
+
+
+
+
+static const struct WildPokemon gSafariWest_LandMons[] = 
+{
+  {30, 36, SPECIES_NINCADA},         //Chance: 20% Duraludon
+  {30, 36, SPECIES_AMBIPOM},         //Chance: 20% Ninjask
+  {30, 36, SPECIES_NINCADA},         //Chance: 10% Nincada
+  {30, 36, SPECIES_TAUROS},         //Chance: 10% 
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% 
+  {30, 36, SPECIES_PYROAR},         //Chance: 10% 
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 5%
+  {30, 36, SPECIES_NINJASK},         //Chance: 4%
+  {30, 36, SPECIES_DURALUDON},         //Chance: 4%
+  {30, 36, SPECIES_DURALUDON},         //Chance: 1%
+  {30, 36, SPECIES_DURALUDON},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSafariWest_LandMonsInfo= {20, gSafariWest_LandMons};
+
+static const struct WildPokemon gSafariWest_SurfMons[] = 
+{
+  {35, 58, SPECIES_WOOPER},
+  {35, 58, SPECIES_QUAGSIRE},
+  {35, 58, SPECIES_QUAGSIRE},
+  {45, 58, SPECIES_RELICANTH},
+  {56, 58, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariWest_SurfMonsInfo = {5, gSafariWest_SurfMons};
+
+
+static const struct WildPokemon gSafariWest_FishingMons[] = 
+{
+  {15, 20, SPECIES_MAGIKARP},
+  {15, 20, SPECIES_WOOPER},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_WOOPER},
+  {27, 29, SPECIES_WOOPER},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gSafariWest_FishingMonsInfo = {5, gSafariWest_FishingMons};
+
+
+
+
+
+static const struct WildPokemon gFuchsiaCity_SurfMons[] = 
+{
+  {35, 58, SPECIES_FINNEON},
+  {35, 58, SPECIES_CHINCHOU},
+  {35, 58, SPECIES_FINNEON},
+  {45, 58, SPECIES_LUMINEON},
+  {56, 58, SPECIES_LANTURN},
+};
+static const struct WildPokemonInfo gFuchsiaCity_SurfMonsInfo = {5, gFuchsiaCity_SurfMons};
+
+
+static const struct WildPokemon gFuchsiaCity_FishingMons[] = 
+{
+  {15, 20, SPECIES_FINNEON},
+  {15, 20, SPECIES_CHINCHOU},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_CHINCHOU},
+  {33, 55, SPECIES_FINNEON},
+  {33, 55, SPECIES_CHINCHOU},
+  {33, 55, SPECIES_FINNEON},
+  {33, 55, SPECIES_FINNEON},
+  {33, 55, SPECIES_LANTURN},
+};
+static const struct WildPokemonInfo gFuchsiaCity_FishingMonsInfo = {5, gFuchsiaCity_FishingMons};
+
+
+
+
+
+
+static const struct WildPokemon gRoute19_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_TENTACOOL},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_SHARPEDO},
+};
+static const struct WildPokemonInfo gRoute19_SurfMonsInfo = {5, gRoute19_SurfMons};
+
+
+static const struct WildPokemon gRoute19_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_TENTACOOL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute19_FishingMonsInfo = {5, gRoute19_FishingMons};
+
+
+static const struct WildPokemon gRoute20_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_TENTACOOL},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_SHARPEDO},
+};
+static const struct WildPokemonInfo gRoute20_SurfMonsInfo = {5, gRoute20_SurfMons};
+
+
+static const struct WildPokemon gRoute20_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_TENTACOOL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute20_FishingMonsInfo = {5, gRoute20_FishingMons};
+
+
+
+static const struct WildPokemon gRoute21_LandMons[] = 
+{
+  {31, 37, SPECIES_FLOETTE},         //Chance: 20% Thwackey
+  {31, 37, SPECIES_PERSIAN},         //Chance: 20% Croconaw
+  {31, 37, SPECIES_BRAIXEN},         //Chance: 10% Fennekin
+  {31, 37, SPECIES_CROCONAW},         //Chance: 10% Floette
+  {31, 37, SPECIES_THWACKEY},         //Chance: 10% Persian
+  {31, 37, SPECIES_BRAIXEN},         //Chance: 10% 
+  {31, 37, SPECIES_CROCONAW},         //Chance: 5%
+  {31, 37, SPECIES_CROCONAW},         //Chance: 5%
+  {31, 37, SPECIES_THWACKEY},         //Chance: 4%
+  {31, 37, SPECIES_THWACKEY},         //Chance: 4%
+  {31, 37, SPECIES_THWACKEY},         //Chance: 1%
+  {31, 37, SPECIES_THWACKEY},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute21_LandMonsInfo= {20, gRoute21_LandMons};
+
+static const struct WildPokemon gRoute21_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_TENTACOOL},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_SHARPEDO},
+};
+static const struct WildPokemonInfo gRoute21_SurfMonsInfo = {5, gRoute21_SurfMons};
+
+
+static const struct WildPokemon gRoute21_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_TENTACOOL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+};
+static const struct WildPokemonInfo gRoute21_FishingMonsInfo = {5, gRoute21_FishingMons};
+
+
+
+
+
+static const struct WildPokemon gCinnabar_SurfMons[] = 
+{
+  {35, 58, SPECIES_TENTACOOL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_SHARPEDO},
+  {45, 58, SPECIES_TENTACRUEL},
+  {56, 58, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gCinnabar_SurfMonsInfo = {5, gCinnabar_SurfMons};
+
+
+static const struct WildPokemon gCinnabar_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_TENTACOOL},
+  {27, 29, SPECIES_TENTACOOL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_TENTACRUEL},
+  {33, 55, SPECIES_RELICANTH},
+  {33, 55, SPECIES_RELICANTH},
+};
+static const struct WildPokemonInfo gCinnabar_FishingMonsInfo = {5, gCinnabar_FishingMons};
+
+
+
+
+
+
+
+static const struct WildPokemon gSeafoam1F_LandMons[] = 
+{
+  {34, 41, SPECIES_SNORUNT},         //Chance: 20% Snowrunt 
+  {34, 41, SPECIES_SWINUB},         //Chance: 20% Glalie
+  {34, 41, SPECIES_SNORUNT},         //Chance: 10% 
+  {34, 41, SPECIES_SWINUB},         //Chance: 10% 
+  {34, 41, SPECIES_CUBCHOO},         //Chance: 10% Swinub
+  {34, 41, SPECIES_VANILLITE},         //Chance: 10% Piloswine
+  {34, 41, SPECIES_SNORUNT},         //Chance: 5% Vanillite
+  {34, 41, SPECIES_SWINUB},         //Chance: 5% Vannillish
+  {34, 41, SPECIES_CUBCHOO},         //Chance: 4% Cubcho
+  {34, 41, SPECIES_VANILLITE},         //Chance: 4% Beartic
+  {34, 41, SPECIES_PILOSWINE},         //Chance: 1%
+  {34, 41, SPECIES_PILOSWINE},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSeafoamF1_LandMonsInfo= {7, gSeafoam1F_LandMons};
+
+
+static const struct WildPokemon gSeafoamB1F_LandMons[] = 
+{
+  {35, 42, SPECIES_SNORUNT},         //Chance: 20% Snowrunt 
+  {35, 42, SPECIES_SWINUB},         //Chance: 20% Glalie
+  {35, 42, SPECIES_SNORUNT},         //Chance: 10% 
+  {35, 42, SPECIES_SWINUB},         //Chance: 10% 
+  {35, 42, SPECIES_CUBCHOO},         //Chance: 10% Swinub
+  {35, 42, SPECIES_VANILLITE},         //Chance: 10% Piloswine
+  {35, 42, SPECIES_SNORUNT},         //Chance: 5% Vanillite
+  {35, 42, SPECIES_VANILLITE},         //Chance: 5% Vannillish
+  {35, 42, SPECIES_PILOSWINE},         //Chance: 4% Cubcho
+  {35, 42, SPECIES_PILOSWINE},         //Chance: 4% Beartic
+  {37, 44, SPECIES_BEARTIC},         //Chance: 1%
+  {37, 44, SPECIES_BEARTIC},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSeafoamB1F_LandMonsInfo= {7, gSeafoamB1F_LandMons};
+
+static const struct WildPokemon gSeafoamB2F_LandMons[] = 
+{
+  {36, 43, SPECIES_SNORUNT},         //Chance: 20% Snowrunt 
+  {36, 43, SPECIES_SWINUB},         //Chance: 20% Glalie
+  {36, 43, SPECIES_SNORUNT},         //Chance: 10% 
+  {36, 43, SPECIES_CUBCHOO},         //Chance: 10% 
+  {36, 43, SPECIES_VANILLITE},         //Chance: 10% Swinub
+  {36, 43, SPECIES_VANILLITE},         //Chance: 10% Piloswine
+  {36, 43, SPECIES_PILOSWINE},         //Chance: 5% Vanillite
+  {36, 43, SPECIES_PILOSWINE},         //Chance: 5% Vannillish
+  {37, 45, SPECIES_BEARTIC},         //Chance: 4% Cubcho
+  {37, 45, SPECIES_BEARTIC},         //Chance: 4% Beartic
+  {37, 45, SPECIES_VANILLISH},         //Chance: 1%
+  {37, 45, SPECIES_VANILLISH},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSeafoamB2F_LandMonsInfo= {7, gSeafoamB2F_LandMons};
+
+static const struct WildPokemon gSeafoamB3F_LandMons[] = 
+{
+  {37, 44, SPECIES_SNORUNT},         //Chance: 20% Snowrunt 
+  {37, 44, SPECIES_SWINUB},         //Chance: 20% Glalie
+  {37, 44, SPECIES_SNORUNT},         //Chance: 10% 
+  {37, 44, SPECIES_CUBCHOO},         //Chance: 10% 
+  {37, 44, SPECIES_VANILLITE},         //Chance: 10% Swinub
+  {37, 44, SPECIES_VANILLITE},         //Chance: 10% Piloswine
+  {37, 44, SPECIES_PILOSWINE},         //Chance: 5% Vanillite
+  {37, 44, SPECIES_PILOSWINE},         //Chance: 5% Vannillish
+  {38, 46, SPECIES_BEARTIC},         //Chance: 4% Cubcho
+  {38, 46, SPECIES_BEARTIC},         //Chance: 4% Beartic
+  {38, 46, SPECIES_VANILLISH},         //Chance: 1%
+  {38, 46, SPECIES_VANILLISH},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSeafoamB3F_LandMonsInfo= {7, gSeafoamB3F_LandMons};
+
+static const struct WildPokemon gSeafoamB4F_LandMons[] = 
+{
+  {37, 44, SPECIES_SNORUNT},         //Chance: 20% Snowrunt 
+  {37, 44, SPECIES_SWINUB},         //Chance: 20% Glalie
+  {37, 44, SPECIES_CUBCHOO},         //Chance: 10% 
+  {37, 44, SPECIES_VANILLITE},         //Chance: 10% 
+  {37, 44, SPECIES_VANILLITE},         //Chance: 10% Swinub
+  {37, 44, SPECIES_PILOSWINE},         //Chance: 10% Piloswine
+  {37, 44, SPECIES_BEARTIC},         //Chance: 5% Vanillite
+  {37, 44, SPECIES_BEARTIC},         //Chance: 5% Vannillish
+  {38, 46, SPECIES_VANILLISH},         //Chance: 4% Cubcho
+  {38, 46, SPECIES_VANILLISH},         //Chance: 4% Beartic
+  {42, 46, SPECIES_GLALIE},         //Chance: 1%
+  {42, 46, SPECIES_GLALIE},         //Chance: 1%
+};
+static const struct WildPokemonInfo gSeafoamB4F_LandMonsInfo= {7, gSeafoamB4F_LandMons};
+
+static const struct WildPokemon gSeafoam_SurfMons[] = 
+{
+  {35, 58, SPECIES_SPHEAL},
+  {35, 58, SPECIES_SPHEAL},
+  {35, 58, SPECIES_SEALEO},
+  {45, 58, SPECIES_SEALEO},
+  {56, 58, SPECIES_SEALEO},
+};
+static const struct WildPokemonInfo gSeafoam_SurfMonsInfo = {5, gSeafoam_SurfMons};
+
+
+static const struct WildPokemon gSeafoam_FishingMons[] = 
+{
+  {15, 20, SPECIES_SPHEAL},
+  {15, 20, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_SPHEAL},
+  {27, 29, SPECIES_SPHEAL},
+  {27, 29, SPECIES_MAGIKARP},
+  {33, 55, SPECIES_SEALEO},
+  {33, 55, SPECIES_SEALEO},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+};
+static const struct WildPokemonInfo gSeafoam_FishingMonsInfo = {5, gSeafoam_FishingMons};
+
+static const struct WildPokemon gPokemonMansion1F_LandMons[] =
+{
+  {36, 42, SPECIES_CRUSTLE},         //Chance: 20% Crustle
+  {36, 42, SPECIES_BALTOY},         //Chance: 20% Sinistea
+  {36, 42, SPECIES_SINISTEA},         //Chance: 10% Bronzor
+  {36, 42, SPECIES_BALTOY},         //Chance: 10% Bronzong
+  {36, 42, SPECIES_BRONZOR},         //Chance: 10% Baltoy
+  {36, 42, SPECIES_CRUSTLE},         //Chance: 10% Claydoll
+  {36, 42, SPECIES_BALTOY},         //Chance: 5% Golett
+  {36, 42, SPECIES_BRONZOR},         //Chance: 5% Golurk
+  {36, 42, SPECIES_CLAYDOL},         //Chance: 4%
+  {36, 42, SPECIES_BRONZONG},         //Chance: 4%
+  {36, 42, SPECIES_BRONZONG},         //Chance: 1%
+  {36, 42, SPECIES_BRONZONG},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonMansion1F_LandMonsInfo= {7, gPokemonMansion1F_LandMons};
+
+static const struct WildPokemon gPokemonMansionB1F_LandMons[] =
+{
+  {36, 42, SPECIES_CRUSTLE},         //Chance: 20% Crustle
+  {36, 42, SPECIES_SINISTEA},         //Chance: 20% Sinistea
+  {36, 42, SPECIES_SINISTEA},         //Chance: 10% Bronzor
+  {36, 42, SPECIES_GOLETT},         //Chance: 10% Bronzong
+  {36, 42, SPECIES_GOLETT},         //Chance: 10% Baltoy
+  {36, 42, SPECIES_CRUSTLE},         //Chance: 10% Claydoll
+  {36, 42, SPECIES_BALTOY},         //Chance: 5% Golett
+  {36, 42, SPECIES_BALTOY},         //Chance: 5% Golurk
+  {36, 42, SPECIES_GOLURK},         //Chance: 4%
+  {36, 42, SPECIES_CLAYDOL},         //Chance: 4%
+  {36, 42, SPECIES_CLAYDOL},         //Chance: 1%
+  {36, 42, SPECIES_CLAYDOL},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPokemonMansionB1F_LandMonsInfo= {7, gPokemonMansionB1F_LandMons};
+
+static const struct WildPokemon gPowerPlant_LandMons[] =
+{
+  {36, 42, SPECIES_FLAAFFY},         //Chance: 20% Galvantula
+  {36, 42, SPECIES_LUXIO},         //Chance: 20% Elektrik
+  {36, 42, SPECIES_FLAAFFY},         //Chance: 10% Luxio
+  {36, 42, SPECIES_LUXIO},         //Chance: 10% Luxray
+  {36, 42, SPECIES_BOLTUND},         //Chance: 10% Flaffy
+  {36, 42, SPECIES_GALVANTULA},         //Chance: 10% Boltund
+  {36, 42, SPECIES_EELEKTRIK},         //Chance: 5% 
+  {36, 42, SPECIES_GALVANTULA},         //Chance: 5% 
+  {36, 42, SPECIES_EELEKTRIK},         //Chance: 4%
+  {36, 42, SPECIES_LUXRAY},         //Chance: 4%
+  {36, 42, SPECIES_LUXRAY},         //Chance: 1%
+  {36, 42, SPECIES_LUXRAY},         //Chance: 1%
+};
+static const struct WildPokemonInfo gPowerPlant_LandMonsInfo= {7, gPowerPlant_LandMons};
+
+
+
+
+
+static const struct WildPokemon gOneTown_SurfMons[] = 
+{
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_STARYU},
+  {35, 58, SPECIES_STARYU},
+  {45, 58, SPECIES_STARMIE},
+  {56, 58, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gOneTown_SurfMonsInfo = {5, gOneTown_SurfMons};
+
+
+static const struct WildPokemon gOneTown_FishingMons[] = 
+{
+  {15, 20, SPECIES_MAGIKARP},
+  {15, 20, SPECIES_STARYU},
+  {27, 29, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_STARYU},
+  {27, 29, SPECIES_STARYU},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gOneTown_FishingMonsInfo = {5, gOneTown_FishingMons};
+
+
+static const struct WildPokemon gTreasureBeach_LandMons[] = 
+{
+  {39, 47, SPECIES_AZURILL},         //Chance: 20% Sandygast
+  {39, 47, SPECIES_SANDYGAST},         //Chance: 20% Pallossand
+  {39, 47, SPECIES_MARILL},         //Chance: 10% Maril
+  {39, 47, SPECIES_MARILL},         //Chance: 10% Azumaril
+  {39, 47, SPECIES_SANDYGAST},         //Chance: 10% Azurill
+  {39, 47, SPECIES_AZURILL},         //Chance: 10% 
+  {39, 47, SPECIES_AZUMARILL},         //Chance: 5%
+  {39, 47, SPECIES_AZUMARILL},         //Chance: 5%
+  {39, 47, SPECIES_PALOSSAND},         //Chance: 4%
+  {39, 47, SPECIES_PALOSSAND},         //Chance: 4%
+  {39, 47, SPECIES_PALOSSAND},         //Chance: 1%
+  {39, 47, SPECIES_PALOSSAND},         //Chance: 1%
+};
+static const struct WildPokemonInfo gTreasureBeach_LandMonsInfo= {20, gTreasureBeach_LandMons};
+
+
+
+
+static const struct WildPokemon gKindleRoad_LandMons[] = 
+{
+  {39, 47, SPECIES_CUTIEFLY},         //Chance: 20% Ribombee
+  {39, 47, SPECIES_HOOTHOOT},         //Chance: 20% Noctowl
+  {39, 47, SPECIES_CUTIEFLY},         //Chance: 10% Hoothoot
+  {39, 47, SPECIES_HOOTHOOT},         //Chance: 10% Cutifly
+  {39, 47, SPECIES_LITLEO},         //Chance: 10% Litleo
+  {39, 47, SPECIES_LITLEO},         //Chance: 10% Pyroar
+  {39, 47, SPECIES_RIBOMBEE},         //Chance: 5%
+  {39, 47, SPECIES_NOCTOWL},         //Chance: 5%
+  {39, 47, SPECIES_NOCTOWL},         //Chance: 4%
+  {39, 47, SPECIES_NOCTOWL},         //Chance: 4%
+  {39, 47, SPECIES_PYROAR},         //Chance: 1%
+  {39, 47, SPECIES_PYROAR},         //Chance: 1%
+};
+static const struct WildPokemonInfo gKindleRoad_LandMonsInfo= {20, gKindleRoad_LandMons};
+
+static const struct WildPokemon gKindleRoad_SurfMons[] = 
+{
+  {35, 58, SPECIES_REMORAID},
+  {35, 58, SPECIES_MAGIKARP},
+  {35, 58, SPECIES_MAGIKARP},
+  {45, 58, SPECIES_OCTILLERY},
+  {56, 58, SPECIES_GYARADOS},
+};
+static const struct WildPokemonInfo gKindleRoad_SurfMonsInfo = {5, gKindleRoad_SurfMons};
+
+
+static const struct WildPokemon gKindleRoad_FishingMons[] = 
+{
+  {15, 20, SPECIES_REMORAID},
+  {15, 20, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_REMORAID},
+  {27, 29, SPECIES_REMORAID},
+  {27, 29, SPECIES_MAGIKARP},
+  {33, 55, SPECIES_OCTILLERY},
+  {33, 55, SPECIES_OCTILLERY},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+  {33, 55, SPECIES_GYARADOS},
+};
+static const struct WildPokemonInfo gKindleRoad_FishingMonsInfo = {5, gKindleRoad_FishingMons};
+
+
+static const struct WildPokemon gMtEmberOutside_LandMons[] = 
+{
+  {39, 47, SPECIES_NUMEL},         //Chance: 20% Numel
+  {39, 47, SPECIES_SALANDIT},         //Chance: 20% Camerupt
+  {39, 47, SPECIES_NUMEL},         //Chance: 10% Heatmor
+  {39, 47, SPECIES_SALANDIT},         //Chance: 10% Durant
+  {39, 47, SPECIES_DURANT},         //Chance: 10% Salandit
+  {39, 47, SPECIES_DURANT},         //Chance: 10% 
+  {39, 47, SPECIES_HEATMOR},         //Chance: 5%
+  {39, 47, SPECIES_CAMERUPT},         //Chance: 5%
+  {39, 47, SPECIES_CAMERUPT},         //Chance: 4%
+  {39, 47, SPECIES_HEATMOR},         //Chance: 4%
+  {39, 47, SPECIES_CAMERUPT},         //Chance: 1%
+  {39, 47, SPECIES_HEATMOR},         //Chance: 1%
+};
+static const struct WildPokemonInfo gMtEmberOutside_LandMonsInfo= {20, gMtEmberOutside_LandMons};
+
+
+static const struct WildPokemon gMtEmberInside_LandMons[] = 
+{
+  {39, 47, SPECIES_NUMEL},   //Chance: 20% Numel
+  {39, 47, SPECIES_GRAVELER},   //Chance: 20% Camerupt
+  {39, 47, SPECIES_BOLDORE},   //Chance: 10% Graveler
+  {39, 47, SPECIES_BOLDORE},   //Chance: 10% Bolor
+  {39, 47, SPECIES_LAIRON},   //Chance: 10% Lairon
+  {39, 47, SPECIES_LAIRON},   //Chance: 10% 
+  {39, 47, SPECIES_NUMEL},   //Chance: 5%
+  {39, 47, SPECIES_GRAVELER},   //Chance: 5%
+  {39, 47, SPECIES_BOLDORE},   //Chance: 4%
+  {39, 47, SPECIES_CAMERUPT},   //Chance: 4%
+  {39, 47, SPECIES_CAMERUPT},   //Chance: 1%
+  {39, 47, SPECIES_CAMERUPT},   //Chance: 1%
+};
+static const struct WildPokemonInfo gMtEmberInside_LandMonsInfo= {7, gMtEmberInside_LandMons};
+
+
+
+static const struct WildPokemon gCapeBrink_LandMons[] = 
+{
+  {39, 47, SPECIES_BIDOOF},         //Chance: 20% Dodrio
+  {39, 47, SPECIES_SHROOMISH},         //Chance: 20% Dodou
+  {39, 47, SPECIES_BIDOOF},         //Chance: 10% Shroomish
+  {39, 47, SPECIES_SHROOMISH},         //Chance: 10% Breloom
+  {39, 47, SPECIES_DODUO},         //Chance: 10% Bidoof
+  {39, 47, SPECIES_DODUO},         //Chance: 10% Bibearal
+  {39, 47, SPECIES_DODRIO},         //Chance: 5%
+  {39, 47, SPECIES_BIBAREL},         //Chance: 5%
+  {39, 47, SPECIES_BIBAREL},         //Chance: 4%
+  {39, 47, SPECIES_BRELOOM},         //Chance: 4%
+  {39, 47, SPECIES_BRELOOM},         //Chance: 1%
+  {39, 47, SPECIES_BRELOOM},         //Chance: 1%
+};
+static const struct WildPokemonInfo gCapeBrink_LandMonsInfo= {20, gCapeBrink_LandMons};
+
+static const struct WildPokemon gCapeBrink_SurfMons[] = 
+{
+  {35, 58, SPECIES_FINNEON},
+  {35, 58, SPECIES_MAGIKARP},
+  {35, 58, SPECIES_MAGIKARP},
+  {45, 58, SPECIES_LUMINEON},
+  {56, 58, SPECIES_LUMINEON},
+};
+static const struct WildPokemonInfo gCapeBrink_SurfMonsInfo = {5, gCapeBrink_SurfMons};
+
+
+static const struct WildPokemon gCapeBrink_FishingMons[] = 
+{
+  {15, 20, SPECIES_FINNEON},
+  {15, 20, SPECIES_MAGIKARP},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_MAGIKARP},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_LUMINEON},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_STARMIE},
+  {33, 55, SPECIES_STARMIE},
+};
+static const struct WildPokemonInfo gCapeBrink_FishingMonsInfo = {5, gCapeBrink_FishingMons};
+
+
+static const struct WildPokemon gThreeIslandPort_LandMons[] = 
+{
+  {39, 47, SPECIES_INKAY},         //Chance: 20% Inkay
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 20% Malamar
+  {39, 47, SPECIES_INKAY},         //Chance: 10% Munchlax
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 10% Dwebbly Crustle
+  {39, 47, SPECIES_MALAMAR},         //Chance: 10% 
+  {39, 47, SPECIES_INKAY},         //Chance: 10% 
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 5%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 5%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 4%
+  {39, 47, SPECIES_MUNCHLAX},         //Chance: 4%
+  {39, 47, SPECIES_MUNCHLAX},         //Chance: 1%
+  {39, 47, SPECIES_MUNCHLAX},         //Chance: 1%
+};
+static const struct WildPokemonInfo gThreeIslandPort_LandMonsInfo= {20, gThreeIslandPort_LandMons};
+
+
+static const struct WildPokemon gThreeIslandPath_LandMons[] = 
+{
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 20% Inkay
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 20% Malamar
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 10% Munchlax
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 10% Dwebbly Crustle
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 10% 
+  {39, 47, SPECIES_DWEBBLE},         //Chance: 10% 
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 5%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 5%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 4%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 4%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 1%
+  {39, 47, SPECIES_CRUSTLE},         //Chance: 1%
+};
+static const struct WildPokemonInfo gThreeIslandPath_LandMonsInfo= {6, gThreeIslandPath_LandMons};
+
+
+
+
+static const struct WildPokemon gBondBridge_LandMons[] = 
+{
+  {41, 49, SPECIES_ORANGURU},         //Chance: 20% 
+  {41, 49, SPECIES_PASSIMIAN},         //Chance: 20% Orangaru
+  {41, 49, SPECIES_ORANGURU},         //Chance: 10% Passmissian
+  {41, 49, SPECIES_PASSIMIAN},         //Chance: 10% Hitmonchan
+  {41, 49, SPECIES_HITMONCHAN},         //Chance: 10% Hitmonlee
+  {41, 49, SPECIES_HITMONLEE},         //Chance: 10% Clefairy
+  {41, 49, SPECIES_HITMONCHAN},         //Chance: 5% JigglyPuff
+  {41, 49, SPECIES_HITMONLEE},         //Chance: 5%
+  {41, 49, SPECIES_CLEFAIRY},         //Chance: 4%
+  {41, 49, SPECIES_JIGGLYPUFF},         //Chance: 4%
+  {41, 49, SPECIES_CLEFAIRY},         //Chance: 1%
+  {41, 49, SPECIES_JIGGLYPUFF},         //Chance: 1%
+};
+static const struct WildPokemonInfo gBondBridge_LandMonsInfo= {20, gBondBridge_LandMons};
+
+static const struct WildPokemon gBondBridge_SurfMons[] = 
+{
+  {35, 58, SPECIES_REMORAID},
+  {35, 58, SPECIES_BINACLE},
+  {35, 58, SPECIES_BINACLE},
+  {45, 58, SPECIES_OCTILLERY},
+  {56, 58, SPECIES_BARBARACLE},
+};
+static const struct WildPokemonInfo gBondBridge_SurfMonsInfo = {5, gBondBridge_SurfMons};
+
+
+static const struct WildPokemon gBondBridge_FishingMons[] = 
+{
+  {15, 20, SPECIES_REMORAID},
+  {15, 20, SPECIES_BINACLE},
+  {27, 29, SPECIES_REMORAID},
+  {27, 29, SPECIES_REMORAID},
+  {27, 29, SPECIES_BINACLE},
+  {33, 55, SPECIES_REMORAID},
+  {33, 55, SPECIES_BINACLE},
+  {33, 55, SPECIES_OCTILLERY},
+  {33, 55, SPECIES_OCTILLERY},
+  {33, 55, SPECIES_BARBARACLE},
+};
+static const struct WildPokemonInfo gBondBridge_FishingMonsInfo = {5, gBondBridge_FishingMons};
+
+
+
+
+
+static const struct WildPokemon gBerryForest_LandMons[] = 
+{
+  {41, 49, SPECIES_APPLIN},         //Chance: 20% Applin
+  {41, 49, SPECIES_PHANTUMP},         //Chance: 20% Phantump
+  {41, 49, SPECIES_SHROOMISH},         //Chance: 10% Tevanent
+  {41, 49, SPECIES_APPLIN},         //Chance: 10% Drowzee
+  {41, 49, SPECIES_PHANTUMP},         //Chance: 10% Hypno
+  {41, 49, SPECIES_SHROOMISH},         //Chance: 10% Shroomish
+  {41, 49, SPECIES_DROWZEE},         //Chance: 5% 
+  {41, 49, SPECIES_TREVENANT},         //Chance: 5%
+  {41, 49, SPECIES_TREVENANT},         //Chance: 4%
+  {41, 49, SPECIES_DROWZEE},         //Chance: 4%
+  {41, 49, SPECIES_HYPNO},         //Chance: 1%
+  {41, 49, SPECIES_HYPNO},         //Chance: 1%
+};
+static const struct WildPokemonInfo gBerryForest_LandMonsInfo= {20, gBerryForest_LandMons};
+
+static const struct WildPokemon gBerryForest_SurfMons[] = 
+{
+  {35, 58, SPECIES_WOOPER},
+  {35, 58, SPECIES_FINNEON},
+  {35, 58, SPECIES_FINNEON},
+  {45, 58, SPECIES_QUAGSIRE},
+  {56, 58, SPECIES_LUMINEON},
+};
+static const struct WildPokemonInfo gBerryForest_SurfMonsInfo = {5, gBerryForest_SurfMons};
+
+
+static const struct WildPokemon gBerryForest_FishingMons[] = 
+{
+  {15, 20, SPECIES_FINNEON},
+  {15, 20, SPECIES_WOOPER},
+  {27, 29, SPECIES_FINNEON},
+  {27, 29, SPECIES_WOOPER},
+  {27, 29, SPECIES_MAGIKARP},
+  {33, 55, SPECIES_MAGIKARP},
+  {33, 55, SPECIES_WOOPER},
+  {33, 55, SPECIES_FINNEON},
+  {33, 55, SPECIES_QUAGSIRE},
+  {33, 55, SPECIES_LUMINEON},
+};
+static const struct WildPokemonInfo gBerryForest_FishingMonsInfo = {5, gBerryForest_FishingMons};
+
+
+
+
+
+static const struct WildPokemon gRoute23_LandMons[] = 
+{
+  {43, 56, SPECIES_AUDINO},         //Chance: 20% Audino
+  {43, 56, SPECIES_GOTHORITA},         //Chance: 20% Pideot
+  {43, 56, SPECIES_AUDINO},         //Chance: 10% Gothorita
+  {43, 56, SPECIES_AUDINO},         //Chance: 10% Gothitelle
+  {43, 56, SPECIES_GOTHORITA},         //Chance: 10% Medicham
+  {43, 56, SPECIES_MEDICHAM},         //Chance: 10% 
+  {43, 56, SPECIES_MEDICHAM},         //Chance: 5%
+  {43, 56, SPECIES_PIDGEOT},         //Chance: 5%
+  {43, 56, SPECIES_PIDGEOT},         //Chance: 4%
+  {43, 56, SPECIES_GOTHITELLE},         //Chance: 4%
+  {43, 56, SPECIES_GOTHITELLE},         //Chance: 1%
+  {43, 56, SPECIES_GOTHITELLE},         //Chance: 1%
+};
+static const struct WildPokemonInfo gRoute23_LandMonsInfo= {20, gRoute23_LandMons};
+
+static const struct WildPokemon gRoute23_SurfMons[] = 
+{
+  {35, 58, SPECIES_MARILL},
+  {35, 58, SPECIES_CARVANHA},
+  {35, 58, SPECIES_MARILL},
+  {45, 58, SPECIES_AZUMARILL},
+  {56, 58, SPECIES_SHARPEDO},
+};
+static const struct WildPokemonInfo gRoute23_SurfMonsInfo = {5, gRoute23_SurfMons};
+
+
+static const struct WildPokemon gRoute23_FishingMons[] = 
+{
+  {15, 20, SPECIES_CARVANHA},
+  {15, 20, SPECIES_MARILL},
+  {27, 29, SPECIES_CARVANHA},
+  {27, 29, SPECIES_MARILL},
+  {27, 29, SPECIES_MARILL},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_SHARPEDO},
+  {33, 55, SPECIES_AZUMARILL},
+  {33, 55, SPECIES_AZUMARILL},
+};
+static const struct WildPokemonInfo gRoute23_FishingMonsInfo = {5, gRoute23_FishingMons};
+
+
+
+
+static const struct WildPokemon gVictoryRoad1F_LandMons[] = 
+{
+  {45, 63, SPECIES_GRAVELER},   //Chance: 20% Graveler
+  {45, 63, SPECIES_SANDSLASH},   //Chance: 20% Golem
+  {45, 63, SPECIES_GRAVELER},   //Chance: 10% Hippopatas
+  {45, 63, SPECIES_SANDSLASH},   //Chance: 10% Sandslash
+  {45, 63, SPECIES_GOLBAT},   //Chance: 10% Golbat
+  {45, 63, SPECIES_GOLBAT},   //Chance: 10% 
+  {45, 63, SPECIES_HIPPOWDON},   //Chance: 5%
+  {45, 63, SPECIES_HIPPOWDON},   //Chance: 5%
+  {45, 63, SPECIES_GOLBAT},   //Chance: 4%
+  {45, 63, SPECIES_GOLEM},   //Chance: 4%
+  {45, 63, SPECIES_GOLEM},   //Chance: 1%
+  {45, 63, SPECIES_GOLEM},   //Chance: 1%
+};
+static const struct WildPokemonInfo gVictoryRoad1F_LandMonsInfo= {4, gVictoryRoad1F_LandMons};
+
+
+static const struct WildPokemon gVictoryRoad2F_LandMons[] = 
+{
+  {45, 63, SPECIES_BOLDORE},   //Chance: 20% Bolore
+  {45, 63, SPECIES_SANDACONDA},   //Chance: 20% Gigalith
+  {45, 63, SPECIES_BOLDORE},   //Chance: 10% Hippopatas
+  {45, 63, SPECIES_SANDACONDA},   //Chance: 10% Sandaconda
+  {45, 63, SPECIES_SWOOBAT},   //Chance: 10% Swoobat
+  {45, 63, SPECIES_SWOOBAT},   //Chance: 10% 
+  {45, 63, SPECIES_HIPPOWDON},   //Chance: 5%
+  {45, 63, SPECIES_HIPPOWDON},   //Chance: 5%
+  {45, 63, SPECIES_SWOOBAT},   //Chance: 4%
+  {45, 63, SPECIES_GIGALITH},   //Chance: 4%
+  {45, 63, SPECIES_GIGALITH},   //Chance: 1%
+  {45, 63, SPECIES_GIGALITH},   //Chance: 1%
+};
+static const struct WildPokemonInfo gVictoryRoad2F_LandMonsInfo= {4, gVictoryRoad2F_LandMons};
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
+
+
+
+
+const struct WildPokemonHeader gWildMonNightHeaders[] =
+{
+	
+	{
+    .mapGroup = MAP_GROUP(PALLET_TOWN),
+    .mapNum = MAP_NUM(PALLET_TOWN),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gPalletTown_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gPalletTown_FishingMonsInfo,
+  },
+	{
+    .mapGroup = MAP_GROUP(ROUTE_1),
+    .mapNum = MAP_NUM(ROUTE_1),
+    .landMonsInfo = &gRoute1_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(VIRIDIAN_CITY),
+    .mapNum = MAP_NUM(VIRIDIAN_CITY),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gViridianCity_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gViridianCity_FishingMonsInfo,
+  	},
+  {
+    .mapGroup = MAP_GROUP(ROUTE_22),
+    .mapNum = MAP_NUM(ROUTE_22),
+    .landMonsInfo = &gRoute22_LandMonsInfo,
+    .waterMonsInfo = &gRoute22_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute22_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_2),
+    .mapNum = MAP_NUM(ROUTE_2),
+    .landMonsInfo = &gRoute2_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(VIRIDIAN_FOREST),
+    .mapNum = MAP_NUM(VIRIDIAN_FOREST),
+    .landMonsInfo = &gViridianForest_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_3),
+    .mapNum = MAP_NUM(ROUTE_3),
+    .landMonsInfo = &gRoute3_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_MOON_1F),
+    .mapNum = MAP_NUM(MT_MOON_1F),
+    .landMonsInfo = &gMTMoon1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_MOON_B1F),
+    .mapNum = MAP_NUM(MT_MOON_B1F),
+    .landMonsInfo = &gMTMoonB1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_MOON_B2F),
+    .mapNum = MAP_NUM(MT_MOON_B2F),
+    .landMonsInfo = &gMTMoonB2F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_4),
+    .mapNum = MAP_NUM(ROUTE_4),
+    .landMonsInfo = &gRoute4_LandMonsInfo,
+    .waterMonsInfo = &gRoute4_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute4_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(CERULEAN_CITY),
+    .mapNum = MAP_NUM(CERULEAN_CITY),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gCeruleanCity_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gCeruleanCity_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_24),
+    .mapNum = MAP_NUM(ROUTE_24),
+    .landMonsInfo = &gRoute24_LandMonsInfo,
+    .waterMonsInfo = &gRoute24_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute24_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_25),
+    .mapNum = MAP_NUM(ROUTE_25),
+    .landMonsInfo = &gRoute25_LandMonsInfo,
+    .waterMonsInfo = &gRoute25_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute25_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_5),
+    .mapNum = MAP_NUM(ROUTE_5),
+    .landMonsInfo = &gRoute5_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_6),
+    .mapNum = MAP_NUM(ROUTE_6),
+    .landMonsInfo = &gRoute6_LandMonsInfo,
+    .waterMonsInfo = &gRoute6_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute6_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(VERMILION_CITY),
+    .mapNum = MAP_NUM(VERMILION_CITY),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gVermillionCity_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gVermillionCity_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_11),
+    .mapNum = MAP_NUM(ROUTE_11),
+    .landMonsInfo = &gRoute11_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(DIGLETTS_CAVE_NORTH_ENTRANCE),
+    .mapNum = MAP_NUM(DIGLETTS_CAVE_NORTH_ENTRANCE),
+    .landMonsInfo = &gDiglettsCaveEntrance_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(DIGLETTS_CAVE_SOUTH_ENTRANCE),
+    .mapNum = MAP_NUM(DIGLETTS_CAVE_NORTH_ENTRANCE),
+    .landMonsInfo = &gDiglettsCaveEntrance_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(DIGLETTS_CAVE_B1F),
+    .mapNum = MAP_NUM(DIGLETTS_CAVE_B1F),
+    .landMonsInfo = &gDiglettsCaveB1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_9),
+    .mapNum = MAP_NUM(ROUTE_9),
+    .landMonsInfo = &gRoute9_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_10),
+    .mapNum = MAP_NUM(ROUTE_10),
+    .landMonsInfo = &gRoute10_LandMonsInfo,
+    .waterMonsInfo = &gRoute10_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute10_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROCK_TUNNEL_1F),
+    .mapNum = MAP_NUM(ROCK_TUNNEL_1F),
+    .landMonsInfo = &gRockTunnel1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROCK_TUNNEL_B1F),
+    .mapNum = MAP_NUM(ROCK_TUNNEL_B1F),
+    .landMonsInfo = &gRockTunnelB1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_TOWER_3F),
+    .mapNum = MAP_NUM(POKEMON_TOWER_3F),
+    .landMonsInfo = &gPokemonTower3F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_TOWER_4F),
+    .mapNum = MAP_NUM(POKEMON_TOWER_4F),
+    .landMonsInfo = &gPokemonTower4F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_TOWER_5F),
+    .mapNum = MAP_NUM(POKEMON_TOWER_5F),
+    .landMonsInfo = &gPokemonTower5F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_TOWER_6F),
+    .mapNum = MAP_NUM(POKEMON_TOWER_6F),
+    .landMonsInfo = &gPokemonTower6F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_TOWER_7F),
+    .mapNum = MAP_NUM(POKEMON_TOWER_7F),
+    .landMonsInfo = &gPokemonTower7F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_8),
+    .mapNum = MAP_NUM(ROUTE_8),
+    .landMonsInfo = &gRoute8_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_7),
+    .mapNum = MAP_NUM(ROUTE_7),
+    .landMonsInfo = &gRoute7_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(CELADON_CITY),
+    .mapNum = MAP_NUM(CELADON_CITY),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gCeladonCity_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gCeladonCity_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_16),
+    .mapNum = MAP_NUM(ROUTE_16),
+    .landMonsInfo = &gRoute16_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_17),
+    .mapNum = MAP_NUM(ROUTE_17),
+    .landMonsInfo = &gRoute17_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_18),
+    .mapNum = MAP_NUM(ROUTE_18),
+    .landMonsInfo = &gRoute18_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_12),
+    .mapNum = MAP_NUM(ROUTE_12),
+    .landMonsInfo = &gRoute12_LandMonsInfo,
+    .waterMonsInfo = &gRoute12_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute12_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_13),
+    .mapNum = MAP_NUM(ROUTE_13),
+    .landMonsInfo = &gRoute13_LandMonsInfo,
+    .waterMonsInfo = &gRoute13_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute13_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_14),
+    .mapNum = MAP_NUM(ROUTE_14),
+    .landMonsInfo = &gRoute14_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_15),
+    .mapNum = MAP_NUM(ROUTE_15),
+    .landMonsInfo = &gRoute15_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(SAFARI_ZONE_CENTER),
+    .mapNum = MAP_NUM(SAFARI_ZONE_CENTER),
+    .landMonsInfo = &gSafariCenter_LandMonsInfo,
+    .waterMonsInfo = &gSafariCenter_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSafariCenter_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(SAFARI_ZONE_EAST),
+    .mapNum = MAP_NUM(SAFARI_ZONE_EAST),
+    .landMonsInfo = &gSafariEast_LandMonsInfo,
+    .waterMonsInfo = &gSafariEast_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSafariEast_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(SAFARI_ZONE_NORTH),
+    .mapNum = MAP_NUM(SAFARI_ZONE_NORTH),
+    .landMonsInfo = &gSafariNorth_LandMonsInfo,
+    .waterMonsInfo = &gSafariNorth_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSafariNorth_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(SAFARI_ZONE_WEST),
+    .mapNum = MAP_NUM(SAFARI_ZONE_WEST),
+    .landMonsInfo = &gSafariWest_LandMonsInfo,
+    .waterMonsInfo = &gSafariWest_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSafariWest_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(FUCHSIA_CITY),
+    .mapNum = MAP_NUM(FUCHSIA_CITY),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gFuchsiaCity_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gFuchsiaCity_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_19),
+    .mapNum = MAP_NUM(ROUTE_19),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gRoute19_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute19_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_20),
+    .mapNum = MAP_NUM(ROUTE_20),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gRoute20_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute20_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_21_A),
+    .mapNum = MAP_NUM(ROUTE_21_A),
+    .landMonsInfo = &gRoute21_LandMonsInfo,
+    .waterMonsInfo = &gRoute21_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute21_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_21_B),
+    .mapNum = MAP_NUM(ROUTE_21_B),
+    .landMonsInfo = &gRoute21_LandMonsInfo,
+    .waterMonsInfo = &gRoute21_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute21_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(CINNABAR_ISLAND),
+    .mapNum = MAP_NUM(CINNABAR_ISLAND),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gCinnabar_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gCinnabar_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(SEAFOAM_ISLANDS_1F),
+    .mapNum = MAP_NUM(SEAFOAM_ISLANDS_1F),
+    .landMonsInfo = &gSeafoamF1_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(SEAFOAM_ISLANDS_B1F),
+    .mapNum = MAP_NUM(SEAFOAM_ISLANDS_B1F),
+    .landMonsInfo = &gSeafoamB1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(SEAFOAM_ISLANDS_B2F),
+    .mapNum = MAP_NUM(SEAFOAM_ISLANDS_B2F),
+    .landMonsInfo = &gSeafoamB2F_LandMonsInfo,
+    .waterMonsInfo = &gSeafoam_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSeafoam_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(SEAFOAM_ISLANDS_B3F),
+    .mapNum = MAP_NUM(SEAFOAM_ISLANDS_B3F),
+    .landMonsInfo = &gSeafoamB3F_LandMonsInfo,
+    .waterMonsInfo = &gSeafoam_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSeafoam_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(SEAFOAM_ISLANDS_B4F),
+    .mapNum = MAP_NUM(SEAFOAM_ISLANDS_B4F),
+    .landMonsInfo = &gSeafoamB4F_LandMonsInfo,
+    .waterMonsInfo = &gSeafoam_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gSeafoam_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_MANSION_1F),
+    .mapNum = MAP_NUM(POKEMON_MANSION_1F),
+    .landMonsInfo = &gPokemonMansion1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_MANSION_2F),
+    .mapNum = MAP_NUM(POKEMON_MANSION_2F),
+    .landMonsInfo = &gPokemonMansion1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_MANSION_3F),
+    .mapNum = MAP_NUM(POKEMON_MANSION_3F),
+    .landMonsInfo = &gPokemonMansion1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POKEMON_MANSION_B1F),
+    .mapNum = MAP_NUM(POKEMON_MANSION_B1F),
+    .landMonsInfo = &gPokemonMansionB1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(POWER_PLANT),
+    .mapNum = MAP_NUM(POWER_PLANT),
+    .landMonsInfo = &gPowerPlant_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(ONE_ISLAND),
+    .mapNum = MAP_NUM(ONE_ISLAND),
+    .landMonsInfo = NULL,
+    .waterMonsInfo = &gOneTown_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gOneTown_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ONE_ISLAND_TREASURE_BEACH),
+    .mapNum = MAP_NUM(ONE_ISLAND_TREASURE_BEACH),
+    .landMonsInfo = &gTreasureBeach_LandMonsInfo,
+    .waterMonsInfo = &gOneTown_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gOneTown_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ONE_ISLAND_KINDLE_ROAD),
+    .mapNum = MAP_NUM(ONE_ISLAND_KINDLE_ROAD),
+    .landMonsInfo = &gKindleRoad_LandMonsInfo,
+    .waterMonsInfo = &gKindleRoad_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gKindleRoad_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_EMBER_EXTERIOR),
+    .mapNum = MAP_NUM(MT_EMBER_EXTERIOR),
+    .landMonsInfo = &gMtEmberOutside_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_EMBER_SUMMIT_PATH_1F),
+    .mapNum = MAP_NUM(MT_EMBER_SUMMIT_PATH_1F),
+    .landMonsInfo = &gMtEmberInside_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_EMBER_SUMMIT_PATH_2F),
+    .mapNum = MAP_NUM(MT_EMBER_SUMMIT_PATH_2F),
+    .landMonsInfo = &gMtEmberInside_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(MT_EMBER_SUMMIT_PATH_3F),
+    .mapNum = MAP_NUM(MT_EMBER_SUMMIT_PATH_3F),
+    .landMonsInfo = &gMtEmberInside_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(TWO_ISLAND_CAPE_BRINK),
+    .mapNum = MAP_NUM(TWO_ISLAND_CAPE_BRINK),
+    .landMonsInfo = &gCapeBrink_LandMonsInfo,
+    .waterMonsInfo = &gCapeBrink_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gCapeBrink_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(THREE_ISLAND_PORT),
+    .mapNum = MAP_NUM(THREE_ISLAND_PORT),
+    .landMonsInfo = &gThreeIslandPort_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(THREE_ISLAND_DUNSPARCE_TUNNEL),
+    .mapNum = MAP_NUM(THREE_ISLAND_DUNSPARCE_TUNNEL),
+    .landMonsInfo = &gThreeIslandPath_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(THREE_ISLAND_BOND_BRIDGE),
+    .mapNum = MAP_NUM(THREE_ISLAND_BOND_BRIDGE),
+    .landMonsInfo = &gBondBridge_LandMonsInfo,
+    .waterMonsInfo = &gBondBridge_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gBondBridge_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(THREE_ISLAND_BERRY_FOREST),
+    .mapNum = MAP_NUM(THREE_ISLAND_BERRY_FOREST),
+    .landMonsInfo = &gBerryForest_LandMonsInfo,
+    .waterMonsInfo = &gBerryForest_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gBerryForest_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(ROUTE_23),
+    .mapNum = MAP_NUM(ROUTE_23),
+    .landMonsInfo = &gRoute23_LandMonsInfo,
+    .waterMonsInfo = &gRoute23_SurfMonsInfo,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = &gRoute23_FishingMonsInfo,
+  },
+  {
+    .mapGroup = MAP_GROUP(VICTORY_ROAD_1F),
+    .mapNum = MAP_NUM(VICTORY_ROAD_1F),
+    .landMonsInfo = &gVictoryRoad1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(VICTORY_ROAD_2F),
+    .mapNum = MAP_NUM(VICTORY_ROAD_2F),
+    .landMonsInfo = &gVictoryRoad2F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+  {
+    .mapGroup = MAP_GROUP(VICTORY_ROAD_3F),
+    .mapNum = MAP_NUM(VICTORY_ROAD_3F),
+    .landMonsInfo = &gVictoryRoad1F_LandMonsInfo,
+    .waterMonsInfo = NULL,
+    .rockSmashMonsInfo = NULL,
+    .fishingMonsInfo = NULL,
+  },
+};
+
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
 	{
@@ -32,18 +2535,6 @@ const struct WildPokemonHeader gWildMonMorningHeaders[] =
 };
 
 const struct WildPokemonHeader gWildMonEveningHeaders[] =
-{
-	{
-		.mapGroup = 0xFF,
-		.mapNum = 0xFF,
-		.landMonsInfo = NULL,
-		.waterMonsInfo = NULL,
-		.rockSmashMonsInfo = NULL,
-		.fishingMonsInfo = NULL,
-	}
-};
-
-const struct WildPokemonHeader gWildMonNightHeaders[] =
 {
 	{
 		.mapGroup = 0xFF,
