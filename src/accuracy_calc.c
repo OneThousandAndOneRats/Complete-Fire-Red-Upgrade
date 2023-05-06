@@ -216,6 +216,16 @@ bool8 ProtectAffects(u16 move, u8 bankAtk, u8 bankDef, bool8 set)
 			gBattleCommunication[6] = 1;
 		}
 	}
+	else if (gProtectStructs[bankDef].MushyShield && protectFlag && split != SPLIT_STATUS)
+	{
+		effect = 1;
+		gNewBS->missStringId[bankDef] = 1;
+		if (contact && set)
+		{
+			gProtectStructs[bankDef].mushyshield_damage = 1;
+			gBattleCommunication[6] = 1;
+		}
+	}
 	else if (gProtectStructs[bankDef].SpikyShield && protectFlag)
 	{
 		effect = 1;

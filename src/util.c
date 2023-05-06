@@ -547,3 +547,25 @@ bool8 CanPartyMonBeFrozen(struct Pokemon* mon)
 
 	return TRUE;
 }
+
+u8 GetBadgeCount() //newly added
+{
+	u8 badgeCount = 0;
+	if (FlagGet(FLAG_BADGE01_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE02_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE03_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE04_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE05_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE06_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE07_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE08_GET))
+		++badgeCount;
+	return badgeCount;
+}

@@ -2457,7 +2457,7 @@ Big Bang
 Abduct
 
 #org @NAME_NEUTRONSHOT
-Neutron Shot
+Neutron Beam
 
 #org @NAME_STANDIN
 Stand In
@@ -2662,6 +2662,51 @@ Consume
 
 #org @NAME_ORDERUP
 Order Up
+
+#org @NAME_SPOREBURST
+Spore Burst
+
+#org @NAME_PUFFPUNCH
+Puff Punch
+
+#org @NAME_MYCELIALCAGE
+MycelialCage
+
+#org @NAME_MUSCARDINE
+Muscardine
+
+#org @NAME_FERMENTEDSPRAY
+FermentSpray
+
+#org @NAME_SUPERSPORE
+Super Spore
+
+#org @NAME_AFTEREFFECTS
+AfterEffects
+
+#org @NAME_MUSHYSHIELD
+Mushy Shield
+
+#org @NAME_TRUFFLETOUCH
+Truffle Tap
+
+#org @NAME_BADTRIP
+Bad Trip
+
+#org @NAME_DELAYEDGROWTH
+Slow Growth
+
+#org @NAME_LICHENLEECH
+Lichen Leech
+
+#org @NAME_BLACKMOLD
+Black Mold
+
+#org @NAME_PSYCHOSPORE
+Psycho Spore
+
+#org @NAME_MUSHYMESS
+Mushy Mess
 
 #org @Z_Move_1
 Z-Move 1

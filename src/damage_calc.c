@@ -1543,6 +1543,9 @@ static void ModulateDmgByType(u8 multiplier, const u16 move, const u8 moveType, 
 	if (move == MOVE_FREEZEDRY && defType == TYPE_WATER) //Always Super-Effective, even in Inverse Battles
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
+	if (move == MOVE_MUSCARDINE && defType == TYPE_BUG) //Always Super-Effective, even in Inverse Battles
+		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
+
 	if(moveType == TYPE_COSMIC && defType == TYPE_COSMIC && atkAbility == ABILITY_COSMOSCONQUEROR)
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
@@ -3927,6 +3930,11 @@ static u16 GetBasePower(struct DamageCalc* data)
 			}
 			break;
 
+		case MOVE_TRUFFLETOUCH:
+			if (SpeedCalc(bankAtk) < SpeedCalc(bankDef))
+				power = (power * 15) / 10;
+			break;
+
 		case MOVE_ROAROFTIME:
 			#ifdef SPECIES_DIALGA_ORIGIN
 			if (data->atkSpecies == SPECIES_DIALGA_ORIGIN)
@@ -4122,7 +4130,7 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 				power = (power * 12) / 10;
 			break;
 
-		case ABILITY_SOLARIZE:
+		/*case ABILITY_SOLARIZE:
 		//1.5 Boost
 			if(data->moveType == TYPE_FIRE)
 				power = (power * 15) / 10;
@@ -4132,11 +4140,11 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 		//1.5 Boost
 			if(data->moveType == TYPE_ICE)
 				power = (power * 15) / 10;
-			break;
+			break;*/
 
 		case ABILITY_STARGAZER:
 		//1.2 Boost
-			if(data->moveType == TYPE_COSMIC)
+			if(gSpecialMoveFlags[move].gBeamMoves)
 				power = (power * 12) / 10;
 			break;
 

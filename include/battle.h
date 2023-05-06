@@ -406,9 +406,11 @@ struct ProtectStruct
     u32 KingsShield : 1;
     u32 SpikyShield : 1;
 	u32 BanefulBunker : 1;
+    u32 MushyShield : 1;
     u32 kingsshield_damage : 1;
     u32 spikyshield_damage : 1;
     u32 banefulbunker_damage : 1;
+    u32 mushyshield_damage : 1;
     u32 enduredSturdy : 1;
     u32 Field3 : 1;
 
@@ -460,6 +462,8 @@ struct SideTimer
 			 u8 srAmount : 1;
 			 u8 stickyWeb : 1;
 			 u8 steelsurge: 1;
+             u8 psporeAmount: 1;
+             u8 mushymessAmount: 1;
 	/*0x0B*/ u8 stickyWebBank;
 };
 

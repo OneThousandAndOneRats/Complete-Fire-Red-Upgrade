@@ -71,18 +71,19 @@ EventScript_BattleItemShop:
 	release
 	end
 
+.align 1
 EventScript_BattleItems_Values:
 	@.hword ITEM_ABILITY_CAPSULE
 	.hword ITEM_CHOICE_BAND
-	@.hword ITEM_CHOICE_SCARF
+	.hword ITEM_CHOICE_SCARF
 	.hword ITEM_CHOICE_SPECS
-	@.hword ITEM_ASSAULT_VEST
-	@.hword ITEM_LIFE_ORB
-	@.hword ITEM_TOXIC_ORB
-	@.hword ITEM_FLAME_ORB
-	@.hword ITEM_FOCUS_SASH
-	@.hword ITEM_EVIOLITE
-	@.hword ITEM_HEAVY_DUTY_BOOTS
+	.hword ITEM_ASSAULT_VEST
+	.hword ITEM_LIFE_ORB
+	.hword ITEM_TOXIC_ORB
+	.hword ITEM_FLAME_ORB
+	.hword ITEM_FOCUS_SASH
+	.hword ITEM_EVIOLITE
+	.hword ITEM_HEAVY_DUTY_BOOTS
 	.hword 0x0
 
 

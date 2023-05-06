@@ -496,6 +496,9 @@ void AnimTask_GetTrappedMoveAnimId(u8 taskId)
 		case MOVE_CAVING:
 			gBattleAnimArgs[0] = 11;
 			break;
+		case MOVE_MYCELIALCAGE:
+			gBattleAnimArgs[0] = 12;
+			break;
 		default:
 			gBattleAnimArgs[0] = 0;
 	}

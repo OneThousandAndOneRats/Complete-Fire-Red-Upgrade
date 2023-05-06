@@ -1046,6 +1046,18 @@ void atkFE_prefaintmoveendeffects(void)
 					break;
 				}
 			}
+			if (gProtectStructs[gBankTarget].mushyshield_damage)
+			{
+				gProtectStructs[gBankTarget].mushyshield_damage = 0;
+
+				if (BATTLER_ALIVE(gBankAttacker) && STAT_CAN_FALL(gBankAttacker, STAT_ATK))
+				{
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MushyShield;
+					effect = TRUE;
+					break;
+				}
+			}
 
 			if (gProtectStructs[gBankTarget].spikyshield_damage)
 			{

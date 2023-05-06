@@ -98,10 +98,11 @@ EventScript_runningshoes_main:
 	msgbox gText_runningshoes_greet MSG_KEEPOPEN @"I@m glad I caught up to you.\nI@m ..."
 	textcolor 0x3
 	fanfare 0x13E
-	preparemsg gText_runningshoes_get @"[player] received the\nRUNNING SHO..."
+	preparemsg gText_Package_get @"[player] received the\nRUNNING SHO..."
 	waitmsg
 	waitfanfare
-	additem ITEM_EXP_SHARE 0x1
+	additem ITEM_GREAT_BALL 0x5
+	additem ITEM_SUPER_POTION 0x5
 	@setflag 0x906  @REENABLE THIS ONE ITS FIGURED OUT HOW TO MAKE ITEM TOGGLE IT
 	@msgbox 0x817E99D MSG_KEEPOPEN @"[player] switched shoes with the\n..."
 	@special 0x171
@@ -109,7 +110,7 @@ EventScript_runningshoes_main:
 	@msgbox 0x817E9C7 MSG_KEEPOPEN @"Press the B Button to run.\nBut on..."
 	@normalmsg
 	call 0x81A6675
-	msgbox gText_runningshoes_ MSG_KEEPOPEN @"Well, I must be going back to\nthe..."
+	msgbox gText_PewterAideGoodbye_ MSG_KEEPOPEN @"Well, I must be going back to\nthe..."
 	closeonkeypress
 	compare 0x4001 0x0
 	if 0x1 _call 0x8166412
@@ -167,3 +168,61 @@ EventScript_EntranceGuyNo:
 EventScript_EntranceMovement:
 	.byte 0x5A
 	.byte 0xFE
+
+
+EventScript_GymGuidePewterStart:
+	lock
+	faceplayer
+	checkflag 0x4B0
+	if 0x1 _goto EventScript_GymGuidePewterAlreadyBeat
+	msgbox gText_GymGuyPewter MSG_KEEPOPEN
+	release 
+	end
+
+EventScript_GymGuidePewterAlreadyBeat:
+	msgbox gText_GymGuyPewterVictory MSG_YESNO
+	compare LASTRESULT 0x1
+	if 0x1 _goto EventScript_GymGuidePewterAlreadyBeatYes
+	release
+	end
+
+EventScript_GymGuidePewterAlreadyBeatYes:
+	msgbox gText_SoundTypeExplination MSG_KEEPOPEN
+	release
+	end
+
+EventScript_PewterGymSign:
+	msgbox gText_PewterGymSign MSG_KEEPOPEN
+	end
+
+
+EventScript_BrockStart:
+	lock
+	faceplayer
+	@setvar VAR_PRE_BATTLE_MUGSHOT_STYLE 0x2
+	@setvar VAR_PRE_BATTLE_MUGSHOT_SPRITE 0x0
+	@special 0x174
+	@setflag 0x915
+	trainerbattle1 0x1 0x19E 0x0 gText_BrockBattleIntro gText_BrockBattleOutro EventScript_brockBeaten
+	msgbox gText_BrockRepeat 0x6
+	release
+	end
+
+EventScript_brockBeaten:
+	setvar 0x8004 0x2
+	setvar 0x8005 0x1
+	special 0x173
+	setflag 0x4B0
+	setflag 0x820
+	setvar 0x406C 0x1
+	setflag 0x2E
+	clearflag 0x92
+	setvar 0x8008 0x1
+	call 0x81A6B18
+	goto 0x816A5F3
+	msgbox gText_Brock_Wait 0x6
+	giveitem 0x147 0x1 MSG_OBTAIN
+	@msgbox gText_PgotBrockTM 0x6
+	msgbox gText_BrockTMExplination 0x6
+	release
+	end

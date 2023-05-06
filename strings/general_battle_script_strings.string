@@ -67,6 +67,9 @@ The battlefield got weird!
 #org @ThirdTypeAddedString
 [BUFFER][00] type was added to\n[TARGET]!
 
+#org @ThirdTypeAddedStringAttacker
+[BUFFER][00] type was added to\n[ATTACKER]!
+
 #org @gText_MimicryReturnedToNormal
 [SCRIPTING_BANK] returned\nto its original type!
 

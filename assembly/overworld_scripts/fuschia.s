@@ -103,3 +103,10 @@ CancelNo3:
     msgbox gText_Fuschia_EggNo3 MSG_NORMAL
     release
     end
+
+EventScript_FuschiaGymChefCounter:
+    lock
+    faceplayer
+    msgbox gText_FushiaGymChefCounter MSG_NORMAL
+    release
+    end

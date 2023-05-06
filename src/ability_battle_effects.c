@@ -89,7 +89,7 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	[ABILITY_ADDITIVELIGHT] = 7,
 	[ABILITY_DAZZLING] = 5,
 	//[ABILITY_DEFEATIST] = -1,
-	[ABILITY_LUNARIZE] = 6,
+	[ABILITY_LUNARIZE] = 7,
 	[ABILITY_DEFIANT] = 5,
 	[ABILITY_DELTASTREAM] = 10,
 	[ABILITY_DESOLATELAND] = 10,
@@ -341,7 +341,7 @@ const s8 gAbilityRatings[ABILITIES_COUNT] =
 	[ABILITY_PROPELLERTAIL] = 3,
 	#endif
 	//[ABILITY_STEAMENGINE] = 3,
-	[ABILITY_SOLARIZE] = 6,
+	[ABILITY_SOLARIZE] = 7,
 	//[ABILITY_PUNKROCK] = 2,
 	[ABILITY_CHITTERCHATTER] = 2,
 	[ABILITY_SANDSPIT] = 5,
@@ -452,6 +452,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				case ABILITY_IMPOSTER:
 				case ABILITY_BLINDINGENTRANCE:
 				case ABILITY_TRACTORBEAM:
+				case ABILITY_SOLARIZE:
+				case ABILITY_LUNARIZE:
 				#ifdef ABILITY_ASONE_GRIM
 				case ABILITY_ASONE_GRIM:
 				#endif
@@ -476,6 +478,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 			case ABILITY_FRISK:
 			case ABILITY_BLINDINGENTRANCE:
 			case ABILITY_TRACTORBEAM:
+			case ABILITY_SOLARIZE:
+			case ABILITY_LUNARIZE:
 				gStatuses3[bank] |= STATUS3_SWITCH_IN_ABILITY_DONE;
 				break;
 			case ABILITY_TRACE: //Trace is the only ability that activates after a U-Turn + faint switch-in
@@ -743,6 +747,31 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 				gNewBS->intimidateActive = bank + 1;
 				effect++;
 			}
+			break;
+		case ABILITY_SOLARIZE:
+			if (gBattleMons[bank].type1 == gBattleMons[bank].type2)
+				gBattleMons[bank].type2 = TYPE_FIRE;
+			else
+				gBattleMons[bank].type3 = TYPE_FIRE;
+			gBankAttacker = bank;
+			gBattleScripting.bank = bank;
+			PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FIRE);
+			gBattleStringLoader = ThirdTypeAddedStringAttacker;
+			BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+			effect++;
+			break;
+
+		case ABILITY_LUNARIZE:
+			if (gBattleMons[bank].type1 == gBattleMons[bank].type2)
+				gBattleMons[bank].type2 = TYPE_ICE;
+			else
+				gBattleMons[bank].type3 = TYPE_ICE;
+			gBankAttacker = bank;
+			gBattleScripting.bank = bank;
+			PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_ICE);
+			gBattleStringLoader = ThirdTypeAddedStringAttacker;
+			BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+			effect++;
 			break;
 
 		case ABILITY_FORECAST:

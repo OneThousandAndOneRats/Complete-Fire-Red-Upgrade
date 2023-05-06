@@ -46,6 +46,8 @@ enum SwitchInStates
 	SwitchIn_Steelsurge,
 	SwitchIn_ToxicSpikes,
 	SwitchIn_StickyWeb,
+	SwitchIn_PsychoSpore,
+	SwitchIn_MushyMess,
 	SwitchIn_EmergencyExit,
 	SwitchIn_PrimalReversion,
 	SwitchIn_Truant,
@@ -71,6 +73,7 @@ static bool8 TryDoForceSwitchOut(void);
 static void SwitchPartyOrderInGameMulti(u8 bank, u8 monToSwitchIntoId);
 static bool8 PPIsMaxed(bank_t);
 static u8 GetStealthRockDivisor(void);
+static u8 GetMushyMessDivisor(void);
 
 void atkE2_switchoutabilities(void)
 {
@@ -746,6 +749,72 @@ void atk52_switchineffects(void)
 			++gNewBS->switchInEffectsState;
 		__attribute__ ((fallthrough));
 
+		case SwitchIn_MushyMess:
+			if (gSideTimers[SIDE(gActiveBattler)].mushymessAmount > 0
+			&& CheckGrounding(gActiveBattler))
+			{
+				if (IsOfType(gActiveBattler, TYPE_FUNGUS) || IsOfType(gActiveBattler, TYPE_ICE))
+				{
+					gSideTimers[SIDE(gActiveBattler)].mushymessAmount = 0;
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MMAbsorb;
+				}
+				else if (ability != ABILITY_MAGICGUARD && IsAffectedByHazards(gActiveBattler))
+				{
+					
+					gSideTimers[SIDE(gActiveBattler)].mushymessAmount = 0;
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MMAbsorb;
+
+					gBattleMoveDamage = CalcMushyMessDamage(gActiveBattler);
+					gNewBS->DamageTaken[gActiveBattler] += gBattleMoveDamage;
+
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_MMHurt;
+					gSideStatuses[SIDE(gActiveBattler)] |= SIDE_STATUS_SPIKES_DAMAGED;
+					gBattleScripting.bank = gActiveBattler;
+					gBankTarget = gActiveBattler;
+					//gBankAttacker = FOE(gActiveBattler); //For EXP
+					++gNewBS->switchInEffectsState;
+					return;
+				}
+			}
+			++gNewBS->switchInEffectsState;
+		__attribute__ ((fallthrough));
+
+
+		case SwitchIn_PsychoSpore:
+			if (gSideTimers[SIDE(gActiveBattler)].psporeAmount > 0
+			&& CheckGrounding(gActiveBattler))
+			{
+				if (IsOfType(gActiveBattler, TYPE_FUNGUS) || IsOfType(gActiveBattler, TYPE_ICE))
+				{
+					gSideTimers[SIDE(gActiveBattler)].psporeAmount = 0;
+					BattleScriptPushCursor();
+					gBattlescriptCurrInstr = BattleScript_PSAbsorb;
+				}
+				else if (IsAffectedByHazards(gActiveBattler) //Pokemon with this item can still remove T-Spikes
+				&& CanBeConfused(gActiveBattler, 0xFF, TRUE) //Must include check here, otherwise Corrosion can activate (which it shouldn't)
+				&& !BankSideHasSafeguard(gActiveBattler))
+				{
+					if (gSideTimers[SIDE(gActiveBattler)].psporeAmount == 1)
+					{
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_PSConfuse;
+					}
+
+					gSideStatuses[SIDE(gActiveBattler)] |= SIDE_STATUS_SPIKES_DAMAGED;
+				}
+
+				gBattleScripting.bank = gActiveBattler;
+				gBankTarget = gActiveBattler;
+				//gBankAttacker = FOE(gActiveBattler); //For EXP
+				++gNewBS->switchInEffectsState;
+				return;
+			}
+			++gNewBS->switchInEffectsState;
+		__attribute__ ((fallthrough));
+
 		case SwitchIn_Steelsurge:
 			if (gSideTimers[SIDE(gActiveBattler)].steelsurge > 0
 			&& ability != ABILITY_MAGICGUARD
@@ -997,6 +1066,7 @@ void atk52_switchineffects(void)
 
 			for (i = 0; i < gBattlersCount; i++)
 				gBattleStruct->hpOnSwitchout[SIDE(i)] = gBattleMons[i].hp;
+			gBattleMons[0].giftRibbon1 = false;
 
 			if (T2_READ_8(gBattlescriptCurrInstr + 1) == 5)
 			{
@@ -1284,6 +1354,7 @@ void ClearSwitchBytes(u8 bank)
 	gProtectStructs[bank].KingsShield = 0;	//Necessary because could be sent away with Roar
 	gProtectStructs[bank].SpikyShield = 0;
 	gProtectStructs[bank].BanefulBunker = 0;
+	gProtectStructs[bank].MushyShield = 0;
 	gProtectStructs[bank].obstruct = 0;
 	gProtectStructs[bank].enduredSturdy = 0;
 	
@@ -1408,6 +1479,50 @@ u32 GetStealthRockDamagePartyMon(struct Pokemon* mon)
 	return CalcMonStealthRockDamage(mon);
 }
 
+//
+u32 CalcMushyMessDamage(u8 bank)
+{
+	u8 flags;
+	u8 divisor = 3;
+	gBattleMoveDamage = 40;
+
+	TypeDamageModification(0, bank, MOVE_MUSHYMESS, TYPE_FUNGUS, &flags);
+	divisor = GetMushyMessDivisor();
+
+	return MathMax(1, gBattleMons[bank].maxHP / divisor);
+}
+
+u32 GetMushyMessDamage(u8 bank)
+{
+	if (!IsAffectedByHazards(bank))
+		return 0;
+
+	return CalcMushyMessDamage(bank);
+}
+
+u32 CalcMonMushyMessDamage(struct Pokemon* mon)
+{
+	u8 flags;
+	u8 divisor = 3;
+	gBattleMoveDamage = 40;
+
+	TypeDamageModificationPartyMon(0, mon, MOVE_MUSHYMESS, TYPE_FUNGUS, &flags);
+	divisor = GetMushyMessDivisor();
+
+	return MathMax(1, GetMonData(mon, MON_DATA_MAX_HP, NULL) / divisor);
+}
+
+u32 GetMushyMessDamagePartyMon(struct Pokemon* mon)
+{
+	if (!IsMonAffectedByHazards(mon))
+		return 0;
+
+	return CalcMonMushyMessDamage(mon);
+}
+
+//
+
+
 u32 CalcSteelsurgeDamage(u8 bank)
 {
 	u8 flags;
@@ -1457,6 +1572,36 @@ static u8 GetStealthRockDivisor(void)
 			break;
 		case 80:
 			divisor = 4;
+			break;
+		case 160:
+			divisor = 2;
+			break;
+		case 320:
+			divisor = 1;
+	}
+
+	return divisor;
+}
+
+static u8 GetMushyMessDivisor(void)
+{
+	u8 divisor = 1;
+
+	switch (gBattleMoveDamage) {
+		case 5:
+			divisor = 24;
+			break;
+		case 10:
+			divisor = 12;
+			break;
+		case 20:
+			divisor = 6;
+			break;
+		case 40:
+			divisor = 3;
+			break;
+		case 80:
+			divisor = 2;
 			break;
 		case 160:
 			divisor = 2;

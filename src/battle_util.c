@@ -589,6 +589,7 @@ bool8 LiftProtect(u8 bank)
 {
 	if ((gProtectStructs[bank].protected && !IsDynamaxed(bank))
 	|| gProtectStructs[bank].KingsShield
+	|| gProtectStructs[bank].MushyShield
 	|| gProtectStructs[bank].SpikyShield
 	|| gProtectStructs[bank].BanefulBunker
 	|| gProtectStructs[bank].obstruct
@@ -1494,7 +1495,10 @@ bool8 IsAffectedByPowderByDetails(u8 type1, u8 type2, u8 type3, u8 ability, u8 i
 		&& itemEffect != ITEM_EFFECT_SAFETY_GOGGLES
 		&& type1 != TYPE_GRASS
 		&& type2 != TYPE_GRASS
-		&& type3 != TYPE_GRASS;
+		&& type3 != TYPE_GRASS
+		&& type1 != TYPE_FUNGUS
+		&& type2 != TYPE_FUNGUS
+		&& type3 != TYPE_FUNGUS;
 }
 
 bool8 MoveIgnoresSubstitutes(u16 move, u8 atkAbility)

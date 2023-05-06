@@ -1009,7 +1009,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.ItemCustomMoves);
 						SetMonData(mon, MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
-						SetAbilityFromEnum(&party[i], trainer->party.ItemCustomMoves[i].ability);
+						 (&party[i], trainer->party.ItemCustomMoves[i].ability);
 						break;
 				}
 			}
@@ -1198,6 +1198,7 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 }
 
 static void SetAbilityFromEnum(struct Pokemon* mon, u8 abilityNum) {
+	//mon->otid = TRUE;
 	switch(abilityNum) {
 		case Ability_Hidden:
 		GIVE_HIDDEN_ABILITY:

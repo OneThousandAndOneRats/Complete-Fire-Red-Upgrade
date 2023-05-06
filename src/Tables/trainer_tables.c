@@ -192,7 +192,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_BugCatcherVFAnthony[] = {
 };
 
 //~~~~~~~~~~~~~~~~~~|Pewter Gym|~~~~~~~~~~~~~~~~~~//
-const struct TrainerMonNoItemDefaultMoves sParty_CamperPGLiam[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_CamperPGLiam[] = { //TODO MAYBE UPDATE THIS TO A ENGINEER
     {
         .iv = 0,
         .lvl = 9,
@@ -274,7 +274,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_BugCatcherR3Colton[] = {
     {
         .iv = 0,
         .lvl = 12,
-        .species = SPECIES_DOTTLER,
+        .species = SPECIES_PARAS,
     },
 };
 const struct TrainerMonNoItemDefaultMoves sParty_YoungsterR3Ben[] = {
@@ -723,7 +723,7 @@ const struct TrainerMonItemCustomMoves sParty_RivalCeruleanCityWater[] = {
     },
 };
 
-const struct TrainerMonNoItemDefaultMoves sParty_SwimmerMCeruleanGymLuis[] = {
+const struct TrainerMonNoItemDefaultMoves sParty_SwimmerMCeruleanGymLuis[] = { //TODO: UPDATE THIS TO A MALE PICKNICKER
     {
         .iv = 0,
         .lvl = 17,
@@ -1068,7 +1068,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_PicknickerR6Nancy[]= {
     {
         .iv = 0,
         .lvl = 22,
-        .species = SPECIES_MEOWTH,
+        .species = SPECIES_MORELULL,
     },
     {
         .iv = 0,
@@ -1618,15 +1618,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalSSAnneFire[]= {
     {
         .iv = 0,
         .lvl = 27,
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_TREVENANT,
         .moves = {
-            MOVE_MACHPUNCH,
-            MOVE_MEGADRAIN,
-            MOVE_POISONPOWDER,
+            MOVE_SHADOWCLAW,
             MOVE_LEECHSEED,
+            MOVE_FEINTATTACK,
+            MOVE_INGRAIN,
         },
         .heldItem = ITEM_NONE,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -1845,7 +1845,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_PicknickerR9Caitlin[]= {
     {
         .iv = 0,
         .lvl = 29,
-        .species = SPECIES_MILTANK,
+        .species = SPECIES_TANGELA,
     },
 };
 
@@ -2303,15 +2303,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalPkmTowerFire[]= {
     {
         .iv = 0,
         .lvl = 33,
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_TREVENANT,
         .moves = {
-            MOVE_MACHPUNCH,
-            MOVE_MEGADRAIN,
-            MOVE_SUBSTITUTE,
+            MOVE_SHADOWCLAW,
+            MOVE_WILLOWISP,
             MOVE_LEECHSEED,
+            MOVE_INGRAIN,
         },
         .heldItem = ITEM_NONE,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -3096,7 +3096,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_BlackBeltDojoHitoshi[]= {
     {
         .iv = 0,
         .lvl = 35,
-        .species = SPECIES_LEAVANNY,
+        .species = SPECIES_PARASECT,
     },
     {
         .iv = 0,
@@ -3242,7 +3242,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_RocketSilph_23[]= {
     {
         .iv = 0,
         .lvl = 35,
-        .species = SPECIES_NINJASK,
+        .species = SPECIES_AMOONGUSS,
     },
     {
         .iv = 0,
@@ -3829,15 +3829,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalSilphFire[]= {
     {
         .iv = 0,
         .lvl = 43,
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_TREVENANT,
         .moves = {
-            MOVE_MACHPUNCH,
-            MOVE_SPORE,
-            MOVE_SUBSTITUTE,
-            MOVE_BULLETSEED,
+            MOVE_SHADOWCLAW,
+            MOVE_WILLOWISP,
+            MOVE_LEECHSEED,
+            MOVE_INGRAIN,
         },
         .heldItem = ITEM_MIRACLE_SEED,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -4139,7 +4139,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_BikerR16Hideo[]= {
     {
         .iv = 0,
         .lvl = 43,
-        .species = SPECIES_BEWEAR,
+        .species = SPECIES_AMOONGUSS,
     },
     {
         .iv = 0,
@@ -5358,7 +5358,7 @@ const struct TrainerMonNoItemDefaultMoves sParty_PicknickerR20Irene[]= {
     {
         .iv = 0,
         .lvl = 54,
-        .species = SPECIES_LEAFEON,
+        .species = SPECIES_TANGROWTH,
     },
 };
 const struct TrainerMonNoItemDefaultMoves sParty_BirdKeeperR20Roger[]= {
@@ -6211,21 +6211,10 @@ const struct TrainerMonNoItemDefaultMoves sParty_BlackBeltViridianGymTakashi[]= 
 };
 
 const struct TrainerMonNoItemCustomMoves sParty_LeaderViridianGiovani[] = {
+    
     {  
         .iv = 0,
         .lvl = 61,
-        .species = SPECIES_ZANGOOSE,
-        .moves = {
-            MOVE_BRUTALCLAW,
-            MOVE_SWORDSDANCE,
-            MOVE_HUNTERMARK,
-            MOVE_CLOSECOMBAT,
-        },
-        .ability = Ability_1,
-    },
-    {  
-        .iv = 0,
-        .lvl = 62,
         .species = SPECIES_PRIMEAPE,
         .moves = {
             MOVE_ADRENALINE,
@@ -6237,7 +6226,7 @@ const struct TrainerMonNoItemCustomMoves sParty_LeaderViridianGiovani[] = {
     },
     {  
         .iv = 0,
-        .lvl = 63,
+        .lvl = 62,
         .species = SPECIES_GRANBULL,
         .moves = {
             MOVE_CRUNCH,
@@ -6261,13 +6250,25 @@ const struct TrainerMonNoItemCustomMoves sParty_LeaderViridianGiovani[] = {
     },
     {  
         .iv = 0,
-        .lvl = 64,
+        .lvl = 62,
         .species = SPECIES_LUXRAY,
         .moves = {
             MOVE_WILDCHARGE,
             MOVE_RUPTURE,
             MOVE_CRUNCH,
             MOVE_ROAR,
+        },
+        .ability = Ability_2,
+    },
+    {  
+        .iv = 0,
+        .lvl = 64,
+        .species = SPECIES_URSALUNA,
+        .moves = {
+            MOVE_HAMMERARM,
+            MOVE_PLAYROUGH,
+            MOVE_BRUTALCLAW,
+            MOVE_HIGHHORSEPOWER,
         },
         .ability = Ability_2,
     },
@@ -6290,15 +6291,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalR22LateWater[]= {
     {
         .iv = 0,
         .lvl = 61,
-        .species = SPECIES_UMBREON,
+        .species = SPECIES_GALVANTULA,
         .moves = {
-            MOVE_MOONLIGHT,
-            MOVE_FEINTATTACK,
-            MOVE_TOXIC,
-            MOVE_PROTECT,
+            MOVE_STICKYWEB,
+            MOVE_SUCKERPUNCH,
+            MOVE_BUGBUZZ,
+            MOVE_ELECTROWEB,
         },
         .heldItem = ITEM_NONE,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -6371,15 +6372,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalR22LateGrass[]= {
     {
         .iv = 0,
         .lvl = 61,
-        .species = SPECIES_UMBREON,
+        .species = SPECIES_GALVANTULA,
         .moves = {
-            MOVE_MOONLIGHT,
-            MOVE_FEINTATTACK,
-            MOVE_TOXIC,
-            MOVE_PROTECT,
+            MOVE_STICKYWEB,
+            MOVE_SUCKERPUNCH,
+            MOVE_BUGBUZZ,
+            MOVE_ELECTROWEB,
         },
         .heldItem = ITEM_NONE,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -6451,15 +6452,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalR22LateFire[]= {
     {
         .iv = 0,
         .lvl = 61,
-        .species = SPECIES_UMBREON,
+        .species = SPECIES_GALVANTULA,
         .moves = {
-            MOVE_MOONLIGHT,
-            MOVE_FEINTATTACK,
-            MOVE_TOXIC,
-            MOVE_PROTECT,
+            MOVE_STICKYWEB,
+            MOVE_SUCKERPUNCH,
+            MOVE_BUGBUZZ,
+            MOVE_ELECTROWEB,
         },
         .heldItem = ITEM_NONE,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -6503,15 +6504,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalR22LateFire[]= {
     {
         .iv = 0,
         .lvl = 65,
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_TREVENANT,
         .moves = {
-            MOVE_MACHPUNCH,
-            MOVE_SPORE,
-            MOVE_SUBSTITUTE,
-            MOVE_BULLETSEED,
+            MOVE_SHADOWCLAW,
+            MOVE_HORNLEECH,
+            MOVE_PHANTOMFORCE,
+            MOVE_WILLOWISP,
         },
         .heldItem = ITEM_MIRACLE_SEED,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -6760,15 +6761,15 @@ const struct TrainerMonItemCustomMoves sParty_E4Lorelei[] = {
     {  
         .iv = 0,
         .lvl = 68,
-        .species = SPECIES_VOLBEAT,
+        .species = SPECIES_ILLUMISE,
         .moves = {
-            MOVE_PROTECT,
-            MOVE_PLAYROUGH,
-            MOVE_INFESTATION,
-            MOVE_LIGHTSHIELD,
+            MOVE_ZENHEADBUTT,
+            MOVE_FOCUSEDBEAM,
+            MOVE_BUGBUZZ,
+            MOVE_HALLOWFOCUS,
         },
         .heldItem = ITEM_NONE,
-        .ability = Ability_Hidden,
+        .ability = Ability_2,
     },
     {  
         .iv = 0,
@@ -7281,15 +7282,15 @@ const struct TrainerMonItemCustomMoves sParty_RivalChampionFire[]= {
     {
         .iv = 0,
         .lvl = 75,
-        .species = SPECIES_BRELOOM,
+        .species = SPECIES_TREVENANT,
         .moves = {
-            MOVE_MACHPUNCH,
-            MOVE_SPORE,
-            MOVE_SUBSTITUTE,
-            MOVE_BULLETSEED,
+            MOVE_SHADOWCLAW,
+            MOVE_WILLOWISP,
+            MOVE_HORNLEECH,
+            MOVE_LEECHSEED,
         },
         .heldItem = ITEM_MIRACLE_SEED,
-        .ability = Ability_Hidden,
+        .ability = Ability_1,
     },
     {
         .iv = 0,
@@ -7455,11 +7456,11 @@ const struct Trainer gTrainers[] = {
     },
 
     //~~~~~~~~~~~~~~~~~~|Pewter Gym|~~~~~~~~~~~~~~~~~~//
-    [TRAINER_CAMPER_LIAM] = {
+    [TRAINER_CAMPER_LIAM] = { 
         .partyFlags = 0,
-        .trainerClass = CLASS_CAMPER,
+        .trainerClass = CLASS_ENGINEER, //CLASS CAMPER
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerPic = TRAINER_PIC_WORKER, //TRAINER_PIC_CAMPER
         .trainerName = {_L, _i, _a, _m, _END},
         .items = {},
         .doubleBattle = FALSE,
@@ -7780,9 +7781,9 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_SWIMMER_MALE_LUIS] = {
         .partyFlags = 0,
-        .trainerClass = CLASS_SWIMMER_M,
+        .trainerClass = CLASS_CAMPER,//CLASS_SWIMMER_M,
         .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
-        .trainerPic = TRAINER_PIC_SWIMMER_M,
+        .trainerPic = TRAINER_PIC_CAMPER,//TRAINER_PIC_SWIMMER_M,
         .trainerName = {_L, _u, _i, _s, _END},
         .items = {},
         .doubleBattle = FALSE,

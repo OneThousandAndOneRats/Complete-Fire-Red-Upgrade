@@ -2804,6 +2804,7 @@ bool8 ShouldAIDelayMegaEvolution(u8 bankAtk, u8 bankDef, u16 move, bool8 optimiz
 				case MOVE_KINGSSHIELD:
 				case MOVE_BANEFULBUNKER:
 				case MOVE_OBSTRUCT:
+				case MOVE_MUSHYSHIELD:
 					return TRUE; //Delay Mega Evolution if using Protect for Speed Boost benefits
 			}
 			break;
@@ -3091,6 +3092,10 @@ bool8 BadIdeaToRaiseAttackAgainst(u8 bankAtk, u8 bankDef, u8 amount, bool8 check
 
 	if (checkingOriginalTarget
 	&& MoveInMoveset(MOVE_KINGSSHIELD, bankDef) && CheckContact(GetStrongestMove(bankAtk, bankDef), bankAtk, bankDef))
+		return TRUE;
+
+	if (checkingOriginalTarget   //THIS NEEDS TO BE UPDATED TO COMPARE SPEED MUSHYSHIELD
+	&& MoveInMoveset(MOVE_MUSHYSHIELD, bankDef) && CheckContact(GetStrongestMove(bankAtk, bankDef), bankAtk, bankDef))
 		return TRUE;
 
 	if (amount <= 1)

@@ -136,8 +136,10 @@
 #define TYPE_RELIC    0x1c
 #define TYPE_MYSTIC   0x1d
 #define TYPE_FOOD     0x1e
+#define TYPE_FUNGUS   0x1f
 
-#define NUMBER_OF_MON_TYPES (TYPE_FOOD + 1)
+#define NUMBER_OF_MON_TYPES (TYPE_FUNGUS + 1)
+//#define NUMBER_OF_MON_TYPES (TYPE_FOOD + 1)
 #define NUM_HIDDEN_POWER_TYPES 16
 
 #define PARTY_SIZE 6

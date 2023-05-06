@@ -10,6 +10,12 @@ Pointed stones float in the air\naround [FD][35] team!
 #org @StickyWebLayString
 A sticky web has been laid out\naround [FD][35] team!
 
+#org @PsychoSporeLayString
+Psycho Spores have float\naround [FD][35] team!
+
+#org @MushyMessLayString
+A Mushy mess has been laid out\naround [FD][35] team!
+
 #org @gText_SteelsurgeLay
 Sharp pieces of steel started\nfloating around [FD][35] team!
 
@@ -25,11 +31,20 @@ The entry hazards around\n[FD][35] side were blown away!
 #org @gText_HurtByStealthRock
 Pointed stones dug into\n[TARGET]!
 
+#org @gText_HurtByMushyMess
+[TARGET] inhaled\nall the spores!
+
 #org @gText_HurtBySteelsurge
 The sharp steel bit into\n[TARGET]!
 
 #org @gText_AbsorbedToxicSpikes
 The Toxic Spikes disappeared from\naround [TARGET]'s feet!
+
+#org @gText_AbsorbedPsychoSpore
+The Psycho Spores disappeared from\naround [TARGET]'s feet!
+
+#org @gText_AbsorbedMushyMess
+The Mushy Mess disappeared from\naround [TARGET]'s feet!
 
 #org @gText_CaughtInStickyWeb
 [TARGET] was caught\nin a Sticky Web!

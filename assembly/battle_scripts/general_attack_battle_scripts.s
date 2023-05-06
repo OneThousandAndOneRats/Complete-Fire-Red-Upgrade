@@ -123,6 +123,7 @@ BS_003_DrainHP:
 	jumpifmove MOVE_STRENGTHSAP StrengthSapBS
 	jumpifmove MOVE_GAURDDRAIN GaurdDrainBS
 	jumpifmove MOVE_FEAST FeastBS
+	jumpifmove MOVE_LICHENLEECH LichenLeechBs
 	call STANDARD_DAMAGE
 	jumpiffainted BANK_ATTACKER BS_MOVE_FAINT @;Eg. Parabolic Charge activates Destiny Bond before the last target is struck
 	negativedamage
@@ -133,6 +134,19 @@ DrainHPBSP2:
 	setbyte MULTISTRING_CHOOSER 0x0
 	goto 0x81D6A2B
 	
+LichenLeechBs:
+	call STANDARD_DAMAGE
+	jumpiffainted BANK_ATTACKER BS_MOVE_FAINT @;Eg. Parabolic Charge activates Destiny Bond before the last target is struck
+	negativedamage
+	jumpifstat BANK_TARGET EQUALS STAT_SPD STAT_MIN DrainHPBSP2
+	playstatchangeanimation BANK_TARGET, STAT_ANIM_SPD STAT_ANIM_DOWN
+	setstatchanger STAT_SPD | DECREASE_1
+	statbuffchange STAT_TARGET | STAT_BS_PTR Abduct_TChange
+	setgraphicalstatchangevalues
+	printfromtable 0x83FE588
+	waitmessage DELAY_1SECOND
+	goto DrainHPBSP2
+
 StrengthSapBS:
 	jumpifbehindsubstitute BANK_TARGET FAILED_PRE
 	jumpifstat BANK_TARGET EQUALS STAT_ATK STAT_MIN FAILED_PRE
@@ -1554,9 +1568,12 @@ AuroraVeilBS:
 BS_066_SetPoison:
 	attackcanceler
 	attackstring @;Protean always activates!
+	jumpifmove MOVE_BLACKMOLD BlackMoldBs
 	ppreduce
 	jumpifbehindsubstitute BANK_TARGET FAILED
 	jumpifmove MOVE_TOXICTHREAD ToxicThreadDo
+	jumpifmove MOVE_BADTRIP BadTripBs
+	
 
 PoisonChecks:
 	trysetpoison BANK_TARGET BS_StatusMoveFail
@@ -1589,6 +1606,28 @@ ToxicThreadDo:
 ToxicThreadPSN:
 	bicbyte OUTCOME OUTCOME_MISSED
 	goto PoisonChecks
+
+BadTripBs:
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_POISON
+	seteffectprimary
+	setmoveeffect MOVE_EFFECT_CONFUSION
+	seteffectprimary
+	resultmessage
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
+BlackMoldBs:
+	attackcanceler
+	accuracycheck BS_MOVE_MISSED 0x0
+	call STANDARD_DAMAGE
+	seteffectwithchancetarget
+	setmoveeffect MOVE_EFFECT_TOXIC
+	seteffectprimary
+	resultmessage
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_FAINT
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1889,18 +1928,20 @@ SeedShakerBS:
 	attackcanceler
 	accuracycheck BS_MOVE_MISSED 0x0
 	call STANDARD_DAMAGE
+	jumpiffainted BANK_TARGET BS_MOVE_FAINT
 	goto SetLeechSeedShakerBS
 	
 SetLeechSeedShakerBS:
 	setleechseed
 	printfromtable 0x83FE558
 	waitmessage DELAY_1SECOND
-	goto BS_MOVE_FAINT
+	goto BS_MOVE_END
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global BS_085_Splash
 BS_085_Splash:
+	jumpifmove MOVE_FERMENTEDSPRAY FermentedSprayBs
 	attackcanceler
 	attackstring
 	ppreduce
@@ -1910,6 +1951,22 @@ BS_085_Splash:
 	printstring 0xE4
 	waitmessage DELAY_1SECOND
 	goto BS_MOVE_END
+
+FermentedSprayBs:
+	attackcanceler
+	accuracycheck BS_MOVE_MISSED 0x0
+	call STANDARD_DAMAGE
+	jumpifstatus BANK_TARGET STATUS_ANY FermentedSprayConfuse
+	goto BS_MOVE_FAINT
+
+FermentedSprayConfuse:
+	jumpifbehindsubstitute BANK_TARGET BS_MOVE_FAINT
+	canconfuse BANK_TARGET BS_MOVE_FAINT
+	setmoveeffect MOVE_EFFECT_CONFUSION
+	seteffectprimary
+	resultmessage
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_FAINT
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -6329,6 +6386,7 @@ SoakBS:
 GammarayBS:
 	accuracycheck BS_MOVE_MISSED 0x0
 	call STANDARD_DAMAGE
+	jumpiffainted BANK_TARGET BS_MOVE_FAINT
 	callasm ChangeTargetTypeFunc
 	printstring 0x184
 	waitmessage DELAY_1SECOND

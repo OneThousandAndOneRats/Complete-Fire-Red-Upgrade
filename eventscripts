@@ -13,6 +13,8 @@ tile 3 1 3 EventScript_oldManCatchingRight
 
 npc 5 0 1 EventScript_ViridianCity_LittleGirl
 
+npc 1 0 0 EventScript_ViridianForest_LeonsBaseNPC
+
 npc 6 0 2 EventScript_Amber_start
 npc 6 0 3 EventScript_Amber_display
 npc 6 0 0 EventScript_EntranceGuy
@@ -21,12 +23,16 @@ tile 3 2 4 EventScript_runningshoes4
 tile 3 2 5 EventScript_runningshoes5
 tile 3 2 6 EventScript_runningshoes6
 
+npc 6 2 0 EventScript_BrockStart
+
+
 npc 1 3 0 EventScript_fossilLeft_start
 npc 1 3 1 EventScript_fossilRight_start
-
+npc 6 2 2 EventScript_GymGuidePewterStart
+sign 3 2 2 EventScript_PewterGymSign
 
 npc 9 1 4 EventScript_Vermillion_VsSeeker
-
+npc 9 0 0 EventScript_Vermillion_Fisher
 
 npc 15 2 0 EventScript_Route2Aide
 npc 21 0 4 EventScript_Route10Aide
@@ -45,6 +51,21 @@ npc 12 4 0 EventScript_HonedgeGift
 npc 12 2 1 EventScript_RootFossilOldManStart
 npc 12 2 2 EventScript_SailFossilWomenStart
 
+sign 9 6 2 EventScript_LtSurgePuzzle00
+sign 9 6 3 EventScript_LtSurgePuzzle01
+sign 9 6 4 EventScript_LtSurgePuzzle02
+sign 9 6 5 EventScript_LtSurgePuzzle03
+sign 9 6 6 EventScript_LtSurgePuzzle04
+sign 9 6 7 EventScript_LtSurgePuzzle10
+sign 9 6 8 EventScript_LtSurgePuzzle11
+sign 9 6 9 EventScript_LtSurgePuzzle12
+sign 9 6 10 EventScript_LtSurgePuzzle13
+sign 9 6 11 EventScript_LtSurgePuzzle14
+sign 9 6 12 EventScript_LtSurgePuzzle20
+sign 9 6 13 EventScript_LtSurgePuzzle21
+sign 9 6 14 EventScript_LtSurgePuzzle22
+sign 9 6 15 EventScript_LtSurgePuzzle23
+sign 9 6 16 EventScript_LtSurgePuzzle24
 
 npc 10 7 1 EventScript_FossilRevieveIntro
 npc 10 17 0 EventScript_ChefShop
@@ -64,6 +85,7 @@ npc 1 53 1 EventScript_TropiousGuy
 npc 1 66 0 EventScript_GoldTeeth
 npc 11 7 0 EventScript_FuschiaWarden
 npc 11 9 0 EventScript_Fuschia_EggTutor
+npc 11 3 8 EventScript_FuschiaGymChefCounter
 
 npc 12 4 1 EventScript_FossilRevieveIntro
 

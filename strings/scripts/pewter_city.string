@@ -20,22 +20,22 @@ There used to be a relic here.
 Oh, [PLAYER]!
 
 #org @gText_runningshoes_greet
-I'm glad I caught up to you.\nI'm PROF. OAK's AIDE.\pI've been asked to deliver this,\nso here you go.
+I'm glad I caught up to you.\nI'm Prof. Oak's aide.\pI've been asked to deliver this,\nso here you go.
 
-#org @gText_runningshoes_get
-[PLAYER] received the\nEXP SHARE from the AIDE.
+#org @gText_Package_get
+[PLAYER] received the care\npackage from the Aide.\pInside was several Great Balls\nand Super Potions!
 
 #org @gText_runningshoes_switch
-[PLAYER] switched shoes with the\nRUNNING SHOES.
+[PLAYER] switched shoes with the\nRunning Shoes.
 
 #org @gText_runningshoes_instructions
 Press the B Button to run.\nBut only where there's room to run!
 
-#org @gText_runningshoes_
-Well, I must be going back to\nthe LAB.\pBye-bye!
+#org @gText_PewterAideGoodbye_
+That's a package made by everyone\nin Pallet Town for your journey!\pWell, I must be going back to\nthe lab.\pBye-bye!
 
 #org @gText_runningshoes_0X17EA36
-There's a letter attached[.]\pDear [PLAYER],\pHere is a pair of RUNNING SHOES\nfor my beloved challenger.\pRemember, I'll always cheer for\nyou! Don't ever give up!\pFrom Mom
+There's a letter attached[.]\pDear [PLAYER],\pHere is a pair of Running Shoes\nfor my beloved challenger.\pRemember, I'll always cheer for\nyou! Don't ever give up!\pFrom Mom
 
 #org @gText_SneakIn
 You can't sneak in the back way!\nNice try, kid, but no.\pOh, whatever!\nDo you know about that relic?
@@ -48,3 +48,33 @@ That relic was recovered from a\nnearby tower that recently collapsed.\pIt's wei
 
 #org @gText_EnjoyYourself
 Please enjoy yourself.
+
+#org @gText_GymGuyPewter
+Hey there champ in the making!\nWelcome to the Pewter City Gym!\pSorry for the mess! We have a new\ngym leader who's just moving in!\pThe leader Brock uses sound types.\nSound type is offence focused,\pit can bypass subsitute and has\nstrength in numbers.\pAs a tip, it's weak against Water,\nGround, and Cosmic Type.\pIn fact it deals no damage to\nCosmic Type.\pCan't hear screams in space ya know?\nGood luck champ!
+
+#org @gText_GymGuyPewterVictory
+I knew you could do it champ!\nWant to hear the explanation about\pSound Types again?
+
+#org @gText_SoundTypeExplination
+Sound type is offence focused,\nit can bypass subsitute and has\pstrength in numbers.\nAs a tip, it's weak against Water,\pGround, and Cosmic Type.\nIn fact it deals no damage to\pCosmic Type.\nCan't hear screams in space ya know?
+
+#org @gText_PewterGymSign
+Pewter City Pok\emon Gym\nLeader: Brock\lThe Rockin' Pok\emon Trainer!
+
+#org @gText_BrockBattleIntro
+Yo! I'm Brock.\nI'm Pewter's new Gym Leader.\pOnce I finish unpacking this place\nwill be a awesome music center!\pBut enough talk,\nI know you're here to battle! 
+
+#org @gText_BrockBattleOutro
+Wow what a rockin' battle!\pAs proof of your victory here's the\nPok\emon League SpeakerBadge!\p[PLAYER] received the SpeakerBadge!\pJust having the SpeakerBadge makes\nyour Pok\emon more powerful.\pIt also lets you use the move\nFlash outside of battle.
+
+#org @gText_Brock_Wait
+Since you're my first challenger\nI want you to have this!
+
+#org @gText_BrockTMExplination
+That TM contains the move Blues.\nIt's a sad song that will drop the\pSp.Atk of any foe that\nlistens to it!\pIt's also my favorite genre of music. 
+
+#org @gText_BrockRepeat
+Let's battle again once I get this\nplace assembled!
+
+#org @gText_PgotBrockTM
+[PLAYER] received TM39\nfrom Brock.

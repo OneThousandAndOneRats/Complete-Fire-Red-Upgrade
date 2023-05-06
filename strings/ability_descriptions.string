@@ -163,7 +163,7 @@ Ensures that all moves land.
 //Boosts aura and pulse moves.
 
 #org @DESC_STARGAZER
-Boosts Cosmic Moves
+Boosts Beam Moves
 
 #org @DESC_TOUGHCLAWS
 Boosts moves that make contact.
@@ -232,7 +232,7 @@ Sp. Atk rises when stats fall.
 //Gives up at half HP.
 
 #org @DESC_LUNARIZE
-Lunarize
+Adds Ice-Type to user.
 
 #org @DESC_SLOWSTART
 Takes a while to get going.
@@ -535,7 +535,7 @@ Moves ignore redirection.
 //Fire and Water hits boost Speed.
 
 #org @DESC_SOLARIZE
-Powers up Fire-type move
+Adds Fire-Type to user.
 
 //#org @DESC_PUNKROCK
 //Ups and resists sound moves.

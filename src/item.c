@@ -971,7 +971,7 @@ u8 CheckSingleBagTm(unusedArg u16 item)
 extern const u16 Fairy_TM_DiskPal[];
 const void* FixTmHmDiscPalette(u8 type)
 {
-	if (type == TYPE_FAIRY)
+	if (type == TYPE_FAIRY || type == TYPE_LIGHT || type == TYPE_SOUND || type == TYPE_BEAST || type == TYPE_COSMIC || type == TYPE_RELIC || type == TYPE_MYSTIC || type == TYPE_FOOD)
 		return &Fairy_TM_DiskPal[0];
 	else
 		return 0;

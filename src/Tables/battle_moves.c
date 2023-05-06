@@ -1286,7 +1286,7 @@ const struct BattleMove gBattleMoves[] =
 	{
 		.effect = EFFECT_PARALYZE,
 		.power = 0,
-		.type = TYPE_GRASS,
+		.type = TYPE_FUNGUS,
 		.accuracy = 75,
 		.pp = 30,
 		.secondaryEffectChance = 0,
@@ -2418,7 +2418,7 @@ const struct BattleMove gBattleMoves[] =
 	{
 		.effect = EFFECT_SLEEP,
 		.power = 0,
-		.type = TYPE_GRASS,
+		.type = TYPE_FUNGUS,
 		.accuracy = 100,
 		.pp = 15,
 		.secondaryEffectChance = 0,
@@ -3846,7 +3846,7 @@ const struct BattleMove gBattleMoves[] =
 	{
 		.effect = EFFECT_MORNING_SUN,
 		.power = 0,
-		.type = TYPE_FAIRY,
+		.type = TYPE_LIGHT,
 		.accuracy = 0,
 		.pp = 5,
 		.secondaryEffectChance = 0,
@@ -3974,7 +3974,7 @@ const struct BattleMove gBattleMoves[] =
 	{
 		.effect = EFFECT_PSYCH_UP,
 		.power = 0,
-		.type = TYPE_MYSTIC,
+		.type = TYPE_PSYCHIC,
 		.accuracy = 0,
 		.pp = 10,
 		.secondaryEffectChance = 0,
@@ -10750,7 +10750,7 @@ const struct BattleMove gBattleMoves[] =
 	{
 		.effect = EFFECT_HIT,
 		.power = 100,
-		.type = TYPE_PSYCHIC,
+		.type = TYPE_LIGHT,
 		.accuracy = 100,
 		.pp = 5,
 		.secondaryEffectChance = 0,
@@ -14424,6 +14424,248 @@ const struct BattleMove gBattleMoves[] =
 		.split = SPLIT_STATUS,
 		.z_move_effect = 0
 	},
+
+	[MOVE_SPOREBURST] =
+	{
+		.effect = EFFECT_COUNTER,
+		.power = 1,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 20,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_DEPENDS,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_PUFFPUNCH] =
+	{
+		.effect = EFFECT_CONFUSE_HIT,
+		.power = 60,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 25,
+		.secondaryEffectChance = 20,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_PHYSICAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_MYCELIALCAGE] =
+	{
+		.effect = EFFECT_TRAP,
+		.power = 70,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 15,
+		.secondaryEffectChance = 100,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_MUSCARDINE] =
+	{
+		.effect = EFFECT_HIT,
+		.power = 65,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 25,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_FERMENTEDSPRAY] =
+	{
+		.effect = EFFECT_SPLASH,
+		.power = 70,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 35,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_BOTH,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_SUPERSPORE] =
+	{
+		.effect = EFFECT_SUPER_FANG,
+		.power = 1,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 5,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_BOTH,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_AFTEREFFECTS] =
+	{
+		.effect = EFFECT_CONFUSE_HIT,
+		.power = 75,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 35,
+		.secondaryEffectChance = 100,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 250,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_MUSHYSHIELD] =
+	{
+		.effect = EFFECT_PROTECT,
+		.power = 0,
+		.type = TYPE_FUNGUS,
+		.accuracy = 0,
+		.pp = 10,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_USER,
+		.priority = 4,
+		.flags = 0,
+		.z_move_power = 0,
+		.split = SPLIT_STATUS,
+		.z_move_effect = 0
+	},
+
+	[MOVE_TRUFFLETOUCH] =
+	{
+		.effect = EFFECT_HIT,
+		.power = 40,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 35,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_PHYSICAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_BADTRIP] =
+	{
+		.effect = EFFECT_POISON,
+		.power = 0,
+		.type = TYPE_FUNGUS,
+		.accuracy = 80,
+		.pp = 15,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED |FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 0,
+		.split = SPLIT_STATUS,
+		.z_move_effect = 0
+	},
+
+	[MOVE_DELAYEDGROWTH] =
+	{
+		.effect = EFFECT_FUTURE_SIGHT,
+		.power = 120,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 10,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = 0,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_LICHENLEECH] =
+	{
+		.effect = EFFECT_ABSORB,
+		.power = 50,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 20,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_BLACKMOLD] =
+	{
+		.effect = EFFECT_POISON,
+		.power = 80,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 5,
+		.secondaryEffectChance = 100,
+		.target = MOVE_TARGET_SELECTED,
+		.priority = 0,
+		.flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_SPECIAL,
+		.z_move_effect = 0
+	},
+
+	[MOVE_PSYCHOSPORE] =
+	{
+		.effect = EFFECT_SPIKES,
+		.power = 0,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 20,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_OPPONENTS_FIELD,
+		.priority = 0,
+		.flags = FLAG_MAGIC_COAT_AFFECTED,
+		.z_move_power = 0,
+		.split = SPLIT_STATUS,
+		.z_move_effect = 0
+	},
+
+	[MOVE_MUSHYMESS] =
+	{
+		.effect = EFFECT_SPIKES,
+		.power = 0,
+		.type = TYPE_FUNGUS,
+		.accuracy = 100,
+		.pp = 20,
+		.secondaryEffectChance = 0,
+		.target = MOVE_TARGET_OPPONENTS_FIELD,
+		.priority = 0,
+		.flags = FLAG_MAGIC_COAT_AFFECTED,
+		.z_move_power = 100,
+		.split = SPLIT_STATUS,
+		.z_move_effect = 0
+	},
+
+
 
 	//Z-Moves//
 	[MOVE_BREAKNECK_BLITZ_P] =

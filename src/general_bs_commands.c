@@ -91,6 +91,8 @@ static const u8* const sEntryHazardsStrings[] =
 	ToxicSpikesLayString,
 	StickyWebLayString,
 	gText_SteelsurgeLay,
+	PsychoSporeLayString,
+	MushyMessLayString,
 };
 
 
@@ -2336,6 +2338,7 @@ void atk77_setprotect(void)
 		case MOVE_WIDEGUARD:
 		case MOVE_OBSTRUCT:
 		case MOVE_MAX_GUARD:
+		case MOVE_MUSHYSHIELD:
 			break;
 		default:
 			gDisableStructs[gBankAttacker].protectUses = 0;
@@ -2368,6 +2371,11 @@ void atk77_setprotect(void)
 
 			case MOVE_BANEFULBUNKER:
 				gProtectStructs[gBankAttacker].BanefulBunker = 1;
+				gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+				break;
+
+			case MOVE_MUSHYSHIELD:
+				gProtectStructs[gBankAttacker].MushyShield = 1;
 				gBattleCommunication[MULTISTRING_CHOOSER] = 0;
 				break;
 
@@ -4158,7 +4166,34 @@ void atkB0_trysetspikes(void)
 				stringcase = 4;
 			}
 			break;
-
+		case MOVE_PSYCHOSPORE:
+		 	if (gSideTimers[defSide].psporeAmount)
+			{
+				gSpecialStatuses[gBankAttacker].ppNotAffectedByPressure = 1;
+				gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+			}
+			else
+			{
+				gSideStatuses[defSide] |= SIDE_STATUS_SPIKES;
+				gSideTimers[defSide].psporeAmount = 1;
+				gBattlescriptCurrInstr += 5;
+				stringcase = 5;
+			}
+			break;
+		case MOVE_MUSHYMESS:
+		 	if (gSideTimers[defSide].mushymessAmount)
+			{
+				gSpecialStatuses[gBankAttacker].ppNotAffectedByPressure = 1;
+				gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+			}
+			else
+			{
+				gSideStatuses[defSide] |= SIDE_STATUS_SPIKES;
+				gSideTimers[defSide].mushymessAmount = 1;
+				gBattlescriptCurrInstr += 5;
+				stringcase = 6;
+			}
+			break;
 		default:
 			if (gSideTimers[defSide].spikesAmount >= 3)
 			{
@@ -4633,6 +4668,8 @@ void atkBE_rapidspinfree(void)
 			gSideTimers[sideAtk].srAmount = 0;
 			gSideTimers[sideAtk].stickyWeb = 0;
 			gSideTimers[sideAtk].steelsurge = 0;
+			gSideTimers[sideAtk].psporeAmount = 0;
+			gSideTimers[sideAtk].mushymessAmount = 0;
 			BattleScriptPushCursor();
 			gBattlescriptCurrInstr = BattleScript_SpikesFree;
 		}
@@ -4659,6 +4696,8 @@ void atkBE_rapidspinfree(void)
 			gSideTimers[sideAtk].srAmount = 0;
 			gSideTimers[sideAtk].stickyWeb = 0;
 			gSideTimers[sideAtk].steelsurge = 0;
+			gSideTimers[sideAtk].psporeAmount = 0;
+			gSideTimers[sideAtk].mushymessAmount = 0;
 			BattleScriptPushCursor();
 			gBattlescriptCurrInstr = BattleScript_PrintCustomString;
 			gBattleStringLoader = RemovedEntryHazardsString;
@@ -4671,6 +4710,8 @@ void atkBE_rapidspinfree(void)
 			gSideTimers[sideDef].srAmount = 0;
 			gSideTimers[sideDef].stickyWeb = 0;
 			gSideTimers[sideDef].steelsurge = 0;
+			gSideTimers[sideAtk].psporeAmount = 0;
+			gSideTimers[sideAtk].mushymessAmount = 0;
 			BattleScriptPushCursor();
 			gBattlescriptCurrInstr = BattleScript_PrintCustomString;
 			gBattleStringLoader = RemovedEntryHazardsTargetSideString;

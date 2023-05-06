@@ -14,6 +14,7 @@ cmd49_battle_scripts.s
 .global BattleScript_KingsShield
 .global BattleScript_SpikyShield
 .global BattleScript_BanefulBunker
+.global BattleScript_MushyShield
 .global BattleScript_ObstructStatDecrement
 .global BattleScript_RageIsBuilding
 .global BattleScript_BeakBlastBurn
@@ -70,6 +71,24 @@ BattleScript_KingsShieldPostDecrementSet:
 	waitmessage DELAY_1SECOND
 
 KingsShieldReturn:
+	swapattackerwithtarget
+	return
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleScript_MushyShield:
+	setstatchanger STAT_SPD | DECREASE_2
+	
+BattleScript_MushyShieldPostDecrementSet:
+	swapattackerwithtarget @;Allows for abilities like Defiant and Mirror Armor to have their proper effect
+	statbuffchange STAT_TARGET | STAT_NOT_PROTECT_AFFECTED | STAT_BS_PTR MushyShieldReturn
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 MushyShieldReturn
+	setgraphicalstatchangevalues
+	playanimation BANK_TARGET ANIM_STAT_BUFF ANIM_ARG_1
+	printfromtable gStatDownStringIds
+	waitmessage DELAY_1SECOND
+
+MushyShieldReturn:
 	swapattackerwithtarget
 	return
 

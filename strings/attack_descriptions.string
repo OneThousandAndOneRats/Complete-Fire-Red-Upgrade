@@ -1667,6 +1667,51 @@ The user eats their\nberry and prepares\na STOCKPILE, raising\nDefense and\nSp.D
 #org @DESC_ORDERUP
 The user places an\norder for a randomly\nchoosen Food-Type\nattack.
 
+#org @DESC_SPOREBURST
+The user readies a\nspore sack.\nRetaliates against\nphysical attacks\nwith double the\ndamage. 
+
+#org @DESC_PUFFPUNCH
+A spore coated punch\nthat has a chance\nto inflict confusion.
+
+#org @DESC_MYCELIALCAGE
+A cage made of\nmushrooms that traps\nthe target for four\nto five turns.
+
+#org @DESC_MUSCARDINE
+The user attacks with\na special fungus that\nis Super Effective\nagainst Bug-Types.
+
+#org @DESC_FERMENTEDSPRAY
+The user sprays mold\nat the foes.\nCauses confusion if\nthe foe has a Status\neffect.
+
+#org @DESC_SUPERSPORE
+Deadly spores are\nsprayed around the\nbattlefield.\nHalves the hp of\nall foes.
+
+#org @DESC_AFTEREFFECTS
+A psychadellic\nattack which causes\nconfusion.\nAlways moves last. 
+
+#org @DESC_MUSHYSHIELD
+The user protects\nitself from damage,\nand harshly lowers\nthe foe's Speed if\nit makes contact.
+
+#org @DESC_TRUFFLETOUCH
+Does extra damage\nif the user is\nslower than the\nopponent. 
+
+#org @DESC_BADTRIP
+A potent combination\nof spores and mold.\nCauses poison and\nconfusion.
+
+#org @DESC_DELAYEDGROWTH
+The user sows spores\ninto the ground.\nCauses an attack two\nturns in the future.
+
+#org @DESC_LICHENLEECH
+Absorbs health from\nthe opponent and\nlowers the foe's\nspeed. 
+
+#org @DESC_BLACKMOLD
+A toxic mold damages\nand badly poisons\nthe foe. 
+
+#org @DESC_PSYCHOSPORE
+The user lays a trap\nof psychadellic spores\naround the opponent's\nteam. Causes confusion\nwhen the opposing\nPok\emon switches into\nbattle.
+
+#org @DESC_MUSHYMESS
+The user lays a trap\nof fungi around the\nopponent's team. Hurts\nthe opponent when\nthey switch into battle\nbut clears after the\nfoe enters. 
+
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.
 

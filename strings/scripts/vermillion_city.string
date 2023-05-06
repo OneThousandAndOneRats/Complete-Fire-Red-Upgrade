@@ -1,18 +1,18 @@
 #org @gText_VermillionVsSeeker
-Hi, I can tell by looking at you\nthat you have no friends.\pSo take this!
+Can you believe that people used\nto have to trade Pok\emon to have\pthem evolve? What if they decided\nto keep your pokemon?\pOr what if they traded you a\nPok\emon holding an Everstone?\pThanks to Link Cables you don't\nhave to worry about that!\pHere take one!
 
 #org @gText_VermillionLinkCableGet
-[BLACK][PLAYER] got the link cable from\nthe rude girl!
+[BLACK][PLAYER] got a Link Cable!
 
 #org @gText_VermillionVsSeeker_Repeat
-How's the friend hunt going?
+It would be really rude to trade\na Pokemon with an everstone!
 
 
 #org @gText_ChatotOffer
 Hi! I caught this birdie but\nit's too loud for me.\pDo you want it? 
 
 #org @gText_ChatotAccept
-Thank you!\nNow I can have some peace and quiet. 
+Thank you! Now it can sing\nas much as it wants.
 
 #org @gText_ChatotReject
 Thats too bad.
@@ -22,3 +22,9 @@ Now I can have some peace and quiet.
 
 #org @gText_ChatotGot
 [BLACK][PLAYER] obtained a Chatot!
+
+#org @gText_VermillionFisherGift
+Hey there!\nHave you met my brother?\pHe went fishing in Viridian,\ntook our spare rod as well.\pYou have the look of a trainer,\nhere, take this stone I fished up.
+
+#org @gText_VermillionFisherRepeat
+Keep on fishing!

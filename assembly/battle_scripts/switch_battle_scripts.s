@@ -21,10 +21,14 @@ switch_battle_scripts.s
 
 .global BattleScript_SpikesHurt
 .global BattleScript_SRHurt
+.global BattleScript_MMHurt
 .global BattleScript_SteelsurgeHurt
 .global BattleScript_TSPoison
 .global BattleScript_TSHarshPoison
+.global BattleScript_PSConfuse
 .global BattleScript_TSAbsorb
+.global BattleScript_PSAbsorb
+.global BattleScript_MMAbsorb
 .global BattleScript_StickyWebSpeedDrop
 .global BattleScript_SuccessForceOut
 
@@ -92,6 +96,17 @@ BattleScript_SRHurt:
 	faintpokemon BANK_TARGET TRUE BattleScript_DmgHazardsOnTargetFainted
 	return
 
+BattleScript_MMHurt:
+	orword HIT_MARKER 0x100100
+	graphicalhpupdate BANK_TARGET
+	datahpupdate BANK_TARGET
+	setword BATTLE_STRING_LOADER gText_HurtByMushyMess
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	faintpokemon BANK_TARGET 0x0 0x0
+	faintpokemon BANK_TARGET TRUE BattleScript_DmgHazardsOnTargetFainted
+	return
+
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 BattleScript_SteelsurgeHurt:
@@ -125,8 +140,29 @@ BattleScript_TSHarshPoison:
 	setbyte POISONED_BY 0x0
 	return
 
+BattleScript_PSConfuse:
+	@setbyte CONFUSED_BY 0x2
+	orword HIT_MARKER HITMARKER_IGNORE_SAFEGUARD | HITMARKER_IGNORE_SUBSTITUTE
+	setmoveeffect MOVE_EFFECT_CONFUSION
+	seteffectprimary
+	bicword HIT_MARKER HITMARKER_IGNORE_SAFEGUARD | HITMARKER_IGNORE_SUBSTITUTE
+	@setbyte CONFUSED_BY 0x0
+	return
+
 BattleScript_TSAbsorb:
 	setword BATTLE_STRING_LOADER gText_AbsorbedToxicSpikes
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	return
+
+BattleScript_PSAbsorb:
+	setword BATTLE_STRING_LOADER gText_AbsorbedPsychoSpore
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	return
+
+BattleScript_MMAbsorb:
+	setword BATTLE_STRING_LOADER gText_AbsorbedMushyMess
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	return

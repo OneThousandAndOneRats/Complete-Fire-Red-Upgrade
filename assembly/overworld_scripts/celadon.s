@@ -157,6 +157,7 @@ EventScript_BallShop:
 	release
 	end
 
+
 EventScript_Ball_Values:
 	.hword ITEM_HEAL_BALL
 	.hword ITEM_NET_BALL
@@ -175,7 +176,7 @@ EventScript_Ball_Values:
 	.hword ITEM_LOVE_BALL
 	.hword ITEM_FRIEND_BALL
 	.hword ITEM_MOON_BALL
-	@.hword ITEM_SPORT_BALL
+	.hword ITEM_SPORT_BALL
 	@.hword ITEM_PARK_BALL
 	.hword 0x0
 
@@ -239,16 +240,17 @@ EventScript_IncenseShop:
 	release
 	end
 
+.align 1
 EventScript_Incense_Values:
 	.hword ITEM_SEA_INCENSE
 	.hword ITEM_LAX_INCENSE
-	@.hword ITEM_LUCK_INCENSE
-	@.hword ITEM_FULL_INCENSE
-	@.hword ITEM_ODD_INCENSE
-	@.hword ITEM_PURE_INCENSE
-	@.hword ITEM_ROCK_INCENSE
-	@.hword ITEM_ROSE_INCENSE
-	@.hword ITEM_WAVE_INCENSE
+	.hword ITEM_LUCK_INCENSE
+	.hword ITEM_FULL_INCENSE
+	.hword ITEM_ODD_INCENSE
+	.hword ITEM_PURE_INCENSE
+	.hword ITEM_ROCK_INCENSE
+	.hword ITEM_ROSE_INCENSE
+	.hword ITEM_WAVE_INCENSE
 	.hword 0x0
 
 EventScript_GameCornerItemShop:

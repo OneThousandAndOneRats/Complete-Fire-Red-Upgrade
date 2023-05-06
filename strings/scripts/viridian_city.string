@@ -23,10 +23,10 @@ Fishing is a way of life!\nIt is like the finest poetry.\pFrom the seas to river
 Oh, no!\pI had a nice gift for you, but you\nhave no room for it!
 
 #org @gText_OldManCoffe
-Well, now, I've had my coffee, and\nthat's what I need to get going!\pHm?\nWhat is that red box you have?\pAh, so you're working on your\nPOK\eDEX.\pThen let me give you a word of\nadvice.\pWhenever you catch a POK\eMON,\nthe POK\eDEX automatically updates\lits data.\pI can see in your eyes you\nalready know how to catch\p[.]POK\eMON. Here take this.
+Well, now, I've had my coffee, and\nthat's what I need to get going!\pHm?\nWhat is that red box you have?\pAh, so you're working on your\nPok\edex.\pThen let me give you a word of\nadvice.\pWhenever you catch a Pok\emon,\nthe Pok\edex automatically updates\lits data.\pI can see in your eyes you\nalready know how to catch\p[.]Pok\emon. Here take this.
 
 #org @gText_RecievedDexNav
 [PLAYER] recieved the Dex Nav!
 
 #org @gText_DexNav_Explination
-That device can help you\nfind all POK\eMON in an area.\pIt can be accessed by going\nto the right in the menu. 
+That device can help you\nfind all Pok\emon in an area.\pIt can be accessed by going\nto the right in the menu. 

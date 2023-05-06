@@ -1086,7 +1086,7 @@ void ChangeTargetTypeFunc(void)
 			}
 			else
 			{
-				int num = umodsi(Random(), 25) + 1;
+				int num = umodsi(Random(), 26) + 1;
 				
 				switch(num)
 				{
@@ -1237,6 +1237,12 @@ void ChangeTargetTypeFunc(void)
 					case 25:
 					SET_BATTLER_TYPE(gBankTarget, TYPE_FOOD);
 					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FOOD);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+
+					case 26:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_FUNGUS);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FUNGUS);
 					gBattleStringLoader = TargetTransformedIntoType;
 					break;
 					

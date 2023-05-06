@@ -42,6 +42,17 @@ enum
 
 extern const u16 gBaseExpBySpecies[];
 extern u8 String_TeamExpGain[];
+u8 LevelCap_Badges[9] = {
+	14, //before brock
+	26, //before misty
+	32, //before lt. surge
+	40, //before erika
+	52, //before sabrina
+	62, //before koga
+	65, //before blaine
+	68, //before giovani
+	100
+};
 
 //This file's functions:
 static u32 ExpCalculator(u32 a, u32 t, u32 b, u32 e, u32 L, u32 Lp, u32 p, u32 f, u32 v, u32 s);
@@ -263,6 +274,15 @@ void atk23_getexp(void)
 
 	SKIP_EXP_CALC:
 		calculatedExp = MathMax(1, calculatedExp);
+
+		//these have been added to include a level cap
+		u8 badgeCount = GetBadgeCount();
+		u8 levelCap = LevelCap_Badges[badgeCount];
+		if(pokeLevel >= levelCap)
+		{
+			calculatedExp = 1;
+		}
+
 		gBattleMoveDamage = calculatedExp;
 
 		gBattleScripting.expStateTracker++;
