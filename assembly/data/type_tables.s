@@ -48,6 +48,8 @@ typeicon 32, 12, 0x124      @ Relic icon
 typeicon 32, 12, 0x128      @ Mystic icon
 typeicon 32, 12, 0x12C      @ Food icon
 typeicon 32, 12, 0x140		@ Fungus icon
+typeicon 32, 12, 0x144		@ Tech icon
+typeicon 32, 12, 0x148		@ Shadow icon
 typeicon  8,  8, 0xAE       @ Unused (Small white pokeball)
 typeicon  8,  8, 0xAF       @ Unused (Small dark pokeball)
 

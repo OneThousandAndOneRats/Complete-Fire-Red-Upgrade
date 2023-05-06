@@ -137,8 +137,10 @@
 #define TYPE_MYSTIC   0x1d
 #define TYPE_FOOD     0x1e
 #define TYPE_FUNGUS   0x1f
+#define TYPE_TECH   0x20
+#define TYPE_SHADOW   0x21
 
-#define NUMBER_OF_MON_TYPES (TYPE_FUNGUS + 1)
+#define NUMBER_OF_MON_TYPES (TYPE_SHADOW + 1)
 //#define NUMBER_OF_MON_TYPES (TYPE_FOOD + 1)
 #define NUM_HIDDEN_POWER_TYPES 16
 

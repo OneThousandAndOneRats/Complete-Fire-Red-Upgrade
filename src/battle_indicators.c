@@ -266,6 +266,8 @@ static const struct SpriteFrameImage sTypeIconPicTable[] =
 	[TYPE_MYSTIC] = 	type_icon_frame(CamomonsTypeIconsTiles, TYPE_MYSTIC),
 	[TYPE_FOOD] = 		type_icon_frame(CamomonsTypeIconsTiles, TYPE_FOOD),
 	[TYPE_FUNGUS] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_FUNGUS),
+	[TYPE_TECH] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_TECH),
+	[TYPE_SHADOW] =		type_icon_frame(CamomonsTypeIconsTiles, TYPE_SHADOW),
 };
 
 static const union AffineAnimCmd sSpriteAffineAnim_RaidShieldCreate[] =

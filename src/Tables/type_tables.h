@@ -2,10 +2,10 @@
 /*
 @;format: attacking type, defending type, damage multiplier
 @;the multiplier is a (decimal) fixed-point number:
-@×2.0 TYPE_MUL_SUPER_EFFECTIVE
-@×1.0 TYPE_MUL_NORMAL
-@;×0.5 TYPE_MUL_NOT_EFFECTIVE
-@;×0.0 TYPE_MUL_NO_EFFECT
+@ï¿½2.0 TYPE_MUL_SUPER_EFFECTIVE
+@ï¿½1.0 TYPE_MUL_NORMAL
+@;ï¿½0.5 TYPE_MUL_NOT_EFFECTIVE
+@;ï¿½0.0 TYPE_MUL_NO_EFFECT
 */
 
 const u8 gTypeEffectiveness[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES] =
@@ -324,5 +324,13 @@ const u8 gTypeEffectiveness[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES] =
         [TYPE_FAIRY] = TYPE_MUL_NOT_EFFECTIVE,
         [TYPE_LIGHT] = TYPE_MUL_NOT_EFFECTIVE,
         [TYPE_ICE] = TYPE_MUL_NO_EFFECT,
+    },
+    [TYPE_TECH]=
+    {
+        [TYPE_GRASS] = TYPE_MUL_SUPER_EFFECTIVE,
+    },
+    [TYPE_SHADOW]=
+    {
+        [TYPE_GRASS] = TYPE_MUL_SUPER_EFFECTIVE,
     },
 };

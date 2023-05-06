@@ -298,6 +298,8 @@
 .equ TYPE_MYSTIC, 0x1D
 .equ TYPE_FOOD, 0x1E
 .equ TYPE_FUNGUS, 0x1F
+.equ TYPE_TECH, 0x20
+.equ TYPE_SHADOW, 0x21
 
 @terrains
 .equ ELECTRIC_TERRAIN, 0x1

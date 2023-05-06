@@ -30,9 +30,10 @@
 #define TYPE_MYSTIC	  0x1d
 #define TYPE_FOOD	  0x1e
 #define TYPE_FUNGUS	  0x1f
+#define TYPE_TECH	  0x20
+#define TYPE_SHADOW	  0x21
 
-#define NUMBER_OF_MON_TYPES (TYPE_FUNGUS + 1)
-//#define NUMBER_OF_MON_TYPES (TYPE_FOOD + 1)
+#define NUMBER_OF_MON_TYPES (TYPE_SHADOW + 1)
 
 #define TYPE_NAME_LENGTH 6
 
@@ -109,7 +110,7 @@
 #define EVO_MODE_NORMAL     0
 #define EVO_MODE_TRADE      1
 #define EVO_MODE_ITEM_USE   2
-#define EVO_MODE_ITEM_CHECK 3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokémon to evolve
+#define EVO_MODE_ITEM_CHECK 3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokï¿½mon to evolve
 
 #define SHINY_ODDS 128 //16 // Actual probability is SHINY_ODDS/65536
 //Now set to 1/512

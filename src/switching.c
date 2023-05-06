@@ -1066,7 +1066,7 @@ void atk52_switchineffects(void)
 
 			for (i = 0; i < gBattlersCount; i++)
 				gBattleStruct->hpOnSwitchout[SIDE(i)] = gBattleMons[i].hp;
-			gBattleMons[0].giftRibbon1 = false;
+			//gBattleMons[0].giftRibbon1 = false;
 
 			if (T2_READ_8(gBattlescriptCurrInstr + 1) == 5)
 			{
