@@ -133,7 +133,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define TIME_NIGHT_START 20			//8:00 PM / 20:00
 
 /*===== General Number Options =====*/
-#define KANTO_DEX_COUNT 330
+#define KANTO_DEX_COUNT 340
 #define NATIONAL_DEX_COUNT 1293
 
 #define MAX_LEVEL 100 //Also change this in the file "asm_defines.asm" found in the root

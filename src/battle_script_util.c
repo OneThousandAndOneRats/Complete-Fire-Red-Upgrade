@@ -256,11 +256,42 @@ void LoadTotemMultiBoostSecondStat(void)
 void CheeckPouchFunc(void)
 {
 	u8 bank = gBattleScripting.bank;
-	if (ABILITY(bank) == ABILITY_CHEEKPOUCH && !gNewBS->HealBlockTimers[bank]) { //Berry check should already be done
+	if (ABILITY(bank) == ABILITY_CHEEKPOUCH /* && !SpeciesHasTastyMeal(SPECIES(bank)) */&& !gNewBS->HealBlockTimers[bank]) { //Berry check should already be done
 		gBattleMoveDamage = MathMax(1, udivsi(gBattleMons[bank].maxHP, 3));
 		gBattleMoveDamage *= -1;
 		gFormCounter = TRUE;
 	}
+	// else if(SpeciesHasTastyMeal(SPECIES(bank))) {
+	// 	int rand = RandRange(0,5);
+	// 	u8 statToRaise = 0;
+	// 	int rolls = 0;
+	// 	while (rolls < 5 && STAT_CAN_RISE(bank, statToRaise)) {
+	// 		switch(rand) {
+	// 			case 0:
+	// 				statToRaise = STAT_STAGE_ATK;
+	// 				break;
+	// 			case 1:
+	// 				statToRaise = STAT_STAGE_DEF;
+	// 				break;
+	// 			case 2:
+	// 				statToRaise = STAT_STAGE_SPEED;
+	// 				break;
+	// 			case 3:
+	// 				statToRaise = STAT_STAGE_SPATK;
+	// 				break;
+	// 			case 4:
+	// 				statToRaise = STAT_STAGE_SPDEF;
+	// 				break;
+	// 		}
+	// 		rolls++;
+	// 		rand = RandRange(0,5);
+	// 	}
+	// 	gBattleScripting.statChanger = INCREASE_1 | statToRaise;
+	// 	gBattleScripting.animArg1 = 0xE + statToRaise;
+	// 	gBattleScripting.animArg2 = 0;
+		
+	// 	gFormCounter = TRUE;	
+	// }
 	else
 		gFormCounter = FALSE;
 }

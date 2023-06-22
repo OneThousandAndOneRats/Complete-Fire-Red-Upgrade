@@ -122,3 +122,19 @@ EventScript_newrocksmash_Endall:
 EventScript_newrocksmash_Delete:
 	.byte 0x68
 	.byte 0xFE
+
+
+.global EventScript_GimmighoulEncounter 
+EventScript_GimmighoulEncounter:
+	lockall
+	msgbox gText_Gimmighoul_Found 0x6
+	wildbattle SPECIES_GIMMIGHOUL 0xA 0x00
+	showcoins 0x0 0x0
+	msgbox gText_Gimmighoul_Coins 0x6
+	callasm GiveRandomCoins
+	updatecoins 0x0 0x0
+	sound 0xF8
+	msgbox gText_Gimmighoul_CoinsTaken 0x6
+	hidecoins 0x0 0x0
+	releaseall
+	end

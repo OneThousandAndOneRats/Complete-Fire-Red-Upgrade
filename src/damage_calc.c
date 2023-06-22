@@ -83,11 +83,15 @@ void atk04_critcalc(void)
 	u8 atkEffect = ITEM_EFFECT(gBankAttacker);
 	u8 moveTarget = GetBaseMoveTarget(gCurrentMove, gBankAttacker);
 	bool8 calcSpreadMove = IS_DOUBLE_BATTLE && moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_ALL);
+	u8 resultFlags;
 
 	gStringBank = gBankAttacker;
 
 	for (u32 bankDef = 0; bankDef < gBattlersCount; ++bankDef)
 	{
+		TypeDamageModification(atkAbility, bankDef, gCurrentMove,GetMoveTypeSpecial(gBankAttacker, gCurrentMove) & 0x3F, &resultFlags);
+		//TypeCalc(gCurrentMove, gBankAttacker, bankDef, NULL);
+
 		confirmedCrit = FALSE;
 		critChance = 0;
 
@@ -97,7 +101,7 @@ void atk04_critcalc(void)
 			break; //Already calculated crit chance
 		else if (!BATTLER_ALIVE(bankDef) || bankDef == gBankAttacker
 		|| (bankDef == PARTNER(gBankAttacker) && !(moveTarget & MOVE_TARGET_ALL))
-		|| gNewBS->ResultFlags[bankDef] & MOVE_RESULT_NO_EFFECT
+		|| gNewBS->ResultFlags[bankDef] & MOVE_RESULT_NOT_VERY_EFFECTIVE
 		|| gNewBS->noResultString[bankDef])
 			continue; //Don't bother with this target
 
@@ -114,7 +118,8 @@ void atk04_critcalc(void)
 		else if (IsLaserFocused(gBankAttacker)
 		|| (atkAbility == ABILITY_MERCILESS && !SpeciesHasDrillBeak(GetProperAbilityPopUpSpecies(gBankAttacker)) && (gBattleMons[bankDef].status1 & STATUS_PSN_ANY))
 		|| (atkAbility == ABILITY_DRILLBEAK && SpeciesHasDrillBeak(GetProperAbilityPopUpSpecies(gBankAttacker)) && gSpecialMoveFlags[gCurrentMove].gDrillMoves) //Drill moves always crit
-		|| gSpecialMoveFlags[gCurrentMove].gAlwaysCriticalMoves)
+		|| gSpecialMoveFlags[gCurrentMove].gAlwaysCriticalMoves
+		|| (atkAbility == ABILITY_SUPERLUCK && SpeciesHasRailgun(SPECIES(gBankAttacker)) && (gNewBS->ResultFlags[bankDef] & MOVE_RESULT_NOT_VERY_EFFECTIVE ))) //Something is wrong with this second part of the condtion, the not very effective part
 		{
 			confirmedCrit = TRUE;
 		}
@@ -124,7 +129,7 @@ void atk04_critcalc(void)
 						+ gNewBS->chiStrikeCritBoosts[gBankAttacker]
 						+ (gSpecialMoveFlags[gCurrentMove].gHighCriticalChanceMoves)
 						+ (atkEffect == ITEM_EFFECT_SCOPE_LENS)
-						+ (atkAbility == ABILITY_SUPERLUCK)
+						+ (atkAbility == ABILITY_SUPERLUCK && !SpeciesHasRailgun(SPECIES(gBankAttacker)))
 						#ifdef NATIONAL_DEX_CHANSEY
 						+ 2 * (atkEffect == ITEM_EFFECT_LUCKY_PUNCH && SpeciesToNationalPokedexNum(SPECIES(gBankAttacker)) == NATIONAL_DEX_CHANSEY)
 						#endif
@@ -212,7 +217,8 @@ static u8 CalcPossibleCritChance(u8 bankAtk, u8 bankDef, u16 move, struct Pokemo
 	else if ((IsLaserFocused(bankAtk) && monAtk == NULL)
 	|| (atkAbility == ABILITY_MERCILESS && !SpeciesHasDrillBeak(atkAbilitySpecies) && (defStatus1 & STATUS_PSN_ANY))
 	|| (atkAbility == ABILITY_DRILLBEAK && SpeciesHasDrillBeak(atkAbilitySpecies) && gSpecialMoveFlags[move].gDrillMoves) //Drill moves always crit
-	|| gSpecialMoveFlags[move].gAlwaysCriticalMoves)
+	|| gSpecialMoveFlags[move].gAlwaysCriticalMoves
+	|| (atkAbility == ABILITY_SUPERLUCK && SpeciesHasRailgun(SPECIES(gBankAttacker)) && (gNewBS->ResultFlags[bankDef] & MOVE_RESULT_NOT_VERY_EFFECTIVE ))) //Something is wrong with this second part of the condtion, the not very effective part
 	{
 		return TRUE;
 	}
@@ -3167,7 +3173,11 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 		case ABILITY_FILTER:
 		case ABILITY_PRISMARMOR:
 		//0.75x Decrement
-			if (data->resultFlags & MOVE_RESULT_SUPER_EFFECTIVE)
+			if (SpeciesHasPunkRock(data->atkSpecies)) {
+				if(CheckSoundMove(move))
+					damage /=2;
+			}
+			else if (data->resultFlags & MOVE_RESULT_SUPER_EFFECTIVE)
 				damage = (damage * 75) / 100;
 			break;
 
@@ -3201,6 +3211,7 @@ static s32 CalculateBaseDamage(struct DamageCalc* data)
 			if(data->moveType == TYPE_FIRE)
 				damage /=2;
 			break;
+
 		/*
 		case ABILITY_PUNKROCK:
 		//0.5x Decrement
@@ -4146,6 +4157,12 @@ static u16 AdjustBasePower(struct DamageCalc* data, u16 power)
 		//1.2 Boost
 			if(gSpecialMoveFlags[move].gBeamMoves)
 				power = (power * 12) / 10;
+			break;
+
+
+		case ABILITY_FILTER:
+			if (SpeciesHasPunkRock(data->atkSpecies) && CheckSoundMove(move))
+				power = (power* 13) / 10;
 			break;
 
 		/*

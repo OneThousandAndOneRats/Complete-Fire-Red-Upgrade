@@ -22,6 +22,13 @@ bool8 IsTargetAbilityIgnoredNoMove(u8 defAbility, u8 atkAbility);
 
 bool8 SpeciesHasTurboblaze(u16 species);
 bool8 SpeciesHasTeravolt(u16 species);
+bool8 SpeciesHasPunkRock(u16 species);
+bool8 SpeciesHasSweetTreat(u16 species);
+bool8 SpeciesHasInfection(u16 species);
+bool8 SpeciesHasRailgun(u16 species);
+bool8 SpeciesHasTastyMeal(u16 species);
+bool8 SpeciesHasMyceliumMight(u16 species);
+bool8 SpeciesHasGoodAsGold(u16 species);
 bool8 SpeciesHasDrillBeak(u16 species);
 bool8 SpeciesHasGrassDash(u16 species);
 bool8 SpeciesHasEvaporate(u16 species);

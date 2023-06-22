@@ -97,3 +97,9 @@ EventScript_oldManGiveDexnav:
 	msgbox gText_DexNav_Explination 0x6
 	setvar 0x4051 0x2
 	return
+
+
+EventScript_VirCityGimmighoul:
+	giveitem ITEM_POTION 0x1 MSG_FIND
+	call EventScript_GimmighoulEncounter
+	end

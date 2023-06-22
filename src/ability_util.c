@@ -53,10 +53,26 @@ extern const u8 gText_AbilityName_HoneyArmor[];
 extern const u8 gText_AbilityName_FaceShield[];
 extern const u8 gText_AbilityName_RoyalRoar[];
 
+//My Added Abilities
+extern const u8 gText_AbilityName_PunkRock[];
+extern const u8 gText_AbilityName_SweetTreat[];
+extern const u8 gText_AbilityName_Infection[];
+extern const u8 gText_AbilityName_Railgun[];
+extern const u8 gText_AbilityName_TastyMeal[];
+extern const u8 gText_AbilityName_MyceliumMight[];
+extern const u8 gText_AbilityName_GoodAsGold[];
+
 extern const u8 gText_AbilityDescription_Evaporate[];
 extern const u8 gText_AbilityDescription_GrassDash[];
 extern const u8 gText_AbilityDescription_SlipperyTail[];
 extern const u8 gText_AbilityDescription_DrillBeak[];
+extern const u8 gText_AbilityDescription_PunkRock[];
+extern const u8 gText_AbilityDescription_SweetTreat[];
+extern const u8 gText_AbilityDescription_Infection[];
+extern const u8 gText_AbilityDescription_Railgun[];
+extern const u8 gText_AbilityDescription_TastyMeal[];
+extern const u8 gText_AbilityDescription_MyceliumMight[];
+extern const u8 gText_AbilityDescription_GoodAsGold[];
 
 const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses the 255 Ability limitation and implements clone Abilities
 {
@@ -124,6 +140,32 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 					return gText_AbilityName_SolidRock;
 				#endif
 			}
+			if (SpeciesHasPunkRock(species))
+					return gText_AbilityName_PunkRock;
+			break;
+		case ABILITY_POISONTOUCH:
+			if (SpeciesHasSweetTreat(species))
+				return gText_AbilityName_SweetTreat;
+			break;
+		case ABILITY_COSMOSCONQUEROR:
+			if (SpeciesHasInfection(species))
+				return gText_AbilityName_Infection;
+			break;
+		case ABILITY_SUPERLUCK:
+			if (SpeciesHasRailgun(species))
+				return gText_AbilityName_Railgun;
+			break;
+		case ABILITY_CHEEKPOUCH:
+			if (SpeciesHasTastyMeal(species))
+				return gText_AbilityName_TastyMeal;
+			break;
+		case ABILITY_STALL:
+			if (SpeciesHasMyceliumMight(species))
+				return gText_AbilityName_MyceliumMight;
+			break;
+		case ABILITY_OVERCOAT:
+			if (SpeciesHasGoodAsGold(species))
+				return gText_AbilityName_GoodAsGold;
 			break;
 		case ABILITY_MOLDBREAKER:
 			if (SpeciesHasTurboblaze(species))
@@ -388,6 +430,34 @@ const u8* GetAbilityDescriptionOverride(const u8 ability, const u16 species) //B
 			if (SpeciesHasDrillBeak(species))
 				return gText_AbilityDescription_DrillBeak;
 			break;
+		case ABILITY_FILTER:
+			if (SpeciesHasPunkRock(species))
+				return gText_AbilityDescription_PunkRock;
+			break;
+		case ABILITY_POISONTOUCH:
+			if (SpeciesHasSweetTreat(species))
+				return gText_AbilityDescription_SweetTreat;
+			break;
+		case ABILITY_COSMOSCONQUEROR:
+			if (SpeciesHasInfection(species))
+				return gText_AbilityDescription_Infection;
+			break;
+		case ABILITY_SUPERLUCK:
+			if (SpeciesHasRailgun(species))
+				return gText_AbilityDescription_Railgun;
+			break;
+		case ABILITY_CHEEKPOUCH:
+			if (SpeciesHasTastyMeal(species))
+				return gText_AbilityDescription_TastyMeal;
+			break;
+		case ABILITY_STALL:
+			if (SpeciesHasMyceliumMight(species))
+				return gText_AbilityDescription_MyceliumMight;
+			break;
+		case ABILITY_OVERCOAT:
+			if (SpeciesHasGoodAsGold(species))
+				return gText_AbilityDescription_GoodAsGold;
+			break;
 	}
 
 	return NULL;
@@ -477,6 +547,74 @@ bool8 SpeciesHasTeravolt(unusedArg u16 species)
 	return FALSE;
 	#endif
 }
+
+bool8 SpeciesHasPunkRock(unusedArg u16 species)
+{
+	#if (defined SPECIES_TOXTRICITY)
+	return species == SPECIES_TOXTRICITY;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasSweetTreat(unusedArg u16 species)
+{
+	#if (defined SPECIES_MILCERY && defined SPECIES_ALCREMIE_STRAWBERRY)
+	return species == SPECIES_MILCERY
+		|| species == SPECIES_ALCREMIE_STRAWBERRY;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasInfection(unusedArg u16 species)
+{
+	#if (defined SPECIES_PARAS && defined SPECIES_PARASECT)
+	return species == SPECIES_PARAS
+		|| species == SPECIES_PARASECT;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasRailgun(unusedArg u16 species)
+{
+	#if (defined SPECIES_VIKAVOLT)
+	return species == SPECIES_VIKAVOLT;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasTastyMeal(unusedArg u16 species)
+{
+	#if (defined SPECIES_LICKITUNG && defined SPECIES_LICKILICKY)
+	return species == SPECIES_LICKITUNG
+		|| species == SPECIES_LICKILICKY;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasMyceliumMight (unusedArg u16 species)
+{
+	#if (defined SPECIES_TOEDSCOOL && defined SPECIES_TOEDSCRUEL)
+	return species == SPECIES_TOEDSCOOL
+		|| species == SPECIES_TOEDSCRUEL;
+	#else
+	return FALSE;
+	#endif
+}
+
+bool8 SpeciesHasGoodAsGold (unusedArg u16 species)
+{
+	#if (defined SPECIES_GHOLDENGO)
+	return species == SPECIES_GHOLDENGO;
+	#else
+	return FALSE;
+	#endif
+}
+
 
 bool8 SpeciesHasDrillBeak(unusedArg u16 species) //Custom Unbound Ability
 {
@@ -835,6 +973,9 @@ bool8 IsVitalSpiritAbility(u8 ability, u16 species)
 		#endif
 		#ifdef NATIONAL_DEX_LYCANROC
 		case NATIONAL_DEX_LYCANROC:
+		#endif
+		#ifdef NATIONAL_DEX_ANNIHILAPE
+		case NATIONAL_DEX_ANNIHILAPE:
 		#endif
 			return TRUE;
 	}

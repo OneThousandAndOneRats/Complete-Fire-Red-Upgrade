@@ -2839,6 +2839,22 @@ bool8 TakeCoins(u32 toTake)
 	return TRUE;
 }
 
+bool8 GiveRandomCoins()
+{
+	u32 newAmount;
+	u32 toAdd = RandRange(10,777);
+	u32 current = GetCoins();
+	if (current >= MAX_COINS)
+		return FALSE;
+	else if (current + toAdd >= MAX_COINS)
+		newAmount = MAX_COINS;
+	else
+		newAmount = current + toAdd;
+
+	SetCoins(newAmount);
+	return TRUE;
+}
+
 
 // Check if player has a certain number of coins
 bool8 scrB3_CheckCoins(struct ScriptContext *ctx)

@@ -7326,10 +7326,11 @@ const struct Trainer gTrainers[] = {
         .trainerName = RIVAL_NAME,
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
         .partySize = NELEMS(sParty_RivalLabFire),
         .party = {.NoItemDefaultMoves = sParty_RivalLabFire}
     },
+
     [TRAINER_RIVAL_OAKS_LAB_GROOKEY] = {
         .partyFlags = 0,
         .trainerClass = CLASS_RIVAL,
@@ -7338,7 +7339,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = RIVAL_NAME,
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_RivalLabGrass),
         .party = {.NoItemDefaultMoves = sParty_RivalLabGrass}
     },
@@ -7350,7 +7351,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = RIVAL_NAME,
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_RivalLabWater),
         .party = {.NoItemDefaultMoves = sParty_RivalLabWater}
     },

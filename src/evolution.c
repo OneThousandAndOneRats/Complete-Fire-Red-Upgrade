@@ -5,6 +5,7 @@
 #include "../include/field_player_avatar.h"
 #include "../include/fieldmap.h"
 #include "../include/overworld.h"
+#include "../include/coins.h"
 #include "../include/constants/hold_effects.h"
 #include "../include/constants/items.h"
 #include "../include/constants/pokedex.h"
@@ -16,6 +17,7 @@
 #include "../include/new/evolution.h"
 #include "../include/new/form_change.h"
 #include "../include/new/util.h"
+
 
 /*
 evolution.c
@@ -309,6 +311,14 @@ u16 GetEvolutionTargetSpecies(struct Pokemon* mon, u8 type, u16 evolutionItem)
 						#endif
 					}
 					break;
+
+				case EVO_COINS: //Level up with enough coins
+					if (GetCoins() >= gEvolutionTable[species][i].param)
+					{
+						targetSpecies = gEvolutionTable[species][i].targetSpecies;
+						TakeCoins(gEvolutionTable[species][i].param);
+					}
+					break;
 			}
 		}
 
@@ -429,6 +439,7 @@ bool8 IsLevelUpEvolutionMethod(u8 method)
 		case EVO_NATURE_HIGH:
 		case EVO_NATURE_LOW:
 		case EVO_LEVEL_HOLD_ITEM:
+		case EVO_COINS:
 			return TRUE;
 		default:
 			return FALSE;

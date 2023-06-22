@@ -3217,7 +3217,7 @@ static bool8 TakesGeneralWeatherDamage(u8 bank)
 
 	return WEATHER_HAS_EFFECT
 		&& 	ability != ABILITY_MAGICGUARD
-		&&	ability != ABILITY_OVERCOAT
+		&&	(ability != ABILITY_OVERCOAT  || (SpeciesHasGoodAsGold(SPECIES(bank)) ))
 		&&	effect  != ITEM_EFFECT_SAFETY_GOGGLES
 		&& !(gStatuses3[bank] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER)); //For some strange reason, Pokemon using Shadow/Phantom Force still take weather damage
 }

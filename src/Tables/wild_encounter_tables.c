@@ -954,9 +954,9 @@ static const struct WildPokemon gRoute14_LandMons[] =
   {28, 34, SPECIES_BEWEAR},         //Chance: 10% 
   {28, 34, SPECIES_XATU},         //Chance: 5%
   {28, 34, SPECIES_BEWEAR},         //Chance: 5%
-  {28, 34, SPECIES_SWADLOON},         //Chance: 4%
+  {28, 34, SPECIES_TOEDSCOOL},         //Chance: 4%
   {28, 34, SPECIES_XATU},         //Chance: 4%
-  {28, 34, SPECIES_SWADLOON},         //Chance: 1%
+  {28, 34, SPECIES_TOEDSCOOL},         //Chance: 1%
   {28, 34, SPECIES_XATU},         //Chance: 1%
 };
 static const struct WildPokemonInfo gRoute14_LandMonsInfo= {20, gRoute14_LandMons};
@@ -1494,17 +1494,17 @@ static const struct WildPokemonInfo gPokemonMansionB1F_LandMonsInfo= {7, gPokemo
 static const struct WildPokemon gPowerPlant_LandMons[] =
 {
   {36, 42, SPECIES_FLAAFFY},         //Chance: 20% Galvantula
-  {36, 42, SPECIES_LUXIO},         //Chance: 20% Elektrik
+  {36, 42, SPECIES_VAROOM},         //Chance: 20% Elektrik
   {36, 42, SPECIES_FLAAFFY},         //Chance: 10% Luxio
-  {36, 42, SPECIES_LUXIO},         //Chance: 10% Luxray
+  {36, 42, SPECIES_VAROOM},         //Chance: 10% Luxray
   {36, 42, SPECIES_BOLTUND},         //Chance: 10% Flaffy
   {36, 42, SPECIES_GALVANTULA},         //Chance: 10% Boltund
   {36, 42, SPECIES_EELEKTRIK},         //Chance: 5% 
   {36, 42, SPECIES_GALVANTULA},         //Chance: 5% 
   {36, 42, SPECIES_EELEKTRIK},         //Chance: 4%
-  {36, 42, SPECIES_LUXRAY},         //Chance: 4%
-  {36, 42, SPECIES_LUXRAY},         //Chance: 1%
-  {36, 42, SPECIES_LUXRAY},         //Chance: 1%
+  {36, 42, SPECIES_REVAVROOM},         //Chance: 4%
+  {36, 42, SPECIES_REVAVROOM},         //Chance: 1%
+  {36, 42, SPECIES_REVAVROOM},         //Chance: 1%
 };
 static const struct WildPokemonInfo gPowerPlant_LandMonsInfo= {7, gPowerPlant_LandMons};
 

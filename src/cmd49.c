@@ -186,11 +186,23 @@ void atk49_moveend(void) //All the effects that happen after a move is used
 						break;
 
 					case ABILITY_POISONTOUCH: ;
-						u8 chance = 30;
+						u8 chance = 200;//30;
 						if (BankHasRainbow(gBankAttacker))
 							chance *= 2;
 
-						if (CheckContact(gCurrentMove, gBankAttacker, gBankTarget)
+						if (SpeciesHasSweetTreat(SPECIES(gBankAttacker))
+							&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
+							&& umodsi(Random(), 25) < chance) 
+						{
+							chance = 10;
+							if (umodsi(Random(), 25) < chance) {
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_SweetTreat;
+								effect = TRUE;
+							}
+						}
+
+						else if (CheckContact(gCurrentMove, gBankAttacker, gBankTarget)
 						&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
 						&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)
 						&& umodsi(Random(), 100) < chance)

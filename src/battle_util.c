@@ -285,6 +285,9 @@ bool8 CanHitSemiInvulnerableTarget(u8 bankAtk, u8 bankDef, u16 move)
 	if (move == MOVE_TOXIC && IsOfType(bankAtk, TYPE_POISON))
 		return TRUE;
 
+	if (ABILITY(bankAtk) == ABILITY_STALL && SpeciesHasMyceliumMight(SPECIES(bankAtk)) && SPLIT(move) == SPLIT_STATUS)
+		return TRUE;
+
 	return gStatuses3[bankDef] & STATUS3_ALWAYS_HITS && gDisableStructs[bankDef].bankWithSureHit == bankAtk;
 }
 

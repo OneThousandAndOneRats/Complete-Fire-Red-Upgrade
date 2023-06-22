@@ -13,6 +13,7 @@
 #define BattleScript_Recoil (const u8*) 0x81D9243
 
 extern const u8 BattleScript_PoisonTouch[];
+extern const u8 BattleScript_SweetTreat[];
 extern const u8 BattleScript_KingsShield[];
 extern const u8 BattleScript_SpikyShield[];
 extern const u8 BattleScript_BanefulBunker[];

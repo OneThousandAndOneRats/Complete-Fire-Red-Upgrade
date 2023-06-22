@@ -1019,7 +1019,18 @@ void atkFE_prefaintmoveendeffects(void)
 						if (BankHasRainbow(gBankAttacker))
 							chance *= 2;
 
-						if (CheckContact(gCurrentMove, gBankAttacker, gBankTarget)
+						if (SpeciesHasSweetTreat(SPECIES(gBankAttacker))
+							&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST) 
+						{
+							chance = 10;
+							if (umodsi(Random(), 25) < chance) {
+								BattleScriptPushCursor();
+								gBattlescriptCurrInstr = BattleScript_SweetTreat;
+								effect = TRUE;
+							}
+						}
+
+						else if (CheckContact(gCurrentMove, gBankAttacker, gBankTarget)
 						&& ABILITY(gBankTarget) != ABILITY_SHIELDDUST
 						&& CanBePoisoned(gBankTarget, gBankAttacker, TRUE)
 						&& umodsi(Random(), 100) < chance)

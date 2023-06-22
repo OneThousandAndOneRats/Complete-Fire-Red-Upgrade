@@ -11,6 +11,7 @@ cmd49_battle_scripts.s
 
 .global BattleScript_CouldntFullyProtect
 .global BattleScript_PoisonTouch
+.global BattleScript_SweetTreat
 .global BattleScript_KingsShield
 .global BattleScript_SpikyShield
 .global BattleScript_BanefulBunker
@@ -54,6 +55,17 @@ BattleScript_PoisonTouch:
 	setbyte POISONED_BY 0x1
 	setbyte EFFECT_BYTE 0x2
 	seteffectsecondary @;Affected by Safeguard
+	return
+
+BattleScript_SweetTreat:
+	jumpiffainted BANK_TARGET BattleScript_SweetTreat_end
+	tryinfatuatebank BANK_TARGET BattleScript_SweetTreat_end
+	status2animation BANK_TARGET STATUS2_INLOVE
+	printstring 0x45
+	waitmessage DELAY_1SECOND
+	return
+
+BattleScript_SweetTreat_end:
 	return
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

@@ -1744,7 +1744,12 @@ u8 AbilityBattleEffects(u8 caseID, u8 bank, u8 ability, u8 special, u16 moveArg)
 						break;
 
 					case ABILITY_OVERCOAT:
-						if (gSpecialMoveFlags[move].gPowderMoves)
+						if (SpeciesHasGoodAsGold(SPECIES(bank)) 
+							&& SPLIT(move) == SPLIT_STATUS 
+							&& !(gBattleMoves[move].target & MOVE_TARGET_OPPONENTS_FIELD) 
+							&& !(gBattleMoves[move].target & MOVE_TARGET_USER))
+							effect = 1;
+						else if (gSpecialMoveFlags[move].gPowderMoves)
 							effect = 1;
 						break;
 

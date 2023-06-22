@@ -628,3 +628,24 @@ Tail moves hit first.
 
 #org @gText_AbilityDescription_DrillBeak
 Drill moves land critical hits.
+
+#org @gText_AbilityDescription_PunkRock
+Ups and resists sound moves.
+
+#org @gText_AbilityDescription_SweetTreat
+Attacks can make foe fall in love.
+
+#org @gText_AbilityDescription_Infection
+Fungus is Effective against Bug.
+
+#org @gText_AbilityDescription_Railgun
+Likely to crit when foe resists.
+
+#org @gText_AbilityDescription_TastyMeal
+Heals extra when eating a berry.
+
+#org @gText_AbilityDescription_MyceliumMight
+Status go last, but always hit.
+
+#org @gText_AbilityDescription_GoodAsGold
+Immune to status moves.

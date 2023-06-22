@@ -25,3 +25,12 @@ Strength made it possible to move\nboulders around.
 
 #org @gText_newrocksmash_Nosmash
 It's a rugged rock, but a Pok\emon\nmay be able to smash it.
+
+#org @gText_Gimmighoul_Found
+Oh?\pThere was a Pok\emon hiding here!
+
+#org @gText_Gimmighoul_Coins
+The wild Gimmighoul had a trove of\ncoins!
+
+#org @gText_Gimmighoul_CoinsTaken
+[PLAYER] took the coins.

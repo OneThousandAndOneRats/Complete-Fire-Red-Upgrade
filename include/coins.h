@@ -10,5 +10,6 @@ u32 GetCoins(void);
 void SetCoins(u32 coinAmount);
 bool8 GiveCoins(u32 toAdd);
 bool8 TakeCoins(u32 toSub);
+bool8 GiveRandomCoins(void);
 
 #endif // GUARD_COINS_H
