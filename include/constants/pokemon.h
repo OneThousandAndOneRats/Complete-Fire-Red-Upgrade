@@ -32,8 +32,9 @@
 #define TYPE_FUNGUS	  0x1f
 #define TYPE_TECH	  0x20
 #define TYPE_SHADOW	  0x21
+#define TYPE_CRYSTAL  0x22
 
-#define NUMBER_OF_MON_TYPES (TYPE_SHADOW + 1)
+#define NUMBER_OF_MON_TYPES (TYPE_CRYSTAL + 1)
 
 #define TYPE_NAME_LENGTH 6
 

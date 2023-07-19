@@ -165,7 +165,8 @@ Hyper Cutter
 Pickup
 
 #org @NAME_TRUANT
-Truant
+Recharging
+//Truant
 
 #org @NAME_HUSTLE
 Hustle
@@ -946,3 +947,6 @@ MycelmMight
 
 #org @gText_AbilityName_GoodAsGold
 Good as Gold
+
+#org @gText_AbilityName_Brilliance
+Brilliance

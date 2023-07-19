@@ -370,7 +370,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
 					gNewBS->secondaryEffectApplied = TRUE;
 					if (SIDE(gBankAttacker) == B_SIDE_PLAYER)
 					{
-						if (IsAnyMaxMove(gCurrentMove) && gBattleMoves[gCurrentMove].z_move_effect == MAX_EFFECT_CONFUSE_FOES_PAY_DAY)
+						if ((IsAnyMaxMove(gCurrentMove) && gBattleMoves[gCurrentMove].z_move_effect == MAX_EFFECT_CONFUSE_FOES_PAY_DAY) || gCurrentMove == MOVE_GEMCANNON)
 							gNewBS->maxGoldrushMoney += (100 * ++gNewBS->maxGoldrushUses * gBattleMons[gBankAttacker].level);
 						else
 							gNewBS->PayDayByPartyIndices[gBattlerPartyIndexes[gBankAttacker]]++;
@@ -544,6 +544,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
 					BattleScriptPush(gBattlescriptCurrInstr + 1);
 					gBattlescriptCurrInstr = BattleScript_StatDown;
 				}
+
 				break;
 
 			case MOVE_EFFECT_ATK_PLUS_2:
@@ -1086,6 +1087,21 @@ bool8 SetMoveEffect2(void)
 
 						BattleScriptPushCursor();
 						gBattlescriptCurrInstr = BattleScript_TargetBurnHeal;
+						effect = TRUE;
+					}
+					break;
+
+				case MOVE_ANTIVIRUS:
+					if (gBattleMons[gBankAttacker].status1 & STATUS1_PSN_ANY)
+					{
+						gBattleMons[gBankAttacker].status1 &= !(STATUS1_PSN_ANY);
+
+						gActiveBattler = gBankAttacker;
+						EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4, &gBattleMons[gActiveBattler].status1);
+						MarkBufferBankForExecution(gActiveBattler);
+
+						BattleScriptPushCursor();
+						gBattlescriptCurrInstr = BattleScript_TargetPoisonHeal;
 						effect = TRUE;
 					}
 					break;

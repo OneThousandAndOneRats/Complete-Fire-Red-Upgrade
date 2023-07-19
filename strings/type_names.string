@@ -1,4 +1,4 @@
-MAX_LENGTH=6
+MAX_LENGTH=7
 FILL_FF=True
 
 #org @gTypeNames
@@ -101,5 +101,8 @@ Fungus
 #org @NAME_TECH
 Tech
 
-#org @NAME_Shadow
+#org @NAME_SHADOW
 Shadow
+
+#org @NAME_CRYSTAL
+Crystal

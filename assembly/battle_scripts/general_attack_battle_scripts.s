@@ -598,6 +598,7 @@ BS_024_LowerTargetEvsn1:
 BS_025_Haze:
 	attackcanceler
 	jumpifmove MOVE_BIGBANG BigBangBS
+	jumpifmove MOVE_HARDRESET BigBangBS
 	attackstring
 	ppreduce
 	attackanimation
@@ -615,6 +616,7 @@ BigBangBS:
 	printstring 0xF9
 	waitmessage DELAY_1SECOND
 	goto BS_MOVE_FAINT
+
 	
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1044,8 +1046,16 @@ BS_033_SetBadPoison:
 
 .global BS_034_PayDay
 BS_034_PayDay:
+	jumpifmove MOVE_MAKEITRAIN MakeItRainBS
 	setmoveeffect MOVE_EFFECT_PAYDAY
 	goto BS_STANDARD_HIT
+
+MakeItRainBS:
+	@setmoveeffect MOVE_EFFECT_PAYDAY | MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	setmoveeffect MOVE_EFFECT_PAYDAY | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+
+	goto BS_STANDARD_HIT
+
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -1942,6 +1952,9 @@ SetLeechSeedShakerBS:
 .global BS_085_Splash
 BS_085_Splash:
 	jumpifmove MOVE_FERMENTEDSPRAY FermentedSprayBs
+	jumpifmove MOVE_OVERCHARGE OverchargeBs
+	jumpifmove MOVE_OVERCLOCKING OverclockBs
+	jumpifmove MOVE_COOLDOWN CooldownBs
 	attackcanceler
 	attackstring
 	ppreduce
@@ -1967,6 +1980,74 @@ FermentedSprayConfuse:
 	resultmessage
 	waitmessage DELAY_1SECOND
 	goto BS_MOVE_FAINT
+
+OverchargeBs:
+	attackcanceler
+	attackstring
+	ppreduce
+	trysetparalysis BANK_TARGET BS_StatusMoveFail
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_PARALYSIS
+	seteffectprimary
+	jumpifstat BANK_TARGET EQUALS STAT_ATK STAT_MAX FAILED
+	setbyte STAT_ANIM_PLAYED 0x0
+	playstatchangeanimation BANK_ATTACKER, STAT_ANIM_ATK, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES
+	setstatchanger STAT_ATK | INCREASE_3
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN BS_MOVE_END
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
+OverclockBs:
+	attackcanceler
+	attackstring
+	ppreduce
+	trysetpoison BANK_TARGET BS_StatusMoveFail
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_TOXIC
+	seteffectprimary
+	jumpifstat BANK_TARGET EQUALS STAT_SPATK STAT_MAX FAILED
+	setbyte STAT_ANIM_PLAYED 0x0
+	playstatchangeanimation BANK_ATTACKER, STAT_ANIM_SPATK, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES
+	setstatchanger STAT_SPATK | INCREASE_3
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN BS_MOVE_END
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
+
+CooldownBs:
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstatus BANK_TARGET STATUS_ANY FAILED_PRE
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_FREEZE
+	seteffectprimary
+	jumpifstat BANK_TARGET LESSTHAN STAT_DEF STAT_MAX Cooldown_Def
+	jumpifstat BANK_TARGET EQUALS STAT_SPDEF STAT_MAX BattleScript_CantRaiseMultipleStats
+
+Cooldown_Def:
+	setbyte STAT_ANIM_PLAYED 0x0
+	playstatchangeanimation BANK_ATTACKER, STAT_ANIM_DEF | STAT_ANIM_DEF, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES
+	setstatchanger STAT_DEF | INCREASE_2
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN Cooldown_SpDef
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 Cooldown_SpDef
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+
+Cooldown_SpDef:
+	setstatchanger STAT_SPDEF | INCREASE_2
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN BS_MOVE_END
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -4293,6 +4374,7 @@ BS_182_Superpower:
 	jumpifmove MOVE_HEADLONGRUSH CloseCombatBS
 	jumpifmove MOVE_HAMMERARM HammerArmBS
 	jumpifmove MOVE_ICEHAMMER HammerArmBS
+	jumpifmove MOVE_SPINOUT SpinOutBS
 	jumpifmove MOVE_CLANGINGSCALES ClangingScalesBS
 	jumpifmove MOVE_VCREATE VCreateBS
 	jumpifmove MOVE_HYPERSPACEFURY HyperspaceFuryBS
@@ -4331,6 +4413,12 @@ CC_LowerSpDef:
 
 HammerArmBS:
 	setmoveeffect MOVE_EFFECT_SPD_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+	goto BS_STANDARD_HIT
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+SpinOutBS:
+	setmoveeffect MOVE_EFFECT_SPD_MINUS_2 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
 	goto BS_STANDARD_HIT
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -4408,7 +4496,14 @@ RecycleBS:
 	tryactivateprotean
 	attackanimation
 	waitanimation
+	jumpifmove MOVE_FACETING FacetingBS
 	printstring 0x140
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
+FacetingBS:
+	setword BATTLE_STRING_LOADER FacetingString
+	printstring 0x184
 	waitmessage DELAY_1SECOND
 	goto BS_MOVE_END
 
@@ -4502,6 +4597,8 @@ BS_191_SkillSwap:
 	jumpifmove MOVE_COREENFORCER CoreEnforcerBS
 	jumpifmove MOVE_SIMPLEBEAM SimpleBeamBS
 	jumpifmove MOVE_DEAFEN DeafenBS
+	jumpifmove MOVE_BURNOUT SimpleBeamBS
+
 	
 SkillSwapBS:
 	attackcanceler
@@ -4588,6 +4685,7 @@ WorrySeedBS_ChangeAbility:
 	callasm RestoreOriginalAttackerAndTarget
 	tryactivateswitchinability BANK_TARGET
 	callasm RestoreOriginalAttackerAndTarget
+	jumpifmove MOVE_BURNOUT BurnoutBS
 	goto BS_MOVE_END
 
 DeafenBS:
@@ -4619,6 +4717,52 @@ CoreEnforcerBS:
 	setmoveeffect MOVE_EFFECT_SUPPRESS_ABILITY | MOVE_EFFECT_CERTAIN
 	goto BS_STANDARD_HIT
 
+
+
+BurnoutBS:
+	jumpifstat BANK_ATTACKER LESSTHAN STAT_ATK STAT_MAX Burnout_Atk
+	jumpifstat BANK_ATTACKER LESSTHAN STAT_DEF STAT_MAX Burnout_Atk
+	jumpifstat BANK_ATTACKER LESSTHAN STAT_SPD STAT_MAX Burnout_Atk
+	jumpifstat BANK_ATTACKER LESSTHAN STAT_SPATK STAT_MAX Burnout_Atk
+	jumpifstat BANK_ATTACKER EQUALS STAT_SPDEF STAT_MAX BattleScript_CantRaiseMultipleStats
+
+Burnout_Atk:
+	playstatchangeanimation BANK_ATTACKER, STAT_ANIM_ATK | STAT_ANIM_DEF | STAT_ANIM_SPD | STAT_ANIM_SPATK | STAT_ANIM_SPDEF, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES | STAT_ANIM_BY_TWO
+	setstatchanger STAT_ATK | INCREASE_6
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN Burnout_Def
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 Burnout_Def
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+
+Burnout_Def:
+	setstatchanger STAT_DEF | INCREASE_6
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN Burnout_SpAtk
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 Burnout_SpAtk
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+
+Burnout_SpAtk:
+	setstatchanger STAT_SPATK | INCREASE_6
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN Burnout_SpDef
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 Burnout_SpDef
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+
+Burnout_SpDef:
+	setstatchanger STAT_SPDEF | INCREASE_6
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN Burnout_Spd
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 Burnout_Spd
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+
+Burnout_Spd:
+	setstatchanger STAT_SPD | INCREASE_6
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN BS_MOVE_END
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .global BS_192_Imprison
@@ -4644,13 +4788,14 @@ BS_193_Refresh:
 RefreshBS:
 	attackstringnoprotean
 	ppreduce
-	cureifburnedparalysedorpoisoned FAILED
+	cureprimarystatus BANK_ATTACKER FAILED_PRE
 	tryactivateprotean
 	attackanimation
 	waitanimation
 	printstring 0xA7 @;STRINGID_PKMNSTATUSNORMAL
 	waitmessage DELAY_1SECOND
 	refreshhpbar BANK_ATTACKER
+	jumpifmove MOVE_REBOOT RebootBs
 	goto BS_MOVE_END
 	
 PsychoShiftBS:
@@ -4671,6 +4816,20 @@ PsychoShiftBS:
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	goto BS_MOVE_END
+
+RebootBs:
+	jumpifstat BANK_ATTACKER LESSTHAN STAT_SPD STAT_MAX Reboot_Speed
+	goto BS_MOVE_END
+
+Reboot_Speed:
+	playstatchangeanimation BANK_ATTACKER, STAT_ANIM_SPD, STAT_ANIM_UP | STAT_ANIM_IGNORE_ABILITIES
+	setstatchanger STAT_SPD | INCREASE_1
+	statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN RaiseUserDefSpeed_Evasion
+	jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+	printfromtable gStatUpStringIds
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
+
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -6869,3 +7028,4 @@ QuashString: .byte 0xFD, 0x10, 0xB4, 0xE7, 0x00, 0xE1, 0xE3, 0xEA, 0xD9, 0xFE, 0
 MagnetRiseSetString: .byte 0xFD, 0x0F, 0x00, 0xE0, 0xD9, 0xEA, 0xDD, 0xE8, 0xD5, 0xE8, 0xD9, 0xD8, 0xFE, 0xEB, 0xDD, 0xE8, 0xDC, 0x00, 0xD9, 0xE0, 0xD9, 0xD7, 0xE8, 0xE6, 0xE3, 0xE1, 0xD5, 0xDB, 0xE2, 0xD9, 0xE8, 0xDD, 0xE7, 0xE1, 0xAB, 0xFF
 FlameBurstString: .byte 0xCE, 0xDC, 0xD9, 0x00, 0xD6, 0xE9, 0xE6, 0xE7, 0xE8, 0xDD, 0xE2, 0xDB, 0x00, 0xDA, 0xE0, 0xD5, 0xE1, 0xD9, 0x00, 0xDC, 0xDD, 0xE8, 0xFE, 0xFD, 0x13, 0xAB, 0xFF
 DigestString: .byte 0xFD, 0xC0, 0xD5, 0xDD, 0xE0, 0xD9, 0xD8, 0x00, 0xE8, 0xE3, 0x00, 0xD8, 0xDD, 0xDB, 0xD9, 0xE7, 0xE8, 0x00, 0xD5, 0xE2, 0xED, 0xE8, 0xDC, 0xDD, 0xE2, 0xDB, 0xAB, 0xFF
+FacetingString: .byte 0xFD, 0x0F, 0x00, 0xD7, 0xD5, 0xE6, 0xEA, 0xD9, 0xD8, 0x00, 0xD5, 0x00, 0xDB, 0xD9, 0xE1, 0xAB, 0xFF

@@ -5721,7 +5721,7 @@ void atkE8_settypebasedhalvers(void) { //water/mud sport
 
 void atkEA_tryrecycleitem(void)
 {
-	if (SAVED_CONSUMED_ITEMS(gBankAttacker) != ITEM_NONE && ITEM(gBankAttacker) == ITEM_NONE)
+	if ((gCurrentMove == MOVE_FACETING || SAVED_CONSUMED_ITEMS(gBankAttacker) != ITEM_NONE) && ITEM(gBankAttacker) == ITEM_NONE)
 	{
 		RecycleItem(gBankAttacker);
 		gBattlescriptCurrInstr += 5;
@@ -5739,7 +5739,13 @@ void RecycleItem(u8 bank)
 	CONSUMED_ITEMS(gActiveBattler) = ITEM_NONE;	//Remove the temporary item storage
 	RemoveBankFromPickupStack(gActiveBattler);
 
-	gBattleMons[gActiveBattler].item = gLastUsedItem;
+	if (gCurrentMove == MOVE_FACETING) {
+		int num = umodsi(Random(), 18);
+		gBattleMons[gActiveBattler].item = ITEM_NORMAL_GEM + num;
+		
+	} else {
+		gBattleMons[gActiveBattler].item = gLastUsedItem;
+	}
 	HandleUnburdenBoost(gActiveBattler); //Remove the Unburden Boost
 
 	EmitSetMonData(0, REQUEST_HELDITEM_BATTLE, 0, 2, &gBattleMons[gActiveBattler].item);

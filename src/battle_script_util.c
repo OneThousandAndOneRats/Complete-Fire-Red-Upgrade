@@ -256,42 +256,43 @@ void LoadTotemMultiBoostSecondStat(void)
 void CheeckPouchFunc(void)
 {
 	u8 bank = gBattleScripting.bank;
-	if (ABILITY(bank) == ABILITY_CHEEKPOUCH /* && !SpeciesHasTastyMeal(SPECIES(bank)) */&& !gNewBS->HealBlockTimers[bank]) { //Berry check should already be done
+	if (ABILITY(bank) == ABILITY_CHEEKPOUCH  && !SpeciesHasTastyMeal(SPECIES(bank)) && !gNewBS->HealBlockTimers[bank]) { //Berry check should already be done
 		gBattleMoveDamage = MathMax(1, udivsi(gBattleMons[bank].maxHP, 3));
 		gBattleMoveDamage *= -1;
 		gFormCounter = TRUE;
 	}
-	// else if(SpeciesHasTastyMeal(SPECIES(bank))) {
-	// 	int rand = RandRange(0,5);
-	// 	u8 statToRaise = 0;
-	// 	int rolls = 0;
-	// 	while (rolls < 5 && STAT_CAN_RISE(bank, statToRaise)) {
-	// 		switch(rand) {
-	// 			case 0:
-	// 				statToRaise = STAT_STAGE_ATK;
-	// 				break;
-	// 			case 1:
-	// 				statToRaise = STAT_STAGE_DEF;
-	// 				break;
-	// 			case 2:
-	// 				statToRaise = STAT_STAGE_SPEED;
-	// 				break;
-	// 			case 3:
-	// 				statToRaise = STAT_STAGE_SPATK;
-	// 				break;
-	// 			case 4:
-	// 				statToRaise = STAT_STAGE_SPDEF;
-	// 				break;
-	// 		}
-	// 		rolls++;
-	// 		rand = RandRange(0,5);
-	// 	}
-	// 	gBattleScripting.statChanger = INCREASE_1 | statToRaise;
-	// 	gBattleScripting.animArg1 = 0xE + statToRaise;
-	// 	gBattleScripting.animArg2 = 0;
+	else if(SpeciesHasTastyMeal(SPECIES(bank))) {
+		// int rand = RandRange(0,5);
+		// u8 statToRaise = 0;
+		// int rolls = 0;
+		// while (rolls < 5 && STAT_CAN_RISE(bank, statToRaise)) {
+		// 	switch(rand) {
+		// 		case 0:
+		// 			statToRaise = STAT_STAGE_ATK;
+		// 			break;
+		// 		case 1:
+		// 			statToRaise = STAT_STAGE_DEF;
+		// 			break;
+		// 		case 2:
+		// 			statToRaise = STAT_STAGE_SPEED;
+		// 			break;
+		// 		case 3:
+		// 			statToRaise = STAT_STAGE_SPATK;
+		// 			break;
+		// 		case 4:
+		// 			statToRaise = STAT_STAGE_SPDEF;
+		// 			break;
+		// 	}
+		// 	rolls++;
+		// 	rand = RandRange(0,5);
+		// }
+		u8 statToRaise = STAT_STAGE_SPEED;
+		gBattleScripting.statChanger = INCREASE_1 | statToRaise;
+		gBattleScripting.animArg1 = 0xE + statToRaise;
+		gBattleScripting.animArg2 = 0;
 		
-	// 	gFormCounter = TRUE;	
-	// }
+		gFormCounter = TRUE;	
+	}
 	else
 		gFormCounter = FALSE;
 }
@@ -1117,7 +1118,7 @@ void ChangeTargetTypeFunc(void)
 			}
 			else
 			{
-				int num = umodsi(Random(), 26) + 1;
+				int num = umodsi(Random(), 27) + 1;
 				
 				switch(num)
 				{
@@ -1274,6 +1275,12 @@ void ChangeTargetTypeFunc(void)
 					case 26:
 					SET_BATTLER_TYPE(gBankTarget, TYPE_FUNGUS);
 					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_FUNGUS);
+					gBattleStringLoader = TargetTransformedIntoType;
+					break;
+
+					case 27:
+					SET_BATTLER_TYPE(gBankTarget, TYPE_TECH);
+					PREPARE_TYPE_BUFFER(gBattleTextBuff1, TYPE_TECH);
 					gBattleStringLoader = TargetTransformedIntoType;
 					break;
 					
@@ -1748,6 +1755,32 @@ void AbilityChangeBSFunc(void)
 			else
 			{
 				*defAbilityLoc = ABILITY_SOUNDPROOF;
+				gLastUsedAbility = defAbility; //Original ability
+				ResetVarsForAbilityChange(gBankTarget);
+				gBattleStringLoader = SimpleBeamString;
+			}
+			break;
+		case MOVE_OVERRIDE:
+			if (gSpecialAbilityFlags[defAbility].gSimpleBeamBannedAbilities)
+			{
+				gBattlescriptCurrInstr = BattleScript_ButItFailed - 5;
+			}
+			else
+			{
+				*defAbilityLoc = ABILITY_DOWNLOAD;
+				gLastUsedAbility = defAbility; //Original ability
+				ResetVarsForAbilityChange(gBankTarget);
+				gBattleStringLoader = SimpleBeamString;
+			}
+			break;
+		case MOVE_BURNOUT:
+			if (gSpecialAbilityFlags[defAbility].gSimpleBeamBannedAbilities)
+			{
+				gBattlescriptCurrInstr = BattleScript_ButItFailed - 5;
+			}
+			else
+			{
+				*defAbilityLoc = ABILITY_TRUANT;
 				gLastUsedAbility = defAbility; //Original ability
 				ResetVarsForAbilityChange(gBankTarget);
 				gBattleStringLoader = SimpleBeamString;

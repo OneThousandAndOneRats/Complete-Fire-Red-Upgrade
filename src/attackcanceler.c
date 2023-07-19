@@ -990,6 +990,17 @@ static u8 AtkCanceller_UnableToUseMove(void)
 
 				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
 			}
+			if (gCurrentMove == MOVE_BRUTEFORCE)
+			{
+				gMultiHitCounter = 1;
+				int rand = RandRange(1,100);
+				while(rand <=85 && gMultiHitCounter <100) {
+					gMultiHitCounter ++;
+					rand = RandRange(1,100);
+				}
+
+				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
+			}
 			else if (gSpecialMoveFlags[gCurrentMove].gTwoStrikesMoves)
 			{
 				gMultiHitCounter = 2;

@@ -7326,7 +7326,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = RIVAL_NAME,
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_RivalLabFire),
         .party = {.NoItemDefaultMoves = sParty_RivalLabFire}
     },

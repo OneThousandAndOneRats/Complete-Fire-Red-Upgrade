@@ -2475,7 +2475,8 @@ void GiveMonNatureAndAbility(struct Pokemon* mon, u8 nature, u8 abilityNum, bool
 		personality = Random32();
 		if (forceShiny)
 		{
-			u8 shinyRange = Random() % SHINY_ODDS;
+			//u8 shinyRange = Random() % SHINY_ODDS;
+			u8 shinyRange = RandRange(0,8);
 			personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
 		}
 
@@ -4140,12 +4141,19 @@ static void CheckShinyMon(struct Pokemon* mon)
 		#ifdef ITEM_SHINY_CHARM
 		if (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0)
 		{
-			//Try an extra 2 times to generate shiny personality
-			if (IsShinyOtIdPersonality(otId, Random32())
-			||  IsShinyOtIdPersonality(otId, Random32()))
-				forceShiny = TRUE;
+			// //Try an extra 2 times to generate shiny personality
+			// if (IsShinyOtIdPersonality(otId, Random32())
+			// ||  IsShinyOtIdPersonality(otId, Random32()))
+			// 	forceShiny = TRUE;
+			if (RandRange(0, 65535) <= SHINY_ODDS - 1)
+    			forceShiny = TRUE;
+    		if (RandRange(0, 65535) <= SHINY_ODDS - 1)
+    			forceShiny = TRUE;
 		}
 		#endif
+
+		if (RandRange(0, 65535) <= SHINY_ODDS - 1)
+    		forceShiny = TRUE;
 
 		if (!forceShiny && gFishingByte) //Currently fishing
 		{
@@ -4189,7 +4197,8 @@ void ForceMonShiny(struct Pokemon* mon)
 	{
 		personality = Random32();
 
-		u8 shinyRange = Random() % SHINY_ODDS;
+		//u8 shinyRange = Random() % SHINY_ODDS;
+		u8 shinyRange = RandRange(0,8);
 		personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
 
 		if (abilityMatters)

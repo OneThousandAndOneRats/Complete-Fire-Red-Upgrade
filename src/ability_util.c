@@ -61,6 +61,7 @@ extern const u8 gText_AbilityName_Railgun[];
 extern const u8 gText_AbilityName_TastyMeal[];
 extern const u8 gText_AbilityName_MyceliumMight[];
 extern const u8 gText_AbilityName_GoodAsGold[];
+extern const u8 gText_AbilityName_Brilliance[];
 
 extern const u8 gText_AbilityDescription_Evaporate[];
 extern const u8 gText_AbilityDescription_GrassDash[];
@@ -165,7 +166,12 @@ const u8* GetAbilityNameOverride(const u8 ability, const u16 species) //Bypasses
 			break;
 		case ABILITY_OVERCOAT:
 			if (SpeciesHasGoodAsGold(species))
-				return gText_AbilityName_GoodAsGold;
+			{
+				if (species == SPECIES_CRYSONIX)
+					return gText_AbilityName_Brilliance;
+				else
+					return gText_AbilityName_GoodAsGold;
+			}
 			break;
 		case ABILITY_MOLDBREAKER:
 			if (SpeciesHasTurboblaze(species))
@@ -580,7 +586,8 @@ bool8 SpeciesHasInfection(unusedArg u16 species)
 bool8 SpeciesHasRailgun(unusedArg u16 species)
 {
 	#if (defined SPECIES_VIKAVOLT)
-	return species == SPECIES_VIKAVOLT;
+	return species == SPECIES_VIKAVOLT
+	|| species == SPECIES_MURKROW;
 	#else
 	return FALSE;
 	#endif
@@ -608,8 +615,9 @@ bool8 SpeciesHasMyceliumMight (unusedArg u16 species)
 
 bool8 SpeciesHasGoodAsGold (unusedArg u16 species)
 {
-	#if (defined SPECIES_GHOLDENGO)
-	return species == SPECIES_GHOLDENGO;
+	#if (defined SPECIES_GHOLDENGO && defined SPECIES_CRYSONIX)
+	return species == SPECIES_GHOLDENGO
+		|| species == SPECIES_CRYSONIX;
 	#else
 	return FALSE;
 	#endif

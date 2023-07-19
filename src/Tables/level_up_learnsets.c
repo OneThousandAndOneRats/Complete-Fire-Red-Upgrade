@@ -25,14 +25,8 @@ static const struct LevelUpMove sEmptyMoveset[] = {
 
 
 static const struct LevelUpMove sBulbasaurLevelUpLearnset[] = {
-	//LEVEL_UP_MOVE( 1, MOVE_TACKLE),
-	//LEVEL_UP_MOVE( 3, MOVE_GROWL),
-
-	LEVEL_UP_MOVE( 1, MOVE_SURF),
-	LEVEL_UP_MOVE( 1, MOVE_REHEARSAL),
-	LEVEL_UP_MOVE( 1, MOVE_BREAKALEG),
-	LEVEL_UP_MOVE( 1, MOVE_FORTIFY),
-
+	LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+	LEVEL_UP_MOVE( 3, MOVE_GROWL),
 	LEVEL_UP_MOVE( 7, MOVE_LEECHSEED),
 	LEVEL_UP_MOVE( 9, MOVE_VINEWHIP),
 	LEVEL_UP_MOVE(13, MOVE_POISONPOWDER),
@@ -1652,6 +1646,13 @@ static const struct LevelUpMove sMagnemiteLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(49, MOVE_ZAPCANNON),
 	LEVEL_UP_END,
 };
+//Hard reset
+//Wire Whip
+//Power Surge
+//Hacking
+//Reboot
+//Overclocking
+//Overcharged
 
 static const struct LevelUpMove sMagnetonLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_TRIATTACK),
@@ -1680,6 +1681,13 @@ static const struct LevelUpMove sMagnetonLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(63, MOVE_ZAPCANNON),
 	LEVEL_UP_END,
 };
+//Hard reset
+//Wire Whip
+//Power Surge
+//Hacking
+//Reboot
+//Overclocking
+//Overcharged
 
 static const struct LevelUpMove sFarfetchdLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_BRAVEBIRD),
@@ -2873,6 +2881,11 @@ static const struct LevelUpMove sPorygonLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(62, MOVE_ZAPCANNON),
 	LEVEL_UP_END,
 };
+//Bit crush
+//Hard Reset
+//Memory Leak
+//Reboot
+//Overclocking
 
 static const struct LevelUpMove sOmanyteLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_CONSTRICT),
@@ -5007,6 +5020,11 @@ static const struct LevelUpMove sPorygon2LevelUpLearnset[] = {
 	LEVEL_UP_MOVE(67, MOVE_HYPERBEAM),
 	LEVEL_UP_END,
 };
+//Bit crush
+//Hard Reset
+//Memory Leak
+//Reboot
+//Overclocking
 
 static const struct LevelUpMove sStantlerLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_MEFIRST),
@@ -7999,6 +8017,12 @@ static const struct LevelUpMove sMetangLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(50, MOVE_HYPERBEAM),
 	LEVEL_UP_END,
 };
+//Bit Crush
+//Hydraulic Hit
+//Burnout
+//Reboot
+//Overcharged
+//Short Circuit
 
 static const struct LevelUpMove sMetagrossLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_HAMMERARM),
@@ -8019,6 +8043,12 @@ static const struct LevelUpMove sMetagrossLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(60, MOVE_HYPERBEAM),
 	LEVEL_UP_END,
 };
+//Bit Crush
+//Hydraulic Hit
+//Burnout
+//Reboot
+//Overcharged
+//Short Circuit
 
 static const struct LevelUpMove sRegirockLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_EXPLOSION),
@@ -9786,6 +9816,13 @@ static const struct LevelUpMove sMagnezoneLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(63, MOVE_ZAPCANNON),
 	LEVEL_UP_END,
 };
+//Hard reset
+//Wire Whip
+//Power Surge
+//Hacking
+//Reboot
+//Overclocking
+//Overcharged
 
 static const struct LevelUpMove sLickilickyLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_WRINGOUT),
@@ -10072,6 +10109,11 @@ static const struct LevelUpMove sPorygonZLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(70, MOVE_BIGBANG),
 	LEVEL_UP_END,
 };
+//Bit crush
+//Hard Reset
+//Memory Leak
+//Reboot
+//Overclocking
 
 static const struct LevelUpMove sGalladeLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_SLASH),
@@ -10203,6 +10245,15 @@ static const struct LevelUpMove sRotomLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(64, MOVE_DISCHARGE),
 	LEVEL_UP_END,
 };
+//Hard Reset
+//Anti virus
+//memory leak
+//hacking
+//overclocking
+//cooldown
+//overcharged
+//rebot
+
 
 static const struct LevelUpMove sUxieLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_MEMENTO),
@@ -12704,6 +12755,10 @@ static const struct LevelUpMove sKlinkLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(57, MOVE_HYPERBEAM),
 	LEVEL_UP_END,
 };
+//Hydraulic Hit
+//Brute Frorce
+//wire whip
+//Hard Reset
 
 static const struct LevelUpMove sKlangLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_VICEGRIP),
@@ -12726,6 +12781,10 @@ static const struct LevelUpMove sKlangLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(64, MOVE_HYPERBEAM),
 	LEVEL_UP_END,
 };
+//Hydraulic Hit
+//Brute Frorce
+//wire whip
+//Hard Reset
 
 static const struct LevelUpMove sKlinklangLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_MAGNETICFLUX),
@@ -12751,6 +12810,10 @@ static const struct LevelUpMove sKlinklangLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(72, MOVE_HYPERBEAM),
 	LEVEL_UP_END,
 };
+//Hydraulic Hit
+//Brute Frorce
+//wire whip
+//Hard Reset
 
 static const struct LevelUpMove sTynamoLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_TACKLE),
@@ -15915,6 +15978,12 @@ static const struct LevelUpMove sGrubbinLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(28, MOVE_DIG),
 	LEVEL_UP_END,
 };
+//wirewhip
+//brute force
+//power surge
+//hydraulic hit
+//cooldown 
+//reboot
 
 static const struct LevelUpMove sCharjabugLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_CHARGE),
@@ -15936,6 +16005,12 @@ static const struct LevelUpMove sCharjabugLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(49, MOVE_IRONDEFENSE),
 	LEVEL_UP_END,
 };
+//wirewhip
+//brute force
+//power surge
+//hydraulic hit
+//cooldown 
+//reboot
 
 static const struct LevelUpMove sVikavoltLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 0, MOVE_THUNDERBOLT),
@@ -15959,6 +16034,12 @@ static const struct LevelUpMove sVikavoltLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(49, MOVE_AGILITY),
 	LEVEL_UP_END,
 };
+//wirewhip
+//brute force
+//power surge
+//hydraulic hit
+//cooldown 
+//reboot
 
 static const struct LevelUpMove sCrabrawlerLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_BUBBLE),
@@ -17860,8 +17941,12 @@ static const struct LevelUpMove sMelmetalLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGrookeyLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
-	LEVEL_UP_MOVE( 1, MOVE_GROWL),
+	LEVEL_UP_MOVE( 1, MOVE_SPINOUT),
+	LEVEL_UP_MOVE( 1, MOVE_MAKEITRAIN),
+	LEVEL_UP_MOVE( 1, MOVE_GEMCANNON),
+	LEVEL_UP_MOVE( 1, MOVE_FACETING),
+	//LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
+	//LEVEL_UP_MOVE( 1, MOVE_GROWL),
 	LEVEL_UP_MOVE( 6, MOVE_BRANCHPOKE),
 	LEVEL_UP_MOVE( 8, MOVE_TAUNT),
 	LEVEL_UP_MOVE(10, MOVE_STRUM),
@@ -20508,6 +20593,12 @@ static const struct LevelUpMove sVaroomLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(50, MOVE_GUNKSHOT),
 	LEVEL_UP_END,
 };
+//hydraulic hit
+//brute force
+//power surge
+//short cirit
+//overcharged mode
+//burnout mode
 
 
 static const struct LevelUpMove sRevaroomLevelUpLearnset[] = {
@@ -20530,6 +20621,13 @@ static const struct LevelUpMove sRevaroomLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(58, MOVE_GUNKSHOT),
 	LEVEL_UP_END,
 };
+//hydraulic hit
+//brute force
+//power surge
+//short cirit
+//overcharged mode
+//burnout mode
+
 
 static const struct LevelUpMove sToedscoolLevelUpLearnset[] = {
 	LEVEL_UP_MOVE( 1, MOVE_WRAP),
@@ -20630,6 +20728,34 @@ static const struct LevelUpMove sBruteBonnetLevelUpLearnset[] = {
 	//LEVEL_UP_MOVE(91, MOVE_SOLARBEAM),
 	LEVEL_UP_MOVE(91, MOVE_BLACKMOLD),
 
+	LEVEL_UP_END,
+};
+
+static const struct LevelUpMove sCrysOnixLevelUpLearnset[] = {
+	LEVEL_UP_MOVE( 1, MOVE_MUDSPORT),
+	LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+	LEVEL_UP_MOVE( 1, MOVE_HARDEN),
+	LEVEL_UP_MOVE( 1, MOVE_BIND),
+	LEVEL_UP_MOVE( 4, MOVE_CURSE),
+	LEVEL_UP_MOVE( 7, MOVE_ROCKTHROW),
+	LEVEL_UP_MOVE(10, MOVE_ROCKTOMB),
+	LEVEL_UP_MOVE(13, MOVE_RAGE),
+	LEVEL_UP_MOVE(16, MOVE_STEALTHROCK),
+	LEVEL_UP_MOVE(19, MOVE_ROCKPOLISH),
+	LEVEL_UP_MOVE(20, MOVE_GYROBALL),
+	LEVEL_UP_MOVE(22, MOVE_SMACKDOWN),
+	LEVEL_UP_MOVE(25, MOVE_DRAGONBREATH),
+	LEVEL_UP_MOVE(28, MOVE_SLAM),
+	//LEVEL_UP_MOVE(31, MOVE_SCREECH),
+	LEVEL_UP_MOVE(31, MOVE_FACETING),
+	//LEVEL_UP_MOVE(34, MOVE_ROCKSLIDE),
+	LEVEL_UP_MOVE(34, MOVE_GEMCANNON),
+	LEVEL_UP_MOVE(37, MOVE_SANDTOMB),
+	LEVEL_UP_MOVE(40, MOVE_IRONTAIL),
+	LEVEL_UP_MOVE(43, MOVE_DIG),
+	LEVEL_UP_MOVE(46, MOVE_STONEEDGE),
+	LEVEL_UP_MOVE(49, MOVE_DOUBLEEDGE),
+	LEVEL_UP_MOVE(52, MOVE_SANDSTORM),
 	LEVEL_UP_END,
 };
 
@@ -21901,6 +22027,7 @@ const struct LevelUpMove* const gLevelUpLearnsets[] =
 	[SPECIES_GIMMIGHOUL] = sGimmighoulLevelUpLearnset,
 	[SPECIES_GHOLDENGO] = sGholdengoLevelUpLearnset,
 	[SPECIES_BRUTEBONNET] = sBruteBonnetLevelUpLearnset,
+	[SPECIES_CRYSONIX] = sCrysOnixLevelUpLearnset,
 
 	[SPECIES_VENUSAUR_GIGA] = sVenusaurLevelUpLearnset,
 	[SPECIES_CHARIZARD_GIGA] = sCharizardLevelUpLearnset,

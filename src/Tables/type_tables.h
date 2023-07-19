@@ -328,9 +328,13 @@ const u8 gTypeEffectiveness[NUMBER_OF_MON_TYPES][NUMBER_OF_MON_TYPES] =
     [TYPE_TECH]=
     {
         [TYPE_GRASS] = TYPE_MUL_SUPER_EFFECTIVE,
+        [TYPE_FIRE] = TYPE_MUL_NOT_EFFECTIVE,
     },
     [TYPE_SHADOW]=
     {
         [TYPE_GRASS] = TYPE_MUL_SUPER_EFFECTIVE,
+    },
+    [TYPE_CRYSTAL]=
+    {
     },
 };

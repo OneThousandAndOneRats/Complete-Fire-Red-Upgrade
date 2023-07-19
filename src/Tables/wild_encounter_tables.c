@@ -48,7 +48,8 @@ static const struct WildPokemonInfo gPalletTown_FishingMonsInfo = {5, gPalletTow
 
 static const struct WildPokemon gRoute1_LandMons[] = 
 {
-  {2, 4, SPECIES_PIDGEY},		//Chance: 20%
+  {2, 4, SPECIES_KLINK},    //Chance: 20%
+  //{2, 4, SPECIES_PIDGEY},		//Chance: 20%
   {2, 4, SPECIES_BIDOOF},		//Chance: 20%
   {2, 4, SPECIES_PIDGEY},		//Chance: 10%
   {2, 4, SPECIES_BIDOOF},		//Chance: 10%

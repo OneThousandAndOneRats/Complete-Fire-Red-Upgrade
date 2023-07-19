@@ -1712,6 +1712,63 @@ The user lays a trap\nof psychadellic spores\naround the opponent's\nteam. Cause
 #org @DESC_MUSHYMESS
 The user lays a trap\nof fungi around the\nopponent's team. Hurts\nthe opponent when\nthey switch into battle\nbut clears after the\nfoe enters. 
 
+#org @DESC_BITCRUSH
+The foe is harshly\ncompressed. May\ncause flinching
+
+#org @DESC_HARDRESET
+The foe is forced\nto reset all of their\nstat changes.
+
+#org @DESC_ANTIVIRUS
+Cures\nthe user of poison\nand deals super\neffective damage\nto Poison-Type foes.
+
+#org @DESC_MEMORYLEAK
+A program running\namok. Has a chance\nto lower the foe's\nSp. Def Stat.
+
+#org @DESC_OVERRIDE
+Using a clever\nexploit the user\noverrides the foe's\nability.
+
+#org @DESC_WIREWHIP
+Likely to crit\nand has a chance\nto cause paralysis.
+
+#org @DESC_HYDRAULICHIT
+A Forceful strike\nthat is more likely\nto crit if the foe\nresists.
+
+#org @DESC_BRUTEFORCE
+Low damage but hits\nmultiple times. Can\ntheoretically hit\nan infite number of\ntimes.
+
+#org @DESC_POWERSURGE
+A massive power\nspike for a heavy\nhitting strike.\nRequires the user\nto recharge\nafterwards.
+
+#org @DESC_SHORTCIRCUIT
+The user has an\ninternal malfunction,\ncausing a massive\nexplosion.\nAlways moves first.
+
+#org @DESC_BURNOUT
+Enters burnout mode.\nMaxes all stats but\nforces the user to\nrecharge every other\nturn.
+
+#org @DESC_OVERCLOCKING
+Enters overclocked\nmode. Drastically\nraises the user's\nSp.Atk, but badly\npoisons the user.
+
+#org @DESC_COOLDOWN
+Enters cooldown mode.\nStrongly raises the\nuser's Defense and\nSp. Def, but causes\nfrostbite.
+
+#org @DESC_OVERCHARGE
+Enters overchared\nmode. Drastically\nraises the user's Atk,\nbut paralyzes the\nuser.
+
+#org @DESC_REBOOT
+The user reboots.\nClears status effects\nand raises speed.
+
+#org @DESC_SPINOUT
+The user spins\nfuriously, dealing\ndamage to the target.\nHarshly lowers the\nuser's Speed stat. 
+
+#org @DESC_MAKEITRAIN
+The user attack\nby throwing coins.\nLowers the user's\nSp. Atk stat.\nMoney is earned\nafter the battle.
+
+#org @DESC_GEMCANNON
+Hard gems are\nlaunched at all\nfoes. Earns lots\nof extra money after\nthe battle.
+
+#org @DESC_FACETING
+The user carves a\ngem into a random\nusable item.
+
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.
 

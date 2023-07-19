@@ -74,6 +74,7 @@ extern const u8 BattleScript_RainDanceBlockedByEvaporate[];
 
 extern const u8 BattleScript_TargetSleepHeal[];
 extern const u8 BattleScript_TargetBurnHeal[];
+extern const u8 BattleScript_TargetPoisonHeal[];
 extern const u8 BattleScript_ItemSteal[];
 extern const u8 BattleScript_KnockedOff[];
 extern const u8 BattleScript_AbilityWasSuppressed[];

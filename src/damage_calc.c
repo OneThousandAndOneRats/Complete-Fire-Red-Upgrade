@@ -89,8 +89,6 @@ void atk04_critcalc(void)
 
 	for (u32 bankDef = 0; bankDef < gBattlersCount; ++bankDef)
 	{
-		TypeDamageModification(atkAbility, bankDef, gCurrentMove,GetMoveTypeSpecial(gBankAttacker, gCurrentMove) & 0x3F, &resultFlags);
-		//TypeCalc(gCurrentMove, gBankAttacker, bankDef, NULL);
 
 		confirmedCrit = FALSE;
 		critChance = 0;
@@ -106,6 +104,8 @@ void atk04_critcalc(void)
 			continue; //Don't bother with this target
 
 		u8 defAbility = ABILITY(bankDef);
+		resultFlags = TypeCalc(gCurrentMove, gBankAttacker, bankDef, NULL);
+
 
 		if (defAbility == ABILITY_BATTLEARMOR
 		||  defAbility == ABILITY_SHELLARMOR
@@ -118,8 +118,7 @@ void atk04_critcalc(void)
 		else if (IsLaserFocused(gBankAttacker)
 		|| (atkAbility == ABILITY_MERCILESS && !SpeciesHasDrillBeak(GetProperAbilityPopUpSpecies(gBankAttacker)) && (gBattleMons[bankDef].status1 & STATUS_PSN_ANY))
 		|| (atkAbility == ABILITY_DRILLBEAK && SpeciesHasDrillBeak(GetProperAbilityPopUpSpecies(gBankAttacker)) && gSpecialMoveFlags[gCurrentMove].gDrillMoves) //Drill moves always crit
-		|| gSpecialMoveFlags[gCurrentMove].gAlwaysCriticalMoves
-		|| (atkAbility == ABILITY_SUPERLUCK && SpeciesHasRailgun(SPECIES(gBankAttacker)) && (gNewBS->ResultFlags[bankDef] & MOVE_RESULT_NOT_VERY_EFFECTIVE ))) //Something is wrong with this second part of the condtion, the not very effective part
+		|| gSpecialMoveFlags[gCurrentMove].gAlwaysCriticalMoves) 
 		{
 			confirmedCrit = TRUE;
 		}
@@ -130,6 +129,7 @@ void atk04_critcalc(void)
 						+ (gSpecialMoveFlags[gCurrentMove].gHighCriticalChanceMoves)
 						+ (atkEffect == ITEM_EFFECT_SCOPE_LENS)
 						+ (atkAbility == ABILITY_SUPERLUCK && !SpeciesHasRailgun(SPECIES(gBankAttacker)))
+						+ (2 *(atkAbility == ABILITY_SUPERLUCK && SpeciesHasRailgun(SPECIES(gBankAttacker)) && (resultFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE )))
 						#ifdef NATIONAL_DEX_CHANSEY
 						+ 2 * (atkEffect == ITEM_EFFECT_LUCKY_PUNCH && SpeciesToNationalPokedexNum(SPECIES(gBankAttacker)) == NATIONAL_DEX_CHANSEY)
 						#endif
@@ -140,7 +140,9 @@ void atk04_critcalc(void)
 						#ifdef SPECIES_PALKIA_ORIGIN
 						+ 2 * (gCurrentMove == MOVE_SPACIALREND && SPECIES(gBankAttacker) == SPECIES_PALKIA_ORIGIN)
 						#endif
-						+ 2 * (gCurrentMove == MOVE_10000000_VOLT_THUNDERBOLT);
+						+ 2 * (gCurrentMove == MOVE_10000000_VOLT_THUNDERBOLT)
+						+ 3 * (gCurrentMove == MOVE_HYDRAULICHIT && (resultFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE ))
+						+ (gCurrentMove == MOVE_WIREWHIP);
 
 			if (critChance > 4)
 				critChance = 4;
@@ -175,6 +177,7 @@ static u8 CalcPossibleCritChance(u8 bankAtk, u8 bankDef, u16 move, struct Pokemo
 
 	u8 atkEffect = 0;
 	u16 critChance = 0;
+	u8 resultFlags = TypeCalc(move, bankAtk,bankDef, monAtk);
 
 	if (monAtk != NULL)
 	{
@@ -217,8 +220,7 @@ static u8 CalcPossibleCritChance(u8 bankAtk, u8 bankDef, u16 move, struct Pokemo
 	else if ((IsLaserFocused(bankAtk) && monAtk == NULL)
 	|| (atkAbility == ABILITY_MERCILESS && !SpeciesHasDrillBeak(atkAbilitySpecies) && (defStatus1 & STATUS_PSN_ANY))
 	|| (atkAbility == ABILITY_DRILLBEAK && SpeciesHasDrillBeak(atkAbilitySpecies) && gSpecialMoveFlags[move].gDrillMoves) //Drill moves always crit
-	|| gSpecialMoveFlags[move].gAlwaysCriticalMoves
-	|| (atkAbility == ABILITY_SUPERLUCK && SpeciesHasRailgun(SPECIES(gBankAttacker)) && (gNewBS->ResultFlags[bankDef] & MOVE_RESULT_NOT_VERY_EFFECTIVE ))) //Something is wrong with this second part of the condtion, the not very effective part
+	|| gSpecialMoveFlags[move].gAlwaysCriticalMoves) 
 	{
 		return TRUE;
 	}
@@ -228,14 +230,17 @@ static u8 CalcPossibleCritChance(u8 bankAtk, u8 bankDef, u16 move, struct Pokemo
 					+ gNewBS->chiStrikeCritBoosts[bankAtk]
 					+ (gSpecialMoveFlags[move].gHighCriticalChanceMoves)
 					+ (atkEffect == ITEM_EFFECT_SCOPE_LENS)
-					+ (atkAbility == ABILITY_SUPERLUCK)
+					+  (atkAbility == ABILITY_SUPERLUCK && !SpeciesHasRailgun(SPECIES(gBankAttacker)))
+					+ (2 *(atkAbility == ABILITY_SUPERLUCK && SpeciesHasRailgun(SPECIES(gBankAttacker)) && (resultFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE )))
 					#ifdef NATIONAL_DEX_CHANSEY
 					+ 2 * (atkEffect == ITEM_EFFECT_LUCKY_PUNCH && SpeciesToNationalPokedexNum(atkSpecies) == NATIONAL_DEX_CHANSEY)
 					#endif
 					#ifdef NATIONAL_DEX_FARFETCHD
 					+ 2 * (atkEffect == ITEM_EFFECT_STICK && SpeciesToNationalPokedexNum(atkSpecies) == NATIONAL_DEX_FARFETCHD)
 					#endif
-					+ 2 * (move == MOVE_10000000_VOLT_THUNDERBOLT);
+					+ 2 * (move == MOVE_10000000_VOLT_THUNDERBOLT)
+					+ 3 * (move == MOVE_HYDRAULICHIT && (resultFlags & MOVE_RESULT_NOT_VERY_EFFECTIVE ))
+					+ (gCurrentMove == MOVE_WIREWHIP);
 
 		#ifdef CRIT_CHANCE_GEN_6
 			if (critChance >= 3)
@@ -1547,6 +1552,9 @@ static void ModulateDmgByType(u8 multiplier, const u16 move, const u8 moveType, 
 	}
 
 	if (move == MOVE_FREEZEDRY && defType == TYPE_WATER) //Always Super-Effective, even in Inverse Battles
+		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
+
+	if (move == MOVE_ANTIVIRUS && defType == TYPE_POISON) //Always Super-Effective, even in Inverse Battles
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
 
 	if (move == MOVE_MUSCARDINE && defType == TYPE_BUG) //Always Super-Effective, even in Inverse Battles

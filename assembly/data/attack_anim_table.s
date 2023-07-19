@@ -945,6 +945,25 @@ gMoveAnimations:
 .word ANIM_BLACKMOLD
 .word ANIM_PSYCHOSPORE
 .word ANIM_MUSHYMESS
+.word ANIM_BITCRUSH
+.word ANIM_HARDRESET
+.word ANIM_ANTIVIRUS
+.word ANIM_MEMORYLEAK
+.word ANIM_OVERRIDE
+.word ANIM_WIREWHIP
+.word ANIM_HYDRAULICHIT
+.word ANIM_BRUTEFORCE
+.word ANIM_POWERSURGE
+.word ANIM_SHORTCIRCUIT
+.word ANIM_BURNOUT
+.word ANIM_OVERCLOCKING
+.word ANIM_COOLDOWN
+.word ANIM_OVERCHARGE
+.word ANIM_REBOOT
+.word ANIM_SPINOUT
+.word ANIM_MAKEITRAIN
+.word ANIM_GEMCANNON
+.word ANIM_FACETING
 
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
@@ -20951,6 +20970,259 @@ ANIM_PSYCHOSPORE:
 .pool
 ANIM_MUSHYMESS:
 	goto ANIM_STEALTHROCK
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BITCRUSH:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HARDRESET:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_ANTIVIRUS:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_MEMORYLEAK:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_OVERRIDE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_WIREWHIP:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_HYDRAULICHIT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BRUTEFORCE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_POWERSURGE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SHORTCIRCUIT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_BURNOUT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_OVERCLOCKING:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_COOLDOWN:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_OVERCHARGE:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_REBOOT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_SPINOUT:
+	goto ANIM_DRAGONPULSE
+	endanimation
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@Credit Matteo
+.pool
+.equ CoinSound, 0xA7
+ANIM_MAKEITRAIN:
+	loadparticle ANIM_TAG_COIN
+	pokespritetoBG side_target
+	LaunchTemplate Template_ShakeMonOrTerrain 0x2 0x5 0x7 0x1 0xB 0x3 0x1
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFFB 0x0 0xFFFB 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x5 0x0 0x6 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFE9 0x0 0xFFF6 0x1
+	PlaySound2 CoinSound 0x3F
+	LaunchTask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x5 0x32 0x1
+	LaunchTask AnimTask_move_bank 0x2 0x5 target_partner 0x0 0x5 0x32 0x1
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFEC 0x0 0xFFF6 0x1
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xA 0x0 0xA 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x1C 0x0 0xA 0x1
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFF0 0x0 0xFFFB 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x18 0x0 0xA 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x1E 0x0 0xA 0x1
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFF0 0x0 0xFFF5 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFEC 0x0 0xFFF6 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFE0 0x0 0xFFF6 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x18 0x0 0xFFF6 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xA 0x0 0x6 0x1
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFEF 0x0 0xFFF9 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFEC 0x0 0xFFF6 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x1C 0x0 0xA 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFF6 0x0 0xFFFB 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xA 0x0 0x6 0x1
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0xFFF0 0x0 0xFFFB 0x1
+	PlaySound2 CoinSound 0x3F
+	pause 0x2 
+	LaunchTemplate COIN_SLIDE 0x82 0x4 0x18 0x0 0xFFF6 0x1
+	PlaySound2 CoinSound 0x3F
+	waitanimation
+	pokespritefrombg side_target
+	endanimation
+	
+.align 2
+COIN_SLIDE: objtemplate ANIM_TAG_COIN ANIM_TAG_COIN OAM_OFF_16x16 0x83E69DC 0x0 0x8231cfc 0x80B4635
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_GEMCANNON:
+	loadparticle ANIM_TAG_ICE_CRYSTALS
+	pokespritetoBG side_target
+	LaunchTemplate Template_ShakeMonOrTerrain 0x2 0x5 0x7 0x1 0xB 0x3 0x1
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFFB 0x0 0xFFFB 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x5 0x0 0x6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFE9 0x0 0xFFF6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	LaunchTask AnimTask_move_bank 0x2 0x5 bank_target 0x0 0x5 0x32 0x1
+	LaunchTask AnimTask_move_bank 0x2 0x5 target_partner 0x0 0x5 0x32 0x1
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFEC 0x0 0xFFF6 0x1
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xA 0x0 0xA 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x1C 0x0 0xA 0x1
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFF0 0x0 0xFFFB 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x18 0x0 0xA 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x1E 0x0 0xA 0x1
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFF0 0x0 0xFFF5 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFEC 0x0 0xFFF6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFE0 0x0 0xFFF6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x18 0x0 0xFFF6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xA 0x0 0x6 0x1
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFEF 0x0 0xFFF9 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFEC 0x0 0xFFF6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x1C 0x0 0xA 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFF6 0x0 0xFFFB 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xA 0x0 0x6 0x1
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0xFFF0 0x0 0xFFFB 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	pause 0x2 
+	LaunchTemplate CRYSTAL_SLIDE 0x82 0x4 0x18 0x0 0xFFF6 0x1
+	playsound2 0x7c SOUND_PAN_TARGET
+	waitanimation
+	pokespritefrombg side_target
+	endanimation
+	
+.align 2
+CRYSTAL_SLIDE: objtemplate ANIM_TAG_ICE_CRYSTALS ANIM_TAG_ICE_CRYSTALS OAM_OFF_16x16 0x83E69DC 0x0 0x8231cfc 0x80B4635
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_FACETING:
+	loadparticle ANIM_TAG_ICE_CRYSTALS
+	loadparticle ANIM_TAG_CUT
+	call FREEZE_CHANCE_ANIM
+	pokespritetoBG bank_attacker
+	setblends 0x80c
+	playsound2 0x79 SOUND_PAN_TARGET
+	launchtemplate Template_CuttingSlice 0x2 0x3 0x28 0xffe0 0x0
+	pause 0x5
+	playsound2 0x79 SOUND_PAN_TARGET
+	launchtemplate Template_CuttingSlice 0x2 0x3 0x28 0xffe0 0x1
+	pause 0x5
+	waitanimation
+	soundcomplex 0x71 SOUND_PAN_ATTACKER 0x1c 0x2
+	waitanimation
+	pokespritefromBG bank_attacker
 	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
