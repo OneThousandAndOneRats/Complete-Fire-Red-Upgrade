@@ -1990,7 +1990,7 @@ SKIP_CHECK_TARGET:
 				{
 					DECREASE_VIABILITY(10);
 				}
-				else if (move == MOVE_KINGSSHIELD && gDisableStructs[bankAtk].protectUses > 0)
+				else if ((move == MOVE_KINGSSHIELD || move == MOVE_MUSHYSHIELD) && gDisableStructs[bankAtk].protectUses > 0)
 				{
 					DECREASE_VIABILITY(9); //Pretty much never use King's Shield more than once in a row
 				}
@@ -2063,6 +2063,19 @@ SKIP_CHECK_TARGET:
 						DECREASE_VIABILITY(10);
 					else if (PARTNER_MOVE_IS_SAME_NO_TARGET && gSideTimers[SIDE(bankDef)].stickyWeb)
 						DECREASE_VIABILITY(10); //Only one mon needs to set up Sticky Web
+					break;
+
+				case MOVE_PSYCHOSPORE:
+					if (gSideTimers[SIDE(bankDef)].psporeAmount > 0
+					|| PARTNER_MOVE_IS_SAME_NO_TARGET //Only one mon needs to set up Stealth Rocks
+					|| PARTNER_MOVE_IS_MAX_MOVE_WITH_EFFECT(MAX_EFFECT_STEALTH_ROCK))
+						DECREASE_VIABILITY(10);
+					break;
+				case MOVE_MUSHYMESS:
+					if (gSideTimers[SIDE(bankDef)].mushymessAmount > 0
+					|| PARTNER_MOVE_IS_SAME_NO_TARGET //Only one mon needs to set up Stealth Rocks
+					|| PARTNER_MOVE_IS_MAX_MOVE_WITH_EFFECT(MAX_EFFECT_STEALTH_ROCK))
+						DECREASE_VIABILITY(10);
 					break;
 
 				default: //Spikes
@@ -2656,6 +2669,11 @@ SKIP_CHECK_TARGET:
 						DECREASE_VIABILITY(10);
 					else
 						goto AI_SUBSTITUTE_CHECK;
+					break;
+
+				case MOVE_DEAFEN:
+				case MOVE_OVERRIDE:
+					goto AI_SUBSTITUTE_CHECK;
 					break;
 
 				default: //Skill Swap

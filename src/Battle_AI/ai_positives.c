@@ -1306,6 +1306,24 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 							break;
 						}
 					}
+					goto PROTECT_CHECKS;
+
+				case MOVE_MUSHYSHIELD:
+					if (predictedMove != MOVE_NONE 
+					 && CheckContact(predictedMove, bankDef, bankAtk)) //Enemy will hit with a contact move
+					{
+						if (IsClassStall(class))
+						{
+							INCREASE_VIABILITY(8);
+							break;
+						}
+						else if (IS_DOUBLE_BATTLE)
+						{
+							INCREASE_VIABILITY(19);
+							break;
+						}
+					}
+					goto PROTECT_CHECKS;
 					//Fallthrough
 
 				default:
@@ -1371,6 +1389,28 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 						{
 							IncreaseEntryHazardsViability(&viability, class, bankAtk, bankDef, move);
 							break; //Can hurt at least one mon
+						}
+					}
+					break;
+
+				case MOVE_PSYCHOSPORE:
+				case MOVE_MUSHYMESS:
+					for (i = 0; i < PARTY_SIZE; ++i)
+					{
+						if (GetMonData(&defParty[i], MON_DATA_SPECIES, NULL) != SPECIES_NONE
+						&& !GetMonData(&defParty[i], MON_DATA_IS_EGG, NULL)
+						&&  GetMonData(&defParty[i], MON_DATA_HP, NULL) > 0
+						&&  IsMonAffectedByHazards(&defParty[i])
+						&&  i != gBattlerPartyIndexes[data->foe1]
+						&&  i != gBattlerPartyIndexes[data->foe2]
+						&&  CheckMonGrounding(&defParty[i]) == GROUNDED)
+						{
+							u8 type1 = (gBattleTypeFlags & BATTLE_TYPE_CAMOMONS) ? GetCamomonsTypeByMon(&defParty[i], 0) : gBaseStats[defParty[i].species].type1;
+							u8 type2 = (gBattleTypeFlags & BATTLE_TYPE_CAMOMONS) ? GetCamomonsTypeByMon(&defParty[i], 1) : gBaseStats[defParty[i].species].type2;
+							if (type1 == TYPE_FUNGUS || type2 == TYPE_FUNGUS)
+								break; //Don't set up Psychospore if someone in party who can just remove them
+							
+							IncreaseEntryHazardsViability(&viability, class, bankAtk, bankDef, move);
 						}
 					}
 					break;
@@ -2413,6 +2453,7 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			{
 				case MOVE_BUGBITE:
 				case MOVE_PLUCK:
+				case MOVE_GREEDYGRAB:
 					if (data->defStatus2 & STATUS2_SUBSTITUTE
 					||  defAbility == ABILITY_STICKYHOLD)
 						break;

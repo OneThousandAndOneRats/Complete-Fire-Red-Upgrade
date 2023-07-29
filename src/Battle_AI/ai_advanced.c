@@ -530,6 +530,14 @@ u8 PredictFightingStyle(const u16* const moves, const u8 ability, const u8 itemE
 							if (!gSideTimers[SIDE(FOE(bank))].stickyWeb)
 								++entryHazardNum;
 							break;
+						case MOVE_PSYCHOSPORE:
+							if (!gSideTimers[SIDE(FOE(bank))].psporeAmount)
+								++entryHazardNum;
+							break;
+						case MOVE_MUSHYMESS:
+							if (!gSideTimers[SIDE(FOE(bank))].mushymessAmount)
+								++entryHazardNum;
+							break;
 						default: //Spikes
 							if (gSideTimers[SIDE(FOE(bank))].spikesAmount < 3)
 								++entryHazardNum;
@@ -2512,7 +2520,9 @@ void IncreaseEntryHazardsViability(s16* originalViability, u8 class, u8 bankAtk,
 			if (((move == MOVE_SPIKES && gSideTimers[SIDE(bankDef)].spikesAmount > 0) //Trying to set up more Spikes
 			  || (move == MOVE_TOXICSPIKES && gSideTimers[SIDE(bankDef)].tspikesAmount > 0)) //or trying to set up more Toxic Spikes
 			&& ((!gSideTimers[SIDE(bankDef)].srAmount && MoveInMoveset(MOVE_STEALTHROCK, bankAtk)) //But can set up Stealth Rock too
-			 || (!gSideTimers[SIDE(bankDef)].stickyWeb && MoveInMoveset(MOVE_STICKYWEB, bankAtk)))) //Or can set up Sticky Web too
+			 || (!gSideTimers[SIDE(bankDef)].stickyWeb && MoveInMoveset(MOVE_STICKYWEB, bankAtk)) //Or can set up Sticky Web too
+			 || (!gSideTimers[SIDE(bankDef)].psporeAmount && MoveInMoveset(MOVE_MUSHYMESS, bankAtk)) //Or can set up Psychospore too
+			 || (!gSideTimers[SIDE(bankDef)].mushymessAmount && MoveInMoveset(MOVE_PSYCHOSPORE, bankAtk))))  //Or can set up mushymess too
 			{
 				//Use less of the time to allow SR to get set up
 				if (ViableMonCountFromBankLoadPartyRange(bankDef) == 2) //Only two mons left
@@ -2536,6 +2546,12 @@ void IncreaseEntryHazardsViability(s16* originalViability, u8 class, u8 bankAtk,
 					break;
 				case MOVE_TOXICSPIKES:
 					INCREASE_VIABILITY(5);
+					break;
+				case MOVE_PSYCHOSPORE:
+					INCREASE_VIABILITY(6);
+					break;
+				case MOVE_MUSHYMESS:
+					INCREASE_VIABILITY(6);
 					break;
 				default:
 					INCREASE_VIABILITY(4);

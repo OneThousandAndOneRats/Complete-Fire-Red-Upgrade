@@ -1428,7 +1428,14 @@ static bool8 ShouldSwitchIfWonderGuard(struct Pokemon* party, u8 firstId, u8 las
 								if (gSideTimers[SIDE(bankDef)].stickyWeb == 0)
 									return FALSE;
 								break;
-
+							case MOVE_PSYCHOSPORE:
+								if (gSideTimers[SIDE(bankDef)].psporeAmount == 0)
+									return FALSE;
+								break;
+							case MOVE_MUSHYMESS:
+								if (gSideTimers[SIDE(bankDef)].mushymessAmount == 0)
+									return FALSE;
+								break;
 							default: //Spikes
 								if (gSideTimers[SIDE(bankDef)].spikesAmount < 3)
 									return FALSE;
@@ -1998,6 +2005,8 @@ u8 CalcMostSuitableMonToSwitchInto(void)
 	s16 scores[PARTY_SIZE] = {0};
 	u8 flags[PARTY_SIZE] = {0};
 	bool8 canNegateToxicSpikes[PARTY_SIZE] = {FALSE};
+	bool8 canNegateMushroomSpikes[PARTY_SIZE] = {FALSE};
+
 	bool8 canRemoveHazards[PARTY_SIZE] = {FALSE};
 
 	if (gBattleStruct->monToSwitchIntoId[gActiveBattler] != PARTY_SIZE)
@@ -2062,6 +2071,7 @@ u8 CalcMostSuitableMonToSwitchInto(void)
 			secondLastValidMon = lastValidMon;
 			lastValidMon = i;
 			canNegateToxicSpikes[i] = IsMonOfType(consideredMon, TYPE_POISON) && CheckMonGrounding(consideredMon);
+			canNegateMushroomSpikes[i] = IsMonOfType(consideredMon, TYPE_FUNGUS) && CheckMonGrounding(consideredMon);
 
 			if (WillFaintFromEntryHazards(consideredMon, SIDE(gActiveBattler)))
 				continue; //Don't switch in the mon if it'll faint on reentry
@@ -2468,10 +2478,12 @@ u8 CalcMostSuitableMonToSwitchInto(void)
 		&& (flags[bestMonId] & (SWITCHING_FLAG_KO_FOE | SWITCHING_FLAG_OUTSPEEDS)) != (SWITCHING_FLAG_KO_FOE | SWITCHING_FLAG_OUTSPEEDS)) //And doesn't outspeed and KO
 		{
 			bool8 tSpikesActive = gSideTimers[SIDE(gActiveBattler)].tspikesAmount > 0;
+			bool8 mushroomSpikesActive = gSideTimers[SIDE(gActiveBattler)].psporeAmount > 0 || gSideTimers[SIDE(gActiveBattler)].mushymessAmount > 0;
 			for (i = firstId; i < lastId; ++i)
 			{
 				if ((canRemoveHazards[i] && !(flags[i] & SWITCHING_FLAG_FAINTS_FROM_FOE)) //Mon can stay alive and remove hazards
-				|| (tSpikesActive && canNegateToxicSpikes[i]))
+				|| (tSpikesActive && canNegateToxicSpikes[i])
+				|| (mushroomSpikesActive && canNegateMushroomSpikes[i]))
 				{
 					if (IS_DOUBLE_BATTLE)
 					{
