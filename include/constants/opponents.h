@@ -53,6 +53,11 @@
 #define TRAINER_TEAM_ROCKET_GRUNT_4              354
 #define TRAINER_SUPER_NERD_MIGUEL                170
 
+//~~~~~~~~~~~~~~~~~~|Mt Moon SUMMIT|~~~~~~~~~~~~~~~~~~//
+#define TRAINER_HIKER_DON                 		 101
+#define TRAINER_HIKER_RON                    	 113
+#define TRAINER_HIKER_JON                    	 492
+
 //~~~~~~~~~~~~~~~~~~|Route 4|~~~~~~~~~~~~~~~~~~//
 #define TRAINER_LASS_CRISSY                      119
 
@@ -160,7 +165,7 @@
 #define TRAINER_POKEMANIAC_HERMAN                163
 
 //Outside PowerPlant
-#define TRAINER_POKEMANIAC_MARK                  162 //NEEDS TO BE IMPLEMENTED POST SURF
+#define TRAINER_POKEMANIAC_MARK                  162
 
 
 //~~~~~~~~~~~~~~~~~~|Rock Tunnel|~~~~~~~~~~~~~~~~~~//
@@ -179,6 +184,10 @@
 #define TRAINER_PICNICKER_LEAH                   476
 #define TRAINER_PICNICKER_ARIANA                 475
 #define TRAINER_PICNICKER_DANA                   474
+
+//Basement
+#define TRAINER_TEAM_ROCKET_GRUNT_BASEMENT_A	 174
+#define TRAINER_TEAM_ROCKET_GRUNT_BASEMENT_B	 175
 
 
 //~~~~~~~~~~~~~~~~~~|Pokemon Tower|~~~~~~~~~~~~~~~~~~//

@@ -69,6 +69,27 @@ EventScript_Moltres:
     release
     end
 
+EventScript_BruteBonnet:
+    lock
+    faceplayer
+    cry 0x4F3 0x2
+    preparemsg gText_BruteBonnetCry 
+    waitmsg
+    waitcry
+    pause 0xA
+    playsong 0x156 0x0
+    waitkeypress
+    wildbattle SPECIES_BRUTEBONNET 0x32 0x00
+    special2 LASTRESULT 0xB4
+    compare LASTRESULT 0x4
+    if 0x1 _goto EndThis
+    fadescreen 0x1
+    hidesprite 0x800F
+    setflag 0x200
+    fadescreen 0x0
+    release
+    end
+
 EventScript_Articuno_Binoculars:
 	lockall
 	msgbox gText_ArticunoBinoculars MSG_KEEPOPEN

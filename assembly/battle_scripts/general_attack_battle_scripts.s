@@ -1051,10 +1051,26 @@ BS_034_PayDay:
 	goto BS_STANDARD_HIT
 
 MakeItRainBS:
-	@setmoveeffect MOVE_EFFECT_PAYDAY | MOVE_EFFECT_SP_ATK_MINUS_1 | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
-	setmoveeffect MOVE_EFFECT_PAYDAY | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
+    attackcanceler
+    accuracycheck BS_MOVE_MISSED 0x0
+    call STANDARD_DAMAGE
+    faintpokemonaftermove
+    jumpifstat BANK_ATTACKER GREATERTHAN STAT_SPATK STAT_MIN MIT_LowerSpAtk
+    setmoveeffect MOVE_EFFECT_PAYDAY
+    seteffectprimary
+    goto BS_MOVE_END
 
-	goto BS_STANDARD_HIT
+
+MIT_LowerSpAtk:
+    playstatchangeanimation BANK_ATTACKER, STAT_ANIM_SPATK STAT_ANIM_DOWN
+    setstatchanger STAT_SPATK | DECREASE_1
+    statbuffchange STAT_ATTACKER | STAT_BS_PTR | STAT_CERTAIN, BS_MOVE_END
+    jumpifbyte EQUALS MULTISTRING_CHOOSER 0x2 BS_MOVE_END
+    printfromtable 0x83FE57C
+    waitmessage DELAY_1SECOND
+    setmoveeffect MOVE_EFFECT_PAYDAY
+    seteffectprimary
+    goto BS_MOVE_END
 
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

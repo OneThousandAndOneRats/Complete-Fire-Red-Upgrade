@@ -97,6 +97,21 @@ npc 1 101 0 EventScript_Moltres
 
 sign 24 1 0 EventScript_Articuno_Binoculars
 
+npc 5 5 7 EventScript_BruteBonnet
+npc 0 1 0 EventScript_Crystal_Rocket
+npc 0 1 1 EventScript_Crystal_Rocket
+npc 2 39 0 EventScript_TempOldManMtMoon_start
+sign 2 39 0 EventScript_MtMoonMetoriteNormal
+sign 2 39 1 EventScript_MtMoonMetoriteDefense
+sign 2 39 2 EventScript_MtMoonMetoriteAttack
+sign 2 39 3 EventScript_MtMoonMetoriteSpeed
+tile 2 55 0 EventScript_MtMoonSummitMusicControlStop
+tile 2 55 1 EventScript_MtMoonSummitMusicControlStart
+npc 2 55 3 EventScript_MtMoonDeoxysFight
+npc 2 55 8 EventScript_MtMoonTopHikerDon
+npc 2 55 7 EventScript_MtMoonTopHikerRon
+npc 2 55 6 EventScript_MtMoonTopHikerJon
+
 npc 3 5 6 EventScript_CutTree
 npc 3 1 7 EventScript_CutTree
 npc 3 1 1 EventScript_CutTree
@@ -194,6 +209,38 @@ npc 3 61 12 EventScript_newstrength_Start
 npc 3 61 13 EventScript_newstrength_Start
 npc 3 64 9 EventScript_newstrength_Start
 npc 3 64 14 EventScript_newstrength_Start
+
+npc 0 0 0 EventScript_newstrength_Start
+npc 0 0 1 EventScript_newstrength_Start
+npc 0 0 2 EventScript_newstrength_Start
+npc 0 0 3 EventScript_newstrength_Start
+npc 0 0 4 EventScript_newstrength_Start
+npc 0 0 5 EventScript_newstrength_Start
+npc 0 0 6 EventScript_newstrength_Start
+npc 0 0 7 EventScript_newstrength_Start
+npc 0 0 8 EventScript_newstrength_Start
+npc 0 0 9 EventScript_newstrength_Start
+npc 0 0 10 EventScript_newstrength_Start
+npc 0 0 11 EventScript_newstrength_Start
+
+npc 1 0 11 EventScript_newstrength_Start
+npc 1 0 12 EventScript_newstrength_Start
+npc 1 0 13 EventScript_newstrength_Start
+npc 5 5 0 EventScript_RockSmash
+npc 5 5 1 EventScript_RockSmash
+npc 5 5 2 EventScript_RockSmash
+npc 5 5 3 EventScript_RockSmash
+npc 5 5 4 EventScript_RockSmash
+npc 5 5 5 EventScript_RockSmash
+npc 5 5 6 EventScript_RockSmash
+
+npc 1 1 14 EventScript_RockSmash
+npc 1 1 15 EventScript_newstrength_Start
+npc 1 1 16 EventScript_newstrength_Start
+npc 2 55 1 EventScript_RockSmash
+npc 2 55 2 EventScript_RockSmash
+npc 2 55 0 EventScript_newstrength_Start
+
 
 npc 3 45 13 EventScript_RockSmash
 npc 3 45 14 EventScript_RockSmash

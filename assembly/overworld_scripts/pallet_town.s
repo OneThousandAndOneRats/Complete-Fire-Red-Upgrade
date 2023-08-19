@@ -12,7 +12,7 @@ EventScript_PalletTown_FatGuy:
 	msgbox gText_PalletTown_FatGuy MSG_FACE
 	@msgbox gText_GymGuyPewter MSG_FACE
 	giveitem ITEM_RARE_CANDY 0xF MSG_OBTAIN
-	@giveitem ITEM_MASTER_BALL 0xF MSG_OBTAIN
+	giveitem ITEM_MASTER_BALL 0xF MSG_OBTAIN
 	@giveitem ITEM_COIN_CASE 0x1 MSG_OBTAIN
 
 	givepokemon SPECIES_CRYSONIX 0x5 0x0 0x0 0x0 0x0

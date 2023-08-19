@@ -1764,7 +1764,7 @@ The user spins\nfuriously, dealing\ndamage to the target.\nHarshly lowers the\nu
 The user attack\nby throwing coins.\nLowers the user's\nSp. Atk stat.\nMoney is earned\nafter the battle.
 
 #org @DESC_GEMCANNON
-Hard gems are\nlaunched at all\nfoes. Earns lots\nof extra money after\nthe battle.
+Hard gems are\nlaunched at all\nfoes. Earns lots\nof extra money\nafter the battle.
 
 #org @DESC_FACETING
 The user carves a\ngem into a random\nusable item.

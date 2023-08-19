@@ -80,3 +80,98 @@ EventScript_fossilRight_move:
 .byte 0x11
 .byte 0x11
 .byte 0xFE
+
+
+EventScript_TempOldManMtMoon_start:
+	lock
+	faceplayer
+	msgbox gText_MeteoriteMan MSG_FACE
+	release
+	end
+
+EventScript_MtMoonSummitMusicControlStop:
+	checkflag 0x09A
+	if 0x0 _goto EventScript_MtMoonSummitMusicControlStopStop
+	end
+
+EventScript_MtMoonSummitMusicControlStopStop:
+	setflag 0x01F
+	fadeoutbgm 0x0 
+	end
+
+EventScript_MtMoonSummitMusicControlStart:
+	checkflag 0x01F
+	if 0x1 _goto EventScript_MtMoonSummitMusicControlStartStart
+	end
+
+EventScript_MtMoonSummitMusicControlStartStart:
+	clearflag 0x01F
+	fadeinbgm 0x2 
+	end
+
+EventScript_MtMoonDeoxysFight:
+	lock
+	cry SPECIES_DEOXYS 0x2
+	waitcry
+	playsong 0x157
+	wildbattle SPECIES_DEOXYS 0x2D 0x00
+	setflag 0x09A
+	clearflag 0x01F
+	hidesprite 0x4
+	release
+	end
+
+EventScript_MtMoonMetoriteNormal:
+	lock
+	msgbox gText_NormalMeteorite 0x6
+    special 0x9F
+    waitstate
+    callasm SetDeoxysFormNormal
+    release
+    end
+
+EventScript_MtMoonMetoriteDefense:
+	lock
+	msgbox gText_DefenseMeteorite 0x6
+    special 0x9F
+    waitstate
+    callasm SetDeoxysFormDefense
+    release
+    end
+
+EventScript_MtMoonMetoriteAttack:
+	lock
+	msgbox gText_AttackMeteorite 0x6
+    special 0x9F
+    waitstate
+    callasm SetDeoxysFormAttack
+    release
+    end
+
+EventScript_MtMoonMetoriteSpeed:
+	lock
+	msgbox gText_SpeedMeteorite 0x6
+    special 0x9F
+    waitstate
+    callasm SetDeoxysFormSpeed
+    release
+    end
+
+
+EventScript_MtMoonTopHikerDon:
+	trainerbattle1 0x0 0x65 0x0 gText_CrystalRocketSurprised gText_CrystalRocketABeaten EventScript_MtMoonHikerEnd
+	msgbox gText_SpeedMeteorite 0x6
+    end
+
+EventScript_MtMoonTopHikerRon:
+	trainerbattle1 0x0 0x71 0x0 gText_CrystalRocketSurprised gText_CrystalRocketABeaten EventScript_MtMoonHikerEnd
+	msgbox gText_SpeedMeteorite 0x6
+    end
+
+EventScript_MtMoonTopHikerJon:
+	trainerbattle1 0x0 0x1EC 0x0 gText_CrystalRocketSurprised gText_CrystalRocketABeaten EventScript_MtMoonHikerEnd
+	msgbox gText_SpeedMeteorite 0x6
+    end
+
+EventScript_MtMoonHikerEnd:
+	end

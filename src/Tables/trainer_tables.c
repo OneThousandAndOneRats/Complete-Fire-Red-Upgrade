@@ -538,6 +538,55 @@ const struct TrainerMonNoItemDefaultMoves sParty_NerdMTMB2FMiguel[] = {
     },
 };
 
+
+//~~~~~~~~~~~~~~~~~~|Mt Moon Summit|~~~~~~~~~~~~~~~~~~//
+const struct TrainerMonNoItemDefaultMoves sParty_HikerMTSDon[] = {
+    {
+        .iv = 0,
+        .lvl = 62,
+        .species = SPECIES_DRUDDIGON,
+    },
+    {
+        .iv = 0,
+        .lvl = 62,
+        .species = SPECIES_TURTONATOR,
+    },
+};
+const struct TrainerMonNoItemDefaultMoves sParty_HikerMTSRon[] = {
+    {
+        .iv = 0,
+        .lvl = 52,
+        .species = SPECIES_CAMERUPT,
+    },
+    {
+        .iv = 0,
+        .lvl = 52,
+        .species = SPECIES_MAMOSWINE,
+    },
+    {
+        .iv = 0,
+        .lvl = 53,
+        .species = SPECIES_STONJOURNER,
+    },
+};
+const struct TrainerMonNoItemDefaultMoves sParty_HikerMTSJon[] = {
+    {
+        .iv = 0,
+        .lvl = 51,
+        .species = SPECIES_CLAYDOL,
+    },
+    {
+        .iv = 0,
+        .lvl = 54,
+        .species = SPECIES_AGGRON,
+    },
+    {
+        .iv = 0,
+        .lvl = 53,
+        .species = SPECIES_CRUSTLE,
+    },
+};
+
 //~~~~~~~~~~~~~~~~~~|Route 4|~~~~~~~~~~~~~~~~~~//
 const struct TrainerMonNoItemDefaultMoves sParty_LassR4Crissy[] = {
     {
@@ -2072,6 +2121,38 @@ const struct TrainerMonNoItemDefaultMoves sParty_PicknickerRTDana[]= {
         .iv = 0,
         .lvl = 27,
         .species = SPECIES_LITLEO,
+    },
+
+};
+
+const struct TrainerMonNoItemDefaultMoves sParty_RocketRockTunnelA[]= {
+    {
+        .iv = 0,
+        .lvl = 37,
+        .species = SPECIES_HEATMOR,
+    },
+    {
+        .iv = 0,
+        .lvl = 37,
+        .species = SPECIES_MAWILE,
+    },
+    {
+        .iv = 0,
+        .lvl = 37,
+        .species = SPECIES_DUGTRIO,
+    },
+
+};
+const struct TrainerMonNoItemDefaultMoves sParty_RocketRockTunnelB[]= {
+    {
+        .iv = 0,
+        .lvl = 42,
+        .species = SPECIES_PALOSSAND,
+    },
+    {
+        .iv = 0,
+        .lvl = 42,
+        .species = SPECIES_BARBARACLE,
     },
 
 };
@@ -7729,6 +7810,44 @@ const struct Trainer gTrainers[] = {
         .partySize = NELEMS(sParty_NerdMTMB2FMiguel),
         .party = {.NoItemDefaultMoves = sParty_NerdMTMB2FMiguel}
     },
+
+    //~~~~~~~~~~~~~~~~~~|Mt Moon Summit|~~~~~~~~~~~~~~~~~~//
+    [TRAINER_HIKER_DON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_D, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HikerMTSDon),
+        .party = {.NoItemDefaultMoves = sParty_HikerMTSDon}
+    },
+    [TRAINER_HIKER_RON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_R, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HikerMTSRon),
+        .party = {.NoItemDefaultMoves = sParty_HikerMTSRon}
+    },
+    [TRAINER_HIKER_JON] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_HIKER,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
+        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerName = {_J, _o, _n, _END},
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_HikerMTSJon),
+        .party = {.NoItemDefaultMoves = sParty_HikerMTSJon}
+    },
     //~~~~~~~~~~~~~~~~~~|Route 4|~~~~~~~~~~~~~~~~~~//
     [TRAINER_LASS_CRISSY] = {
         .partyFlags = 0,
@@ -8812,6 +8931,30 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
         .partySize = NELEMS(sParty_PicknickerRTDana),
         .party = {.NoItemDefaultMoves = sParty_PicknickerRTDana}
+    },
+    [TRAINER_TEAM_ROCKET_GRUNT_BASEMENT_A] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_ROCKET,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
+        .trainerName = GRUNT_NAME,
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RocketRockTunnelA),
+        .party = {.NoItemDefaultMoves = sParty_RocketRockTunnelA}
+    },
+    [TRAINER_TEAM_ROCKET_GRUNT_BASEMENT_B] = {
+        .partyFlags = 0,
+        .trainerClass = CLASS_TEAM_ROCKET,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
+        .trainerName = GRUNT_NAME,
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_GOOD_MOVE | AI_SCRIPT_CHECK_BAD_MOVE,
+        .partySize = NELEMS(sParty_RocketRockTunnelB),
+        .party = {.NoItemDefaultMoves = sParty_RocketRockTunnelB}
     },
 
 

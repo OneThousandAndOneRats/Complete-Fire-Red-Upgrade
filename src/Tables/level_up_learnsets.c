@@ -20746,8 +20746,7 @@ static const struct LevelUpMove sCrysOnixLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(22, MOVE_SMACKDOWN),
 	LEVEL_UP_MOVE(25, MOVE_DRAGONBREATH),
 	LEVEL_UP_MOVE(28, MOVE_SLAM),
-	//LEVEL_UP_MOVE(31, MOVE_SCREECH),
-	LEVEL_UP_MOVE(31, MOVE_FACETING),
+	LEVEL_UP_MOVE(31, MOVE_SCREECH),
 	//LEVEL_UP_MOVE(34, MOVE_ROCKSLIDE),
 	LEVEL_UP_MOVE(34, MOVE_GEMCANNON),
 	LEVEL_UP_MOVE(37, MOVE_SANDTOMB),
@@ -20755,7 +20754,8 @@ static const struct LevelUpMove sCrysOnixLevelUpLearnset[] = {
 	LEVEL_UP_MOVE(43, MOVE_DIG),
 	LEVEL_UP_MOVE(46, MOVE_STONEEDGE),
 	LEVEL_UP_MOVE(49, MOVE_DOUBLEEDGE),
-	LEVEL_UP_MOVE(52, MOVE_SANDSTORM),
+	//LEVEL_UP_MOVE(52, MOVE_SANDSTORM),
+	LEVEL_UP_MOVE(52, MOVE_FACETING),
 	LEVEL_UP_END,
 };
 
@@ -22028,6 +22028,8 @@ const struct LevelUpMove* const gLevelUpLearnsets[] =
 	[SPECIES_GHOLDENGO] = sGholdengoLevelUpLearnset,
 	[SPECIES_BRUTEBONNET] = sBruteBonnetLevelUpLearnset,
 	[SPECIES_CRYSONIX] = sCrysOnixLevelUpLearnset,
+	[SPECIES_SHDWLUGIA] = sMagikarpLevelUpLearnset,
+	[SPECIES_SHDWHO_OH] = sMagikarpLevelUpLearnset,
 
 	[SPECIES_VENUSAUR_GIGA] = sVenusaurLevelUpLearnset,
 	[SPECIES_CHARIZARD_GIGA] = sCharizardLevelUpLearnset,

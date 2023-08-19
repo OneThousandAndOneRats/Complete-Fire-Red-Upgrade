@@ -2841,17 +2841,8 @@ bool8 TakeCoins(u32 toTake)
 
 bool8 GiveRandomCoins()
 {
-	u32 newAmount;
 	u32 toAdd = RandRange(10,777);
-	u32 current = GetCoins();
-	if (current >= MAX_COINS)
-		return FALSE;
-	else if (current + toAdd >= MAX_COINS)
-		newAmount = MAX_COINS;
-	else
-		newAmount = current + toAdd;
-
-	SetCoins(newAmount);
+	GiveCoins(toAdd);
 	return TRUE;
 }
 
@@ -2937,6 +2928,81 @@ bool8 scrB5_SubtractCoins(struct ScriptContext *ctx)
 void ConvertCoinInt(u32 coinAmount)
 {
 	ConvertIntToDecimalStringN(gStringVar1, coinAmount, STR_CONV_MODE_RIGHT_ALIGN, MAX_COINS_DIGITS);
+}
+
+void SetDeoxysFormNormal(void) {
+        struct Pokemon* mon = &gPlayerParty[Var8004];
+        u16 baseSpecies = mon->species;
+        u16 targetSpecies;
+
+        if (baseSpecies == SPECIES_DEOXYS
+            || baseSpecies == SPECIES_DEOXYS_ATTACK
+            || baseSpecies == SPECIES_DEOXYS_DEFENSE
+            || baseSpecies == SPECIES_DEOXYS_SPEED)
+        {
+            targetSpecies = SPECIES_DEOXYS;
+
+            SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+            CalculateMonStats(mon);
+            gSpecialVar_LastResult = TRUE;
+            return;
+        }
+}
+void SetDeoxysFormAttack(void) {
+        struct Pokemon* mon = &gPlayerParty[Var8004];
+        u16 baseSpecies = mon->species;
+        u16 targetSpecies;
+
+        if (baseSpecies == SPECIES_DEOXYS
+            || baseSpecies == SPECIES_DEOXYS_ATTACK
+            || baseSpecies == SPECIES_DEOXYS_DEFENSE
+            || baseSpecies == SPECIES_DEOXYS_SPEED)
+        {
+            targetSpecies = SPECIES_DEOXYS_ATTACK;
+            
+            SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+            CalculateMonStats(mon);
+            gSpecialVar_LastResult = TRUE;
+            return;
+        }
+}
+
+void SetDeoxysFormDefense(void) {
+        struct Pokemon* mon = &gPlayerParty[Var8004];
+        u16 baseSpecies = mon->species;
+        u16 targetSpecies;
+
+        if (baseSpecies == SPECIES_DEOXYS
+            || baseSpecies == SPECIES_DEOXYS_ATTACK
+            || baseSpecies == SPECIES_DEOXYS_DEFENSE
+            || baseSpecies == SPECIES_DEOXYS_SPEED)
+        {
+            targetSpecies = SPECIES_DEOXYS_DEFENSE;
+            
+            SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+            CalculateMonStats(mon);
+            gSpecialVar_LastResult = TRUE;
+            return;
+        }
+}
+
+void SetDeoxysFormSpeed(void) {
+        struct Pokemon* mon = &gPlayerParty[Var8004];
+        u16 baseSpecies = mon->species;
+        u16 targetSpecies;
+
+        if (baseSpecies == SPECIES_DEOXYS
+            || baseSpecies == SPECIES_DEOXYS_ATTACK
+            || baseSpecies == SPECIES_DEOXYS_DEFENSE
+            || baseSpecies == SPECIES_DEOXYS_SPEED)
+        {
+            targetSpecies = SPECIES_DEOXYS_SPEED;
+            
+            SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+            CalculateMonStats(mon);
+            gSpecialVar_LastResult = TRUE;
+            return;
+        }
 }
 
 #ifdef SCROLLING_MULTICHOICE
