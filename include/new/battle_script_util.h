@@ -33,6 +33,8 @@ void TryActivatePartnerSapSipper(void);
 void RoundBSFunction(void);
 void EchoedVoiceFunc(void);
 void DefogHelperFunc(void);
+void ShadowShedHelperFunc(void);
+void ClearTargetsScreens(void);
 void ClearBeakBlastBit(void);
 void BelchFunction(void);
 void StrengthSapFunc(void);

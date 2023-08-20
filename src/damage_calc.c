@@ -1551,8 +1551,12 @@ static void ModulateDmgByType(u8 multiplier, const u16 move, const u8 moveType, 
 			return; //Scrappy breaks Ghost immunity
 	}
 
+	if (moveType == TYPE_SHADOW) //Always Super-Effective, even in Inverse Battles
+		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
+
 	if (move == MOVE_FREEZEDRY && defType == TYPE_WATER) //Always Super-Effective, even in Inverse Battles
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;
+
 
 	if (move == MOVE_ANTIVIRUS && defType == TYPE_POISON) //Always Super-Effective, even in Inverse Battles
 		multiplier = TYPE_MUL_SUPER_EFFECTIVE;

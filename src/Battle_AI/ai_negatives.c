@@ -878,8 +878,39 @@ SKIP_CHECK_TARGET:
 			break;
 
 		case EFFECT_SPLASH:
-			if (!IsTypeZCrystal(data->atkItem, gBattleMoves[move].type) || gNewBS->zMoveData.used[bankAtk])
-				DECREASE_VIABILITY(10);
+			switch (move) {
+				case MOVE_SPLASH:
+					if (!IsTypeZCrystal(data->atkItem, gBattleMoves[move].type) || gNewBS->zMoveData.used[bankAtk])
+						DECREASE_VIABILITY(10);
+					break;
+
+				case MOVE_FERMENTEDSPRAY:
+					goto AI_STANDARD_DAMAGE;
+					break;
+
+				case MOVE_COOLDOWN:
+					if (data->atkAbility == ABILITY_CONTRARY 
+						|| data->atkStatus1 & STATUS1_FREEZE 
+						|| !AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_DEF) 
+						|| !AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_SPDEF))
+						DECREASE_VIABILITY(10);
+					break;
+
+				case MOVE_OVERCLOCKING:
+					if (data->atkAbility == ABILITY_CONTRARY 
+						|| data->atkStatus1 & STATUS1_PSN_ANY 
+						|| !AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_SPATK))
+						DECREASE_VIABILITY(10);
+					break;
+
+				case MOVE_OVERCHARGE:
+					if (data->atkAbility == ABILITY_CONTRARY 
+						|| data->atkStatus1 & STATUS1_PARALYSIS 
+						|| !AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_ATK)) 
+						DECREASE_VIABILITY(10);
+					break;
+
+			}
 			break;
 
 		case EFFECT_TELEPORT:
@@ -1570,7 +1601,7 @@ SKIP_CHECK_TARGET:
 				DECREASE_VIABILITY(10);
 			else if (AI_THINKING_STRUCT->aiFlags > AI_SCRIPT_SEMI_SMART //Only smart AI
 				&& !IsBankIncapacitated(bankDef) //Enemy can attack
-				&& (HasUsedMoveWithEffect(bankDef, EFFECT_BRICK_BREAK) || HasUsedMove(bankDef, MOVE_DEFOG))) //Has used a move that could break screens before
+				&& (HasUsedMoveWithEffect(bankDef, EFFECT_BRICK_BREAK) || HasUsedMove(bankDef, MOVE_DEFOG) || HasUsedMove(bankDef, MOVE_SHADOWSHED))) //Has used a move that could break screens before
 					DECREASE_VIABILITY(9); //Better not to use screen since player will probably try to cheese AI
 				break;
 			break;
@@ -1671,7 +1702,7 @@ SKIP_CHECK_TARGET:
 						DECREASE_VIABILITY(10);
 					else if (AI_THINKING_STRUCT->aiFlags > AI_SCRIPT_SEMI_SMART //Only smart AI
 					&& !IsBankIncapacitated(bankDef) //Enemy can attack
-					&& (HasUsedMoveWithEffect(bankDef, EFFECT_BRICK_BREAK) || HasUsedMove(bankDef, MOVE_DEFOG))) //Has used a move that could break screens before
+					&& (HasUsedMoveWithEffect(bankDef, EFFECT_BRICK_BREAK) || HasUsedMove(bankDef, MOVE_DEFOG) || HasUsedMove(bankDef, MOVE_SHADOWSHED))) //Has used a move that could break screens before
 						DECREASE_VIABILITY(9); //Better not to use screen since player will probably try to cheese AI
 					break;
 			}
@@ -2660,6 +2691,8 @@ SKIP_CHECK_TARGET:
 					break;
 
 				case MOVE_COREENFORCER:
+				case MOVE_DEAFEN:
+				case MOVE_OVERRIDE:
 					goto AI_STANDARD_DAMAGE;
 
 				case MOVE_SIMPLEBEAM:
@@ -2671,9 +2704,10 @@ SKIP_CHECK_TARGET:
 						goto AI_SUBSTITUTE_CHECK;
 					break;
 
-				case MOVE_DEAFEN:
-				case MOVE_OVERRIDE:
-					goto AI_SUBSTITUTE_CHECK;
+				case MOVE_BURNOUT:
+					if (atkAbility2 == ABILITY_TRUANT || MainStatsMaxed(bankAtk)) {
+						DECREASE_VIABILITY(10);
+					}
 					break;
 
 				default: //Skill Swap

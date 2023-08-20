@@ -1769,6 +1769,30 @@ Hard gems are\nlaunched at all\nfoes. Earns lots\nof extra money\nafter the batt
 #org @DESC_FACETING
 The user carves a\ngem into a random\nusable item.
 
+#org @DESC_SHADOWBLAST
+A wicked blade of\nair is formed using\na shadowy aura. 
+
+#org @DESC_SHADOWDOWN
+A shadowy aura\nsharply cuts the\nfoe's Defense. 
+
+#org @DESC_SHADOWSHED
+A shadowy aura\neliminates Reflect\nand similar moves. 
+
+#org @DESC_SHADOWSTORM
+A shadowy aura is\nused to whip up a\nvicious tornado.
+
+#org @DESC_SHADOWFLARE
+A wicked blast of\nfire is formed using\na shadowy aura. 
+
+#org @DESC_SHADOWHOLD
+The opponent's\nPok\emon cannot\nescape
+
+#org @DESC_SHADOWPANIC
+A shadowy aura\nemanates to cause \nconfusion to all\nfoes. 
+
+#org @DESC_SHADOWBREAK
+A shattering ram\nattack with a\nshadowy aura. 
+
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.
 

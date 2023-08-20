@@ -966,8 +966,40 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			break;
 
 		case EFFECT_SPLASH:
-			if (IsTypeZCrystal(data->atkItem, gBattleMoves[move].type) && !IsMegaZMoveBannedBattle() && !gNewBS->zMoveData.used[bankAtk])
-				INCREASE_VIABILITY(9); //Z-Splash!
+			switch (move) {
+				case MOVE_SPLASH:
+					if (IsTypeZCrystal(data->atkItem, gBattleMoves[move].type) && !IsMegaZMoveBannedBattle() && !gNewBS->zMoveData.used[bankAtk])
+						INCREASE_VIABILITY(9); //Z-Splash!
+					break;
+
+				case MOVE_FERMENTEDSPRAY:
+					if (data->defStatus1 & STATUS1_ANY && !(data->defStatus2 & STATUS2_CONFUSION))
+						INCREASE_VIABILITY (2);
+					break;
+
+				case MOVE_COOLDOWN:
+					if (data->atkAbility != ABILITY_CONTRARY 
+						|| !(data->atkStatus1 & STATUS1_FREEZE) 
+						|| AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_DEF) 
+						|| AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_SPDEF))
+						INCREASE_STATUS_VIABILITY(2);
+					break;
+
+				case MOVE_OVERCLOCKING:
+					if (data->atkAbility != ABILITY_CONTRARY 
+						|| !(data->atkStatus1 & STATUS1_PSN_ANY) 
+						|| AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_SPATK))
+						INCREASE_STATUS_VIABILITY(2);
+					break;
+
+				case MOVE_OVERCHARGE:
+					if (data->atkAbility != ABILITY_CONTRARY 
+						|| !(data->atkStatus1 & STATUS1_PARALYSIS) 
+						|| AI_STAT_CAN_RISE(bankAtk, STAT_STAGE_ATK)) 
+						INCREASE_STATUS_VIABILITY(2);
+					break;
+
+			}
 			break;
 		
 		case EFFECT_TELEPORT:
@@ -1676,6 +1708,18 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 					goto AI_EVASION_MINUS; //If no other reason to use Defog, use it for the Evasion lowering
 				}
 			}
+			if (move == MOVE_SHADOWSHED)
+			{
+				if (gSideStatuses[SIDE(bankDef)] &
+					(SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN | SIDE_STATUS_SAFEGUARD | SIDE_STATUS_MIST)
+				|| gNewBS->AuroraVeilTimers[SIDE(bankDef)] != 0)
+				{
+					if (IS_DOUBLE_BATTLE)
+						IncreaseHelpingHandViability(&viability, class);
+					else
+						INCREASE_STATUS_VIABILITY(3);
+				}
+			}
 			else //Rapid Spin
 			{
 				if (!(AI_SpecialTypeCalc(move, bankAtk, bankDef) & MOVE_RESULT_DOESNT_AFFECT_FOE))
@@ -2254,6 +2298,12 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 				case MOVE_SKILLSWAP:
 					if (gAbilityRatings[defAbility] > gAbilityRatings[atkAbility])
 						INCREASE_STATUS_VIABILITY(1);
+					break;
+
+				case MOVE_BURNOUT:
+					if (atkAbility != ABILITY_TRUANT && !MainStatsMaxed(bankAtk)) {
+						INCREASE_STATUS_VIABILITY(2);
+					}
 					break;
 			}
 			break;

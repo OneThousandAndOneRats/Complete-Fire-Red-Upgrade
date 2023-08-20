@@ -3160,6 +3160,7 @@ BS_128_Pursuit:
 .global BattleScript_SideStatusWoreOffRet
 BS_129_RapidSpin:
 	jumpifmove MOVE_DEFOG DefogBS
+	jumpifmove MOVE_SHADOWSHED ShadowShedBs
 	
 RapidSpinBS:
 	setmoveeffect MOVE_EFFECT_RAPIDSPIN | MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN
@@ -3224,6 +3225,19 @@ BattleScript_SideStatusWoreOffRet:
 	printstring 0x184
 	waitmessage DELAY_1SECOND
 	return
+
+ShadowShedBs:
+	attackcanceler
+	attackstring
+	ppreduce
+	callasm ShadowShedHelperFunc
+	attackanimation
+	waitanimation
+	callasm ClearTargetsScreens
+	setword BATTLE_STRING_LOADER gText_ScreensRemoved
+	printstring 0x184
+	waitmessage DELAY_1SECOND
+	goto BS_MOVE_END
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 

@@ -491,6 +491,32 @@ void DefogHelperFunc(void)
 	}
 }
 
+void ShadowShedHelperFunc(void)
+{
+	if (gNewBS->AuroraVeilTimers[SIDE(gBankTarget)]
+	|| gSideStatuses[SIDE(gBankTarget)] & ( SIDE_STATUS_REFLECT
+										  | SIDE_STATUS_LIGHTSCREEN
+										  | SIDE_STATUS_SAFEGUARD
+										  | SIDE_STATUS_MIST))
+	{
+		return;
+	}
+	gBattlescriptCurrInstr = BattleScript_NoTargetMoveFailed - 5;
+}
+
+void ClearTargetsScreens(void)
+{
+	gSideStatuses[SIDE(gBankTarget)] &= ~(SIDE_STATUS_REFLECT);
+	gSideStatuses[SIDE(gBankTarget)] &= ~(SIDE_STATUS_LIGHTSCREEN);
+	gSideStatuses[SIDE(gBankTarget)] &= ~(SIDE_STATUS_SAFEGUARD);
+	gSideStatuses[SIDE(gBankTarget)] &= ~(SIDE_STATUS_MIST);
+	gSideTimers[SIDE(gBankTarget)].reflectTimer = 0;
+	gSideTimers[SIDE(gBankTarget)].lightscreenTimer = 0;
+	gSideTimers[SIDE(gBankTarget)].mistTimer = 0;
+	gSideTimers[SIDE(gBankTarget)].safeguardTimer = 0;
+	gNewBS->AuroraVeilTimers[SIDE(gBankTarget)] = 0;
+}
+
 void ClearBeakBlastBit(void)
 {
 	if (!(gNewBS->BeakBlastByte & gBitTable[gBankAttacker])) //Forced by Encore

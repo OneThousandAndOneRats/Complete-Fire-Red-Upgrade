@@ -17941,12 +17941,8 @@ static const struct LevelUpMove sMelmetalLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGrookeyLevelUpLearnset[] = {
-	LEVEL_UP_MOVE( 1, MOVE_SPINOUT),
-	LEVEL_UP_MOVE( 1, MOVE_MAKEITRAIN),
-	LEVEL_UP_MOVE( 1, MOVE_GEMCANNON),
-	LEVEL_UP_MOVE( 1, MOVE_FACETING),
-	//LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
-	//LEVEL_UP_MOVE( 1, MOVE_GROWL),
+	LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
+	LEVEL_UP_MOVE( 1, MOVE_GROWL),
 	LEVEL_UP_MOVE( 6, MOVE_BRANCHPOKE),
 	LEVEL_UP_MOVE( 8, MOVE_TAUNT),
 	LEVEL_UP_MOVE(10, MOVE_STRUM),
@@ -20759,6 +20755,22 @@ static const struct LevelUpMove sCrysOnixLevelUpLearnset[] = {
 	LEVEL_UP_END,
 };
 
+static const struct LevelUpMove sShdwLugiaLevelUpLearnset[] = {
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWBLAST),
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWDOWN),
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWSHED),
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWSTORM),
+	LEVEL_UP_END,
+};
+
+static const struct LevelUpMove sShdwHoOhLevelUpLearnset[] = {
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWFLARE),
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWHOLD),
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWPANIC),
+	LEVEL_UP_MOVE( 1, MOVE_SHADOWBREAK),
+	LEVEL_UP_END,
+};
+
 const struct LevelUpMove* const gLevelUpLearnsets[] =
 {
 	[SPECIES_NONE] = sEmptyMoveset,
@@ -22028,8 +22040,8 @@ const struct LevelUpMove* const gLevelUpLearnsets[] =
 	[SPECIES_GHOLDENGO] = sGholdengoLevelUpLearnset,
 	[SPECIES_BRUTEBONNET] = sBruteBonnetLevelUpLearnset,
 	[SPECIES_CRYSONIX] = sCrysOnixLevelUpLearnset,
-	[SPECIES_SHDWLUGIA] = sMagikarpLevelUpLearnset,
-	[SPECIES_SHDWHO_OH] = sMagikarpLevelUpLearnset,
+	[SPECIES_SHDWLUGIA] = sShdwLugiaLevelUpLearnset,
+	[SPECIES_SHDWHO_OH] = sShdwHoOhLevelUpLearnset,
 
 	[SPECIES_VENUSAUR_GIGA] = sVenusaurLevelUpLearnset,
 	[SPECIES_CHARIZARD_GIGA] = sCharizardLevelUpLearnset,
