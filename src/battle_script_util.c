@@ -2980,3 +2980,12 @@ void ChooseMoveEffectForSpringtideStorm(void)
 
 	gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[moveEffect] - 5;
 }
+
+void IncreaseHitCounter(void)
+{
+    u8 side = SIDE(gBankTarget);
+    u8 index = gBattlerPartyIndexes[gBankTarget];
+    u8 counter = gBattleStruct->hitCounter[side][index];
+
+    gBattleStruct->hitCounter[side][index] = MathMin(254, counter + 1);
+}

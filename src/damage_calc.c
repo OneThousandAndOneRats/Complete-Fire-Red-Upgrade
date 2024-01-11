@@ -3972,6 +3972,10 @@ static u16 GetBasePower(struct DamageCalc* data)
 			#endif
 			break;
 
+		case MOVE_RAGEFIST:
+			power = 50 + (50 * gBattleStruct->hitCounter[SIDE(bankAtk)][gBattlerPartyIndexes[bankAtk]]);
+			break;
+
 		default:
 			if (gBattleMoves[move].effect == EFFECT_TRIPLE_KICK)
 			{

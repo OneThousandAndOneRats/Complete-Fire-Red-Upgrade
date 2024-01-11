@@ -718,6 +718,7 @@ struct BattleStruct
 	u8 field_187;
 	struct BattleEnigmaBerry battleEnigmaBerry;
 	u8 field_1A4[0x5C]; // currently unknown
+    u8 hitCounter[2][MAX_BATTLERS_COUNT];
 }; //size == 0x200 bytes
 
 extern struct BattleStruct* gBattleStruct;

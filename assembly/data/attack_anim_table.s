@@ -972,6 +972,7 @@ gMoveAnimations:
 .word ANIM_SHADOWHOLD
 .word ANIM_SHADOWPANIC
 .word ANIM_SHADOWBREAK
+.word ANIM_RAGEFIST
 
 @;New attacks go above!
 .word ANIM_BREAKNECK_BLITZ
@@ -21281,6 +21282,11 @@ ANIM_SHADOWBREAK:
 	goto ANIM_STONEEDGE
 	endanimation
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.pool
+ANIM_RAGEFIST:
+	goto 0x81cff92 @dynamic punch
+	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool

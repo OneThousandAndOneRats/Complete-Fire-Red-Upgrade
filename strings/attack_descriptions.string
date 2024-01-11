@@ -1731,10 +1731,10 @@ Using a clever\nexploit the user\noverrides the foe's\nability.
 Likely to crit\nand has a chance\nto cause paralysis.
 
 #org @DESC_HYDRAULICHIT
-A Forceful strike\nthat is more likely\nto crit if the foe\nresists.
+A Forceful strike\nthat is much more\nlikely to crit if the\nfoe resists.
 
 #org @DESC_BRUTEFORCE
-Low damage but hits\nmultiple times. Can\ntheoretically hit\nan infite number of\ntimes.
+Low damage but hits\nuntil it misses.
 
 #org @DESC_POWERSURGE
 A massive power\nspike for a heavy\nhitting strike.\nRequires the user\nto recharge\nafterwards.
@@ -1792,6 +1792,9 @@ A shadowy aura\nemanates to cause \nconfusion to all\nfoes.
 
 #org @DESC_SHADOWBREAK
 A shattering ram\nattack with a\nshadowy aura. 
+
+#org @DESC_RAGEFIST
+The user fuels the\nattack with rage.\nThe more the user\nis hit, the stronger\nthe move.
 
 #org @DESC_MAX_GUARD
 Enables the user to\nevade all attacks.\nIt may fail if used\nin succession.
